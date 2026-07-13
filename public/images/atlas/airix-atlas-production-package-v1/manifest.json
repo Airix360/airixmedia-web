@@ -1,0 +1,947 @@
+{
+  "package_name": "Airix Atlas Production Package",
+  "version": "1.0-candidate",
+  "created_utc": "2026-07-13T19:46:27Z",
+  "visual_direction": "Gongbi technique + Lagos subject matter + Atlas palette",
+  "completed_groups": [
+    1,
+    2,
+    3,
+    5
+  ],
+  "incomplete_groups": [
+    4,
+    6,
+    7,
+    8,
+    9
+  ],
+  "file_count": 185,
+  "files": [
+    {
+      "path": "01-master-scenes/ill-0001-arrival-district.png",
+      "size_bytes": 2838726,
+      "sha256": "be838b413c4590d929be397e3a7a1ec0ac051533862c2fcfb1babda5784eae28"
+    },
+    {
+      "path": "01-master-scenes/ill-0002-knowledge-district.png",
+      "size_bytes": 3137850,
+      "sha256": "53fc17f6adc3ab159bdb26ba3b0e15323eac6075580ab911e4b66c0f37ff71d7"
+    },
+    {
+      "path": "01-master-scenes/ill-0003-commerce-district.png",
+      "size_bytes": 3044061,
+      "sha256": "ed2e6c1e0ccb71aac7ec4f0bed1d8614bde97f1db52a3f312963dec7314abd8c"
+    },
+    {
+      "path": "01-master-scenes/ill-0004-infrastructure-district.png",
+      "size_bytes": 2898231,
+      "sha256": "d56537f8c1efccc75ad53412818fbf4cd76a85535166eef980162f3e220c46e6"
+    },
+    {
+      "path": "01-master-scenes/ill-0005-studio-district.png",
+      "size_bytes": 3288428,
+      "sha256": "3cb3168bc2d18d9819027bfdfcfd69768c039e60d5b16586c19c83566551c042"
+    },
+    {
+      "path": "01-master-scenes/ill-0006-gateway-district.png",
+      "size_bytes": 2903592,
+      "sha256": "2b54e235054b4ab03af9674f1de325542a597532773f435a98eec49740e5c3ee"
+    },
+    {
+      "path": "01-master-scenes/ill-0007-community-square.png",
+      "size_bytes": 3151311,
+      "sha256": "5fbf3a91f031d49ee71e36c9cc131e256d829173abfdce43a14159dba94d46f6"
+    },
+    {
+      "path": "01-master-scenes/ill-0008-marina-waterfront.png",
+      "size_bytes": 2777570,
+      "sha256": "183fb580e2b176d3fd5f5f4a75074566528e272997d4a5bc5fc927d8fae802ed"
+    },
+    {
+      "path": "01-master-scenes/ill-0009-logistics-hub.png",
+      "size_bytes": 2892303,
+      "sha256": "f4566e07f4e4bfbb4fc33114cb67150cd0d353695efd73d6561c8342cbbbc051"
+    },
+    {
+      "path": "01-master-scenes/ill-0010-night-waterfront.png",
+      "size_bytes": 2727872,
+      "sha256": "c36fc187a5bc5fa852df447967157d8b60aa2973bf94269215b7494c12989b0d"
+    },
+    {
+      "path": "02-responsive-crops/README.md",
+      "size_bytes": 517,
+      "sha256": "7f35e007e0172f82bbb8cf83b58dce0bc54aa38660ec88cd8e5fbbb86b724357"
+    },
+    {
+      "path": "02-responsive-crops/ill-0001-arrival-district/ill-0001-arrival-district-desktop-16x9.webp",
+      "size_bytes": 388138,
+      "sha256": "7eddbce4ee8b5203160cb3278c61bed9c390878165be76f8b43b4ac66024b1ea"
+    },
+    {
+      "path": "02-responsive-crops/ill-0001-arrival-district/ill-0001-arrival-district-mobile-4x5.webp",
+      "size_bytes": 322760,
+      "sha256": "d62007c26a42b7853b697f424a7b2b2a12cedc76d826d84ee2ecf7f05bf38331"
+    },
+    {
+      "path": "02-responsive-crops/ill-0001-arrival-district/ill-0001-arrival-district-social-og.webp",
+      "size_bytes": 241120,
+      "sha256": "ad94f8b4a474d7b9dc519533f99b9491824e2f01ee4e37f21a0de69cba3fdb41"
+    },
+    {
+      "path": "02-responsive-crops/ill-0001-arrival-district/ill-0001-arrival-district-tablet-4x3.webp",
+      "size_bytes": 314380,
+      "sha256": "9a7462f41f005ce7692f65111a413f4cada1437ea278dd19f21193fcfc885f48"
+    },
+    {
+      "path": "02-responsive-crops/ill-0001-arrival-district/ill-0001-arrival-district-thumbnail-16x9.webp",
+      "size_bytes": 74942,
+      "sha256": "ba4b142ef9d065583f50080388539eb4ef634370b6f7147cc81ba9b1f30037e8"
+    },
+    {
+      "path": "02-responsive-crops/ill-0002-knowledge-district/ill-0002-knowledge-district-desktop-16x9.webp",
+      "size_bytes": 526296,
+      "sha256": "1c926fe2bd404debac0e2dc7c0a7deece7e3f36d45a784795a42862df4951fe4"
+    },
+    {
+      "path": "02-responsive-crops/ill-0002-knowledge-district/ill-0002-knowledge-district-mobile-4x5.webp",
+      "size_bytes": 404364,
+      "sha256": "efbd702be109f2e61deab1b89aac4985a11dc1961e16eeda9fcca4fc8fe55b73"
+    },
+    {
+      "path": "02-responsive-crops/ill-0002-knowledge-district/ill-0002-knowledge-district-social-og.webp",
+      "size_bytes": 317592,
+      "sha256": "b04ff5f5afe83d2010c4441062928281aa277568729a1410842091d7c2c12fe6"
+    },
+    {
+      "path": "02-responsive-crops/ill-0002-knowledge-district/ill-0002-knowledge-district-tablet-4x3.webp",
+      "size_bytes": 387778,
+      "sha256": "6485057cd028674ff5be4bb4ef670d6300526a557a9738df9d4dcbd4f8e84396"
+    },
+    {
+      "path": "02-responsive-crops/ill-0002-knowledge-district/ill-0002-knowledge-district-thumbnail-16x9.webp",
+      "size_bytes": 94310,
+      "sha256": "93572abc67e81971ed9ea3df6afc1d9516d5712dbd7bac4ef9b705a93b12b1a3"
+    },
+    {
+      "path": "02-responsive-crops/ill-0003-commerce-district/ill-0003-commerce-district-desktop-16x9.webp",
+      "size_bytes": 498002,
+      "sha256": "1614f56e55e37990bbf80d12dedf4bfbc41ba34d0c81f4ca2d9014aa08e11e5b"
+    },
+    {
+      "path": "02-responsive-crops/ill-0003-commerce-district/ill-0003-commerce-district-mobile-4x5.webp",
+      "size_bytes": 345764,
+      "sha256": "a06499dfb4d212f241699a0412e6fb3364675c1f2e6950456e6df6c3a1eae675"
+    },
+    {
+      "path": "02-responsive-crops/ill-0003-commerce-district/ill-0003-commerce-district-social-og.webp",
+      "size_bytes": 296946,
+      "sha256": "d5e40ade30ccd24f1ae5369d13ad5bf2133b944e594985a1cf82037387478e7c"
+    },
+    {
+      "path": "02-responsive-crops/ill-0003-commerce-district/ill-0003-commerce-district-tablet-4x3.webp",
+      "size_bytes": 357066,
+      "sha256": "cc60719c7c41f42a5ca1c0c3b7ffa979310a36fad48fa05aef811f65f8f1f08d"
+    },
+    {
+      "path": "02-responsive-crops/ill-0003-commerce-district/ill-0003-commerce-district-thumbnail-16x9.webp",
+      "size_bytes": 87852,
+      "sha256": "2f0556303e2ec8af6c2e9592718f781e739ff1f8425e1ecf9f65b3a159ba43cf"
+    },
+    {
+      "path": "02-responsive-crops/ill-0004-infrastructure-district/ill-0004-infrastructure-district-desktop-16x9.webp",
+      "size_bytes": 425060,
+      "sha256": "4a9bda94909fbb4de358cd01c291948137c6162f8f4cbf50a7a006676bf980c9"
+    },
+    {
+      "path": "02-responsive-crops/ill-0004-infrastructure-district/ill-0004-infrastructure-district-mobile-4x5.webp",
+      "size_bytes": 284836,
+      "sha256": "da7c0b695ba57d29abbcd3eb1c10b6e23f63e4677edb87645864db58a16fa142"
+    },
+    {
+      "path": "02-responsive-crops/ill-0004-infrastructure-district/ill-0004-infrastructure-district-social-og.webp",
+      "size_bytes": 265602,
+      "sha256": "41292736825a07755819d342cbac6840fac1b67bd7a44c42d355a3f66404089f"
+    },
+    {
+      "path": "02-responsive-crops/ill-0004-infrastructure-district/ill-0004-infrastructure-district-tablet-4x3.webp",
+      "size_bytes": 304616,
+      "sha256": "d367a1e86ee70835bd8ef641fc6f2ed5b18ed3520461db74ba0a888f92f249ac"
+    },
+    {
+      "path": "02-responsive-crops/ill-0004-infrastructure-district/ill-0004-infrastructure-district-thumbnail-16x9.webp",
+      "size_bytes": 80934,
+      "sha256": "9f4b22ae29eb19b8b41176da9ee16ed859cacf43585d39812aa1bc93d206c1cd"
+    },
+    {
+      "path": "02-responsive-crops/ill-0005-studio-district/ill-0005-studio-district-desktop-16x9.webp",
+      "size_bytes": 589728,
+      "sha256": "a00553f9be4e9b3e333385738e9da51aabfecca678c88fa207061f3a6e8761c7"
+    },
+    {
+      "path": "02-responsive-crops/ill-0005-studio-district/ill-0005-studio-district-mobile-4x5.webp",
+      "size_bytes": 430702,
+      "sha256": "91d7a65c1c63d08be129acf729ff7ca7b219884126823ef05d24683b0810fcb7"
+    },
+    {
+      "path": "02-responsive-crops/ill-0005-studio-district/ill-0005-studio-district-social-og.webp",
+      "size_bytes": 347094,
+      "sha256": "8a0cf7a5c6a3517dfbc761f197ac2208b7cccd574e159e7644598877bf7c380d"
+    },
+    {
+      "path": "02-responsive-crops/ill-0005-studio-district/ill-0005-studio-district-tablet-4x3.webp",
+      "size_bytes": 445606,
+      "sha256": "f881856418408bc644482aac1e913970cf87dc0d140b05218d9fe95cbc60c3dc"
+    },
+    {
+      "path": "02-responsive-crops/ill-0005-studio-district/ill-0005-studio-district-thumbnail-16x9.webp",
+      "size_bytes": 102590,
+      "sha256": "76d34f3d6df923bdd25bf82dfe07c0780d5c83c0a7ee1f0a89c6ebde923fc560"
+    },
+    {
+      "path": "02-responsive-crops/ill-0006-gateway-district/ill-0006-gateway-district-desktop-16x9.webp",
+      "size_bytes": 455772,
+      "sha256": "0eaf06dc303b297b42a64dd5ce87820f4b463cf6352e0a7140dde52dd27d1cdd"
+    },
+    {
+      "path": "02-responsive-crops/ill-0006-gateway-district/ill-0006-gateway-district-mobile-4x5.webp",
+      "size_bytes": 317718,
+      "sha256": "d94d825685ff06f82fd728fd435e35240ae4fac6eef5fbfe1cbf160963239f76"
+    },
+    {
+      "path": "02-responsive-crops/ill-0006-gateway-district/ill-0006-gateway-district-social-og.webp",
+      "size_bytes": 278518,
+      "sha256": "d40e9d78c55670a3ff13c22d5893ed17f1ef23072884003fa5075634ef72916e"
+    },
+    {
+      "path": "02-responsive-crops/ill-0006-gateway-district/ill-0006-gateway-district-tablet-4x3.webp",
+      "size_bytes": 342064,
+      "sha256": "d1be588336c6ca7f3ad6ad22c5eb1de053afe2e3eff7fa657115bb742a485884"
+    },
+    {
+      "path": "02-responsive-crops/ill-0006-gateway-district/ill-0006-gateway-district-thumbnail-16x9.webp",
+      "size_bytes": 91944,
+      "sha256": "62ed2d046bfb533f239745b7bbfbc6368a5c7194f1e3b8cdb6eec747b5343ed5"
+    },
+    {
+      "path": "02-responsive-crops/ill-0007-community-square/ill-0007-community-square-desktop-16x9.webp",
+      "size_bytes": 502536,
+      "sha256": "c84e69412d19631f88303aa1cc6ca8214971a18e5c2535b58cbe74df3115cc00"
+    },
+    {
+      "path": "02-responsive-crops/ill-0007-community-square/ill-0007-community-square-mobile-4x5.webp",
+      "size_bytes": 305470,
+      "sha256": "27ef8df862c59b02e6ec71675b7f40a71b506b3a848110a7a8752176213825e2"
+    },
+    {
+      "path": "02-responsive-crops/ill-0007-community-square/ill-0007-community-square-social-og.webp",
+      "size_bytes": 295096,
+      "sha256": "03492b38d6537d71d73dad84b23e9fc04ae2f4a518354b038864344a640836fb"
+    },
+    {
+      "path": "02-responsive-crops/ill-0007-community-square/ill-0007-community-square-tablet-4x3.webp",
+      "size_bytes": 352804,
+      "sha256": "aa2a7d322adc674b676a8188713b6b157ca30d74a64a8a084e5bdee93f43155c"
+    },
+    {
+      "path": "02-responsive-crops/ill-0007-community-square/ill-0007-community-square-thumbnail-16x9.webp",
+      "size_bytes": 96612,
+      "sha256": "ef8bae777d4960532b99bbf7b3ab9c985e6eaa8904a8a379a180fb7c9adc295a"
+    },
+    {
+      "path": "02-responsive-crops/ill-0008-marina-waterfront/ill-0008-marina-waterfront-desktop-16x9.webp",
+      "size_bytes": 386890,
+      "sha256": "67094faa40e8ebd1c58f5b409ac0f1b6f9bc22275929704c7836b7a904350f07"
+    },
+    {
+      "path": "02-responsive-crops/ill-0008-marina-waterfront/ill-0008-marina-waterfront-mobile-4x5.webp",
+      "size_bytes": 237446,
+      "sha256": "2dd24b95c6ffcb471c5d4789d7cb64845ffb5d582976ba0aa1738f02dbd9ffb5"
+    },
+    {
+      "path": "02-responsive-crops/ill-0008-marina-waterfront/ill-0008-marina-waterfront-social-og.webp",
+      "size_bytes": 230668,
+      "sha256": "ad942e70b5b69d528d2ebb83ae72eb07fedbc71ddbb548cb0cb226120c17a8ba"
+    },
+    {
+      "path": "02-responsive-crops/ill-0008-marina-waterfront/ill-0008-marina-waterfront-tablet-4x3.webp",
+      "size_bytes": 255104,
+      "sha256": "915eb46296c0a5bd84fb6790654f7f8610b294f341acd49f74e462fe83f65589"
+    },
+    {
+      "path": "02-responsive-crops/ill-0008-marina-waterfront/ill-0008-marina-waterfront-thumbnail-16x9.webp",
+      "size_bytes": 70510,
+      "sha256": "3b85d706585b4a4ce1d812e516fef7dd568bea4c8cfec3deeae964208b06ee5a"
+    },
+    {
+      "path": "02-responsive-crops/ill-0009-logistics-hub/ill-0009-logistics-hub-desktop-16x9.webp",
+      "size_bytes": 422816,
+      "sha256": "cf605f4c76b7da38e260567c237e13f02b5685b642acb91e27f3be37c83e84a9"
+    },
+    {
+      "path": "02-responsive-crops/ill-0009-logistics-hub/ill-0009-logistics-hub-mobile-4x5.webp",
+      "size_bytes": 283968,
+      "sha256": "3a524a792a6b61950894ea8ff539ec1a4f8884c5fab043a19a673790fac70843"
+    },
+    {
+      "path": "02-responsive-crops/ill-0009-logistics-hub/ill-0009-logistics-hub-social-og.webp",
+      "size_bytes": 263054,
+      "sha256": "9134230b807dc19fe55d899f29272e0ddb4664dedb69d8987150f0bd15a107b2"
+    },
+    {
+      "path": "02-responsive-crops/ill-0009-logistics-hub/ill-0009-logistics-hub-tablet-4x3.webp",
+      "size_bytes": 292070,
+      "sha256": "0818005b56e16e12621c4550b7b6937fcc109cb71a93352d682cae4f697f1b47"
+    },
+    {
+      "path": "02-responsive-crops/ill-0009-logistics-hub/ill-0009-logistics-hub-thumbnail-16x9.webp",
+      "size_bytes": 80538,
+      "sha256": "73d2120f49e49df7059086afd8e6e1a2c1c64901754e78ee6f5676f78643f7ea"
+    },
+    {
+      "path": "02-responsive-crops/ill-0010-night-waterfront/ill-0010-night-waterfront-desktop-16x9.webp",
+      "size_bytes": 376848,
+      "sha256": "b2d7bbd353198b761d99cbab41f6b65ce2b127277ccfe563a462b1af55b0e94c"
+    },
+    {
+      "path": "02-responsive-crops/ill-0010-night-waterfront/ill-0010-night-waterfront-mobile-4x5.webp",
+      "size_bytes": 292734,
+      "sha256": "89a5cc1b4a25df77231fd1395b9d13f316d6cad2187f522c0694f0e45483bb9e"
+    },
+    {
+      "path": "02-responsive-crops/ill-0010-night-waterfront/ill-0010-night-waterfront-social-og.webp",
+      "size_bytes": 229378,
+      "sha256": "6d7e02487036456bebd264ce061b78a3822cb4885d62a13429a5768de0e252dc"
+    },
+    {
+      "path": "02-responsive-crops/ill-0010-night-waterfront/ill-0010-night-waterfront-tablet-4x3.webp",
+      "size_bytes": 298240,
+      "sha256": "8f3d61eaec0a377f7758e6e826f504b47eb7a3657081e1bcc0517dfff13a3a43"
+    },
+    {
+      "path": "02-responsive-crops/ill-0010-night-waterfront/ill-0010-night-waterfront-thumbnail-16x9.webp",
+      "size_bytes": 69660,
+      "sha256": "d41fc3e1e251d95d1bc8859950b7fde9a3d4325caf3dc7aa182da5726e23c60a"
+    },
+    {
+      "path": "02-responsive-crops/manifest.json",
+      "size_bytes": 21474,
+      "sha256": "dade0f3da7e6ce6d7e78bd6b5a35f9abbc885bb25da565838cd8e11b187c2e22"
+    },
+    {
+      "path": "03-transparent-scene-layers/README.md",
+      "size_bytes": 508,
+      "sha256": "ec381ea2a5b6bb441a3281ef1c45282251a56cc866e8bd09326e87d144b15341"
+    },
+    {
+      "path": "03-transparent-scene-layers/ill-0001-arrival-district/ill-0001-arrival-district-01-atmosphere.webp",
+      "size_bytes": 205848,
+      "sha256": "2bee3f933a2a0500cacb85e9dc250c8b489bc449861ad0209aa06f7ba8555442"
+    },
+    {
+      "path": "03-transparent-scene-layers/ill-0001-arrival-district/ill-0001-arrival-district-02-distant-world.webp",
+      "size_bytes": 205670,
+      "sha256": "f5860eed6cd3fa018cdf0952be36863974508a7eee69c8da81604066b3c885cc"
+    },
+    {
+      "path": "03-transparent-scene-layers/ill-0001-arrival-district/ill-0001-arrival-district-03-midground-structures.webp",
+      "size_bytes": 206024,
+      "sha256": "46365fd66620dc502422901455f96f3563e862431507d674de545637a03d7fbb"
+    },
+    {
+      "path": "03-transparent-scene-layers/ill-0001-arrival-district/ill-0001-arrival-district-04-surface-water-road.webp",
+      "size_bytes": 205828,
+      "sha256": "5053bc51c38e151384ea54435b851bee95439c5f86c561693f73d64ddedd4402"
+    },
+    {
+      "path": "03-transparent-scene-layers/ill-0001-arrival-district/ill-0001-arrival-district-05-foreground-activity.webp",
+      "size_bytes": 218244,
+      "sha256": "2ef8164387f8937dd8d0e066072f3d9e41b0e2a409d3939d114cfd87182c0986"
+    },
+    {
+      "path": "03-transparent-scene-layers/ill-0001-arrival-district/ill-0001-arrival-district-preview.jpg",
+      "size_bytes": 38288,
+      "sha256": "aa7fc3b058c6a58c2f5e9a4595356dbfadefb3fc4bc15c296ee7c0d3f3a48f2a"
+    },
+    {
+      "path": "03-transparent-scene-layers/ill-0002-knowledge-district/ill-0002-knowledge-district-01-atmosphere.webp",
+      "size_bytes": 281242,
+      "sha256": "c6ca53d048944882342bcc4f56d421f42f7bd248245640a30abfee8466f598ed"
+    },
+    {
+      "path": "03-transparent-scene-layers/ill-0002-knowledge-district/ill-0002-knowledge-district-02-distant-world.webp",
+      "size_bytes": 280984,
+      "sha256": "02f787301d5c97f29857560511034cf53b7fa0080c6bbf5a4e4100182a093134"
+    },
+    {
+      "path": "03-transparent-scene-layers/ill-0002-knowledge-district/ill-0002-knowledge-district-03-midground-structures.webp",
+      "size_bytes": 281310,
+      "sha256": "6ac6853da257bd7807b3d2a028f3ebf3c001b883a170fa14bf460524b9274748"
+    },
+    {
+      "path": "03-transparent-scene-layers/ill-0002-knowledge-district/ill-0002-knowledge-district-04-surface-water-road.webp",
+      "size_bytes": 281210,
+      "sha256": "c5f7fbe1cc0b27d18c423b253b6b9c8d79410c6d7e625328060e6c9c40202c8b"
+    },
+    {
+      "path": "03-transparent-scene-layers/ill-0002-knowledge-district/ill-0002-knowledge-district-05-foreground-activity.webp",
+      "size_bytes": 293450,
+      "sha256": "41012501722eeba7e8a6df8598aeb4184c50db7bee614739737d306d31ef4a8b"
+    },
+    {
+      "path": "03-transparent-scene-layers/ill-0002-knowledge-district/ill-0002-knowledge-district-preview.jpg",
+      "size_bytes": 46726,
+      "sha256": "55d36647ccb5acfcc5a9fdd8fff9dcc2be79d6d3596a3a9d59fc486378fcdee2"
+    },
+    {
+      "path": "03-transparent-scene-layers/ill-0003-commerce-district/ill-0003-commerce-district-01-atmosphere.webp",
+      "size_bytes": 263126,
+      "sha256": "c3dd707737b717ca6f5590cff485f7d5d18283ff51091834aae54f58363c088d"
+    },
+    {
+      "path": "03-transparent-scene-layers/ill-0003-commerce-district/ill-0003-commerce-district-02-distant-world.webp",
+      "size_bytes": 262826,
+      "sha256": "e3739a2931117e8d29a88a7958cdc10f602e6044d1114063db8b3ad97e2dc2c7"
+    },
+    {
+      "path": "03-transparent-scene-layers/ill-0003-commerce-district/ill-0003-commerce-district-03-midground-structures.webp",
+      "size_bytes": 263180,
+      "sha256": "26b90f404b3cd2d6f027e8ffab53892a0385e4b750bfbd124e588815c85e219c"
+    },
+    {
+      "path": "03-transparent-scene-layers/ill-0003-commerce-district/ill-0003-commerce-district-04-surface-water-road.webp",
+      "size_bytes": 263654,
+      "sha256": "a8ca1aa7507a734addfd24f9840429a2cc9c1b0784576664a022d3a5d51d14d2"
+    },
+    {
+      "path": "03-transparent-scene-layers/ill-0003-commerce-district/ill-0003-commerce-district-05-foreground-activity.webp",
+      "size_bytes": 275682,
+      "sha256": "45d74e27852274c539ddf3377277e76d0e569e0a6bcdc19834702c2b2f62a241"
+    },
+    {
+      "path": "03-transparent-scene-layers/ill-0003-commerce-district/ill-0003-commerce-district-preview.jpg",
+      "size_bytes": 45800,
+      "sha256": "6ab91f9a479a48190ca9ab80ea49aeb0b5f9d6d3d2164b9be72aeb7e0a614eda"
+    },
+    {
+      "path": "03-transparent-scene-layers/ill-0004-infrastructure-district/ill-0004-infrastructure-district-01-atmosphere.webp",
+      "size_bytes": 227586,
+      "sha256": "0fbfc5f4fe9cf3de7c3c4cd87a437ec7d58473d6df7ecfee44ff746684f2b0d7"
+    },
+    {
+      "path": "03-transparent-scene-layers/ill-0004-infrastructure-district/ill-0004-infrastructure-district-02-distant-world.webp",
+      "size_bytes": 227420,
+      "sha256": "bc2bb602139e3e59d8a7ee8afe587e26990c49b1783148e49bbb4ea46696d0fb"
+    },
+    {
+      "path": "03-transparent-scene-layers/ill-0004-infrastructure-district/ill-0004-infrastructure-district-03-midground-structures.webp",
+      "size_bytes": 227792,
+      "sha256": "16ff3444515f273b3f07e1de76ddbb1a3ca3264a8c7fc8b241a88b2ffd77f982"
+    },
+    {
+      "path": "03-transparent-scene-layers/ill-0004-infrastructure-district/ill-0004-infrastructure-district-04-surface-water-road.webp",
+      "size_bytes": 227526,
+      "sha256": "60eb8701fd24945c6e0de1cdcb90cbefa5d402548a2edfbf624668666a1a4317"
+    },
+    {
+      "path": "03-transparent-scene-layers/ill-0004-infrastructure-district/ill-0004-infrastructure-district-05-foreground-activity.webp",
+      "size_bytes": 239964,
+      "sha256": "a26e75167c1a8f3d0d220daa79516cc53eaefee360cb2bd498bfb69f22ed1dde"
+    },
+    {
+      "path": "03-transparent-scene-layers/ill-0004-infrastructure-district/ill-0004-infrastructure-district-preview.jpg",
+      "size_bytes": 41962,
+      "sha256": "bdc04c047b59c666d7a59f2fc1c73115278bb17ce1a67b745b45615ae5061234"
+    },
+    {
+      "path": "03-transparent-scene-layers/ill-0005-studio-district/ill-0005-studio-district-01-atmosphere.webp",
+      "size_bytes": 315758,
+      "sha256": "e066ba260bc365f6d2b0e56e1a2d95925eb0c012c01b6a17d7c28f690815a739"
+    },
+    {
+      "path": "03-transparent-scene-layers/ill-0005-studio-district/ill-0005-studio-district-02-distant-world.webp",
+      "size_bytes": 315632,
+      "sha256": "5c4375a82234739d2943707dcb19d73d5c22732d653060d0f52e8c764dce8b8e"
+    },
+    {
+      "path": "03-transparent-scene-layers/ill-0005-studio-district/ill-0005-studio-district-03-midground-structures.webp",
+      "size_bytes": 316004,
+      "sha256": "9130b60c0d338b673ab06df77456669afda5ca68592b1302890b12988b415c4b"
+    },
+    {
+      "path": "03-transparent-scene-layers/ill-0005-studio-district/ill-0005-studio-district-04-surface-water-road.webp",
+      "size_bytes": 315742,
+      "sha256": "bb1a43febe05e1cfbaa929be22dcd0c13ad404e8302c5c942daa4e3810854a8b"
+    },
+    {
+      "path": "03-transparent-scene-layers/ill-0005-studio-district/ill-0005-studio-district-05-foreground-activity.webp",
+      "size_bytes": 328178,
+      "sha256": "8367d4aceff57d1996ef2610dc161d780762f60efa8002afff3ddb9caa8c9263"
+    },
+    {
+      "path": "03-transparent-scene-layers/ill-0005-studio-district/ill-0005-studio-district-preview.jpg",
+      "size_bytes": 46251,
+      "sha256": "5dcc2cb4c399072f48cea4ee08a83a8f4a41099b9d5d37d121d0eb5d5798b842"
+    },
+    {
+      "path": "03-transparent-scene-layers/ill-0006-gateway-district/ill-0006-gateway-district-01-atmosphere.webp",
+      "size_bytes": 245394,
+      "sha256": "6a1eef6ecd2e6dc312a4f17d00b9e060793da37f3ed61797f1518f659f73637e"
+    },
+    {
+      "path": "03-transparent-scene-layers/ill-0006-gateway-district/ill-0006-gateway-district-02-distant-world.webp",
+      "size_bytes": 244996,
+      "sha256": "2549b69419e71da42a2c4dd63e558fae91cd3890845c54c8aac28dae053039f2"
+    },
+    {
+      "path": "03-transparent-scene-layers/ill-0006-gateway-district/ill-0006-gateway-district-03-midground-structures.webp",
+      "size_bytes": 245524,
+      "sha256": "1719bd37ae5a41f693294017e90eb6f3cb839ad04d9c46315db70419d83b07c4"
+    },
+    {
+      "path": "03-transparent-scene-layers/ill-0006-gateway-district/ill-0006-gateway-district-04-surface-water-road.webp",
+      "size_bytes": 245278,
+      "sha256": "74b477becebe44b8e9bbdaf6bc325ebbb34e1df38690973fb5b4002765b397a8"
+    },
+    {
+      "path": "03-transparent-scene-layers/ill-0006-gateway-district/ill-0006-gateway-district-05-foreground-activity.webp",
+      "size_bytes": 257664,
+      "sha256": "918da46be9be62ede042bcf2dd2a62d2d8f36b35524bb783bc55fa1ebde10d3e"
+    },
+    {
+      "path": "03-transparent-scene-layers/ill-0006-gateway-district/ill-0006-gateway-district-preview.jpg",
+      "size_bytes": 47563,
+      "sha256": "c050fe99d521cd5f4aeec5e29cb19048d14e7eb06e3085a417db92310f4a48ac"
+    },
+    {
+      "path": "03-transparent-scene-layers/ill-0007-community-square/ill-0007-community-square-01-atmosphere.webp",
+      "size_bytes": 275318,
+      "sha256": "56304dfdeb7090a4d1a45bac03727118f0d6ec5deb62fdb6eca26e86a142fde3"
+    },
+    {
+      "path": "03-transparent-scene-layers/ill-0007-community-square/ill-0007-community-square-02-distant-world.webp",
+      "size_bytes": 275036,
+      "sha256": "4e1fc8e9bff476642fe4fb1ca612d391ea6a1122e5bde23020b5a9f3b8946d6b"
+    },
+    {
+      "path": "03-transparent-scene-layers/ill-0007-community-square/ill-0007-community-square-03-midground-structures.webp",
+      "size_bytes": 275468,
+      "sha256": "e4959911e0dd6ce66327b09d2a1b5093e3243e48044379970fc19edab933f4cd"
+    },
+    {
+      "path": "03-transparent-scene-layers/ill-0007-community-square/ill-0007-community-square-04-surface-water-road.webp",
+      "size_bytes": 275196,
+      "sha256": "a9f172f58a3067a7befc5d6d02715d3ad6069979ae4cb6dbffe7bfb29cdd1142"
+    },
+    {
+      "path": "03-transparent-scene-layers/ill-0007-community-square/ill-0007-community-square-05-foreground-activity.webp",
+      "size_bytes": 287580,
+      "sha256": "5a1961ef8824f9c5e74f8c8635ef478f567be62daa576d5fc5b4cd686f31b4bb"
+    },
+    {
+      "path": "03-transparent-scene-layers/ill-0007-community-square/ill-0007-community-square-preview.jpg",
+      "size_bytes": 46058,
+      "sha256": "da1e88b5a91a68ea2007153237d0c442c2d5ae0a3c437609c42fbfe4e8fe4831"
+    },
+    {
+      "path": "03-transparent-scene-layers/ill-0008-marina-waterfront/ill-0008-marina-waterfront-01-atmosphere.webp",
+      "size_bytes": 204780,
+      "sha256": "071a34dcdf11e15c7efb52d5e996827be6b44f1b9f7d0da52f08376feafc8b79"
+    },
+    {
+      "path": "03-transparent-scene-layers/ill-0008-marina-waterfront/ill-0008-marina-waterfront-02-distant-world.webp",
+      "size_bytes": 204616,
+      "sha256": "eeb5bd819547bef9ca8bc579ac280adcc356eab79f749501db108d0df904e828"
+    },
+    {
+      "path": "03-transparent-scene-layers/ill-0008-marina-waterfront/ill-0008-marina-waterfront-03-midground-structures.webp",
+      "size_bytes": 204864,
+      "sha256": "0a350bb6a93cc06ead0a5327bbdcff5a27bc526ce1ad8fd5dc9fcbf4c59dcb39"
+    },
+    {
+      "path": "03-transparent-scene-layers/ill-0008-marina-waterfront/ill-0008-marina-waterfront-04-surface-water-road.webp",
+      "size_bytes": 204610,
+      "sha256": "2387ef7f949fb9715866e944fa58785c11a89bc2748b88618253bd2feb48d825"
+    },
+    {
+      "path": "03-transparent-scene-layers/ill-0008-marina-waterfront/ill-0008-marina-waterfront-05-foreground-activity.webp",
+      "size_bytes": 217084,
+      "sha256": "add951de609a3544ddc88401814b6295a2dd22713f7c6de9bf5285dc195bdaa1"
+    },
+    {
+      "path": "03-transparent-scene-layers/ill-0008-marina-waterfront/ill-0008-marina-waterfront-preview.jpg",
+      "size_bytes": 35969,
+      "sha256": "7473b16390d7ea4de9ab936823745cba6f8527df4e9dbfc47088903726eb499a"
+    },
+    {
+      "path": "03-transparent-scene-layers/ill-0009-logistics-hub/ill-0009-logistics-hub-01-atmosphere.webp",
+      "size_bytes": 225680,
+      "sha256": "0c37071753263d616d1db53c5902f4e1b90f5a6c699b103c8ea203a5c7246113"
+    },
+    {
+      "path": "03-transparent-scene-layers/ill-0009-logistics-hub/ill-0009-logistics-hub-02-distant-world.webp",
+      "size_bytes": 225406,
+      "sha256": "0ad0ba09867d85091ad2463017a7ceeaca64f53765e253ce41b2149290cbb536"
+    },
+    {
+      "path": "03-transparent-scene-layers/ill-0009-logistics-hub/ill-0009-logistics-hub-03-midground-structures.webp",
+      "size_bytes": 225782,
+      "sha256": "ac3d9e6a2f915d5f1c6e96030d924401e4b55279b8738ba45f404c8d04fa4f73"
+    },
+    {
+      "path": "03-transparent-scene-layers/ill-0009-logistics-hub/ill-0009-logistics-hub-04-surface-water-road.webp",
+      "size_bytes": 225556,
+      "sha256": "ffcf134efc85e4a658f73636135cc319d27b58daa43b58089798ab8d5039d94f"
+    },
+    {
+      "path": "03-transparent-scene-layers/ill-0009-logistics-hub/ill-0009-logistics-hub-05-foreground-activity.webp",
+      "size_bytes": 239914,
+      "sha256": "c24c43e7370dd1f68233e2e6a9468ab0c2d3f5e61c864e6418a2258003b211d4"
+    },
+    {
+      "path": "03-transparent-scene-layers/ill-0009-logistics-hub/ill-0009-logistics-hub-preview.jpg",
+      "size_bytes": 41182,
+      "sha256": "84747f554fcf0679016fa47dd8294f49851b3dae17bd6c9e64f2dd2bc92cdcaa"
+    },
+    {
+      "path": "03-transparent-scene-layers/ill-0010-night-waterfront/ill-0010-night-waterfront-01-atmosphere.webp",
+      "size_bytes": 191424,
+      "sha256": "e893a1250d33f1a6b556f1c0f493ad3bed269a1ef3ece5b92cc240a3d743377e"
+    },
+    {
+      "path": "03-transparent-scene-layers/ill-0010-night-waterfront/ill-0010-night-waterfront-02-distant-world.webp",
+      "size_bytes": 190768,
+      "sha256": "5f7ce8718bc096527646f9410caa7c4c11266bd5670c2ca9410f9accc1db8898"
+    },
+    {
+      "path": "03-transparent-scene-layers/ill-0010-night-waterfront/ill-0010-night-waterfront-03-midground-structures.webp",
+      "size_bytes": 191086,
+      "sha256": "3e5c71e532113c8132d98b71a2f6a8997c58c4f4dd7207319c5e76f49c200bd0"
+    },
+    {
+      "path": "03-transparent-scene-layers/ill-0010-night-waterfront/ill-0010-night-waterfront-04-surface-water-road.webp",
+      "size_bytes": 191292,
+      "sha256": "ddcedd835528c23c6e4f428440a66c12992742a28b132f3ae648e7761a9e52fe"
+    },
+    {
+      "path": "03-transparent-scene-layers/ill-0010-night-waterfront/ill-0010-night-waterfront-05-foreground-activity.webp",
+      "size_bytes": 203672,
+      "sha256": "cff0eccd933803661185f5331b09ffd600a476fd5886cfff35cc90d0d62d5efd"
+    },
+    {
+      "path": "03-transparent-scene-layers/ill-0010-night-waterfront/ill-0010-night-waterfront-preview.jpg",
+      "size_bytes": 32699,
+      "sha256": "15d21fe0dea01de3a8ac9ae68e6b408176e084420395ead5b59d09fb4fac1256"
+    },
+    {
+      "path": "03-transparent-scene-layers/manifest.json",
+      "size_bytes": 6564,
+      "sha256": "a7893effe9273b3d16176baf7371d0f5c21f7dd2e1b2bd4d162d23b9fa890d64"
+    },
+    {
+      "path": "04-reusable-objects-and-artifacts/STATUS.md",
+      "size_bytes": 383,
+      "sha256": "64a9c716abbd62c5212c51233284176233a0ff60e46bd054c32296c3410d788b"
+    },
+    {
+      "path": "05-people-clothing-vehicles-environment/README.md",
+      "size_bytes": 335,
+      "sha256": "5033ddb719d5b5737cd67573ee34f024663f4d3dd027a2dfba493070e1aa2e77"
+    },
+    {
+      "path": "05-people-clothing-vehicles-environment/clothing/01-agbada-set.png",
+      "size_bytes": 212449,
+      "sha256": "2fa9f927497d7c64a69bb677e7fed05a73e5ef73573113b7492d45670dff3cbf"
+    },
+    {
+      "path": "05-people-clothing-vehicles-environment/clothing/02-iro-buba-and-gele.png",
+      "size_bytes": 223893,
+      "sha256": "d9da4bc8ebf7c88de83bf7dfa61f95e724b93c18a27385307c31c5fa2780ba4e"
+    },
+    {
+      "path": "05-people-clothing-vehicles-environment/clothing/03-kaftan-set.png",
+      "size_bytes": 177749,
+      "sha256": "d07a765dedc1a3a82fc6f217fd855fd9c7f04bfaafe50ca9e71d55190fa96f19"
+    },
+    {
+      "path": "05-people-clothing-vehicles-environment/clothing/04-senator-set.png",
+      "size_bytes": 169142,
+      "sha256": "c259ce83966c4b8dc3cc3764fba53db379fe936ffe16c6bf8e20a1baf91747de"
+    },
+    {
+      "path": "05-people-clothing-vehicles-environment/clothing/05-adire-wrap-dress.png",
+      "size_bytes": 237113,
+      "sha256": "3273e5b9adc3e821db66027d27e7ca849ce0238d63e693fcb40d7e63cd4a419f"
+    },
+    {
+      "path": "05-people-clothing-vehicles-environment/clothing/06-school-uniform-set.png",
+      "size_bytes": 146854,
+      "sha256": "b7a67bd16cb592c89198770840a739f6505dd025e76975e0b982d1c34a8bba36"
+    },
+    {
+      "path": "05-people-clothing-vehicles-environment/clothing/07-work-coveralls.png",
+      "size_bytes": 205733,
+      "sha256": "59df1bd4bb4b607ca39f5f274b5fd4ef5b780c740059c73027e42e3b286606da"
+    },
+    {
+      "path": "05-people-clothing-vehicles-environment/clothing/08-smart-casual-set.png",
+      "size_bytes": 230824,
+      "sha256": "22d4be28ca070526b264c920e3570306994b5b2b07a7bac1b6fa7c76c6f03f7f"
+    },
+    {
+      "path": "05-people-clothing-vehicles-environment/clothing/_source-sheet.png",
+      "size_bytes": 1865516,
+      "sha256": "40fbc91f665131de9271fd89b0c61f7b4125ec0476c640f4e11568edb038e904"
+    },
+    {
+      "path": "05-people-clothing-vehicles-environment/landmarks/01-church-tower-chapel.png",
+      "size_bytes": 262779,
+      "sha256": "48ed69a5ca35d1bfb13d5675df8758d79cc108135981dfc792e94e826347ee2b"
+    },
+    {
+      "path": "05-people-clothing-vehicles-environment/landmarks/02-central-mosque.png",
+      "size_bytes": 273329,
+      "sha256": "0ce9b993eea96fee2356d073342163457692bd21f786cc24287110bbf3263587"
+    },
+    {
+      "path": "05-people-clothing-vehicles-environment/landmarks/03-colonial-civic-hall.png",
+      "size_bytes": 321543,
+      "sha256": "9253f2dc6e880e7f81b463c0b58bc01ec4f45499de8a6c31e46ff360f15c598c"
+    },
+    {
+      "path": "05-people-clothing-vehicles-environment/landmarks/04-archive-pavilion.png",
+      "size_bytes": 158212,
+      "sha256": "e77c8f0b6823e45be121835158c643db8f3e149a0b472599349839ff8c3fad3e"
+    },
+    {
+      "path": "05-people-clothing-vehicles-environment/landmarks/05-cable-stayed-bridge.png",
+      "size_bytes": 291854,
+      "sha256": "fb20d3e39e8f24535b94dd5ac6516a8e6c89af77aa05572535b925c73d3c4d82"
+    },
+    {
+      "path": "05-people-clothing-vehicles-environment/landmarks/06-gateway-arch.png",
+      "size_bytes": 178928,
+      "sha256": "6c19015a4276bcae1de197574c65191d321007108e243ae60dbc652aefb587f3"
+    },
+    {
+      "path": "05-people-clothing-vehicles-environment/landmarks/_source-sheet.png",
+      "size_bytes": 1641674,
+      "sha256": "71957c81c224888dd07120d99f0bf83f98e643c4c42d4b70294db97f80a27d4a"
+    },
+    {
+      "path": "05-people-clothing-vehicles-environment/manifest.json",
+      "size_bytes": 16150,
+      "sha256": "cdc91f7e218db641eabc1a49d920459c1ee6532e0d1a503795440fa4a5d1c445"
+    },
+    {
+      "path": "05-people-clothing-vehicles-environment/people/01-market-woman-headload.png",
+      "size_bytes": 165833,
+      "sha256": "cf49c72d2852979883bc666398eadd2795caeb28bcca61d3ea3270b7e7536bce"
+    },
+    {
+      "path": "05-people-clothing-vehicles-environment/people/02-elder-with-cane.png",
+      "size_bytes": 173080,
+      "sha256": "e0c6ad080defa09f584d1c21884e5cd3f626ed5b99df02d4f599bca6c3da80b5"
+    },
+    {
+      "path": "05-people-clothing-vehicles-environment/people/03-professional-woman-tote.png",
+      "size_bytes": 129267,
+      "sha256": "ea2d315f1042dd07e406eae28bda5b191fb7b4246b8d2b61896a45d6b104b633"
+    },
+    {
+      "path": "05-people-clothing-vehicles-environment/people/04-creative-man-messenger.png",
+      "size_bytes": 157100,
+      "sha256": "bcf7c9b4c6bf7363b59122a0576a0cb538145ff030cbfbac2564dd4b1fee73cc"
+    },
+    {
+      "path": "05-people-clothing-vehicles-environment/people/05-modest-professional-woman.png",
+      "size_bytes": 133953,
+      "sha256": "12c43ce1e2cacad6f2e6df8e69c97e803de314896105d5d8b75263b62a4dfd5b"
+    },
+    {
+      "path": "05-people-clothing-vehicles-environment/people/06-schoolboy-uniform.png",
+      "size_bytes": 112808,
+      "sha256": "a76dac0e2635433ad1a104752e518ddae71d884ec4e5c0dbe26c9a19888c8c41"
+    },
+    {
+      "path": "05-people-clothing-vehicles-environment/people/07-coverall-worker.png",
+      "size_bytes": 162260,
+      "sha256": "1a1845e008760ed42a12bb90e1325ce542994cddc91ec9e56e758a4a31b56779"
+    },
+    {
+      "path": "05-people-clothing-vehicles-environment/people/08-elder-ceremonial-agbada.png",
+      "size_bytes": 210644,
+      "sha256": "cd92698db1cab446a6e9f820147eda9d48931704237b0a1654e1c0be35887965"
+    },
+    {
+      "path": "05-people-clothing-vehicles-environment/people/_source-sheet.png",
+      "size_bytes": 1562767,
+      "sha256": "2be45ba491a25937421ab1e83e5a7d7d06d483c5a5439822600b0fa77a690e4e"
+    },
+    {
+      "path": "05-people-clothing-vehicles-environment/street-details/01-atlas-sign-frame.png",
+      "size_bytes": 190382,
+      "sha256": "3f8c8cb1ba552a29ab08b6a69750471711fd96c95983cd836bee26b7c5666e00"
+    },
+    {
+      "path": "05-people-clothing-vehicles-environment/street-details/02-umbrella-market-stand.png",
+      "size_bytes": 231496,
+      "sha256": "1f30b934c2df5adcbb5dba4e86372fb2d6433498409ff8761d49aa153e9551bd"
+    },
+    {
+      "path": "05-people-clothing-vehicles-environment/street-details/03-wooden-bench.png",
+      "size_bytes": 77514,
+      "sha256": "40c28d89e0cf843a43abf6f4965caeef38240748ed5c0c297ded1889e7ede0fc"
+    },
+    {
+      "path": "05-people-clothing-vehicles-environment/street-details/04-utility-streetlight-pole.png",
+      "size_bytes": 115204,
+      "sha256": "8e8beb48b8df8f1dc85908e4f21bf5c34a836035dbcd04431bca37229a444f5a"
+    },
+    {
+      "path": "05-people-clothing-vehicles-environment/street-details/05-round-stone-well.png",
+      "size_bytes": 123958,
+      "sha256": "1433ee9be8c4586b4b713cefddcfe8ed04784b51cc536b04af8fbbda690d256b"
+    },
+    {
+      "path": "05-people-clothing-vehicles-environment/street-details/06-drums-and-waste-cluster.png",
+      "size_bytes": 134881,
+      "sha256": "2d8f12a382c4eb620a6a3ab4f3c0909b23771039cf387a022146ff3076573252"
+    },
+    {
+      "path": "05-people-clothing-vehicles-environment/street-details/07-small-kiosk-booth.png",
+      "size_bytes": 197257,
+      "sha256": "fe895c927c95f8a3d03d677d61695b73f48921c47eb2ecc44524f3b739523ec8"
+    },
+    {
+      "path": "05-people-clothing-vehicles-environment/street-details/08-vendor-table.png",
+      "size_bytes": 144785,
+      "sha256": "a4ee68a339db4d8c645f8c73105aced74931b9052007fa9d9970e26d8eb7ae74"
+    },
+    {
+      "path": "05-people-clothing-vehicles-environment/street-details/_source-sheet.png",
+      "size_bytes": 1589523,
+      "sha256": "eb1ffde8e5edf487e39300b92d3316f687e97922b6f306655e940d5aea8cf370"
+    },
+    {
+      "path": "05-people-clothing-vehicles-environment/transport/01-danfo-bus.png",
+      "size_bytes": 162627,
+      "sha256": "2a76b7bbe6ad1a9a293a2ca8a948d22904d4addca96bd48a5a018448a88f6e7b"
+    },
+    {
+      "path": "05-people-clothing-vehicles-environment/transport/02-passenger-ferry.png",
+      "size_bytes": 218224,
+      "sha256": "26bb6dbcb198acd0f4857027bc6007f29f337d4f8e3666cee319c07d0060acbf"
+    },
+    {
+      "path": "05-people-clothing-vehicles-environment/transport/03-keke-rickshaw.png",
+      "size_bytes": 128907,
+      "sha256": "05889f561b53c7db3776abe15e9b929b9fb1dcb4bb0a0cc8c495d9e192c4053f"
+    },
+    {
+      "path": "05-people-clothing-vehicles-environment/transport/04-okada-motorcycle.png",
+      "size_bytes": 107804,
+      "sha256": "c54fa0104b2b969f68a8a05bb969b7089b07a0f8fd6a861c7d3b50c3e5c717fe"
+    },
+    {
+      "path": "05-people-clothing-vehicles-environment/transport/05-mini-logistics-truck.png",
+      "size_bytes": 163255,
+      "sha256": "99b0d19e04089a7e65c4c743e4aab55280c6e62b83a82da41b03f98e7dc28827"
+    },
+    {
+      "path": "05-people-clothing-vehicles-environment/transport/06-wooden-canoe.png",
+      "size_bytes": 87991,
+      "sha256": "a157cc3a3e0ee1172e83a1cbb5a645993d2f4159d1843381a212c613a0680367"
+    },
+    {
+      "path": "05-people-clothing-vehicles-environment/transport/07-cargo-tricycle.png",
+      "size_bytes": 135854,
+      "sha256": "6bd0013b402144d53e069a136fb3e88f61c61bf6852be58052823bf2b98f7d39"
+    },
+    {
+      "path": "05-people-clothing-vehicles-environment/transport/08-produce-handcart.png",
+      "size_bytes": 145658,
+      "sha256": "8dcc8befd7160ae6dd9428e47b0bc6f14663460d2d320b2fa57af3687bdc8800"
+    },
+    {
+      "path": "05-people-clothing-vehicles-environment/transport/_source-sheet.png",
+      "size_bytes": 1563548,
+      "sha256": "df4c966e52b28622b08c5ebcbe3b445cdb54384607ea1fe3f8687aceca169efa"
+    },
+    {
+      "path": "05-people-clothing-vehicles-environment/vegetation/01-trust-tree.png",
+      "size_bytes": 752133,
+      "sha256": "ec9b398d9169ed8e35b54d2796a3da7c7e05bc5fa2565997d5468e1460eaaea0"
+    },
+    {
+      "path": "05-people-clothing-vehicles-environment/vegetation/02-palm-tree.png",
+      "size_bytes": 189314,
+      "sha256": "ef04c0cc204193287b16c9aa2db542f50a244b92a7df5515c1527b9ceb1adf86"
+    },
+    {
+      "path": "05-people-clothing-vehicles-environment/vegetation/03-street-shade-tree.png",
+      "size_bytes": 267093,
+      "sha256": "a33f6cf9084dc1b77b646d4b59405bcb4b99413f4d959780914a26efa03058da"
+    },
+    {
+      "path": "05-people-clothing-vehicles-environment/vegetation/04-mangrove-cluster.png",
+      "size_bytes": 331568,
+      "sha256": "28a60cd95f39bf122de7b962b1614e7baf723513f68d8e38792d701ef42440dc"
+    },
+    {
+      "path": "05-people-clothing-vehicles-environment/vegetation/05-flowering-tree.png",
+      "size_bytes": 307200,
+      "sha256": "abd0510a9f8f8a32f7995179b1ea04036f1697e936e6e49795bbc044f9d616e7"
+    },
+    {
+      "path": "05-people-clothing-vehicles-environment/vegetation/06-potted-tropicals.png",
+      "size_bytes": 200459,
+      "sha256": "8efd83301ee5e1510c7aaea47c32476278c79d8b899975fc55c7b5f62ecc194a"
+    },
+    {
+      "path": "05-people-clothing-vehicles-environment/vegetation/07-shrub-cluster.png",
+      "size_bytes": 128737,
+      "sha256": "e704ce193c3ec0a7d799da2be9007ea0e7124fcb4c94ae74eba7e5ca30d264d9"
+    },
+    {
+      "path": "05-people-clothing-vehicles-environment/vegetation/_source-sheet.png",
+      "size_bytes": 2132781,
+      "sha256": "ae5fbf20b4e0fe3c463c6b069417b23f4850d58121d677dcb9103e58fa474e36"
+    },
+    {
+      "path": "06-district-markers-and-svg-icons/STATUS.md",
+      "size_bytes": 66,
+      "sha256": "94a47db061d6404ce6d4d8f91906dfef6c2ee721f5ed5e0cd841feae4837368f"
+    },
+    {
+      "path": "07-route-map-and-wayfinding-kit/STATUS.md",
+      "size_bytes": 57,
+      "sha256": "74bc4cb3e0372f625341c3d287329c4549236f3e4f5ac5f97079187f70762e22"
+    },
+    {
+      "path": "08-stamp-label-signage-lettering/STATUS.md",
+      "size_bytes": 69,
+      "sha256": "48b2f2278277d2e0135f07a0bacad0b2d1e8838fe36737579914e1b548106daf"
+    },
+    {
+      "path": "09-texture-and-atmosphere-library/STATUS.md",
+      "size_bytes": 59,
+      "sha256": "f01db02f0d86d6400f4061b200028ddf67b72c772bc7ac58554525217674bfd3"
+    },
+    {
+      "path": "docs/DELIVERY-STATUS.md",
+      "size_bytes": 552,
+      "sha256": "6c0c5bb4f6050e4fa1bcd596ef13418fbf2dcc643b68328b57324377e85d09a7"
+    },
+    {
+      "path": "docs/NAMING-CONVENTION.md",
+      "size_bytes": 469,
+      "sha256": "58f3a2fd0e355020770bb0784da4d365cf0f5df96bc2a165366a494aa0601511"
+    },
+    {
+      "path": "docs/USAGE-RULES.md",
+      "size_bytes": 595,
+      "sha256": "d02f0b9278bfeaed48f237f140784aee0bae01f8d850e335334d45f825c566b0"
+    }
+  ]
+}

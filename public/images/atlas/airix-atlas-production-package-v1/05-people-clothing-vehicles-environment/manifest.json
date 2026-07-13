@@ -1,0 +1,725 @@
+{
+  "group": "Group 5 \u2014 People, Clothing, Vehicles, and Environment",
+  "assets": [
+    {
+      "category": "people",
+      "name": "market-woman-headload",
+      "file": "people/01-market-woman-headload.png",
+      "source_sheet": "a_clean_white_transparent_background_style_illust_1_batch_1.png",
+      "source_box": [
+        85,
+        7,
+        284,
+        525
+      ],
+      "dimensions": [
+        160,
+        479
+      ]
+    },
+    {
+      "category": "people",
+      "name": "elder-with-cane",
+      "file": "people/02-elder-with-cane.png",
+      "source_sheet": "a_clean_white_transparent_background_style_illust_1_batch_1.png",
+      "source_box": [
+        409,
+        18,
+        639,
+        515
+      ],
+      "dimensions": [
+        192,
+        458
+      ]
+    },
+    {
+      "category": "people",
+      "name": "professional-woman-tote",
+      "file": "people/03-professional-woman-tote.png",
+      "source_sheet": "a_clean_white_transparent_background_style_illust_1_batch_1.png",
+      "source_box": [
+        794,
+        22,
+        1003,
+        523
+      ],
+      "dimensions": [
+        170,
+        463
+      ]
+    },
+    {
+      "category": "people",
+      "name": "creative-man-messenger",
+      "file": "people/04-creative-man-messenger.png",
+      "source_sheet": "a_clean_white_transparent_background_style_illust_1_batch_1.png",
+      "source_box": [
+        1125,
+        24,
+        1329,
+        523
+      ],
+      "dimensions": [
+        167,
+        461
+      ]
+    },
+    {
+      "category": "people",
+      "name": "modest-professional-woman",
+      "file": "people/05-modest-professional-woman.png",
+      "source_sheet": "a_clean_white_transparent_background_style_illust_1_batch_1.png",
+      "source_box": [
+        91,
+        535,
+        274,
+        1039
+      ],
+      "dimensions": [
+        145,
+        465
+      ]
+    },
+    {
+      "category": "people",
+      "name": "schoolboy-uniform",
+      "file": "people/06-schoolboy-uniform.png",
+      "source_sheet": "a_clean_white_transparent_background_style_illust_1_batch_1.png",
+      "source_box": [
+        435,
+        544,
+        613,
+        1037
+      ],
+      "dimensions": [
+        140,
+        455
+      ]
+    },
+    {
+      "category": "people",
+      "name": "coverall-worker",
+      "file": "people/07-coverall-worker.png",
+      "source_sheet": "a_clean_white_transparent_background_style_illust_1_batch_1.png",
+      "source_box": [
+        772,
+        531,
+        980,
+        1036
+      ],
+      "dimensions": [
+        169,
+        467
+      ]
+    },
+    {
+      "category": "people",
+      "name": "elder-ceremonial-agbada",
+      "file": "people/08-elder-ceremonial-agbada.png",
+      "source_sheet": "a_clean_white_transparent_background_style_illust_1_batch_1.png",
+      "source_box": [
+        1105,
+        536,
+        1358,
+        1036
+      ],
+      "dimensions": [
+        214,
+        461
+      ]
+    },
+    {
+      "category": "clothing",
+      "name": "agbada-set",
+      "file": "clothing/01-agbada-set.png",
+      "source_sheet": "a_clean_illustration_graphic_layout_on_a_transpare_2_batch_2.png",
+      "source_box": [
+        43,
+        23,
+        349,
+        496
+      ],
+      "dimensions": [
+        268,
+        434
+      ]
+    },
+    {
+      "category": "clothing",
+      "name": "iro-buba-and-gele",
+      "file": "clothing/02-iro-buba-and-gele.png",
+      "source_sheet": "a_clean_illustration_graphic_layout_on_a_transpare_2_batch_2.png",
+      "source_box": [
+        433,
+        1,
+        700,
+        506
+      ],
+      "dimensions": [
+        228,
+        466
+      ]
+    },
+    {
+      "category": "clothing",
+      "name": "kaftan-set",
+      "file": "clothing/03-kaftan-set.png",
+      "source_sheet": "a_clean_illustration_graphic_layout_on_a_transpare_2_batch_2.png",
+      "source_box": [
+        778,
+        27,
+        1033,
+        506
+      ],
+      "dimensions": [
+        217,
+        441
+      ]
+    },
+    {
+      "category": "clothing",
+      "name": "senator-set",
+      "file": "clothing/04-senator-set.png",
+      "source_sheet": "a_clean_illustration_graphic_layout_on_a_transpare_2_batch_2.png",
+      "source_box": [
+        1146,
+        23,
+        1388,
+        510
+      ],
+      "dimensions": [
+        203,
+        448
+      ]
+    },
+    {
+      "category": "clothing",
+      "name": "adire-wrap-dress",
+      "file": "clothing/05-adire-wrap-dress.png",
+      "source_sheet": "a_clean_illustration_graphic_layout_on_a_transpare_2_batch_2.png",
+      "source_box": [
+        56,
+        541,
+        312,
+        1044
+      ],
+      "dimensions": [
+        236,
+        465
+      ]
+    },
+    {
+      "category": "clothing",
+      "name": "school-uniform-set",
+      "file": "clothing/06-school-uniform-set.png",
+      "source_sheet": "a_clean_illustration_graphic_layout_on_a_transpare_2_batch_2.png",
+      "source_box": [
+        424,
+        540,
+        674,
+        940
+      ],
+      "dimensions": [
+        211,
+        363
+      ]
+    },
+    {
+      "category": "clothing",
+      "name": "work-coveralls",
+      "file": "clothing/07-work-coveralls.png",
+      "source_sheet": "a_clean_illustration_graphic_layout_on_a_transpare_2_batch_2.png",
+      "source_box": [
+        776,
+        545,
+        1033,
+        1048
+      ],
+      "dimensions": [
+        221,
+        464
+      ]
+    },
+    {
+      "category": "clothing",
+      "name": "smart-casual-set",
+      "file": "clothing/08-smart-casual-set.png",
+      "source_sheet": "a_clean_illustration_graphic_layout_on_a_transpare_2_batch_2.png",
+      "source_box": [
+        1114,
+        529,
+        1396,
+        1058
+      ],
+      "dimensions": [
+        243,
+        490
+      ]
+    },
+    {
+      "category": "transport",
+      "name": "danfo-bus",
+      "file": "transport/01-danfo-bus.png",
+      "source_sheet": "a_clean_illustration_clipart_sheet_on_a_transparen_3_batch_3.png",
+      "source_box": [
+        25,
+        229,
+        375,
+        495
+      ],
+      "dimensions": [
+        333,
+        227
+      ]
+    },
+    {
+      "category": "transport",
+      "name": "passenger-ferry",
+      "file": "transport/02-passenger-ferry.png",
+      "source_sheet": "a_clean_illustration_clipart_sheet_on_a_transparen_3_batch_3.png",
+      "source_box": [
+        366,
+        216,
+        822,
+        533
+      ],
+      "dimensions": [
+        420,
+        289
+      ]
+    },
+    {
+      "category": "transport",
+      "name": "keke-rickshaw",
+      "file": "transport/03-keke-rickshaw.png",
+      "source_sheet": "a_clean_illustration_clipart_sheet_on_a_transparen_3_batch_3.png",
+      "source_box": [
+        808,
+        264,
+        1099,
+        516
+      ],
+      "dimensions": [
+        254,
+        216
+      ]
+    },
+    {
+      "category": "transport",
+      "name": "okada-motorcycle",
+      "file": "transport/04-okada-motorcycle.png",
+      "source_sheet": "a_clean_illustration_clipart_sheet_on_a_transparen_3_batch_3.png",
+      "source_box": [
+        1126,
+        258,
+        1368,
+        525
+      ],
+      "dimensions": [
+        232,
+        228
+      ]
+    },
+    {
+      "category": "transport",
+      "name": "mini-logistics-truck",
+      "file": "transport/05-mini-logistics-truck.png",
+      "source_sheet": "a_clean_illustration_clipart_sheet_on_a_transparen_3_batch_3.png",
+      "source_box": [
+        6,
+        633,
+        378,
+        869
+      ],
+      "dimensions": [
+        350,
+        220
+      ]
+    },
+    {
+      "category": "transport",
+      "name": "wooden-canoe",
+      "file": "transport/06-wooden-canoe.png",
+      "source_sheet": "a_clean_illustration_clipart_sheet_on_a_transparen_3_batch_3.png",
+      "source_box": [
+        390,
+        696,
+        757,
+        871
+      ],
+      "dimensions": [
+        329,
+        140
+      ]
+    },
+    {
+      "category": "transport",
+      "name": "cargo-tricycle",
+      "file": "transport/07-cargo-tricycle.png",
+      "source_sheet": "a_clean_illustration_clipart_sheet_on_a_transparen_3_batch_3.png",
+      "source_box": [
+        737,
+        670,
+        1086,
+        903
+      ],
+      "dimensions": [
+        310,
+        194
+      ]
+    },
+    {
+      "category": "transport",
+      "name": "produce-handcart",
+      "file": "transport/08-produce-handcart.png",
+      "source_sheet": "a_clean_illustration_clipart_sheet_on_a_transparen_3_batch_3.png",
+      "source_box": [
+        1102,
+        620,
+        1435,
+        919
+      ],
+      "dimensions": [
+        297,
+        261
+      ]
+    },
+    {
+      "category": "vegetation",
+      "name": "trust-tree",
+      "file": "vegetation/01-trust-tree.png",
+      "source_sheet": "a_clean_illustration_graphic_design_scene_on_a_tra_4_batch_4.png",
+      "source_box": [
+        23,
+        56,
+        750,
+        576
+      ],
+      "dimensions": [
+        708,
+        483
+      ]
+    },
+    {
+      "category": "vegetation",
+      "name": "palm-tree",
+      "file": "vegetation/02-palm-tree.png",
+      "source_sheet": "a_clean_illustration_graphic_design_scene_on_a_tra_4_batch_4.png",
+      "source_box": [
+        719,
+        79,
+        998,
+        572
+      ],
+      "dimensions": [
+        259,
+        454
+      ]
+    },
+    {
+      "category": "vegetation",
+      "name": "street-shade-tree",
+      "file": "vegetation/03-street-shade-tree.png",
+      "source_sheet": "a_clean_illustration_graphic_design_scene_on_a_tra_4_batch_4.png",
+      "source_box": [
+        1009,
+        170,
+        1413,
+        572
+      ],
+      "dimensions": [
+        365,
+        363
+      ]
+    },
+    {
+      "category": "vegetation",
+      "name": "mangrove-cluster",
+      "file": "vegetation/04-mangrove-cluster.png",
+      "source_sheet": "a_clean_illustration_graphic_design_scene_on_a_tra_4_batch_4.png",
+      "source_box": [
+        15,
+        678,
+        468,
+        1021
+      ],
+      "dimensions": [
+        453,
+        343
+      ]
+    },
+    {
+      "category": "vegetation",
+      "name": "flowering-tree",
+      "file": "vegetation/05-flowering-tree.png",
+      "source_sheet": "a_clean_illustration_graphic_design_scene_on_a_tra_4_batch_4.png",
+      "source_box": [
+        415,
+        639,
+        829,
+        1008
+      ],
+      "dimensions": [
+        414,
+        369
+      ]
+    },
+    {
+      "category": "vegetation",
+      "name": "potted-tropicals",
+      "file": "vegetation/06-potted-tropicals.png",
+      "source_sheet": "a_clean_illustration_graphic_design_scene_on_a_tra_4_batch_4.png",
+      "source_box": [
+        814,
+        654,
+        1115,
+        1013
+      ],
+      "dimensions": [
+        282,
+        320
+      ]
+    },
+    {
+      "category": "vegetation",
+      "name": "shrub-cluster",
+      "file": "vegetation/07-shrub-cluster.png",
+      "source_sheet": "a_clean_illustration_graphic_design_scene_on_a_tra_4_batch_4.png",
+      "source_box": [
+        1088,
+        795,
+        1431,
+        1011
+      ],
+      "dimensions": [
+        323,
+        181
+      ]
+    },
+    {
+      "category": "landmarks",
+      "name": "church-tower-chapel",
+      "file": "landmarks/01-church-tower-chapel.png",
+      "source_sheet": "a_clean_illustration_style_scene_on_a_transparent_5_batch_5.png",
+      "source_box": [
+        43,
+        40,
+        416,
+        602
+      ],
+      "dimensions": [
+        334,
+        525
+      ]
+    },
+    {
+      "category": "landmarks",
+      "name": "central-mosque",
+      "file": "landmarks/02-central-mosque.png",
+      "source_sheet": "a_clean_illustration_style_scene_on_a_transparent_5_batch_5.png",
+      "source_box": [
+        485,
+        72,
+        888,
+        602
+      ],
+      "dimensions": [
+        365,
+        492
+      ]
+    },
+    {
+      "category": "landmarks",
+      "name": "colonial-civic-hall",
+      "file": "landmarks/03-colonial-civic-hall.png",
+      "source_sheet": "a_clean_illustration_style_scene_on_a_transparent_5_batch_5.png",
+      "source_box": [
+        915,
+        195,
+        1447,
+        604
+      ],
+      "dimensions": [
+        493,
+        372
+      ]
+    },
+    {
+      "category": "landmarks",
+      "name": "archive-pavilion",
+      "file": "landmarks/04-archive-pavilion.png",
+      "source_sheet": "a_clean_illustration_style_scene_on_a_transparent_5_batch_5.png",
+      "source_box": [
+        59,
+        693,
+        384,
+        1016
+      ],
+      "dimensions": [
+        286,
+        284
+      ]
+    },
+    {
+      "category": "landmarks",
+      "name": "cable-stayed-bridge",
+      "file": "landmarks/05-cable-stayed-bridge.png",
+      "source_sheet": "a_clean_illustration_style_scene_on_a_transparent_5_batch_5.png",
+      "source_box": [
+        456,
+        602,
+        938,
+        1059
+      ],
+      "dimensions": [
+        444,
+        418
+      ]
+    },
+    {
+      "category": "landmarks",
+      "name": "gateway-arch",
+      "file": "landmarks/06-gateway-arch.png",
+      "source_sheet": "a_clean_illustration_style_scene_on_a_transparent_5_batch_5.png",
+      "source_box": [
+        983,
+        698,
+        1366,
+        1025
+      ],
+      "dimensions": [
+        345,
+        288
+      ]
+    },
+    {
+      "category": "street-details",
+      "name": "atlas-sign-frame",
+      "file": "street-details/01-atlas-sign-frame.png",
+      "source_sheet": "a_clean_illustration_diagram_like_image_on_a_trans_6_batch_6.png",
+      "source_box": [
+        23,
+        165,
+        381,
+        560
+      ],
+      "dimensions": [
+        319,
+        357
+      ]
+    },
+    {
+      "category": "street-details",
+      "name": "umbrella-market-stand",
+      "file": "street-details/02-umbrella-market-stand.png",
+      "source_sheet": "a_clean_illustration_diagram_like_image_on_a_trans_6_batch_6.png",
+      "source_box": [
+        388,
+        161,
+        744,
+        549
+      ],
+      "dimensions": [
+        322,
+        354
+      ]
+    },
+    {
+      "category": "street-details",
+      "name": "wooden-bench",
+      "file": "street-details/03-wooden-bench.png",
+      "source_sheet": "a_clean_illustration_diagram_like_image_on_a_trans_6_batch_6.png",
+      "source_box": [
+        790,
+        363,
+        1125,
+        542
+      ],
+      "dimensions": [
+        296,
+        143
+      ]
+    },
+    {
+      "category": "street-details",
+      "name": "utility-streetlight-pole",
+      "file": "street-details/04-utility-streetlight-pole.png",
+      "source_sheet": "a_clean_illustration_diagram_like_image_on_a_trans_6_batch_6.png",
+      "source_box": [
+        1198,
+        54,
+        1429,
+        558
+      ],
+      "dimensions": [
+        192,
+        466
+      ]
+    },
+    {
+      "category": "street-details",
+      "name": "round-stone-well",
+      "file": "street-details/05-round-stone-well.png",
+      "source_sheet": "a_clean_illustration_diagram_like_image_on_a_trans_6_batch_6.png",
+      "source_box": [
+        0,
+        770,
+        396,
+        949
+      ],
+      "dimensions": [
+        378,
+        142
+      ]
+    },
+    {
+      "category": "street-details",
+      "name": "drums-and-waste-cluster",
+      "file": "street-details/06-drums-and-waste-cluster.png",
+      "source_sheet": "a_clean_illustration_diagram_like_image_on_a_trans_6_batch_6.png",
+      "source_box": [
+        395,
+        731,
+        739,
+        963
+      ],
+      "dimensions": [
+        322,
+        193
+      ]
+    },
+    {
+      "category": "street-details",
+      "name": "small-kiosk-booth",
+      "file": "street-details/07-small-kiosk-booth.png",
+      "source_sheet": "a_clean_illustration_diagram_like_image_on_a_trans_6_batch_6.png",
+      "source_box": [
+        730,
+        650,
+        1074,
+        968
+      ],
+      "dimensions": [
+        324,
+        281
+      ]
+    },
+    {
+      "category": "street-details",
+      "name": "vendor-table",
+      "file": "street-details/08-vendor-table.png",
+      "source_sheet": "a_clean_illustration_diagram_like_image_on_a_trans_6_batch_6.png",
+      "source_box": [
+        1069,
+        738,
+        1424,
+        980
+      ],
+      "dimensions": [
+        334,
+        204
+      ]
+    }
+  ]
+}
