@@ -3,6 +3,8 @@ name: Unpack Atlas image candidates
 on:
   push:
     branches: [assets/gongbi-candidates]
+  pull_request:
+    branches: [main]
 
 permissions:
   contents: write
