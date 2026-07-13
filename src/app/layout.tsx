@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Archivo, Fragment_Mono } from "next/font/google";
 import "./globals.css";
+import "@/styles/atlas-tokens.css";
 
 const archivo = Archivo({ variable: "--font-sans", subsets: ["latin"], display: "swap" });
 const fragmentMono = Fragment_Mono({ variable: "--font-mono", subsets: ["latin"], weight: "400", display: "swap" });

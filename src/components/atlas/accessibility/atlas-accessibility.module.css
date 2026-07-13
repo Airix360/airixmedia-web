@@ -1,0 +1,3 @@
+.skipJourney { position: fixed; z-index: calc(var(--atlas-depth-dialog) + 1); top: .75rem; left: .75rem; padding: .75rem 1rem; color: var(--atlas-color-paper-cream); background: var(--atlas-color-charcoal-ink); transform: translateY(-180%); transition: transform var(--atlas-duration-fast) var(--atlas-ease-out); }
+.skipJourney:focus { transform: translateY(0); outline: var(--atlas-border-focus); outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) { .skipJourney { transition: none; } }
