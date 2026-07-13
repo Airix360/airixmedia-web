@@ -1,0 +1,4 @@
+import { expect, test } from "@playwright/test";
+test("homepage communicates the company-wide proposition", async ({ page }) => { await page.goto("/"); await expect(page.getByRole("heading", { level: 1 })).toContainText("digital systems"); await expect(page.getByRole("link", { name: /start a project/i }).first()).toBeVisible(); });
+test("critical locale routes are reachable", async ({ page }) => { await page.goto("/fr"); await expect(page.getByRole("heading", { level: 1 })).toContainText("systèmes numériques"); await page.goto("/pt"); await expect(page.getByRole("heading", { level: 1 })).toContainText("sistemas digitais"); });
+test("project selector validates before advancing", async ({ page }) => { await page.goto("/start-a-project"); await page.getByRole("button", { name: /continue/i }).click(); await expect(page.locator(".error").first()).toBeVisible(); });
