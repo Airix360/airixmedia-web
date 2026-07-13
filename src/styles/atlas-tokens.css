@@ -1,0 +1,90 @@
+:root {
+  --atlas-color-paper-cream: #f2e7cf;
+  --atlas-color-signal-orange: #f26a2e;
+  --atlas-color-transit-yellow: #f4c430;
+  --atlas-color-terracotta: #b84f35;
+  --atlas-color-deep-umber: #3b241c;
+  --atlas-color-charcoal-ink: #1e1b18;
+  --atlas-color-lagoon-blue: #5e8c91;
+  --atlas-color-foliage-green: #65724b;
+  --atlas-color-paper-light: #f8f0df;
+  --atlas-color-paper-aged: #ddcba9;
+  --atlas-color-focus: #1f5e78;
+  --atlas-color-overlay: rgb(30 27 24 / 72%);
+  --atlas-color-rule: rgb(59 36 28 / 24%);
+  --atlas-color-rule-strong: rgb(59 36 28 / 52%);
+  --atlas-color-shadow: rgb(59 36 28 / 18%);
+  --atlas-color-transparent: transparent;
+
+  --atlas-font-display: var(--font-sans), Arial, sans-serif;
+  --atlas-font-structural: var(--font-sans), Arial, sans-serif;
+  --atlas-font-editorial: Georgia, "Times New Roman", serif;
+  --atlas-font-body: var(--font-sans), Arial, sans-serif;
+  --atlas-font-wayfinding: var(--font-mono), monospace;
+
+  --atlas-space-3xs: 0.25rem;
+  --atlas-space-2xs: 0.5rem;
+  --atlas-space-xs: 0.75rem;
+  --atlas-space-sm: 1rem;
+  --atlas-space-md: 1.5rem;
+  --atlas-space-lg: 2rem;
+  --atlas-space-xl: 3rem;
+  --atlas-space-2xl: 4.5rem;
+  --atlas-space-3xl: 7rem;
+  --atlas-space-4xl: 10rem;
+
+  --atlas-border-hairline: 1px solid var(--atlas-color-rule);
+  --atlas-border-route: 2px solid var(--atlas-color-deep-umber);
+  --atlas-border-focus: 3px solid var(--atlas-color-focus);
+  --atlas-radius-control: 0.125rem;
+  --atlas-radius-scene: 0;
+
+  --atlas-shadow-paper: 0 1rem 3rem var(--atlas-color-shadow);
+  --atlas-shadow-sign: 0.45rem 0.45rem 0 var(--atlas-color-deep-umber);
+
+  --atlas-depth-background: 0;
+  --atlas-depth-world: 10;
+  --atlas-depth-midground: 20;
+  --atlas-depth-foreground: 30;
+  --atlas-depth-caption: 40;
+  --atlas-depth-navigation: 60;
+  --atlas-depth-dialog: 80;
+
+  --atlas-duration-instant: 100ms;
+  --atlas-duration-fast: 180ms;
+  --atlas-duration-route: 360ms;
+  --atlas-duration-scene: 700ms;
+  --atlas-duration-monumental: 1200ms;
+  --atlas-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --atlas-ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --atlas-ease-linear: linear;
+
+  --atlas-content-reading: 42rem;
+  --atlas-content-copy: 52rem;
+  --atlas-content-scene: 96rem;
+  --atlas-content-wide: 112rem;
+
+  --atlas-district-arrival: var(--atlas-color-signal-orange);
+  --atlas-district-landmarks: var(--atlas-color-terracotta);
+  --atlas-district-commerce: var(--atlas-color-transit-yellow);
+  --atlas-district-knowledge: var(--atlas-color-lagoon-blue);
+  --atlas-district-infrastructure: var(--atlas-color-charcoal-ink);
+  --atlas-district-studio: var(--atlas-color-foliage-green);
+  --atlas-district-labs: var(--atlas-color-terracotta);
+  --atlas-district-observatory: var(--atlas-color-lagoon-blue);
+  --atlas-district-gateway: var(--atlas-color-signal-orange);
+
+  --atlas-surface-paper: var(--atlas-color-paper-cream);
+  --atlas-surface-paper-light: var(--atlas-color-paper-light);
+  --atlas-surface-paper-aged: var(--atlas-color-paper-aged);
+  --atlas-surface-ink: var(--atlas-color-charcoal-ink);
+  --atlas-surface-lagoon: var(--atlas-color-lagoon-blue);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --atlas-duration-route: var(--atlas-duration-instant);
+    --atlas-duration-scene: var(--atlas-duration-instant);
+    --atlas-duration-monumental: var(--atlas-duration-instant);
+  }
+}

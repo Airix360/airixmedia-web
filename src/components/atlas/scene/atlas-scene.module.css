@@ -1,0 +1,32 @@
+.scene { position: relative; width: 100%; min-height: 28rem; margin: 0; overflow: clip; color: var(--atlas-color-deep-umber); background: var(--atlas-surface-paper-aged); isolation: isolate; }
+.motionSwitch, .motionComposition, .reducedComposition, .layers, .fallback, .fallback picture { position: absolute; inset: 0; width: 100%; height: 100%; }
+.layers { overflow: hidden; }
+.layer { position: absolute; inset: -1%; z-index: calc(var(--atlas-depth-world) + var(--atlas-layer-depth)); width: 102%; height: 102%; object-fit: cover; object-position: center; transition: transform var(--atlas-duration-scene) var(--atlas-ease-out); }
+.layer[data-layer-role="atmosphere"] { opacity: .82; }
+.layer[data-layer-motion="drift"] { transform: translate3d(-.35%, 0, 0) scale(1.01); }
+.layer[data-layer-motion="route"] { transform: translate3d(.25%, 0, 0); }
+.fallback picture { display: block; }
+.fallback img { width: 100%; height: 100%; object-fit: cover; object-position: var(--atlas-object-position); }
+.reducedComposition { display: none; }
+.motionSwitch[data-scene-mode="static"] .motionComposition,
+.motionSwitch[data-scene-mode="reduced"] .motionComposition { display: none; }
+.motionSwitch[data-scene-mode="static"] .reducedComposition,
+.motionSwitch[data-scene-mode="reduced"] .reducedComposition { display: block; }
+.sceneCaption { position: absolute; z-index: var(--atlas-depth-caption); max-width: min(32rem, calc(100% - 3rem)); padding: var(--atlas-space-md); color: var(--atlas-color-charcoal-ink); background: color-mix(in srgb, var(--atlas-surface-paper) 92%, var(--atlas-color-transparent)); box-shadow: var(--atlas-shadow-paper); }
+.sceneCaption[data-safe-zone="left"] { left: var(--atlas-space-xl); top: 50%; transform: translateY(-50%); }
+.sceneCaption[data-safe-zone="right"] { right: var(--atlas-space-xl); top: 50%; transform: translateY(-50%); }
+.sceneCaption[data-safe-zone="top"] { top: var(--atlas-space-xl); left: 50%; transform: translateX(-50%); }
+.sceneCaption[data-safe-zone="bottom"] { bottom: var(--atlas-space-xl); left: 50%; transform: translateX(-50%); }
+.caption>span { display: block; margin-bottom: var(--atlas-space-xs); color: var(--atlas-color-terracotta); font: 600 .72rem/1.2 var(--atlas-font-wayfinding); letter-spacing: .08em; text-transform: uppercase; }
+.signalPosition { position: absolute; z-index: var(--atlas-depth-caption); top: 9%; right: 12%; }
+.signal { display: inline-grid; width: clamp(3.5rem, 8vw, 7rem); aspect-ratio: 1; place-items: center; border-radius: 50%; background: var(--atlas-color-signal-orange); box-shadow: 0 0 0 .5rem color-mix(in srgb, var(--atlas-color-signal-orange) 18%, var(--atlas-color-transparent)); }
+.signal i { width: 18%; aspect-ratio: 1; border-radius: 50%; background: var(--atlas-color-transit-yellow); }
+.marker { --atlas-marker-accent: var(--atlas-color-signal-orange); display: inline-flex; min-height: 3rem; align-items: center; gap: var(--atlas-space-xs); color: var(--atlas-color-charcoal-ink); font-family: var(--atlas-font-body); }
+.marker>i, .marker>img { width: 2.75rem; height: 2.75rem; flex: 0 0 auto; object-fit: contain; border: var(--atlas-border-hairline); background: var(--atlas-marker-accent); }
+.marker>span { display: grid; gap: .1rem; }.marker b { font-size: .9rem; }.marker small { color: var(--atlas-color-deep-umber); font: .66rem/1.2 var(--atlas-font-wayfinding); }
+@media (max-width: 639px) {
+  .scene { min-height: 38rem; }.sceneCaption { max-width: calc(100% - 2rem); }.sceneCaption[data-safe-zone] { inset: auto 1rem 1rem; transform: none; }.signalPosition { top: 11%; right: 8%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motionComposition { display: none!important; }.reducedComposition { display: block!important; }.layer { transform: none!important; transition: none!important; }
+}
