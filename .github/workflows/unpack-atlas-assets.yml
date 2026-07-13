@@ -1,0 +1,29 @@
+name: Unpack Atlas image candidates
+
+on:
+  push:
+    branches: [assets/gongbi-candidates]
+
+permissions:
+  contents: write
+
+jobs:
+  unpack:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: assets/gongbi-candidates
+      - name: Unpack candidates
+        run: |
+          mkdir -p public/images/atlas/candidates
+          unzip -o .asset-staging/all-generated-atlas-candidates-320.zip -d public/images/atlas/candidates
+          rm -rf .asset-staging
+      - name: Commit unpacked assets
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/images/atlas/candidates .asset-staging
+          git commit -m "assets: unpack all generated Atlas candidates"
+          git push origin HEAD:assets/gongbi-candidates
