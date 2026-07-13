@@ -1,0 +1,13 @@
+npm warn Unknown project config "node-linker". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+npm warn Unknown project config "confirmModulesPurge". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+/Users/hendrix/airixmedia-web/src/app/globals.css (imported by layout.tsx)
+  line 94: [overused-font] font-family: Arial
+    → Inter, Roboto, Fraunces, Geist, Plus Jakarta Sans, and Space Grotesk are used on so many sites they no longer feel distinctive. Each new wave of AI-generated UIs converges on the same handful of faces. Choose a face that gives your interface personality.
+  line 104: [layout-transition] transition: padding
+    → Animating width, height, padding, or margin causes layout thrash and janky performance. Use transform and opacity instead, or grid-template-rows for height animations.
+
+2 anti-patterns found.
+
+Command exit code: 2
+No finding was fixed in Phase 2.
