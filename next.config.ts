@@ -6,6 +6,12 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   reactStrictMode: true,
   experimental: { optimizePackageImports: ["lucide-react"] },
+  async rewrites() {
+    return [
+      { source: "/__design_lab", destination: "/design-lab-preview" },
+      { source: "/__design_lab/:path*", destination: "/design-lab-preview/:path*" },
+    ];
+  },
   async headers() {
     return [{ source: "/:path*", headers: [
       { key: "X-Content-Type-Options", value: "nosniff" },
