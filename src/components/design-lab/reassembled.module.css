@@ -1,0 +1,80 @@
+.reassembled {
+  --rs-copy: #171512;
+  --rs-ink: #29251f;
+  --rs-paper: #eee7d8;
+  --rs-paint: #e24822;
+  --rs-tarp: #126f69;
+  --rs-chalk: #fffaf0;
+  --rs-scaffold: #807869;
+  --rs-muted: #625c52;
+  --rs-adhesive: #e6c85a;
+  --rs-shadow: rgb(31 26 19 / 22%);
+  --rs-clear: transparent;
+  background: var(--rs-paper);
+  color: var(--rs-copy);
+  min-height: 100vh;
+  overflow: clip;
+}
+
+.scaffoldNav { position: fixed; inset: 0 auto 0 0; z-index: 30; width: 8rem; padding: 1.25rem 1rem; border-right: 1px solid var(--rs-scaffold); background: color-mix(in srgb, var(--rs-paper) 92%, var(--rs-clear)); display: flex; flex-direction: column; justify-content: space-between; text-transform: uppercase; font: 650 .62rem/1.2 var(--font-mono); letter-spacing: .08em; }
+.scaffoldNav>a { color: var(--rs-copy); text-decoration: none; }
+.scaffoldNav nav { display: grid; gap: 1.4rem; }
+.scaffoldNav nav a { color: var(--rs-muted); text-decoration: none; writing-mode: vertical-rl; }
+.scaffoldNav nav a:hover, .scaffoldNav nav a:focus-visible { color: var(--rs-paint); }
+.scaffoldNav>span { writing-mode: vertical-rl; color: var(--rs-muted); }
+
+.opening { min-height: 100svh; margin-left: 8rem; display: grid; grid-template-rows: 58svh auto; position: relative; border-bottom: 1px solid var(--rs-scaffold); }
+.materialField { position: relative; overflow: hidden; background: repeating-linear-gradient(90deg, var(--rs-paper) 0 8.5rem, var(--rs-shadow) 8.5rem calc(8.5rem + 1px)); }
+.materialField::before, .materialField::after { content: ""; position: absolute; background: var(--rs-scaffold); transform-origin: left; }
+.materialField::before { width: 120%; height: 2px; top: 45%; left: -5%; transform: rotate(-7deg); }
+.materialField::after { width: 2px; height: 130%; top: -10%; left: 67%; transform: rotate(5deg); }
+.materialField span { position: absolute; display: grid; place-items: center; box-shadow: .65rem .65rem 0 var(--rs-shadow); font: 850 clamp(3rem, 11vw, 10rem)/.8 var(--font-sans); letter-spacing: -.08em; }
+.paintBlock { inset: 9% auto auto 8%; width: 38%; height: 48%; color: var(--rs-chalk); background: var(--rs-paint); transform: rotate(-4deg); }
+.tarpBlock { inset: 28% 7% auto auto; width: 34%; height: 43%; color: var(--rs-chalk); background: var(--rs-tarp); transform: rotate(5deg); }
+.cutPaper { inset: auto auto 7% 43%; padding: 1.25rem 2rem; color: var(--rs-copy); background: var(--rs-adhesive); transform: rotate(-2deg); }
+.printStrip { z-index: 2; inset: 47% auto auto 3%; width: 93%; height: 2rem; box-shadow: none!important; color: var(--rs-chalk); background: var(--rs-ink); font: 700 .7rem/1 var(--font-mono)!important; letter-spacing: .15em!important; transform: rotate(1deg); }
+.materialField i { position: absolute; width: 1rem; height: 1rem; border-radius: 50%; background: var(--rs-ink); }
+.materialField i:nth-of-type(1) { left: 24%; top: 15%; }.materialField i:nth-of-type(2) { left: 70%; top: 61%; }.materialField i:nth-of-type(3) { left: 48%; top: 80%; }
+.readingLane { z-index: 3; padding: clamp(2rem, 5vw, 5.5rem) max(2rem, 7vw); background: var(--rs-paper); display: grid; grid-template-columns: 10rem minmax(0, 1fr) minmax(15rem, 25rem); gap: 2rem; align-items: end; }
+.readingLane>span, .brokenSystem>div:first-child>span, .assemblyCopy>span, .resolvedSystem>span, .accountabilityClose>span { color: var(--rs-paint); font: 700 .68rem/1.2 var(--font-mono); letter-spacing: .12em; text-transform: uppercase; }
+.readingLane h1 { margin: 0; max-width: 12ch; font: 760 clamp(3rem, 7vw, 7.5rem)/.86 var(--font-sans); letter-spacing: -.075em; }
+.readingLane p { margin: 0; color: var(--rs-muted); font-size: clamp(1rem, 1.4vw, 1.25rem); line-height: 1.5; }
+
+.brokenSystem { margin-left: 8rem; min-height: 100svh; padding: 8rem max(2rem, 7vw); display: grid; grid-template-columns: minmax(18rem, .8fr) 1.2fr; gap: 7vw; align-items: center; background: var(--rs-chalk); }
+.brokenSystem h2, .assemblyCopy h2, .resolvedSystem h2, .accountabilityClose h2 { margin: 1.4rem 0; font: 720 clamp(2.8rem, 6vw, 6.5rem)/.9 var(--font-sans); letter-spacing: -.065em; }
+.brokenSystem>div:first-child>p, .assemblyCopy p, .accountabilityClose>p { max-width: 35rem; color: var(--rs-muted); font-size: 1.1rem; line-height: 1.6; }
+.brokenBoard { min-height: 32rem; position: relative; border: 1px dashed var(--rs-scaffold); background: repeating-linear-gradient(0deg, var(--rs-clear) 0 4rem, var(--rs-shadow) 4rem calc(4rem + 1px)); }
+.brokenBoard article { position: absolute; width: 11rem; min-height: 8rem; padding: 1rem; display: flex; flex-direction: column; justify-content: space-between; box-shadow: .6rem .6rem 0 var(--rs-shadow); }
+.brokenBoard article b { font-size: 1.3rem; }.brokenBoard article span { font: .65rem var(--font-mono); text-transform: uppercase; }
+.brokenBoard article:nth-child(1) { left: 8%; top: 10%; background: var(--rs-adhesive); transform: rotate(-7deg); }.brokenBoard article:nth-child(2) { right: 5%; top: 18%; color: var(--rs-chalk); background: var(--rs-paint); transform: rotate(5deg); }.brokenBoard article:nth-child(3) { left: 21%; bottom: 8%; color: var(--rs-chalk); background: var(--rs-tarp); transform: rotate(8deg); }.brokenBoard article:nth-child(4) { right: 12%; bottom: 4%; background: var(--rs-paper); transform: rotate(-5deg); }
+
+.assemblyJourney { height: 245svh; margin-left: 8rem; background: var(--rs-ink); color: var(--rs-chalk); }
+.assemblySticky { min-height: 100svh; position: sticky; top: 0; padding: 6rem max(2rem, 6vw) 2rem; display: grid; grid-template-columns: .7fr 1.3fr; gap: 5vw; align-items: center; overflow: hidden; }
+.assemblyCopy h2 { max-width: 10ch; }.assemblyCopy p { color: var(--rs-paper); }
+.assemblyBoard { position: relative; height: min(72vh, 46rem); border: 1px solid var(--rs-scaffold); background: repeating-linear-gradient(90deg, var(--rs-clear) 0 5rem, rgb(255 250 240 / 8%) 5rem calc(5rem + 1px)); }
+.assemblyFragment { position: absolute; width: 28%; height: 23%; padding: 1rem; display: flex; align-items: flex-end; color: var(--rs-copy); box-shadow: .45rem .45rem 0 var(--rs-shadow); transform-origin: center; }
+.assemblyFragment span { font: 750 clamp(.8rem, 1.4vw, 1.1rem)/1 var(--font-mono); text-transform: uppercase; }
+.fragmentWebsite { left: 7%; top: 8%; background: var(--rs-adhesive); }.fragmentCommerce { left: 37%; top: 8%; background: var(--rs-paper); }.fragmentPayment { right: 5%; top: 8%; color: var(--rs-chalk); background: var(--rs-paint); }.fragmentPortal { left: 7%; bottom: 8%; color: var(--rs-chalk); background: var(--rs-tarp); }.fragmentPublishing { left: 37%; bottom: 8%; background: var(--rs-paper); }.fragmentContinuity { right: 5%; bottom: 8%; background: var(--rs-adhesive); }
+.systemCore { position: absolute; inset: 36% 24%; z-index: 2; padding: 1rem; display: grid; place-items: center; text-align: center; border: 1px solid var(--rs-chalk); background: var(--rs-ink); }.systemCore b { font-size: clamp(1.6rem, 3vw, 3rem); letter-spacing: -.06em; }.systemCore span { font: .6rem var(--font-mono); text-transform: uppercase; }
+.assemblySticky small { position: absolute; bottom: 1.25rem; right: 2rem; color: var(--rs-scaffold); font: .58rem var(--font-mono); text-transform: uppercase; }
+
+.resolvedSystem { margin-left: 8rem; padding: 10rem max(2rem, 8vw); background: var(--rs-tarp); color: var(--rs-chalk); }
+.resolvedSystem h2 { max-width: 13ch; }.resolvedSystem>div { margin-top: 5rem; display: grid; grid-template-columns: repeat(5, 1fr); border-block: 1px solid var(--rs-chalk); }.resolvedSystem p { margin: 0; padding: 1.25rem .8rem; border-right: 1px solid var(--rs-chalk); font: .7rem var(--font-mono); text-transform: uppercase; }
+.accountabilityClose { margin-left: 8rem; min-height: 92svh; padding: 12rem max(2rem, 9vw) 6rem; display: flex; flex-direction: column; justify-content: center; }.accountabilityClose h2 { max-width: 13ch; }.accountabilityClose>div { margin-top: 3rem; display: flex; align-items: center; gap: 2rem; }.accountabilityClose a { color: var(--rs-copy); font-weight: 750; }.accountabilityClose a:first-child { padding: 1rem 1.4rem; color: var(--rs-chalk); background: var(--rs-paint); text-decoration: none; }
+
+@media (max-width: 720px) {
+  .scaffoldNav { inset: 0 0 auto; width: auto; height: 3.7rem; padding: .8rem 1rem; flex-direction: row; align-items: center; border: 0; border-bottom: 1px solid var(--rs-scaffold); }
+  .scaffoldNav nav { display: flex; gap: 1rem; }.scaffoldNav nav a { writing-mode: initial; }.scaffoldNav>span { display: none; }
+  .opening, .brokenSystem, .assemblyJourney, .resolvedSystem, .accountabilityClose { margin-left: 0; }
+  .opening { padding-top: 3.7rem; grid-template-rows: 48svh auto; }
+  .materialField { min-height: 0; }.paintBlock { width: 54%; }.tarpBlock { width: 47%; }.cutPaper { left: 31%; font-size: 2.5rem!important; }.printStrip { top: 49%; }
+  .readingLane { min-height: 48svh; padding: 2rem 1.25rem 3rem; grid-template-columns: 1fr; gap: 1rem; align-content: center; }.readingLane h1 { font-size: clamp(3.05rem, 13vw, 4.8rem); }.readingLane p { max-width: 30rem; }
+  .brokenSystem { padding: 7rem 1.25rem 4rem; grid-template-columns: 1fr; gap: 3rem; }.brokenBoard { min-height: 29rem; }
+  .assemblyJourney { height: auto; }.assemblySticky { position: relative; min-height: auto; padding: 6rem 1.25rem 4rem; grid-template-columns: 1fr; }.assemblyBoard { height: 34rem; }.assemblyFragment { transform: none!important; width: 43%; }.fragmentWebsite, .fragmentPayment, .fragmentPublishing { left: 4%; right: auto; }.fragmentCommerce, .fragmentPortal, .fragmentContinuity { left: auto; right: 4%; }.fragmentWebsite, .fragmentCommerce { top: 5%; }.fragmentPayment, .fragmentPortal { top: 38%; bottom: auto; }.fragmentPublishing, .fragmentContinuity { bottom: 5%; }.systemCore { inset: 30% 29%; }
+  .resolvedSystem, .accountabilityClose { padding: 7rem 1.25rem; }.resolvedSystem>div { grid-template-columns: 1fr; }.resolvedSystem p { border-right: 0; border-bottom: 1px solid var(--rs-chalk); }.accountabilityClose>div { align-items: flex-start; flex-direction: column; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .materialField span, .brokenBoard article, .assemblyFragment { transform: none!important; }
+  .assemblyJourney { height: auto; }.assemblySticky { position: relative; }
+}

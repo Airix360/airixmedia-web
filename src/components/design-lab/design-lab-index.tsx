@@ -18,7 +18,7 @@ export function DesignLabIndex() {
   return <main id="main-content" className={styles.labIndex}>
     <header className={styles.indexHeader}>
       <Link href="/__design_lab" aria-label="Living Lagos design lab home">AIRIX / LIVING LAGOS</Link>
-      <span>Phase 03 · Private review</span>
+      <span>Phase 03B · Corrective review</span>
     </header>
     <section className={styles.indexIntro}>
       <p>Three live interpretations. No production decision has been made.</p>
