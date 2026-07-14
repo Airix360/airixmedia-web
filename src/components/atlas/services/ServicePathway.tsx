@@ -21,7 +21,7 @@ const statusLabel = {
   proposed_internal: "Proposed internal scope · approval required",
 } as const;
 
-export function ServicePathway({ pathway, variant = "commerce" }: { pathway: ServicePathwayContent; variant?: "commerce" | "knowledge" }) {
+export function ServicePathway({ pathway, variant = "commerce" }: { pathway: ServicePathwayContent; variant?: "commerce" | "knowledge" | "infrastructure" }) {
   return (
     <article className={styles.servicePathway} id={pathway.id} data-pathway={pathway.id} data-evidence-status={pathway.evidenceStatus} data-pathway-variant={variant}>
       <div className={styles.pathwayRoute} aria-hidden="true"><span>{pathway.index}</span><i /></div>

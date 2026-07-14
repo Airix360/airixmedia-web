@@ -39,6 +39,24 @@
 .servicePathway[data-pathway-variant="knowledge"] .capabilityGroup li::before { background: var(--atlas-color-lagoon-blue); }
 .servicePathway[data-pathway-variant="knowledge"] footer a { background: var(--atlas-color-lagoon-blue); }
 
+.servicePathway[data-pathway-variant="infrastructure"] {
+  grid-template-columns: 3.75rem minmax(16rem, .58fr) minmax(0, 1.42fr);
+  margin-inline: clamp(1rem, 5vw, 5rem);
+  color: var(--atlas-color-paper-cream);
+  background: var(--atlas-color-charcoal-ink);
+  border-color: var(--atlas-color-rule-strong);
+}
+.servicePathway[data-pathway-variant="infrastructure"] .pathwayRoute { color: var(--atlas-color-transit-yellow); border-color: var(--atlas-color-rule-strong); }
+.servicePathway[data-pathway-variant="infrastructure"] > header { padding: clamp(2rem, 4vw, 4rem); border-color: var(--atlas-color-rule-strong); }
+.servicePathway[data-pathway-variant="infrastructure"] h2 { max-width: 12ch; font-size: clamp(2.2rem, 4.4vw, 4.8rem); line-height: .9; }
+.servicePathway[data-pathway-variant="infrastructure"] .pathwayCapabilities { grid-template-columns: repeat(3, 1fr); }
+.servicePathway[data-pathway-variant="infrastructure"] .capabilityGroup { border-color: var(--atlas-color-rule-strong); }
+.servicePathway[data-pathway-variant="infrastructure"] .capabilityGroup li { border-color: var(--atlas-color-rule-strong); }
+.servicePathway[data-pathway-variant="infrastructure"] .capabilityGroup li::before { background: var(--atlas-color-transit-yellow); border-color: var(--atlas-color-paper-cream); }
+.servicePathway[data-pathway-variant="infrastructure"] footer { border-color: var(--atlas-color-rule-strong); }
+.servicePathway[data-pathway-variant="infrastructure"] footer small { color: var(--atlas-color-paper-aged); }
+.servicePathway[data-pathway-variant="infrastructure"] footer a { color: var(--atlas-color-charcoal-ink); background: var(--atlas-color-transit-yellow); }
+
 @supports (animation-timeline: view()) {
   .pathwayRoute i { animation: serviceRoute both linear; animation-timeline: view(); animation-range: entry 10% cover 45%; }
 }
@@ -50,6 +68,8 @@
   .pathwayCapabilities { grid-column: 2; border-top: 1px solid var(--atlas-color-charcoal-ink); }
   .servicePathway footer { grid-column: 2; }
   .servicePathway[data-pathway-variant="knowledge"] { grid-template-columns: 3.5rem 1fr; }
+  .servicePathway[data-pathway-variant="infrastructure"] { grid-template-columns: 3.5rem 1fr; }
+  .servicePathway[data-pathway-variant="infrastructure"] .pathwayCapabilities { grid-column: 2; }
 }
 
 @media (max-width: 700px) {
@@ -66,6 +86,8 @@
   .servicePathway[data-pathway-variant="knowledge"] { grid-template-columns: 2.75rem 1fr; margin-inline: 1rem; }
   .servicePathway[data-pathway-variant="knowledge"] .capabilityGroup { grid-template-columns: 1fr; gap: 0; padding: 1.6rem 1rem; }
   .servicePathway[data-pathway-variant="knowledge"] .capabilityGroup ul { grid-column: 1; grid-row: auto; margin-top: 1rem; }
+  .servicePathway[data-pathway-variant="infrastructure"] { grid-template-columns: 2.75rem 1fr; margin-inline: 1rem; }
+  .servicePathway[data-pathway-variant="infrastructure"] .pathwayCapabilities { grid-template-columns: 1fr; }
 }
 
 @media (prefers-reduced-motion: reduce) {
