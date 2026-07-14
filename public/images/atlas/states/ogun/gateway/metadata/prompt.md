@@ -1,0 +1,2 @@
+# ILL-0080 prompts
+Desktop: contemporary Ogun project-entry pavilion at a practical road/rail and workshop threshold; people review blank briefs, choose abstract routes and prepare work; left copy field. Mobile: separately authored vertical open threshold, route board and project table. Shared Atlas Gongbi-influenced ink and risograph language. No readable text, ceremonial gate, border cliché, travel poster, factory smoke, handshake, photorealism, CGI, logos, flags or watermarks.

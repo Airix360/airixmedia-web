@@ -1,0 +1,45 @@
+{
+  "assetId": "ILL-0092",
+  "name": "Plateau Resources master candidate",
+  "state": "plateau",
+  "district": "resources",
+  "status": "candidate",
+  "generationDate": "2026-07-14",
+  "method": "OpenAI built-in image generation",
+  "sources": [
+    {
+      "file": "source/ILL-0092_plateau-resources-master_source-desktop_v01.png",
+      "composition": "desktop",
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "file": "source/ILL-0092_plateau-resources-master_source-mobile_v01.png",
+      "composition": "mobile",
+      "width": 897,
+      "height": 1752
+    }
+  ],
+  "derivatives": [
+    "web/ILL-0092_plateau-resources_desktop_1440x811_v01.webp",
+    "web/ILL-0092_plateau-resources_tablet_1024x768_v01.webp",
+    "web/ILL-0092_plateau-resources_mobile_960x1200_v01.webp",
+    "web/ILL-0092_plateau-resources_thumbnail_480x270_v01.webp"
+  ],
+  "focalPoints": {
+    "desktop": "68% 55%",
+    "tablet": "62% 56%",
+    "mobile": "54% 68%"
+  },
+  "safeZones": {
+    "desktop": "left",
+    "tablet": "left",
+    "mobile": "top"
+  },
+  "knownDefects": [
+    "Cultural and architectural review required",
+    "Small anatomy and resource geometry require inspection",
+    "Fictional composite place",
+    "No separable layers"
+  ]
+}

@@ -1,0 +1,2 @@
+# ILL-0082 prompts
+Desktop: contemporary Ogun scheduling preparation room; blank physical register, project briefs, notes, materials and people checking readiness; right copy field. Mobile: separately authored vertical preparation table and open threshold. Shared Atlas Gongbi-influenced ink and risograph language. No readable dates or slots, fake availability, giant clocks/calendars, provider identity, photorealism, CGI, logos, flags or watermarks.

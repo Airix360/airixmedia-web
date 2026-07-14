@@ -1,0 +1,45 @@
+{
+  "assetId": "ILL-0080",
+  "name": "Ogun Gateway master candidate",
+  "state": "ogun",
+  "district": "gateway",
+  "status": "candidate",
+  "generationDate": "2026-07-14",
+  "method": "OpenAI built-in image generation",
+  "sources": [
+    {
+      "file": "source/ILL-0080_ogun-gateway-master_source-desktop_v01.png",
+      "composition": "desktop",
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "file": "source/ILL-0080_ogun-gateway-master_source-mobile_v01.png",
+      "composition": "mobile",
+      "width": 1003,
+      "height": 1568
+    }
+  ],
+  "derivatives": [
+    "web/ILL-0080_ogun-gateway_desktop_1440x811_v01.webp",
+    "web/ILL-0080_ogun-gateway_tablet_1024x768_v01.webp",
+    "web/ILL-0080_ogun-gateway_mobile_960x1200_v01.webp",
+    "web/ILL-0080_ogun-gateway_thumbnail_480x270_v01.webp"
+  ],
+  "focalPoints": {
+    "desktop": "68% 56%",
+    "tablet": "62% 58%",
+    "mobile": "54% 68%"
+  },
+  "safeZones": {
+    "desktop": "left",
+    "tablet": "left",
+    "mobile": "top"
+  },
+  "knownDefects": [
+    "Cultural and architectural review required",
+    "Abstract route marks and anatomy require inspection",
+    "Fictional composite place",
+    "No separable layers"
+  ]
+}

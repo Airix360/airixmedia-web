@@ -1,0 +1,1 @@
+import{InsightsReview}from"@/components/atlas/w7";import{getAtlasScene}from"@/lib/atlas/assets";export default function Page(){return <InsightsReview scene={getAtlasScene("ill-0091",{candidateAccess:"internal-review"})}/>}

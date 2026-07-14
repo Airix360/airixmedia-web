@@ -1,0 +1,1 @@
+import{BookingReview}from"@/components/atlas/w7";import{getAtlasScene}from"@/lib/atlas/assets";export default function Page(){return <BookingReview scene={getAtlasScene("ill-0082",{candidateAccess:"internal-review"})}/>}

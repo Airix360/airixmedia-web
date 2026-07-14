@@ -1,0 +1,1 @@
+import{GatewayReview}from"@/components/atlas/w7";import{getAtlasScene}from"@/lib/atlas/assets";export default function Page(){return <GatewayReview scene={getAtlasScene("ill-0080",{candidateAccess:"internal-review"})}/>}

@@ -4,7 +4,7 @@ import type { AtlasStateId } from "@/lib/atlas/types";
 import styles from "./atlas-state.module.css";
 
 interface AtlasStateMarkerProps {
-  state: Extract<AtlasStateId, "edo" | "kaduna">;
+  state: Extract<AtlasStateId, "edo" | "kaduna" | "plateau" | "ogun">;
   page: string;
   identity: string;
 }

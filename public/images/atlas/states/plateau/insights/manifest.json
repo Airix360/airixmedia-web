@@ -1,0 +1,45 @@
+{
+  "assetId": "ILL-0091",
+  "name": "Plateau Insights master candidate",
+  "state": "plateau",
+  "district": "insights",
+  "status": "candidate",
+  "generationDate": "2026-07-14",
+  "method": "OpenAI built-in image generation",
+  "sources": [
+    {
+      "file": "source/ILL-0091_plateau-insights-master_source-desktop_v01.png",
+      "composition": "desktop",
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "file": "source/ILL-0091_plateau-insights-master_source-mobile_v01.png",
+      "composition": "mobile",
+      "width": 1003,
+      "height": 1568
+    }
+  ],
+  "derivatives": [
+    "web/ILL-0091_plateau-insights_desktop_1440x811_v01.webp",
+    "web/ILL-0091_plateau-insights_tablet_1024x768_v01.webp",
+    "web/ILL-0091_plateau-insights_mobile_960x1200_v01.webp",
+    "web/ILL-0091_plateau-insights_thumbnail_480x270_v01.webp"
+  ],
+  "focalPoints": {
+    "desktop": "42% 56%",
+    "tablet": "45% 58%",
+    "mobile": "48% 70%"
+  },
+  "safeZones": {
+    "desktop": "right",
+    "tablet": "right",
+    "mobile": "top"
+  },
+  "knownDefects": [
+    "Cultural and architectural review required",
+    "Small anatomy and document geometry require inspection",
+    "Fictional composite place",
+    "No separable layers"
+  ]
+}

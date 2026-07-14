@@ -144,6 +144,17 @@ Object.assign(atlasScenes, {
   },
 } satisfies Record<string, AtlasSceneAsset>);
 
+function w7StateScene({id,name,state,district,slug,safe,alt,focal}:{id:string;name:string;state:"plateau"|"ogun";district:"observatory"|"gateway";slug:string;safe:"left"|"right";alt:string;focal:AtlasSceneAsset["focalPoints"]}):AtlasSceneAsset { const base=`${stateRoot}/${state}/${slug}` as const; const fileSlug=`${state}-${slug}`; return {id,name,state,district,status:"candidate",master:`${base}/source/${id}_${fileSlug}-master_source-desktop_v01.png`,responsive:{desktop:`${base}/web/${id}_${fileSlug}_desktop_1440x811_v01.webp`,tablet:`${base}/web/${id}_${fileSlug}_tablet_1024x768_v01.webp`,mobile:`${base}/web/${id}_${fileSlug}_mobile_960x1200_v01.webp`,social:`${base}/web/${id}_${fileSlug}_desktop_1440x811_v01.webp`,thumbnail:`${base}/web/${id}_${fileSlug}_thumbnail_480x270_v01.webp`},layers:[],fallback:`${base}/web/${id}_${fileSlug}_thumbnail_480x270_v01.webp`,focalPoint:focal.desktop,focalPoints:focal,safeZones:{desktop:safe,tablet:safe,mobile:"top"},desktopSafeZone:safe,mobileSafeZone:"top",alt}; }
+
+Object.assign(atlasScenes,{
+  "ill-0090":w7StateScene({id:"ILL-0090",name:"Plateau Observatory master candidate",state:"plateau",district:"observatory",slug:"observatory",safe:"left",focal:{desktop:"70% 55%",tablet:"64% 56%",mobile:"52% 68%"},alt:"A contemporary Plateau research terrace where people compare field maps and observe routes across layered highland horizons."}),
+  "ill-0091":w7StateScene({id:"ILL-0091",name:"Plateau Insights master candidate",state:"plateau",district:"observatory",slug:"insights",safe:"right",focal:{desktop:"42% 56%",tablet:"45% 58%",mobile:"48% 70%"},alt:"A contemporary Plateau editorial terrace where researchers compare field notes, maps and evidence before publication."}),
+  "ill-0092":w7StateScene({id:"ILL-0092",name:"Plateau Resources master candidate",state:"plateau",district:"observatory",slug:"resources",safe:"left",focal:{desktop:"68% 55%",tablet:"62% 56%",mobile:"54% 68%"},alt:"A contemporary Plateau field library where people organise maps, archive boxes, guides and practical reference material."}),
+  "ill-0080":w7StateScene({id:"ILL-0080",name:"Ogun Gateway master candidate",state:"ogun",district:"gateway",slug:"gateway",safe:"left",focal:{desktop:"68% 56%",tablet:"62% 58%",mobile:"54% 68%"},alt:"A contemporary Ogun project-entry pavilion where people review briefs, choose routes and prepare to begin work."}),
+  "ill-0081":w7StateScene({id:"ILL-0081",name:"Ogun Contact master candidate",state:"ogun",district:"gateway",slug:"contact",safe:"right",focal:{desktop:"38% 56%",tablet:"44% 58%",mobile:"50% 70%"},alt:"A shaded contemporary Ogun meeting court where people discuss enquiries around a practical working table."}),
+  "ill-0082":w7StateScene({id:"ILL-0082",name:"Ogun Booking master candidate",state:"ogun",district:"gateway",slug:"booking",safe:"right",focal:{desktop:"42% 58%",tablet:"46% 58%",mobile:"50% 72%"},alt:"A contemporary Ogun preparation room where people review project notes and a scheduling register before a meeting."}),
+} satisfies Record<string,AtlasSceneAsset>);
+
 const library = <T extends Record<string, Omit<AtlasLibraryAsset, "id">>>(entries: T) =>
   Object.fromEntries(Object.entries(entries).map(([id, asset]) => [id, { id, ...asset }])) as {
     [K in keyof T]: AtlasLibraryAsset & { id: K };

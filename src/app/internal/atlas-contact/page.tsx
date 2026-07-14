@@ -1,0 +1,1 @@
+import{ContactReview}from"@/components/atlas/w7";import{getAtlasScene}from"@/lib/atlas/assets";export default function Page(){return <ContactReview scene={getAtlasScene("ill-0081",{candidateAccess:"internal-review"})}/>}

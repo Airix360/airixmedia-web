@@ -1,0 +1,45 @@
+{
+  "assetId": "ILL-0082",
+  "name": "Ogun Booking master candidate",
+  "state": "ogun",
+  "district": "booking",
+  "status": "candidate",
+  "generationDate": "2026-07-14",
+  "method": "OpenAI built-in image generation",
+  "sources": [
+    {
+      "file": "source/ILL-0082_ogun-booking-master_source-desktop_v01.png",
+      "composition": "desktop",
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "file": "source/ILL-0082_ogun-booking-master_source-mobile_v01.png",
+      "composition": "mobile",
+      "width": 971,
+      "height": 1619
+    }
+  ],
+  "derivatives": [
+    "web/ILL-0082_ogun-booking_desktop_1440x811_v01.webp",
+    "web/ILL-0082_ogun-booking_tablet_1024x768_v01.webp",
+    "web/ILL-0082_ogun-booking_mobile_960x1200_v01.webp",
+    "web/ILL-0082_ogun-booking_thumbnail_480x270_v01.webp"
+  ],
+  "focalPoints": {
+    "desktop": "42% 58%",
+    "tablet": "46% 58%",
+    "mobile": "50% 72%"
+  },
+  "safeZones": {
+    "desktop": "right",
+    "tablet": "right",
+    "mobile": "top"
+  },
+  "knownDefects": [
+    "Cultural and architectural review required",
+    "Small anatomy and register geometry require inspection",
+    "Fictional composite place",
+    "No separable layers"
+  ]
+}

@@ -1,0 +1,2 @@
+# ILL-0092 prompts
+Desktop: contemporary Plateau field library with map cabinets, archive boxes, shelves, blank guide packets and practical reference tools; left copy field. Mobile: separately authored vertical shelves, map drawers and visitors organising material. Shared Atlas Gongbi-influenced ink and risograph language. No fake downloads, readable labels, tourism, generic library stock imagery, photorealism, CGI, logos, flags or watermarks.

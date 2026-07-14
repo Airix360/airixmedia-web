@@ -1,0 +1,2 @@
+# ILL-0081 prompts
+Desktop: contemporary Ogun shaded meeting court; naturally occupied conversation table, blank enquiry notes, correspondence trays and workshop threshold; right copy field. Mobile: separately authored vertical intimate meeting court. Shared Atlas Gongbi-influenced ink and risograph language. No contact details, call centre, headsets, handshakes, speech bubbles, giant phones, photorealism, CGI, logos, flags or watermarks.

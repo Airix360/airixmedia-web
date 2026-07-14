@@ -1,0 +1,1 @@
+import{ResourcesReview}from"@/components/atlas/w7";import{getAtlasScene}from"@/lib/atlas/assets";export default function Page(){return <ResourcesReview scene={getAtlasScene("ill-0092",{candidateAccess:"internal-review"})}/>}

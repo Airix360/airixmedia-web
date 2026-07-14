@@ -1,0 +1,2 @@
+# ILL-0091 prompts
+Desktop: contemporary Plateau field-note terrace and editorial observation room; people compare blank evidence, maps, notebooks and proofs; intimate working depth and right copy field. Mobile: separately authored vertical evidence table and blank comparison wall. Shared Atlas Gongbi-influenced ink and risograph language. No fake articles, readable text, tourism, generic blog imagery, fantasy astronomy, photorealism, CGI, logos, flags or watermarks.
