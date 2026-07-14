@@ -1,6 +1,6 @@
 import type { AtlasDistrictId, AtlasPath } from "@/lib/atlas/types";
 
-export type ProofStatus = "verified" | "source_capture" | "placeholder";
+export type ProofStatus = "verified" | "source_capture" | "repository_record" | "placeholder";
 
 export interface ProjectMedia {
   id: string;
@@ -13,7 +13,7 @@ export interface ProjectMedia {
 
 export interface ProjectEvidence {
   label: string;
-  type: "Repository record" | "Infrastructure audit" | "Live URL" | "Public interface" | "Responsibility record" | "Outcome record";
+  type: "Repository record" | "Infrastructure audit" | "Live URL" | "Public interface" | "Responsibility record" | "Outcome record" | "Service scope" | "Continuity scope" | "Commercial terms";
   status: ProofStatus;
   source: string;
   href?: string;

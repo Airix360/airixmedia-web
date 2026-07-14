@@ -1,7 +1,7 @@
 import type { ProjectEvidence } from "@/content/atlas/landmarks";
 import styles from "./atlas-proof.module.css";
 
-const statusLabels = { verified: "Verified", source_capture: "Source captured", placeholder: "Missing / review" } as const;
+const statusLabels = { verified: "Verified", source_capture: "Source captured", repository_record: "Repository record", placeholder: "Missing / review" } as const;
 
 export function EvidenceList({ items, headingId }: { items: readonly ProjectEvidence[]; headingId: string }) {
   return (

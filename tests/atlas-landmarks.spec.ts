@@ -21,7 +21,9 @@ test("Landmark evidence keeps responsibility, types, alternatives, and public ro
   await expect(page.getByText("Outcome record").first()).toBeVisible();
 
   await page.goto("/internal/atlas-landmarks#publishing-evidence");
-  await expect(page.getByRole("img", { name: /KU Journals public homepage/ })).toBeVisible();
+  const publicInterface = page.getByRole("img", { name: /KU Journals public homepage/ });
+  await publicInterface.scrollIntoViewIfNeeded();
+  await expect(publicInterface).toBeVisible();
   await expect(page.getByText("Public interface").last()).toBeVisible();
   await expect(page.getByRole("link", { name: /Related public route Publishing/ })).toHaveAttribute("href", "/publishing");
 });

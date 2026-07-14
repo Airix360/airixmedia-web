@@ -20,6 +20,14 @@ describe("Atlas candidate asset registry", () => {
     expect(() => getAtlasScene("ill-0003")).toThrow(CandidateAssetAccessError);
     expect(() => getAtlasLibraryAsset("commerceMarker")).toThrow(CandidateAssetAccessError);
     expect(() => getAtlasLibraryAsset("knowledgeMarker")).toThrow(CandidateAssetAccessError);
+    expect(() => getAtlasLibraryAsset("marketCanopy")).toThrow(CandidateAssetAccessError);
+    expect(() => getAtlasLibraryAsset("commerceRouteMap")).toThrow(CandidateAssetAccessError);
+    expect(() => getAtlasLibraryAsset("logisticsTruck")).toThrow(CandidateAssetAccessError);
+    expect(() => getAtlasLibraryAsset("marketScale")).toThrow(CandidateAssetAccessError);
+    expect(getAtlasLibraryAsset("marketCanopy", internalReview).status).toBe("candidate");
+    expect(getAtlasLibraryAsset("commerceRouteMap", internalReview).status).toBe("candidate");
+    expect(getAtlasLibraryAsset("logisticsTruck", internalReview).status).toBe("candidate");
+    expect(getAtlasLibraryAsset("marketScale", internalReview).status).toBe("candidate");
   });
 
   it("returns complete responsive and layered scene data for internal review", () => {

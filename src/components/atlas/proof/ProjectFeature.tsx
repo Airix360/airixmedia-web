@@ -4,6 +4,7 @@ import styles from "./atlas-proof.module.css";
 const labels: Record<ProofStatus, string> = {
   verified: "Verified",
   source_capture: "Source captured",
+  repository_record: "Repository record",
   placeholder: "Evidence incomplete",
 };
 
