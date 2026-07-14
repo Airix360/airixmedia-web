@@ -1,2 +1,66 @@
-import Link from"next/link";import{W7ReviewShell}from"./W7ReviewShell";import{resourceRecords}from"@/content/atlas/w7";import type{AtlasSceneAsset}from"@/lib/atlas/types";import styles from"./atlas-w7.module.css";
-export function ResourcesReview({scene}:{scene:AtlasSceneAsset}){return <W7ReviewShell scene={scene} state="plateau" page="Resources" identity="Field Library" kind="resources" title="Useful material, clearly available." body="Guides, checklists, documentation, and public references belong in a field library with honest availability states." skip="resource-library"><section className={styles.section} id="resource-library" tabIndex={-1} data-tone="stone"><header><span>Resource field library</span><h2>A shelf is not a download.</h2><p>W7 distinguishes existing public structures, repository references, and structural placeholders. No missing file is presented as downloadable.</p></header><ol className={styles.ledger}>{resourceRecords.map((x,i)=><li key={x.title}><small>{String(i+1).padStart(2,"0")} · {x.status}</small><h3>{x.title}</h3><p>{x.detail} {x.href?<Link href={x.href}>Open reference ↗</Link>:null}</p></li>)}</ol></section><section className={styles.section} data-tone="dark"><header><span>Availability register</span><h2>Practical before promotional.</h2><p>Future resources require a real file or page, ownership, content review, accessibility review, version, and maintenance status before publication.</p></header><div className={styles.linkRow}><Link href="/resources">Public Resources</Link><Link href="/insights">Related Insights</Link></div></section></W7ReviewShell>}
+import Link from "next/link";
+import { W7ReviewShell } from "./W7ReviewShell";
+import { resourceRecords } from "@/content/atlas/w7";
+import type { AtlasSceneAsset } from "@/lib/atlas/types";
+import styles from "./atlas-w7.module.css";
+export function ResourcesReview({ scene, auditMode = false }: { scene: AtlasSceneAsset; auditMode?: boolean }) {
+  return (
+    <W7ReviewShell
+      scene={scene}
+      state="plateau"
+      page="Resources"
+      identity="Field Library"
+      kind="resources"
+      title="Useful material, clearly available."
+      body="Guides, checklists, documentation, and public references belong in a field library with honest availability states."
+      skip="resource-library"
+      auditMode={auditMode}
+    >
+      <section
+        className={styles.section}
+        id="resource-library"
+        tabIndex={-1}
+        data-tone="stone"
+      >
+        <header>
+          <span>Resource field library</span>
+          <h2>A shelf is not a download.</h2>
+          <p>
+            W7 distinguishes existing public structures, repository references,
+            and structural placeholders. No missing file is presented as
+            downloadable.
+          </p>
+        </header>
+        <ol className={styles.ledger}>
+          {resourceRecords.map((x, i) => (
+            <li key={x.title}>
+              <small>
+                {String(i + 1).padStart(2, "0")} · {x.status}
+              </small>
+              <h3>{x.title}</h3>
+              <p>
+                {x.detail}{" "}
+                {x.href ? <Link href={x.href}>Open reference ↗</Link> : null}
+              </p>
+            </li>
+          ))}
+        </ol>
+      </section>
+      <section className={styles.section} data-tone="dark">
+        <header>
+          <span>Availability register</span>
+          <h2>Practical before promotional.</h2>
+          <p>
+            Future resources require a real file or page, ownership, content
+            review, accessibility review, version, and maintenance status before
+            publication.
+          </p>
+        </header>
+        <div className={styles.linkRow}>
+          <Link href="/resources">Public Resources</Link>
+          <Link href="/insights">Related Insights</Link>
+        </div>
+      </section>
+    </W7ReviewShell>
+  );
+}

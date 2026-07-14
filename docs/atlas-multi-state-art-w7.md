@@ -1,5 +1,7 @@
 # Atlas Multi-State Candidate Art W7
 
+> W7.1 recognition audit: all Plateau candidates passed unchanged. Ogun Gateway `ILL-0080`, Contact `ILL-0081`, and Booking `ILL-0082` are superseded by granite- and infrastructure-led `ILL-0083`, `ILL-0084`, and `ILL-0085`. See `docs/atlas-state-recognition-audit-w7-1.md`.
+
 ## Research and reasoning
 
 Sources: the binding multi-state decision; complete Atlas foundation, world, visual-language, experience, illustration-production and website handoff documents; and W0–W6 implementation records. Plateau uses contemporary highland research terraces, granite, long sightlines, mist, field notes, maps and practical observation to express perspective without tourism. Ogun uses working thresholds, route choice, meeting courts, preparation registers, warm earth, timber and steel to express practical beginnings without industrial or transit spectacle.

@@ -2,29 +2,40 @@
   "assetId": "ILL-0092",
   "name": "Plateau Resources master candidate",
   "state": "plateau",
+  "route": "/internal/atlas-resources",
   "district": "resources",
   "status": "candidate",
   "generationDate": "2026-07-14",
-  "method": "OpenAI built-in image generation",
+  "generationMethod": "OpenAI built-in image generation",
   "sources": [
     {
       "file": "source/ILL-0092_plateau-resources-master_source-desktop_v01.png",
-      "composition": "desktop",
-      "width": 1672,
-      "height": 941
+      "dimensions": "1672x941",
+      "composition": "desktop"
     },
     {
       "file": "source/ILL-0092_plateau-resources-master_source-mobile_v01.png",
-      "composition": "mobile",
-      "width": 897,
-      "height": 1752
+      "dimensions": "897x1752",
+      "composition": "mobile"
     }
   ],
   "derivatives": [
-    "web/ILL-0092_plateau-resources_desktop_1440x811_v01.webp",
-    "web/ILL-0092_plateau-resources_tablet_1024x768_v01.webp",
-    "web/ILL-0092_plateau-resources_mobile_960x1200_v01.webp",
-    "web/ILL-0092_plateau-resources_thumbnail_480x270_v01.webp"
+    {
+      "file": "web/ILL-0092_plateau-resources_desktop_1440x811_v01.webp",
+      "dimensions": "1440x811"
+    },
+    {
+      "file": "web/ILL-0092_plateau-resources_tablet_1024x768_v01.webp",
+      "dimensions": "1024x768"
+    },
+    {
+      "file": "web/ILL-0092_plateau-resources_mobile_960x1200_v01.webp",
+      "dimensions": "960x1200"
+    },
+    {
+      "file": "web/ILL-0092_plateau-resources_thumbnail_480x270_v01.webp",
+      "dimensions": "480x270"
+    }
   ],
   "focalPoints": {
     "desktop": "68% 55%",
@@ -36,10 +47,64 @@
     "tablet": "left",
     "mobile": "top"
   },
-  "knownDefects": [
-    "Cultural and architectural review required",
-    "Small anatomy and resource geometry require inspection",
-    "Fictional composite place",
-    "No separable layers"
-  ]
+  "researchSources": [
+    "decisions/2026-07-14-state-recognition-and-infrastructure-standard.md",
+    "decisions/2026-07-14-multi-state-internal-page-identity.md"
+  ],
+  "geographicAnchor": "Plateau highland shelves, stone terraces and layered horizon",
+  "infrastructureAnchor": "Field library, archive shelves and map-handling routes",
+  "activityAnchor": "People organise guides, archive boxes, maps and practical references",
+  "materialAnchor": "Local-looking stone, timber shelves, grasses and paper",
+  "recognitionExplanation": "The field library is materially embedded in the highland terrace and reads without labels.",
+  "infrastructureCompositionRole": "Terraces and shelves organise the movement of field material from storage to use.",
+  "sensitivities": [
+    "Candidate remains private and non-publishable",
+    "No exact sacred, royal or protected place is represented"
+  ],
+  "simplifiedOrExcluded": [
+    "No readable generated signage",
+    "No public claims, logos or exact monument reconstruction",
+    "No decorative-only state label dependency"
+  ],
+  "accuracyRisks": [
+    "Fictional composite",
+    "Resource and anatomy geometry requires inspection"
+  ],
+  "desktopAnchorSurvival": "pass",
+  "mobileAnchorSurvival": "pass",
+  "hiddenLabelRecognition": "pass",
+  "anatomyDefects": "No blocking defect observed at audit scale; hands, tools, rail and paper geometry remain owner-review items.",
+  "generatedTextDefects": "No readable generated text accepted as page content; abstract marks remain non-semantic.",
+  "ownerReviewStatus": "pending",
+  "culturalReviewStatus": "pending",
+  "finalAuditOutcome": "pass",
+  "anchorRationale": {
+    "geography": "The field library is materially embedded in the highland terrace and reads without labels.",
+    "infrastructure": "Terraces and shelves organise the movement of field material from storage to use.",
+    "activity": "The depicted contemporary work directly supports the resources route rather than acting as background theatre.",
+    "materials": "The recorded palette and construction system reinforce the geographic and infrastructure anchors without relying on labels."
+  },
+  "culturalOrInstitutionalSensitivities": [
+    "Fictional composite",
+    "Resource and anatomy geometry requires inspection"
+  ],
+  "simplifications": [
+    "Geography and urban form are respectfully simplified into a fictional composite",
+    "Small people, documents, tools and transport are illustrative rather than documentary"
+  ],
+  "deliberateExclusions": [
+    "Exact sacred, royal, protected or institutional sites",
+    "Readable generated text, logos, flags and claims",
+    "Tourism, costume and monument-poster treatment"
+  ],
+  "landmarkInfrastructureAccuracyRisks": [
+    "Fictional composite",
+    "Resource and anatomy geometry requires inspection"
+  ],
+  "anatomyAndGeneratedTextDefects": {
+    "anatomy": "No blocking defect observed at audit scale; hands, tools, rail and paper geometry remain owner-review items.",
+    "generatedText": "No readable generated text accepted as page content; abstract marks remain non-semantic."
+  },
+  "originalAuditOutcome": "pass",
+  "correctionPerformed": "Original candidate retained after desktop and mobile hidden-label review."
 }

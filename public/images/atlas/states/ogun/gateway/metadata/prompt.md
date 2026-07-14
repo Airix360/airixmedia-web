@@ -1,2 +1,5 @@
-# ILL-0080 prompts
-Desktop: contemporary Ogun project-entry pavilion at a practical road/rail and workshop threshold; people review blank briefs, choose abstract routes and prepare work; left copy field. Mobile: separately authored vertical open threshold, route board and project table. Shared Atlas Gongbi-influenced ink and risograph language. No readable text, ceremonial gate, border cliché, travel poster, factory smoke, handshake, photorealism, CGI, logos, flags or watermarks.
+# ILL-0083 generation prompts
+
+Desktop: wide contemporary Nigerian gongbi illustration of a fictional Abeokuta project gateway. A substantial layered granite outcrop forces a working rail line, road approach, route pavilion and pedestrian handoff to bend around it while teams arrive with folios and choose routes. Action sits right/centre with calm left copy space. Mobile: separately authored portrait gateway retaining rock, rail, pavilion and activity beneath a calm upper field.
+
+Controls: fictional composite, deliberately not Olumo Rock; no tourism, sacred or royal place, readable text, logo, flag, photorealism, CGI, futuristic city, floating UI or gradients.

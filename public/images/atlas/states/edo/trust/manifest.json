@@ -1,22 +1,112 @@
 {
-  "assetId": "ILL-0070",
-  "name": "Edo Trust master candidate",
+  "assetId": "ILL-0071",
+  "originalAssetId": "ILL-0070",
+  "supersedes": "ILL-0070",
+  "name": "Edo Trust radial-record candidate",
   "state": "edo",
+  "route": "/internal/atlas-trust",
   "district": "trust",
   "status": "candidate",
   "generationDate": "2026-07-14",
   "generationMethod": "OpenAI built-in image generation",
   "sources": [
-    { "file": "source/ILL-0070_edo-trust-master_source-desktop_1672x941_v01.png", "dimensions": "1672x941", "composition": "desktop" },
-    { "file": "source/ILL-0070_edo-trust-master_source-mobile_1003x1568_v01.png", "dimensions": "1003x1568", "composition": "mobile" }
+    {
+      "file": "source/ILL-0071_edo-trust-master_source-desktop_1721x914_v01.png",
+      "dimensions": "1721x914",
+      "composition": "desktop"
+    },
+    {
+      "file": "source/ILL-0071_edo-trust-master_source-mobile_968x1625_v01.png",
+      "dimensions": "968x1625",
+      "composition": "mobile"
+    }
   ],
   "derivatives": [
-    { "file": "web/ILL-0070_edo-trust_desktop_1440x811_v01.webp", "dimensions": "1440x811" },
-    { "file": "web/ILL-0070_edo-trust_tablet_1024x768_v01.webp", "dimensions": "1024x768" },
-    { "file": "web/ILL-0070_edo-trust_mobile_960x1200_v01.webp", "dimensions": "960x1200" },
-    { "file": "web/ILL-0070_edo-trust_thumbnail_480x270_v01.webp", "dimensions": "480x270" }
+    {
+      "file": "web/ILL-0071_edo-trust_desktop_1440x811_v01.webp",
+      "dimensions": "1440x811"
+    },
+    {
+      "file": "web/ILL-0071_edo-trust_tablet_1024x768_v01.webp",
+      "dimensions": "1024x768"
+    },
+    {
+      "file": "web/ILL-0071_edo-trust_mobile_960x1200_v01.webp",
+      "dimensions": "960x1200"
+    },
+    {
+      "file": "web/ILL-0071_edo-trust_thumbnail_480x270_v01.webp",
+      "dimensions": "480x270"
+    }
   ],
-  "focalPoints": { "desktop": "44% 54%", "tablet": "48% 55%", "mobile": "50% 66%" },
-  "safeZones": { "desktop": "right", "tablet": "right", "mobile": "top" },
-  "knownDefects": ["Candidate requires cultural and architectural review", "Document and cabinet detail requires artefact inspection", "The tree and record hall are illustrative rather than a verified place", "No separable motion layers were generated"]
+  "focalPoints": {
+    "desktop": "44% 54%",
+    "tablet": "48% 55%",
+    "mobile": "50% 66%"
+  },
+  "safeZones": {
+    "desktop": "right",
+    "tablet": "right",
+    "mobile": "top"
+  },
+  "researchSources": [
+    "decisions/2026-07-14-state-recognition-and-infrastructure-standard.md",
+    "decisions/2026-07-14-multi-state-internal-page-identity.md"
+  ],
+  "geographicAnchor": "Benin City radial urban form expressed through a circular review court and archive spokes",
+  "infrastructureAnchor": "Four record-hall wings and document routes meet at the civic review table",
+  "activityAnchor": "Stewards inspect records, move archive carts and review responsibility",
+  "materialAnchor": "Warm brick, timber louvres, pale stone and cultivated courtyards",
+  "recognitionExplanation": "Circular evidence review and radial archive movement create an Edo-specific civic system without labels.",
+  "infrastructureCompositionRole": "Archive wings physically deliver records to the central accountability court.",
+  "sensitivities": [
+    "Candidate remains private and non-publishable",
+    "No exact sacred, royal or protected place is represented"
+  ],
+  "simplifiedOrExcluded": [
+    "No readable generated signage",
+    "No public claims, logos or exact monument reconstruction",
+    "No decorative-only state label dependency"
+  ],
+  "accuracyRisks": [
+    "Fictional composite; not a real archive",
+    "Avoid association with palace, royal or sacred forms"
+  ],
+  "desktopAnchorSurvival": "pass",
+  "mobileAnchorSurvival": "pass",
+  "hiddenLabelRecognition": "pass",
+  "anatomyDefects": "No blocking defect observed at audit scale; hands, tools, rail and paper geometry remain owner-review items.",
+  "generatedTextDefects": "No readable generated text accepted as page content; abstract marks remain non-semantic.",
+  "ownerReviewStatus": "pending",
+  "culturalReviewStatus": "pending",
+  "finalAuditOutcome": "pass",
+  "anchorRationale": {
+    "geography": "Circular evidence review and radial archive movement create an Edo-specific civic system without labels.",
+    "infrastructure": "Archive wings physically deliver records to the central accountability court.",
+    "activity": "The depicted contemporary work directly supports the trust route rather than acting as background theatre.",
+    "materials": "The recorded palette and construction system reinforce the geographic and infrastructure anchors without relying on labels."
+  },
+  "culturalOrInstitutionalSensitivities": [
+    "Fictional composite; not a real archive",
+    "Avoid association with palace, royal or sacred forms"
+  ],
+  "simplifications": [
+    "Geography and urban form are respectfully simplified into a fictional composite",
+    "Small people, documents, tools and transport are illustrative rather than documentary"
+  ],
+  "deliberateExclusions": [
+    "Exact sacred, royal, protected or institutional sites",
+    "Readable generated text, logos, flags and claims",
+    "Tourism, costume and monument-poster treatment"
+  ],
+  "landmarkInfrastructureAccuracyRisks": [
+    "Fictional composite; not a real archive",
+    "Avoid association with palace, royal or sacred forms"
+  ],
+  "anatomyAndGeneratedTextDefects": {
+    "anatomy": "No blocking defect observed at audit scale; hands, tools, rail and paper geometry remain owner-review items.",
+    "generatedText": "No readable generated text accepted as page content; abstract marks remain non-semantic."
+  },
+  "originalAuditOutcome": "regenerate",
+  "correctionPerformed": "Regenerated separate desktop and mobile masters as ILL-0071."
 }

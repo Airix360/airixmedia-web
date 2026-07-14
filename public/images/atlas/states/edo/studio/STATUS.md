@@ -1,3 +1,3 @@
-# ILL-0050 status
+# ILL-0051 status
 
-**Candidate — private review only.** Generated 2026-07-14 with the built-in OpenAI image-generation capability. This is not an approved Atlas master, client evidence, a verified Airix office, or a claim about team size or location. Desktop and mobile are separately generated compositions. Owner, cultural, architectural, anatomy, crop, and performance approval remain required.
+**Regenerated candidate — private review only.** ILL-0051 supersedes ILL-0050 after the original failed hidden-label Edo recognition. Its circular court and radial work routes now pass the internal recognition audit. It is not an approved master, verified place, royal or sacred site, client evidence, or Airix facility. Owner and Edo cultural review remain pending.

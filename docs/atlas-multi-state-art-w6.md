@@ -1,5 +1,7 @@
 # Atlas Multi-State Candidate Art W6
 
+> W7.1 recognition audit: Edo Studio `ILL-0050` and Trust `ILL-0070` failed label-independent recognition and are superseded by `ILL-0051` and `ILL-0071`. Kaduna Labs `ILL-0060` passed unchanged. See `docs/atlas-state-recognition-audit-w7-1.md`.
+
 ## Decision and research basis
 
 The binding source is `decisions/2026-07-14-multi-state-internal-page-identity.md` in `thathman/-airix-atlas`: Edo owns Studio, Trust, company, process, principles, branding, and design; Kaduna owns Labs, open source, APIs, plugins, and experiments. The following creative-source documents were also used: `README.md`, `GOVERNANCE.md`, relevant `01-foundation/` files, `02-world/atlas-world.md`, `02-world/states-and-districts.md`, `02-world/visitor-journey.md`, `02-world/symbolism.md`, relevant `03-visual-language/`, `04-experience/`, and `05-illustration-production/` files, and the complete specified `06-website/` handoff set. W0–W5 implementation records supplied runtime and carried-limit context.

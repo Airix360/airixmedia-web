@@ -1,30 +1,43 @@
 {
-  "assetId": "ILL-0081",
-  "name": "Ogun Contact master candidate",
+  "assetId": "ILL-0084",
+  "originalAssetId": "ILL-0081",
+  "supersedes": "ILL-0081",
+  "name": "Ogun granite Contact candidate",
   "state": "ogun",
+  "route": "/internal/atlas-contact",
   "district": "contact",
   "status": "candidate",
   "generationDate": "2026-07-14",
-  "method": "OpenAI built-in image generation",
+  "generationMethod": "OpenAI built-in image generation",
   "sources": [
     {
-      "file": "source/ILL-0081_ogun-contact-master_source-desktop_v01.png",
-      "composition": "desktop",
-      "width": 1672,
-      "height": 941
+      "file": "source/ILL-0084_ogun-contact-master_source-desktop_v01.png",
+      "dimensions": "1672x941",
+      "composition": "desktop"
     },
     {
-      "file": "source/ILL-0081_ogun-contact-master_source-mobile_v01.png",
-      "composition": "mobile",
-      "width": 1003,
-      "height": 1568
+      "file": "source/ILL-0084_ogun-contact-master_source-mobile_v01.png",
+      "dimensions": "1003x1568",
+      "composition": "mobile"
     }
   ],
   "derivatives": [
-    "web/ILL-0081_ogun-contact_desktop_1440x811_v01.webp",
-    "web/ILL-0081_ogun-contact_tablet_1024x768_v01.webp",
-    "web/ILL-0081_ogun-contact_mobile_960x1200_v01.webp",
-    "web/ILL-0081_ogun-contact_thumbnail_480x270_v01.webp"
+    {
+      "file": "web/ILL-0084_ogun-contact_desktop_1440x811_v01.webp",
+      "dimensions": "1440x811"
+    },
+    {
+      "file": "web/ILL-0084_ogun-contact_tablet_1024x768_v01.webp",
+      "dimensions": "1024x768"
+    },
+    {
+      "file": "web/ILL-0084_ogun-contact_mobile_960x1200_v01.webp",
+      "dimensions": "960x1200"
+    },
+    {
+      "file": "web/ILL-0084_ogun-contact_thumbnail_480x270_v01.webp",
+      "dimensions": "480x270"
+    }
   ],
   "focalPoints": {
     "desktop": "38% 56%",
@@ -36,10 +49,66 @@
     "tablet": "right",
     "mobile": "top"
   },
-  "knownDefects": [
-    "Cultural and architectural review required",
-    "Small anatomy and paper geometry require inspection",
-    "Fictional composite place",
-    "No separable layers"
-  ]
+  "researchSources": [
+    "decisions/2026-07-14-state-recognition-and-infrastructure-standard.md",
+    "decisions/2026-07-14-multi-state-internal-page-identity.md",
+    "https://olumorock.ogunstate.gov.ng/about.html",
+    "https://nrc.gov.ng/schedules/"
+  ],
+  "geographicAnchor": "Abeokuta-like granite edge and rocky city horizon",
+  "infrastructureAnchor": "Meeting court, rail siding, road handoff and stepped threshold wrap the rock",
+  "activityAnchor": "People arrive, exchange a brief and review drawings in direct consultation",
+  "materialAnchor": "Granite retaining walls, timber shade, rail steel and restrained planting",
+  "recognitionExplanation": "The meeting court only works because rail and road negotiate the granite terrain.",
+  "infrastructureCompositionRole": "Transport handoffs deliver people and project material directly into conversation.",
+  "sensitivities": [
+    "Candidate remains private and non-publishable",
+    "No exact sacred, royal or protected place is represented"
+  ],
+  "simplifiedOrExcluded": [
+    "No readable generated signage",
+    "No public claims, logos or exact monument reconstruction",
+    "No decorative-only state label dependency"
+  ],
+  "accuracyRisks": [
+    "Fictional composite; deliberately not Olumo Rock",
+    "Train and vehicle details require final anatomy inspection"
+  ],
+  "desktopAnchorSurvival": "pass",
+  "mobileAnchorSurvival": "pass",
+  "hiddenLabelRecognition": "pass",
+  "anatomyDefects": "No blocking defect observed at audit scale; hands, tools, rail and paper geometry remain owner-review items.",
+  "generatedTextDefects": "No readable generated text accepted as page content; abstract marks remain non-semantic.",
+  "ownerReviewStatus": "pending",
+  "culturalReviewStatus": "pending",
+  "finalAuditOutcome": "pass",
+  "anchorRationale": {
+    "geography": "The meeting court only works because rail and road negotiate the granite terrain.",
+    "infrastructure": "Transport handoffs deliver people and project material directly into conversation.",
+    "activity": "The depicted contemporary work directly supports the contact route rather than acting as background theatre.",
+    "materials": "The recorded palette and construction system reinforce the geographic and infrastructure anchors without relying on labels."
+  },
+  "culturalOrInstitutionalSensitivities": [
+    "Fictional composite; deliberately not Olumo Rock",
+    "Train and vehicle details require final anatomy inspection"
+  ],
+  "simplifications": [
+    "Geography and urban form are respectfully simplified into a fictional composite",
+    "Small people, documents, tools and transport are illustrative rather than documentary"
+  ],
+  "deliberateExclusions": [
+    "Exact sacred, royal, protected or institutional sites",
+    "Readable generated text, logos, flags and claims",
+    "Tourism, costume and monument-poster treatment"
+  ],
+  "landmarkInfrastructureAccuracyRisks": [
+    "Fictional composite; deliberately not Olumo Rock",
+    "Train and vehicle details require final anatomy inspection"
+  ],
+  "anatomyAndGeneratedTextDefects": {
+    "anatomy": "No blocking defect observed at audit scale; hands, tools, rail and paper geometry remain owner-review items.",
+    "generatedText": "No readable generated text accepted as page content; abstract marks remain non-semantic."
+  },
+  "originalAuditOutcome": "regenerate",
+  "correctionPerformed": "Regenerated separate desktop and mobile masters as ILL-0084."
 }

@@ -1,2 +1,2 @@
-# ILL-0081 status
-**Candidate — private review only.** Generated 2026-07-14 with OpenAI built-in image generation. Not an approved master, real Airix office, address, staff record, or contact-service claim. Owner, Ogun cultural, architectural, anatomy, crop, text-artefact, rights, and performance review required.
+# ILL-0084 status
+**Regenerated candidate — private review only.** ILL-0084 supersedes ILL-0081. The meeting court, rail siding and road handoff now negotiate granite terrain and pass hidden-label recognition. This fictional composite is deliberately not Olumo Rock and is not an office, address, staff, transport, tourism or service claim. Owner and Ogun cultural review remain pending.

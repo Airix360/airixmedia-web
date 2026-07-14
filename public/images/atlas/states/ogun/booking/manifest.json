@@ -1,30 +1,43 @@
 {
-  "assetId": "ILL-0082",
-  "name": "Ogun Booking master candidate",
+  "assetId": "ILL-0085",
+  "originalAssetId": "ILL-0082",
+  "supersedes": "ILL-0082",
+  "name": "Ogun granite Booking candidate",
   "state": "ogun",
+  "route": "/internal/atlas-booking",
   "district": "booking",
   "status": "candidate",
   "generationDate": "2026-07-14",
-  "method": "OpenAI built-in image generation",
+  "generationMethod": "OpenAI built-in image generation",
   "sources": [
     {
-      "file": "source/ILL-0082_ogun-booking-master_source-desktop_v01.png",
-      "composition": "desktop",
-      "width": 1672,
-      "height": 941
+      "file": "source/ILL-0085_ogun-booking-master_source-desktop_v01.png",
+      "dimensions": "1672x941",
+      "composition": "desktop"
     },
     {
-      "file": "source/ILL-0082_ogun-booking-master_source-mobile_v01.png",
-      "composition": "mobile",
-      "width": 971,
-      "height": 1619
+      "file": "source/ILL-0085_ogun-booking-master_source-mobile_v01.png",
+      "dimensions": "1003x1568",
+      "composition": "mobile"
     }
   ],
   "derivatives": [
-    "web/ILL-0082_ogun-booking_desktop_1440x811_v01.webp",
-    "web/ILL-0082_ogun-booking_tablet_1024x768_v01.webp",
-    "web/ILL-0082_ogun-booking_mobile_960x1200_v01.webp",
-    "web/ILL-0082_ogun-booking_thumbnail_480x270_v01.webp"
+    {
+      "file": "web/ILL-0085_ogun-booking_desktop_1440x811_v01.webp",
+      "dimensions": "1440x811"
+    },
+    {
+      "file": "web/ILL-0085_ogun-booking_tablet_1024x768_v01.webp",
+      "dimensions": "1024x768"
+    },
+    {
+      "file": "web/ILL-0085_ogun-booking_mobile_960x1200_v01.webp",
+      "dimensions": "960x1200"
+    },
+    {
+      "file": "web/ILL-0085_ogun-booking_thumbnail_480x270_v01.webp",
+      "dimensions": "480x270"
+    }
   ],
   "focalPoints": {
     "desktop": "42% 58%",
@@ -36,10 +49,66 @@
     "tablet": "right",
     "mobile": "top"
   },
-  "knownDefects": [
-    "Cultural and architectural review required",
-    "Small anatomy and register geometry require inspection",
-    "Fictional composite place",
-    "No separable layers"
-  ]
+  "researchSources": [
+    "decisions/2026-07-14-state-recognition-and-infrastructure-standard.md",
+    "decisions/2026-07-14-multi-state-internal-page-identity.md",
+    "https://olumorock.ogunstate.gov.ng/about.html",
+    "https://nrc.gov.ng/schedules/"
+  ],
+  "geographicAnchor": "Abeokuta-like granite slope and rocky urban horizon",
+  "infrastructureAnchor": "Preparation rooms, covered rail platform and stepped road route are cut into the slope",
+  "activityAnchor": "Teams organise folios, samples and timing before a consultation",
+  "materialAnchor": "Granite, concrete, timber joinery, paper and muted vegetation",
+  "recognitionExplanation": "Rock-shaped preparation rooms and connected routes remain Ogun-specific without labels.",
+  "infrastructureCompositionRole": "The slope sequences arrival, preparation and consultation through rail and stepped road thresholds.",
+  "sensitivities": [
+    "Candidate remains private and non-publishable",
+    "No exact sacred, royal or protected place is represented"
+  ],
+  "simplifiedOrExcluded": [
+    "No readable generated signage",
+    "No public claims, logos or exact monument reconstruction",
+    "No decorative-only state label dependency"
+  ],
+  "accuracyRisks": [
+    "Fictional composite; deliberately not Olumo Rock",
+    "Abstract timetable must remain unreadable and non-operational"
+  ],
+  "desktopAnchorSurvival": "pass",
+  "mobileAnchorSurvival": "pass",
+  "hiddenLabelRecognition": "pass",
+  "anatomyDefects": "No blocking defect observed at audit scale; hands, tools, rail and paper geometry remain owner-review items.",
+  "generatedTextDefects": "No readable generated text accepted as page content; abstract marks remain non-semantic.",
+  "ownerReviewStatus": "pending",
+  "culturalReviewStatus": "pending",
+  "finalAuditOutcome": "pass",
+  "anchorRationale": {
+    "geography": "Rock-shaped preparation rooms and connected routes remain Ogun-specific without labels.",
+    "infrastructure": "The slope sequences arrival, preparation and consultation through rail and stepped road thresholds.",
+    "activity": "The depicted contemporary work directly supports the booking route rather than acting as background theatre.",
+    "materials": "The recorded palette and construction system reinforce the geographic and infrastructure anchors without relying on labels."
+  },
+  "culturalOrInstitutionalSensitivities": [
+    "Fictional composite; deliberately not Olumo Rock",
+    "Abstract timetable must remain unreadable and non-operational"
+  ],
+  "simplifications": [
+    "Geography and urban form are respectfully simplified into a fictional composite",
+    "Small people, documents, tools and transport are illustrative rather than documentary"
+  ],
+  "deliberateExclusions": [
+    "Exact sacred, royal, protected or institutional sites",
+    "Readable generated text, logos, flags and claims",
+    "Tourism, costume and monument-poster treatment"
+  ],
+  "landmarkInfrastructureAccuracyRisks": [
+    "Fictional composite; deliberately not Olumo Rock",
+    "Abstract timetable must remain unreadable and non-operational"
+  ],
+  "anatomyAndGeneratedTextDefects": {
+    "anatomy": "No blocking defect observed at audit scale; hands, tools, rail and paper geometry remain owner-review items.",
+    "generatedText": "No readable generated text accepted as page content; abstract marks remain non-semantic."
+  },
+  "originalAuditOutcome": "regenerate",
+  "correctionPerformed": "Regenerated separate desktop and mobile masters as ILL-0085."
 }

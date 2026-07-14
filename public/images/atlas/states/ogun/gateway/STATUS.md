@@ -1,2 +1,2 @@
-# ILL-0080 status
-**Candidate — private review only.** Generated 2026-07-14 with OpenAI built-in image generation. Not an approved master, real transport facility, office, government endorsement, or client-engagement record. Owner, Ogun cultural, architectural, anatomy, crop, text-artefact, rights, and performance review required.
+# ILL-0083 status
+**Regenerated candidate — private review only.** ILL-0083 supersedes ILL-0080. Granite terrain now redirects rail, road, pavilion and pedestrian handoff, passing the hidden-label audit. This fictional composite is deliberately not Olumo Rock and is not a transport, tourism, sacred-site, office, government or engagement claim. Owner and Ogun cultural review remain pending.

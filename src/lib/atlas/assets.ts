@@ -100,33 +100,33 @@ export const atlasScenes = Object.fromEntries(
 const stateRoot = `${atlasRoot}/states` as const;
 
 Object.assign(atlasScenes, {
-  "ill-0050": {
-    id: "ill-0050", name: "Edo Studio master candidate", district: "studio", state: "edo", status: "candidate",
-    master: `${stateRoot}/edo/studio/source/ILL-0050_edo-studio-master_source-desktop_1672x941_v01.png`,
+  "ill-0051": {
+    id: "ill-0051", name: "Edo Studio radial-city candidate", district: "studio", state: "edo", status: "candidate",
+    master: `${stateRoot}/edo/studio/source/ILL-0051_edo-studio-master_source-desktop_1672x941_v01.png`,
     responsive: {
-      desktop: `${stateRoot}/edo/studio/web/ILL-0050_edo-studio_desktop_1440x811_v01.webp`,
-      tablet: `${stateRoot}/edo/studio/web/ILL-0050_edo-studio_tablet_1024x768_v01.webp`,
-      mobile: `${stateRoot}/edo/studio/web/ILL-0050_edo-studio_mobile_960x1200_v01.webp`,
-      social: `${stateRoot}/edo/studio/web/ILL-0050_edo-studio_desktop_1440x811_v01.webp`,
-      thumbnail: `${stateRoot}/edo/studio/web/ILL-0050_edo-studio_thumbnail_480x270_v01.webp`,
-    }, layers: [], fallback: `${stateRoot}/edo/studio/web/ILL-0050_edo-studio_thumbnail_480x270_v01.webp`,
+      desktop: `${stateRoot}/edo/studio/web/ILL-0051_edo-studio_desktop_1440x811_v01.webp`,
+      tablet: `${stateRoot}/edo/studio/web/ILL-0051_edo-studio_tablet_1024x768_v01.webp`,
+      mobile: `${stateRoot}/edo/studio/web/ILL-0051_edo-studio_mobile_960x1200_v01.webp`,
+      social: `${stateRoot}/edo/studio/web/ILL-0051_edo-studio_desktop_1440x811_v01.webp`,
+      thumbnail: `${stateRoot}/edo/studio/web/ILL-0051_edo-studio_thumbnail_480x270_v01.webp`,
+    }, layers: [], fallback: `${stateRoot}/edo/studio/web/ILL-0051_edo-studio_thumbnail_480x270_v01.webp`,
     focalPoint: "72% 52%", focalPoints: { desktop: "72% 52%", tablet: "65% 54%", mobile: "50% 66%" },
     safeZones: { desktop: "left", tablet: "left", mobile: "top" }, desktopSafeZone: "left", mobileSafeZone: "top",
-    alt: "A contemporary Edo creative compound where people review drawings, prototypes, material samples and digital work around a shared workshop table.",
+    alt: "A circular workshop court sends covered work bays and pedestrian routes outward like spokes while makers review drawings and prototypes.",
   },
-  "ill-0070": {
-    id: "ill-0070", name: "Edo Trust master candidate", district: "studio", state: "edo", status: "candidate",
-    master: `${stateRoot}/edo/trust/source/ILL-0070_edo-trust-master_source-desktop_1672x941_v01.png`,
+  "ill-0071": {
+    id: "ill-0071", name: "Edo Trust radial-record candidate", district: "studio", state: "edo", status: "candidate",
+    master: `${stateRoot}/edo/trust/source/ILL-0071_edo-trust-master_source-desktop_1721x914_v01.png`,
     responsive: {
-      desktop: `${stateRoot}/edo/trust/web/ILL-0070_edo-trust_desktop_1440x811_v01.webp`,
-      tablet: `${stateRoot}/edo/trust/web/ILL-0070_edo-trust_tablet_1024x768_v01.webp`,
-      mobile: `${stateRoot}/edo/trust/web/ILL-0070_edo-trust_mobile_960x1200_v01.webp`,
-      social: `${stateRoot}/edo/trust/web/ILL-0070_edo-trust_desktop_1440x811_v01.webp`,
-      thumbnail: `${stateRoot}/edo/trust/web/ILL-0070_edo-trust_thumbnail_480x270_v01.webp`,
-    }, layers: [], fallback: `${stateRoot}/edo/trust/web/ILL-0070_edo-trust_thumbnail_480x270_v01.webp`,
+      desktop: `${stateRoot}/edo/trust/web/ILL-0071_edo-trust_desktop_1440x811_v01.webp`,
+      tablet: `${stateRoot}/edo/trust/web/ILL-0071_edo-trust_tablet_1024x768_v01.webp`,
+      mobile: `${stateRoot}/edo/trust/web/ILL-0071_edo-trust_mobile_960x1200_v01.webp`,
+      social: `${stateRoot}/edo/trust/web/ILL-0071_edo-trust_desktop_1440x811_v01.webp`,
+      thumbnail: `${stateRoot}/edo/trust/web/ILL-0071_edo-trust_thumbnail_480x270_v01.webp`,
+    }, layers: [], fallback: `${stateRoot}/edo/trust/web/ILL-0071_edo-trust_thumbnail_480x270_v01.webp`,
     focalPoint: "44% 54%", focalPoints: { desktop: "44% 54%", tablet: "48% 55%", mobile: "50% 66%" },
     safeZones: { desktop: "right", tablet: "right", mobile: "top" }, desktopSafeZone: "right", mobileSafeZone: "top",
-    alt: "A contemporary Edo record hall and shaded courtyard where people examine evidence, maintain records and document responsibility.",
+    alt: "A circular evidence court connects radial archive wings where people examine records, move document carts and review responsibility together.",
   },
   "ill-0060": {
     id: "ill-0060", name: "Kaduna Labs master candidate", district: "labs", state: "kaduna", status: "candidate",
@@ -140,19 +140,19 @@ Object.assign(atlasScenes, {
     }, layers: [], fallback: `${stateRoot}/kaduna/labs/web/ILL-0060_kaduna-labs_thumbnail_480x270_v01.webp`,
     focalPoint: "38% 58%", focalPoints: { desktop: "38% 58%", tablet: "44% 58%", mobile: "56% 66%" },
     safeZones: { desktop: "right", tablet: "right", mobile: "top" }, desktopSafeZone: "right", mobileSafeZone: "top",
-    alt: "A contemporary Kaduna engineering yard where people assemble, test, repair and document prototypes beside rail-inspired routes.",
+    alt: "A dry-season red-earth engineering yard where people assemble, test, repair and document prototypes beside rail-inspired service routes.",
   },
 } satisfies Record<string, AtlasSceneAsset>);
 
 function w7StateScene({id,name,state,district,slug,safe,alt,focal}:{id:string;name:string;state:"plateau"|"ogun";district:"observatory"|"gateway";slug:string;safe:"left"|"right";alt:string;focal:AtlasSceneAsset["focalPoints"]}):AtlasSceneAsset { const base=`${stateRoot}/${state}/${slug}` as const; const fileSlug=`${state}-${slug}`; return {id,name,state,district,status:"candidate",master:`${base}/source/${id}_${fileSlug}-master_source-desktop_v01.png`,responsive:{desktop:`${base}/web/${id}_${fileSlug}_desktop_1440x811_v01.webp`,tablet:`${base}/web/${id}_${fileSlug}_tablet_1024x768_v01.webp`,mobile:`${base}/web/${id}_${fileSlug}_mobile_960x1200_v01.webp`,social:`${base}/web/${id}_${fileSlug}_desktop_1440x811_v01.webp`,thumbnail:`${base}/web/${id}_${fileSlug}_thumbnail_480x270_v01.webp`},layers:[],fallback:`${base}/web/${id}_${fileSlug}_thumbnail_480x270_v01.webp`,focalPoint:focal.desktop,focalPoints:focal,safeZones:{desktop:safe,tablet:safe,mobile:"top"},desktopSafeZone:safe,mobileSafeZone:"top",alt}; }
 
 Object.assign(atlasScenes,{
-  "ill-0090":w7StateScene({id:"ILL-0090",name:"Plateau Observatory master candidate",state:"plateau",district:"observatory",slug:"observatory",safe:"left",focal:{desktop:"70% 55%",tablet:"64% 56%",mobile:"52% 68%"},alt:"A contemporary Plateau research terrace where people compare field maps and observe routes across layered highland horizons."}),
-  "ill-0091":w7StateScene({id:"ILL-0091",name:"Plateau Insights master candidate",state:"plateau",district:"observatory",slug:"insights",safe:"right",focal:{desktop:"42% 56%",tablet:"45% 58%",mobile:"48% 70%"},alt:"A contemporary Plateau editorial terrace where researchers compare field notes, maps and evidence before publication."}),
-  "ill-0092":w7StateScene({id:"ILL-0092",name:"Plateau Resources master candidate",state:"plateau",district:"observatory",slug:"resources",safe:"left",focal:{desktop:"68% 55%",tablet:"62% 56%",mobile:"54% 68%"},alt:"A contemporary Plateau field library where people organise maps, archive boxes, guides and practical reference material."}),
-  "ill-0080":w7StateScene({id:"ILL-0080",name:"Ogun Gateway master candidate",state:"ogun",district:"gateway",slug:"gateway",safe:"left",focal:{desktop:"68% 56%",tablet:"62% 58%",mobile:"54% 68%"},alt:"A contemporary Ogun project-entry pavilion where people review briefs, choose routes and prepare to begin work."}),
-  "ill-0081":w7StateScene({id:"ILL-0081",name:"Ogun Contact master candidate",state:"ogun",district:"gateway",slug:"contact",safe:"right",focal:{desktop:"38% 56%",tablet:"44% 58%",mobile:"50% 70%"},alt:"A shaded contemporary Ogun meeting court where people discuss enquiries around a practical working table."}),
-  "ill-0082":w7StateScene({id:"ILL-0082",name:"Ogun Booking master candidate",state:"ogun",district:"gateway",slug:"booking",safe:"right",focal:{desktop:"42% 58%",tablet:"46% 58%",mobile:"50% 72%"},alt:"A contemporary Ogun preparation room where people review project notes and a scheduling register before a meeting."}),
+  "ill-0090":w7StateScene({id:"ILL-0090",name:"Plateau Observatory master candidate",state:"plateau",district:"observatory",slug:"observatory",safe:"left",focal:{desktop:"70% 55%",tablet:"64% 56%",mobile:"52% 68%"},alt:"A highland research terrace where people compare field maps and observe routes across layered stone escarpments and distant horizons."}),
+  "ill-0091":w7StateScene({id:"ILL-0091",name:"Plateau Insights master candidate",state:"plateau",district:"observatory",slug:"insights",safe:"right",focal:{desktop:"42% 56%",tablet:"45% 58%",mobile:"48% 70%"},alt:"A highland editorial terrace where researchers compare field notes, maps and evidence against layered stone escarpments before publication."}),
+  "ill-0092":w7StateScene({id:"ILL-0092",name:"Plateau Resources master candidate",state:"plateau",district:"observatory",slug:"resources",safe:"left",focal:{desktop:"68% 55%",tablet:"62% 56%",mobile:"54% 68%"},alt:"A terraced highland field library where people organise maps, archive boxes, guides and practical references among stone shelves."}),
+  "ill-0083":w7StateScene({id:"ILL-0083",name:"Ogun granite Gateway candidate",state:"ogun",district:"gateway",slug:"gateway",safe:"left",focal:{desktop:"72% 56%",tablet:"65% 58%",mobile:"52% 70%"},alt:"A rail line, road and project-entry pavilion bend around a layered granite outcrop as teams arrive with briefs and choose a working route."}),
+  "ill-0084":w7StateScene({id:"ILL-0084",name:"Ogun granite Contact candidate",state:"ogun",district:"gateway",slug:"contact",safe:"right",focal:{desktop:"34% 56%",tablet:"40% 58%",mobile:"50% 70%"},alt:"A meeting court built against layered granite receives people and project cases directly from a curving rail siding and road handoff lane."}),
+  "ill-0085":w7StateScene({id:"ILL-0085",name:"Ogun granite Booking candidate",state:"ogun",district:"gateway",slug:"booking",safe:"right",focal:{desktop:"35% 57%",tablet:"42% 58%",mobile:"50% 70%"},alt:"Preparation rooms cut into a granite slope connect to rail and stepped road routes while teams organise folios and consultation timing."}),
 } satisfies Record<string,AtlasSceneAsset>);
 
 const library = <T extends Record<string, Omit<AtlasLibraryAsset, "id">>>(entries: T) =>

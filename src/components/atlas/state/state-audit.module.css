@@ -1,0 +1,9 @@
+.hidden > header,
+.hidden > header + aside,
+.hidden > header + div,
+.hidden :global([data-atlas-state]),
+.hidden section[aria-labelledby] > span,
+.hidden section[aria-labelledby] > div:last-child {
+  opacity: 0;
+  pointer-events: none;
+}
