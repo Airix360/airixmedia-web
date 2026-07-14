@@ -16,6 +16,10 @@ describe("Atlas candidate asset registry", () => {
   it("denies candidate scenes and library material without an explicit review grant", () => {
     expect(() => getAtlasScene("ill-0001")).toThrow(CandidateAssetAccessError);
     expect(() => getAtlasLibraryAsset("atlasSignal")).toThrow(CandidateAssetAccessError);
+    expect(() => getAtlasScene("ill-0002")).toThrow(CandidateAssetAccessError);
+    expect(() => getAtlasScene("ill-0003")).toThrow(CandidateAssetAccessError);
+    expect(() => getAtlasLibraryAsset("commerceMarker")).toThrow(CandidateAssetAccessError);
+    expect(() => getAtlasLibraryAsset("knowledgeMarker")).toThrow(CandidateAssetAccessError);
   });
 
   it("returns complete responsive and layered scene data for internal review", () => {
@@ -49,6 +53,10 @@ describe("Atlas candidate asset registry", () => {
 
     expect(paths.some((path) => path.includes("/raw-generated/"))).toBe(false);
     expect(paths.some((path) => path.includes("/scenes/candidates/"))).toBe(false);
+  });
+
+  it("records the W2 Knowledge composition independently from its source crop", () => {
+    expect(getAtlasScene("ill-0002", internalReview).focalPoints).toEqual({ desktop: "72% 50%", tablet: "68% 50%", mobile: "66% 46%" });
   });
 
   it("resolves every registered path against the organised Atlas tree", () => {

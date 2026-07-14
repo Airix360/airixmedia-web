@@ -48,12 +48,17 @@ function candidateScene(definition: typeof sceneDefinitions[number]): AtlasScene
     tablet: "58% 48%",
     mobile: "56% 42%",
   } as const;
+  const knowledgeFocalPoints = {
+    desktop: "72% 50%",
+    tablet: "68% 50%",
+    mobile: "66% 46%",
+  } as const;
   const defaultFocalPoints = {
     desktop: "50% 50%",
     tablet: "50% 50%",
     mobile: "50% 50%",
   } as const;
-  const focalPoints = id === "ill-0001" ? arrivalFocalPoints : defaultFocalPoints;
+  const focalPoints = id === "ill-0001" ? arrivalFocalPoints : id === "ill-0002" ? knowledgeFocalPoints : defaultFocalPoints;
   return {
     id,
     name,
@@ -107,6 +112,8 @@ export const atlasAssetLibrary = library({
   bridge: { name: "Cable-stayed bridge", category: "landmarks", src: `${atlasRoot}/landmarks/05-cable-stayed-bridge.png`, status: "candidate", decorativeDefault: true },
   signFrame: { name: "Atlas sign frame", category: "streetDetails", src: `${atlasRoot}/street-details/01-atlas-sign-frame.png`, status: "candidate", decorativeDefault: true },
   arrivalMarker: { name: "Arrival district marker", category: "districtMarkers", src: `${atlasRoot}/markers/district/marker-01-arrival.svg`, status: "candidate", decorativeDefault: true },
+  knowledgeMarker: { name: "Knowledge district marker", category: "districtMarkers", src: `${atlasRoot}/markers/district/marker-02-knowledge.svg`, status: "candidate", decorativeDefault: true },
+  commerceMarker: { name: "Commerce district marker", category: "districtMarkers", src: `${atlasRoot}/markers/district/marker-03-commerce.svg`, status: "candidate", decorativeDefault: true },
   publishingIcon: { name: "Publishing icon", category: "icons", src: `${atlasRoot}/icons/svg/ico-005-book.svg`, status: "candidate", decorativeDefault: true },
   routeLegend: { name: "Atlas route legend", category: "wayfinding", src: `${atlasRoot}/wayfinding/legends/atlas-route-legend.svg`, status: "candidate", decorativeDefault: true },
   atlasLettering: { name: "Airix Atlas lettering", category: "graphics", src: `${atlasRoot}/graphics/lettering/lettering-01-airix-atlas.svg`, status: "candidate", decorativeDefault: true },
