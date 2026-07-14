@@ -1,0 +1,21 @@
+{
+  "version": "1.0.0.0",
+  "status": "candidate",
+  "source": {
+    "repository": "https://github.com/thathman/-airix-atlas",
+    "branch": "assets/atlas-public-w8",
+    "commit": "16fcb3ae818223a1b019b63d1e57e9193382647c",
+    "root": "w8-source"
+  },
+  "assets": [
+    { "id": "ILL-0100", "state": "oyo", "family": "publishing", "path": "oyo/publishing", "desktopSafeZone": "left", "mobileSafeZone": "top" },
+    { "id": "ILL-0101", "state": "oyo", "family": "ojs-workflow", "path": "oyo/ojs-workflow", "desktopSafeZone": "right", "mobileSafeZone": "top" },
+    { "id": "ILL-0102", "state": "oyo", "family": "migration", "path": "oyo/migration", "desktopSafeZone": "left", "mobileSafeZone": "top" },
+    { "id": "ILL-0103", "state": "oyo", "family": "open-source", "path": "oyo/open-source", "desktopSafeZone": "right", "mobileSafeZone": "top" },
+    { "id": "ILL-0110", "state": "rivers", "family": "infrastructure", "path": "rivers/infrastructure", "desktopSafeZone": "left", "mobileSafeZone": "top" },
+    { "id": "ILL-0111", "state": "rivers", "family": "support", "path": "rivers/support", "desktopSafeZone": "right", "mobileSafeZone": "top" },
+    { "id": "ILL-0112", "state": "rivers", "family": "emergency", "path": "rivers/emergency", "desktopSafeZone": "left", "mobileSafeZone": "top" },
+    { "id": "ILL-0120", "state": "lagos", "family": "arrival", "path": "lagos/arrival", "desktopSafeZone": "left", "mobileSafeZone": "top" }
+  ],
+  "approval": { "owner": "pending", "cultural": "pending", "rights": "pending" }
+}
