@@ -19,6 +19,26 @@
 .servicePathway footer a { min-width: 15rem; display: flex; align-items: center; justify-content: center; padding: 1rem 1.5rem; color: var(--atlas-color-paper-cream); background: var(--atlas-color-deep-umber); font: 650 .72rem/1.2 var(--atlas-font-wayfinding); text-decoration: none; }
 .servicePathway[data-evidence-status="proposed_internal"] footer strong { color: var(--atlas-color-terracotta); }
 
+.servicePathway[data-pathway-variant="knowledge"] {
+  grid-template-columns: minmax(7rem, .22fr) minmax(17rem, .62fr) minmax(0, 1.16fr);
+  margin-inline: clamp(1rem, 6vw, 6rem);
+  border: 1px solid var(--atlas-color-deep-umber);
+  border-bottom: 0;
+  background: color-mix(in srgb, var(--atlas-color-paper-cream) 88%, transparent);
+}
+.servicePathway[data-pathway-variant="knowledge"]:last-child { border-bottom: 1px solid var(--atlas-color-deep-umber); }
+.servicePathway[data-pathway-variant="knowledge"] .pathwayRoute { color: var(--atlas-color-lagoon-blue); background: var(--atlas-color-paper-aged); }
+.servicePathway[data-pathway-variant="knowledge"] > header { padding: clamp(2rem, 4vw, 4rem); }
+.servicePathway[data-pathway-variant="knowledge"] h2 { max-width: 12ch; font-family: var(--atlas-font-editorial); font-size: clamp(2.2rem, 4vw, 4.4rem); line-height: .94; }
+.servicePathway[data-pathway-variant="knowledge"] .pathwayCapabilities { grid-template-columns: 1fr; }
+.servicePathway[data-pathway-variant="knowledge"] .capabilityGroup { display: grid; grid-template-columns: minmax(8rem, .35fr) 1fr; gap: 0 2rem; padding: 1.4rem 2rem; border-right: 0; border-bottom: 1px solid var(--atlas-color-rule-strong); }
+.servicePathway[data-pathway-variant="knowledge"] .capabilityGroup:last-child { border-bottom: 0; }
+.servicePathway[data-pathway-variant="knowledge"] .capabilityGroup > span { grid-column: 1; }
+.servicePathway[data-pathway-variant="knowledge"] .capabilityGroup h3 { grid-column: 1; min-height: 0; margin-bottom: 0; }
+.servicePathway[data-pathway-variant="knowledge"] .capabilityGroup ul { grid-column: 2; grid-row: 1 / span 2; }
+.servicePathway[data-pathway-variant="knowledge"] .capabilityGroup li::before { background: var(--atlas-color-lagoon-blue); }
+.servicePathway[data-pathway-variant="knowledge"] footer a { background: var(--atlas-color-lagoon-blue); }
+
 @supports (animation-timeline: view()) {
   .pathwayRoute i { animation: serviceRoute both linear; animation-timeline: view(); animation-range: entry 10% cover 45%; }
 }
@@ -29,6 +49,7 @@
   .servicePathway > header { border-right: 0; }
   .pathwayCapabilities { grid-column: 2; border-top: 1px solid var(--atlas-color-charcoal-ink); }
   .servicePathway footer { grid-column: 2; }
+  .servicePathway[data-pathway-variant="knowledge"] { grid-template-columns: 3.5rem 1fr; }
 }
 
 @media (max-width: 700px) {
@@ -42,6 +63,9 @@
   .servicePathway footer { flex-direction: column; }
   .servicePathway footer > div { padding: 1.25rem 1rem; }
   .servicePathway footer a { min-width: 0; min-height: 3.5rem; justify-content: flex-start; }
+  .servicePathway[data-pathway-variant="knowledge"] { grid-template-columns: 2.75rem 1fr; margin-inline: 1rem; }
+  .servicePathway[data-pathway-variant="knowledge"] .capabilityGroup { grid-template-columns: 1fr; gap: 0; padding: 1.6rem 1rem; }
+  .servicePathway[data-pathway-variant="knowledge"] .capabilityGroup ul { grid-column: 1; grid-row: auto; margin-top: 1rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
