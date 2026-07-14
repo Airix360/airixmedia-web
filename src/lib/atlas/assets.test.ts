@@ -32,6 +32,8 @@ describe("Atlas candidate asset registry", () => {
     ]);
     expect(scene.fallback).toMatch(/preview\.jpg$/);
     expect(scene.alt).toBeTruthy();
+    expect(scene.focalPoints).toEqual({ desktop: "52% 50%", tablet: "58% 48%", mobile: "56% 42%" });
+    expect(scene.safeZones).toEqual({ desktop: "right", tablet: "right", mobile: "bottom" });
   });
 
   it("keeps forbidden raw and scene-candidate paths out of the runtime registry", () => {

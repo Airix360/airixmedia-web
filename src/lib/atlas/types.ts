@@ -16,6 +16,19 @@ export type AtlasCandidateAccess = "none" | "internal-review";
 export type AtlasSceneVariant = "desktop" | "tablet" | "mobile" | "social" | "thumbnail";
 export type AtlasSceneLayerRole = "atmosphere" | "distant-world" | "midground" | "surface" | "foreground";
 export type AtlasSafeZone = "left" | "right" | "top" | "bottom" | "none";
+export type AtlasFocalPoint = `${number}% ${number}%`;
+
+export interface AtlasResponsiveFocalPoints {
+  desktop: AtlasFocalPoint;
+  tablet: AtlasFocalPoint;
+  mobile: AtlasFocalPoint;
+}
+
+export interface AtlasResponsiveSafeZones {
+  desktop: AtlasSafeZone;
+  tablet: AtlasSafeZone;
+  mobile: AtlasSafeZone;
+}
 
 export interface AtlasResponsiveSources {
   desktop: AtlasPath;
@@ -42,7 +55,9 @@ export interface AtlasSceneAsset {
   responsive: AtlasResponsiveSources;
   layers: readonly AtlasSceneLayerAsset[];
   fallback: AtlasPath;
-  focalPoint: `${number}% ${number}%`;
+  focalPoint: AtlasFocalPoint;
+  focalPoints: AtlasResponsiveFocalPoints;
+  safeZones: AtlasResponsiveSafeZones;
   desktopSafeZone: AtlasSafeZone;
   mobileSafeZone: AtlasSafeZone;
   alt: string;

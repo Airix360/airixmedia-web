@@ -1,5 +1,5 @@
 import type { CSSProperties } from "react";
-import type { AtlasResponsiveSources } from "@/lib/atlas/types";
+import type { AtlasResponsiveFocalPoints, AtlasResponsiveSources } from "@/lib/atlas/types";
 
 interface ResponsivePictureProps {
   sources: AtlasResponsiveSources;
@@ -7,7 +7,7 @@ interface ResponsivePictureProps {
   decorative?: boolean;
   priority?: boolean;
   className?: string;
-  objectPosition?: string;
+  objectPosition?: string | AtlasResponsiveFocalPoints;
 }
 
 export function ResponsivePicture({
@@ -18,7 +18,14 @@ export function ResponsivePicture({
   className,
   objectPosition = "50% 50%",
 }: ResponsivePictureProps) {
-  const style = { "--atlas-object-position": objectPosition } as CSSProperties;
+  const positions = typeof objectPosition === "string"
+    ? { desktop: objectPosition, tablet: objectPosition, mobile: objectPosition }
+    : objectPosition;
+  const style = {
+    "--atlas-object-position": positions.desktop,
+    "--atlas-object-position-tablet": positions.tablet,
+    "--atlas-object-position-mobile": positions.mobile,
+  } as CSSProperties;
   return (
     <picture className={className} data-atlas-picture="responsive">
       <source media="(max-width: 639px)" srcSet={sources.mobile} />

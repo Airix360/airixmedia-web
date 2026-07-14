@@ -7,6 +7,8 @@
 .layer[data-layer-motion="route"] { transform: translate3d(.25%, 0, 0); }
 .fallback picture { display: block; }
 .fallback img { width: 100%; height: 100%; object-fit: cover; object-position: var(--atlas-object-position); }
+@media (max-width: 1023px) { .fallback img { object-position: var(--atlas-object-position-tablet); } }
+@media (max-width: 639px) { .fallback img { object-position: var(--atlas-object-position-mobile); } }
 .reducedComposition { display: none; }
 .motionSwitch[data-scene-mode="static"] .motionComposition,
 .motionSwitch[data-scene-mode="reduced"] .motionComposition { display: none; }

@@ -43,6 +43,17 @@ function candidateScene(definition: typeof sceneDefinitions[number]): AtlasScene
   const directory = `${id}-${slug}`;
   const base = `${sceneRoot}/responsive/${directory}/${directory}`;
   const layerBase = `${sceneRoot}/layers/${directory}/${directory}`;
+  const arrivalFocalPoints = {
+    desktop: "52% 50%",
+    tablet: "58% 48%",
+    mobile: "56% 42%",
+  } as const;
+  const defaultFocalPoints = {
+    desktop: "50% 50%",
+    tablet: "50% 50%",
+    mobile: "50% 50%",
+  } as const;
+  const focalPoints = id === "ill-0001" ? arrivalFocalPoints : defaultFocalPoints;
   return {
     id,
     name,
@@ -64,7 +75,13 @@ function candidateScene(definition: typeof sceneDefinitions[number]): AtlasScene
       decorative: true,
     })),
     fallback: `${layerBase}-preview.jpg` as AtlasPath,
-    focalPoint: "50% 50%",
+    focalPoint: focalPoints.desktop,
+    focalPoints,
+    safeZones: {
+      desktop: desktopSafeZone,
+      tablet: desktopSafeZone,
+      mobile: mobileSafeZone,
+    },
     desktopSafeZone,
     mobileSafeZone,
     alt,
@@ -95,6 +112,8 @@ export const atlasAssetLibrary = library({
   atlasLettering: { name: "Airix Atlas lettering", category: "graphics", src: `${atlasRoot}/graphics/lettering/lettering-01-airix-atlas.svg`, status: "candidate", decorativeDefault: true },
   warmPaper: { name: "Warm paper texture", category: "textures", src: `${atlasRoot}/textures/paper/tex-paper-01-warm-paper.png`, status: "candidate", decorativeDefault: true },
   fineHalftone: { name: "Fine halftone texture", category: "textures", src: `${atlasRoot}/textures/print/tex-print-01-fine-halftone.png`, status: "candidate", decorativeDefault: true },
+  morningHaze: { name: "Morning haze texture", category: "textures", src: `${atlasRoot}/textures/weather/tex-weather-02-haze.png`, status: "candidate", decorativeDefault: true },
+  primaryRoute: { name: "Primary Atlas route", category: "wayfinding", src: `${atlasRoot}/wayfinding/route-lines/route-01-primary.svg`, status: "candidate", decorativeDefault: true },
 });
 
 function assertAccess(asset: { id: string; status: string; src?: AtlasPath }, access: AtlasAssetAccess = {}) {

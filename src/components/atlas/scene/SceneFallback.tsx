@@ -1,4 +1,4 @@
-import type { AtlasResponsiveSources } from "@/lib/atlas/types";
+import type { AtlasResponsiveFocalPoints, AtlasResponsiveSources } from "@/lib/atlas/types";
 import { ResponsivePicture } from "./ResponsivePicture";
 import styles from "./atlas-scene.module.css";
 
@@ -6,7 +6,7 @@ interface SceneFallbackProps {
   sources: AtlasResponsiveSources;
   alt: string;
   priority?: boolean;
-  objectPosition?: string;
+  objectPosition?: string | AtlasResponsiveFocalPoints;
 }
 
 export function SceneFallback({ sources, alt, priority, objectPosition }: SceneFallbackProps) {

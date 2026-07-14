@@ -26,14 +26,14 @@ export function AtlasScene({
   className,
 }: AtlasSceneProps) {
   const safeZone = captionZone ?? scene.desktopSafeZone;
-  const fallback = <SceneFallback sources={scene.responsive} alt={scene.alt} priority={priority} objectPosition={scene.focalPoint} />;
+  const fallback = <SceneFallback sources={scene.responsive} alt={scene.alt} priority={priority && mode !== "layered"} objectPosition={scene.focalPoints} />;
   const layered = (
     <div className={styles.layers} role="img" aria-label={scene.alt}>
       {scene.layers.map((layer) => (
         <SceneLayer
           key={layer.id}
           layer={layer}
-          priority={priority}
+          priority={priority && mode === "layered" && layer.depth <= 1}
           motion={layer.role === "atmosphere" ? "drift" : layer.role === "surface" ? "route" : "none"}
         />
       ))}

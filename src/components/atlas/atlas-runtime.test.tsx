@@ -30,11 +30,11 @@ describe("Atlas runtime primitives", () => {
 
     expect(scene).toHaveAttribute("data-asset-status", "candidate");
     expect(layers).toHaveLength(5);
-    layers.forEach((layer) => {
+    layers.forEach((layer, index) => {
       expect(layer).toHaveAttribute("alt", "");
       expect(layer).toHaveAttribute("aria-hidden", "true");
-      expect(layer).toHaveAttribute("loading", "eager");
-      expect(layer).toHaveAttribute("fetchpriority", "high");
+      expect(layer).toHaveAttribute("loading", index <= 1 ? "eager" : "lazy");
+      expect(layer).toHaveAttribute("fetchpriority", index <= 1 ? "high" : "auto");
     });
   });
 

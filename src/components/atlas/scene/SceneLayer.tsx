@@ -20,7 +20,7 @@ export function SceneLayer({ layer, motion = "none", priority = false }: SceneLa
       aria-hidden="true"
       data-layer-role={layer.role}
       data-layer-motion={motion}
-      loading={priority || layer.depth <= 1 ? "eager" : "lazy"}
+      loading={priority ? "eager" : "lazy"}
       fetchPriority={priority ? "high" : "auto"}
       decoding="async"
       style={style}
