@@ -1,0 +1,22 @@
+{
+  "assetId": "ILL-0070",
+  "name": "Edo Trust master candidate",
+  "state": "edo",
+  "district": "trust",
+  "status": "candidate",
+  "generationDate": "2026-07-14",
+  "generationMethod": "OpenAI built-in image generation",
+  "sources": [
+    { "file": "source/ILL-0070_edo-trust-master_source-desktop_1672x941_v01.png", "dimensions": "1672x941", "composition": "desktop" },
+    { "file": "source/ILL-0070_edo-trust-master_source-mobile_1003x1568_v01.png", "dimensions": "1003x1568", "composition": "mobile" }
+  ],
+  "derivatives": [
+    { "file": "web/ILL-0070_edo-trust_desktop_1440x811_v01.webp", "dimensions": "1440x811" },
+    { "file": "web/ILL-0070_edo-trust_tablet_1024x768_v01.webp", "dimensions": "1024x768" },
+    { "file": "web/ILL-0070_edo-trust_mobile_960x1200_v01.webp", "dimensions": "960x1200" },
+    { "file": "web/ILL-0070_edo-trust_thumbnail_480x270_v01.webp", "dimensions": "480x270" }
+  ],
+  "focalPoints": { "desktop": "44% 54%", "tablet": "48% 55%", "mobile": "50% 66%" },
+  "safeZones": { "desktop": "right", "tablet": "right", "mobile": "top" },
+  "knownDefects": ["Candidate requires cultural and architectural review", "Document and cabinet detail requires artefact inspection", "The tree and record hall are illustrative rather than a verified place", "No separable motion layers were generated"]
+}

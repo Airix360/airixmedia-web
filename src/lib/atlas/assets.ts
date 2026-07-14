@@ -95,7 +95,54 @@ function candidateScene(definition: typeof sceneDefinitions[number]): AtlasScene
 
 export const atlasScenes = Object.fromEntries(
   sceneDefinitions.map((definition) => [definition[0], candidateScene(definition)]),
-) as Record<typeof sceneDefinitions[number][0], AtlasSceneAsset>;
+) as Record<typeof sceneDefinitions[number][0], AtlasSceneAsset> & Record<string, AtlasSceneAsset>;
+
+const stateRoot = `${atlasRoot}/states` as const;
+
+Object.assign(atlasScenes, {
+  "ill-0050": {
+    id: "ill-0050", name: "Edo Studio master candidate", district: "studio", state: "edo", status: "candidate",
+    master: `${stateRoot}/edo/studio/source/ILL-0050_edo-studio-master_source-desktop_1672x941_v01.png`,
+    responsive: {
+      desktop: `${stateRoot}/edo/studio/web/ILL-0050_edo-studio_desktop_1440x811_v01.webp`,
+      tablet: `${stateRoot}/edo/studio/web/ILL-0050_edo-studio_tablet_1024x768_v01.webp`,
+      mobile: `${stateRoot}/edo/studio/web/ILL-0050_edo-studio_mobile_960x1200_v01.webp`,
+      social: `${stateRoot}/edo/studio/web/ILL-0050_edo-studio_desktop_1440x811_v01.webp`,
+      thumbnail: `${stateRoot}/edo/studio/web/ILL-0050_edo-studio_thumbnail_480x270_v01.webp`,
+    }, layers: [], fallback: `${stateRoot}/edo/studio/web/ILL-0050_edo-studio_thumbnail_480x270_v01.webp`,
+    focalPoint: "72% 52%", focalPoints: { desktop: "72% 52%", tablet: "65% 54%", mobile: "50% 66%" },
+    safeZones: { desktop: "left", tablet: "left", mobile: "top" }, desktopSafeZone: "left", mobileSafeZone: "top",
+    alt: "A contemporary Edo creative compound where people review drawings, prototypes, material samples and digital work around a shared workshop table.",
+  },
+  "ill-0070": {
+    id: "ill-0070", name: "Edo Trust master candidate", district: "studio", state: "edo", status: "candidate",
+    master: `${stateRoot}/edo/trust/source/ILL-0070_edo-trust-master_source-desktop_1672x941_v01.png`,
+    responsive: {
+      desktop: `${stateRoot}/edo/trust/web/ILL-0070_edo-trust_desktop_1440x811_v01.webp`,
+      tablet: `${stateRoot}/edo/trust/web/ILL-0070_edo-trust_tablet_1024x768_v01.webp`,
+      mobile: `${stateRoot}/edo/trust/web/ILL-0070_edo-trust_mobile_960x1200_v01.webp`,
+      social: `${stateRoot}/edo/trust/web/ILL-0070_edo-trust_desktop_1440x811_v01.webp`,
+      thumbnail: `${stateRoot}/edo/trust/web/ILL-0070_edo-trust_thumbnail_480x270_v01.webp`,
+    }, layers: [], fallback: `${stateRoot}/edo/trust/web/ILL-0070_edo-trust_thumbnail_480x270_v01.webp`,
+    focalPoint: "44% 54%", focalPoints: { desktop: "44% 54%", tablet: "48% 55%", mobile: "50% 66%" },
+    safeZones: { desktop: "right", tablet: "right", mobile: "top" }, desktopSafeZone: "right", mobileSafeZone: "top",
+    alt: "A contemporary Edo record hall and shaded courtyard where people examine evidence, maintain records and document responsibility.",
+  },
+  "ill-0060": {
+    id: "ill-0060", name: "Kaduna Labs master candidate", district: "labs", state: "kaduna", status: "candidate",
+    master: `${stateRoot}/kaduna/labs/source/ILL-0060_kaduna-labs-master_source-desktop_1672x941_v01.png`,
+    responsive: {
+      desktop: `${stateRoot}/kaduna/labs/web/ILL-0060_kaduna-labs_desktop_1440x811_v01.webp`,
+      tablet: `${stateRoot}/kaduna/labs/web/ILL-0060_kaduna-labs_tablet_1024x768_v01.webp`,
+      mobile: `${stateRoot}/kaduna/labs/web/ILL-0060_kaduna-labs_mobile_960x1200_v01.webp`,
+      social: `${stateRoot}/kaduna/labs/web/ILL-0060_kaduna-labs_desktop_1440x811_v01.webp`,
+      thumbnail: `${stateRoot}/kaduna/labs/web/ILL-0060_kaduna-labs_thumbnail_480x270_v01.webp`,
+    }, layers: [], fallback: `${stateRoot}/kaduna/labs/web/ILL-0060_kaduna-labs_thumbnail_480x270_v01.webp`,
+    focalPoint: "38% 58%", focalPoints: { desktop: "38% 58%", tablet: "44% 58%", mobile: "56% 66%" },
+    safeZones: { desktop: "right", tablet: "right", mobile: "top" }, desktopSafeZone: "right", mobileSafeZone: "top",
+    alt: "A contemporary Kaduna engineering yard where people assemble, test, repair and document prototypes beside rail-inspired routes.",
+  },
+} satisfies Record<string, AtlasSceneAsset>);
 
 const library = <T extends Record<string, Omit<AtlasLibraryAsset, "id">>>(entries: T) =>
   Object.fromEntries(Object.entries(entries).map(([id, asset]) => [id, { id, ...asset }])) as {

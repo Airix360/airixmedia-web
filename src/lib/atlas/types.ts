@@ -11,6 +11,8 @@ export type AtlasDistrictId =
   | "observatory"
   | "gateway";
 
+export type AtlasStateId = "lagos" | "edo" | "kaduna" | "oyo" | "rivers" | "plateau" | "ogun";
+
 export type AtlasAssetStatus = "approved" | "candidate" | "internal-only";
 export type AtlasCandidateAccess = "none" | "internal-review";
 export type AtlasSceneVariant = "desktop" | "tablet" | "mobile" | "social" | "thumbnail";
@@ -61,6 +63,7 @@ export interface AtlasSceneAsset {
   desktopSafeZone: AtlasSafeZone;
   mobileSafeZone: AtlasSafeZone;
   alt: string;
+  state?: AtlasStateId;
 }
 
 export type AtlasLibraryCategory =

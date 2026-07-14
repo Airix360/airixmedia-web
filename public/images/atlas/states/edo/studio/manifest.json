@@ -1,0 +1,22 @@
+{
+  "assetId": "ILL-0050",
+  "name": "Edo Studio master candidate",
+  "state": "edo",
+  "district": "studio",
+  "status": "candidate",
+  "generationDate": "2026-07-14",
+  "generationMethod": "OpenAI built-in image generation",
+  "sources": [
+    { "file": "source/ILL-0050_edo-studio-master_source-desktop_1672x941_v01.png", "dimensions": "1672x941", "composition": "desktop" },
+    { "file": "source/ILL-0050_edo-studio-master_source-mobile_1122x1402_v01.png", "dimensions": "1122x1402", "composition": "mobile" }
+  ],
+  "derivatives": [
+    { "file": "web/ILL-0050_edo-studio_desktop_1440x811_v01.webp", "dimensions": "1440x811" },
+    { "file": "web/ILL-0050_edo-studio_tablet_1024x768_v01.webp", "dimensions": "1024x768" },
+    { "file": "web/ILL-0050_edo-studio_mobile_960x1200_v01.webp", "dimensions": "960x1200" },
+    { "file": "web/ILL-0050_edo-studio_thumbnail_480x270_v01.webp", "dimensions": "480x270" }
+  ],
+  "focalPoints": { "desktop": "72% 52%", "tablet": "65% 54%", "mobile": "50% 66%" },
+  "safeZones": { "desktop": "left", "tablet": "left", "mobile": "top" },
+  "knownDefects": ["Candidate requires cultural and architectural review", "Small tools, fingers and prototype geometry require close inspection", "Blue-hour field is stronger in the mobile composition", "No separable motion layers were generated"]
+}

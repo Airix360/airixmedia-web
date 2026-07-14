@@ -1,0 +1,22 @@
+{
+  "assetId": "ILL-0060",
+  "name": "Kaduna Labs master candidate",
+  "state": "kaduna",
+  "district": "labs",
+  "status": "candidate",
+  "generationDate": "2026-07-14",
+  "generationMethod": "OpenAI built-in image generation",
+  "sources": [
+    { "file": "source/ILL-0060_kaduna-labs-master_source-desktop_1672x941_v01.png", "dimensions": "1672x941", "composition": "desktop" },
+    { "file": "source/ILL-0060_kaduna-labs-master_source-mobile_1003x1568_v01.png", "dimensions": "1003x1568", "composition": "mobile" }
+  ],
+  "derivatives": [
+    { "file": "web/ILL-0060_kaduna-labs_desktop_1440x811_v01.webp", "dimensions": "1440x811" },
+    { "file": "web/ILL-0060_kaduna-labs_tablet_1024x768_v01.webp", "dimensions": "1024x768" },
+    { "file": "web/ILL-0060_kaduna-labs_mobile_960x1200_v01.webp", "dimensions": "960x1200" },
+    { "file": "web/ILL-0060_kaduna-labs_thumbnail_480x270_v01.webp", "dimensions": "480x270" }
+  ],
+  "focalPoints": { "desktop": "38% 58%", "tablet": "44% 58%", "mobile": "56% 66%" },
+  "safeZones": { "desktop": "right", "tablet": "right", "mobile": "top" },
+  "knownDefects": ["Candidate requires Kaduna cultural and architectural review", "Rail geometry is illustrative and not a real location", "Small component, hand and tool geometry requires artefact inspection", "No separable motion layers were generated"]
+}
