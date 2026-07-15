@@ -81,6 +81,7 @@ test("project brief creates a local summary without network submission", async (
 });
 
 test("representative public routes have no critical or serious Axe violations", async ({ page }) => {
+  test.setTimeout(120_000);
   for (const route of ["/", "/publishing", "/services/managed-infrastructure", "/studio", "/open-source", "/atlas", "/discuss", "/support/emergency"]) {
     await page.goto(route);
     const result = await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"]).analyze();

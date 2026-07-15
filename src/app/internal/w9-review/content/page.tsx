@@ -13,7 +13,7 @@ const claims = [
 
 export default function W9ContentPage() {
   return <W9ReviewShell eyebrow="CLAIM REGISTER" title="Say only what the record supports." intro="Every important claim is assigned an evidence class. Missing proof remains visible as a launch dependency rather than being converted into confident marketing copy.">
-    <section className={styles.section}><h2>Claims and evidence</h2><table className={styles.register}><thead><tr><th>Subject</th><th>Classification</th><th>Permitted boundary</th></tr></thead><tbody>{claims.map(([subject, classification, boundary]) => <tr key={subject}><td>{subject}</td><td>{classification}</td><td>{boundary}</td></tr>)}</tbody></table></section>
+    <section className={styles.section}><h2>Claims and evidence</h2><table className={styles.register} tabIndex={0}><thead><tr><th>Subject</th><th>Classification</th><th>Permitted boundary</th></tr></thead><tbody>{claims.map(([subject, classification, boundary]) => <tr key={subject}><td>{subject}</td><td>{classification}</td><td>{boundary}</td></tr>)}</tbody></table></section>
     <section className={styles.section}><h2>Publication safeguards</h2><p>Production filters exclude inferred-needs-review, placeholder and do-not-publish content. Candidate artwork is never described as approved or documentary. French and Portuguese routes remain noindexed until each critical journey is complete and reviewed. Downloadable resources remain unavailable until real files, ownership, accessibility and versioning are verified.</p></section>
   </W9ReviewShell>;
 }

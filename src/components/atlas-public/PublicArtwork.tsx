@@ -30,6 +30,6 @@ export function PublicArtwork({ id, alt, priority = false }: { id: PublicArtwork
   return <picture className={`${styles.artwork} ${priority ? styles.priorityArtwork : ""}`}>
     <source media="(max-width: 640px)" srcSet={compactMobile} {...highPrioritySource}/>
     <source media="(max-width: 1024px)" srcSet={tablet}/>
-    <Image src={desktop} alt={alt} fill priority={priority} fetchPriority={priority ? "high" : undefined} sizes="(max-width: 640px) 100vw, 100vw"/>
+    <Image src={desktop} alt={alt} fill loading={priority ? "eager" : "lazy"} fetchPriority={priority ? "high" : undefined} sizes="(max-width: 640px) 100vw, 100vw"/>
   </picture>;
 }
