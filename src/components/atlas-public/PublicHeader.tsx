@@ -16,12 +16,19 @@ export function PublicHeader() {
   const [open, setOpen] = useState(false);
   const close = useRef<HTMLButtonElement>(null);
   const trigger = useRef<HTMLButtonElement>(null);
+  const menu = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!open) return;
     close.current?.focus();
     const onKey = (event: KeyboardEvent) => {
       if (event.key === "Escape") { setOpen(false); requestAnimationFrame(() => trigger.current?.focus()); }
+      if (event.key === "Tab" && menu.current) {
+        const focusable = Array.from(menu.current.querySelectorAll<HTMLElement>("a[href], button:not([disabled])"));
+        const first = focusable[0]; const last = focusable.at(-1);
+        if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last?.focus(); }
+        else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first?.focus(); }
+      }
     };
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
@@ -47,11 +54,10 @@ export function PublicHeader() {
         <button ref={trigger} className={`${styles.iconButton} ${styles.menuButton}`} onClick={() => setOpen(true)} aria-label="Open menu" aria-expanded={open}><Menu size={20}/></button>
       </div>
     </div>
-    {open && <div className={styles.menuOverlay} role="dialog" aria-modal="true" aria-label="Site navigation">
+    {open && <div ref={menu} className={styles.menuOverlay} role="dialog" aria-modal="true" aria-label="Site navigation">
       <div className={styles.menuTop}><span>Airix Atlas / Directory</span><button ref={close} className={styles.iconButton} onClick={() => { setOpen(false); trigger.current?.focus(); }} aria-label="Close menu"><X size={21}/></button></div>
       <nav>{links.map(([label, href], index) => <Link key={href} onClick={() => setOpen(false)} href={href}><span>0{index + 1}</span>{label}</Link>)}</nav>
       <div className={styles.menuUtilities}><Link href="/support/emergency">Emergency Support</Link><a href={contact.portal}>Client Portal</a></div>
     </div>}
   </header>;
 }
-

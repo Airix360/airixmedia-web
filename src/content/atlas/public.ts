@@ -62,6 +62,25 @@ const detailFallbacks: Array<[string, PublicPage]> = [
 ];
 
 export function getPublicPage(path: string) {
+  if (path === "work/ku-journals") return {
+    path,
+    state: "oyo" as const,
+    stateLabel: "Oyo · Publishing evidence",
+    eyebrow: "SOURCE-CAPTURED WORK RECORD",
+    title: "KU Journals",
+    summary: "A current public journal interface whose footer credits Airix Media with design, development and maintenance.",
+    art: "oyo-publishing" as const,
+    sections: [
+      { title: "What the public record supports", body: "The live interface and dated captures support the existence of the platform and the visible Airix Media footer credit." },
+      { title: "What remains withheld", body: "Original need, constraints, complete responsibility, editorial decisions, institutional claims, journal metrics and measurable outcomes remain unverified." }
+    ],
+    action: { label: "Discuss a publishing system", href: "/discuss" }
+  };
+  if (path.startsWith("open-source/")) {
+    const names: Record<string, string> = { "paystack-ojs": "PaystackOJS", "ojs-magic-login": "OJS Magic Login", "submission-fee": "Submission Fee for OJS", multipay: "MultiPay for OJS", "request-waiver": "Request Waiver for OJS" };
+    const slug = path.split("/")[1];
+    if (names[slug]) return { ...publicPages.find((page) => page.path === "open-source")!, path, eyebrow: "VERIFIED PUBLIC REPOSITORY", title: names[slug], summary: slug === "paystack-ojs" ? "A public OJS 3.5 Paystack payment plugin. GitHub release v1.1.1.0 and README header 1.1.0 are both disclosed." : "A public OJS plugin record with source, release state and support boundaries kept explicit." };
+  }
   return publicPages.find((page) => page.path === path) ?? detailFallbacks.find(([prefix]) => path.startsWith(prefix))?.[1] ?? null;
 }
 
@@ -74,4 +93,3 @@ export const publishingPrices = [
   ["Training · up to 10 participants", "From ₦100,000/session"],
   ["Custom plugins", "From ₦250,000"]
 ] as const;
-

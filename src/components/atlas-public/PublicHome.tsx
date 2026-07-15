@@ -22,7 +22,7 @@ export function PublicHome() {
         <div className={styles.arrivalCopy}><span className={styles.routeLabel}>AIRIX ATLAS / LAGOS / ARRIVAL</span><h1 id="arrival-title">Every thriving city depends on invisible systems.</h1><a href="#proposition">Enter the Atlas <ArrowRight size={17}/></a></div>
       </section>
 
-      <section className={styles.movement}><div><span>ROUTES</span><strong>Movement</strong></div><p>People, services, transactions, records and ideas move because many systems keep their promises at once.</p><div className={styles.routeLine} aria-hidden="true"><i/><i/><i/><i/></div></section>
+      <section className={styles.movement}><div><span>ROUTES</span><h2>Movement</h2></div><p>People, services, transactions, records and ideas move because many systems keep their promises at once.</p><div className={styles.routeLine} aria-hidden="true"><i/><i/><i/><i/></div></section>
 
       <section id="proposition" className={styles.proposition}><span className={styles.kicker}>THE CITY REVEALS THE SYSTEM</span><h2>We build the invisible systems that allow ambitious organisations to thrive.</h2><p>Airix Media is a boutique creative technology studio and digital operations partner. We design, build, run and rescue websites, business systems, publishing platforms and technical infrastructure.</p><div><Link className={styles.primaryAction} href="/discuss">Discuss a Project <ArrowRight size={17}/></Link><Link className={styles.secondaryAction} href="/work">See verified work</Link></div></section>
 
@@ -39,4 +39,3 @@ export function PublicHome() {
     <PublicFooter/>
   </div>;
 }
-

@@ -24,9 +24,12 @@ export type PublicArtworkKey = keyof typeof artwork;
 
 export function PublicArtwork({ id, alt, priority = false }: { id: PublicArtworkKey; alt: string; priority?: boolean }) {
   const [desktop, mobile] = artwork[id];
-  return <picture className={styles.artwork}>
-    <source media="(max-width: 640px)" srcSet={mobile}/>
-    <Image src={desktop} alt={alt} fill priority={priority} sizes="(max-width: 640px) 100vw, 100vw"/>
+  const compactMobile = mobile.replace("_mobile_960x1200_", "_mobile_640x800_");
+  const tablet = desktop.replace("_desktop_1440x811_", "_tablet_1024x768_");
+  const highPrioritySource = priority ? ({ fetchPriority: "high" } as const) : {};
+  return <picture className={`${styles.artwork} ${priority ? styles.priorityArtwork : ""}`}>
+    <source media="(max-width: 640px)" srcSet={compactMobile} {...highPrioritySource}/>
+    <source media="(max-width: 1024px)" srcSet={tablet}/>
+    <Image src={desktop} alt={alt} fill priority={priority} fetchPriority={priority ? "high" : undefined} sizes="(max-width: 640px) 100vw, 100vw"/>
   </picture>;
 }
-

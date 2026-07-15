@@ -5,7 +5,8 @@ import { getPublicPage } from "@/content/atlas/public";
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string[] }> }): Promise<Metadata> {
   const { slug } = await params; const page = getPublicPage(slug.join("/"));
-  return { title: page?.title ?? "Airix Media", description: page?.summary };
+  const path = slug.join("/");
+  return { title: page?.title ?? "Airix Media", description: page?.summary, alternates: { canonical: `/${path}` }, openGraph: { title: page?.title, description: page?.summary, type: "website" } };
 }
 
 export default async function Page({ params }: { params: Promise<{ slug: string[] }> }) {

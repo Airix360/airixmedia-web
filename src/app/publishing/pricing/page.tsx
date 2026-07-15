@@ -5,6 +5,8 @@ import { PublicHeader } from "@/components/atlas-public/PublicHeader";
 import { publishingPrices } from "@/content/atlas/public";
 import styles from "@/components/atlas-public/atlas-public.module.css";
 
+export const metadata = { title: "OJS Pricing", description: "Owner-confirmed starting amounts for OJS setup, migration, hosting, support, training and plugin work.", alternates: { canonical: "/publishing/pricing" } };
+
 export default function Page() {
   return <div className={`${styles.site} ${styles.state_oyo}`}>
     <PublicHeader />
