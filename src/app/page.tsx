@@ -1,5 +1,5 @@
-import { HomePage } from "@/components/home-page";
+import { PublicHome } from "@/components/atlas-public/PublicHome";
 
 export default function Page() {
-  return <HomePage locale="en" />;
+  return <PublicHome />;
 }

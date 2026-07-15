@@ -6,6 +6,15 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   reactStrictMode: true,
   experimental: { optimizePackageImports: ["lucide-react"] },
+  async redirects() {
+    return [
+      { source: "/systems", destination: "/work", permanent: true },
+      { source: "/systems/:slug*", destination: "/work/:slug*", permanent: true },
+      { source: "/company", destination: "/studio", permanent: true },
+      { source: "/start-a-project", destination: "/discuss", permanent: true },
+      { source: "/project-brief", destination: "/discuss", permanent: true },
+    ];
+  },
   async headers() {
     return [{ source: "/:path*", headers: [
       { key: "X-Content-Type-Options", value: "nosniff" },
