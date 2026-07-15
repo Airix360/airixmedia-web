@@ -11,7 +11,8 @@ export const metadata: Metadata = {
   title: { default: "Airix Media — Digital systems organisations rely on", template: "%s | Airix Media" },
   description: "Airix Media designs, builds, runs, and rescues websites, business systems, publishing platforms, and technical infrastructure.",
   openGraph: { title: "Airix Media", description: "We build the digital systems organisations rely on.", type: "website", locale: "en_GB" },
-  alternates: { canonical: "/", languages: { "en": "/", "fr": "/fr", "pt": "/pt" } },
+  twitter: { card: "summary", title: "Airix Media", description: "We build the digital systems organisations rely on." },
+  alternates: { canonical: "/" },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

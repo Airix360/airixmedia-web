@@ -1,6 +1,6 @@
 # Airix Media Web
 
-Version `1.0.0.0` of the new Airix Media public-site prototype. It positions Airix Media as a boutique creative technology studio and digital operations partner across websites, business systems, publishing technology, infrastructure, support, and recovery.
+Version `2.0.0.1` of the Airix Atlas public-site prototype. It positions Airix Media as a boutique creative technology studio and digital operations partner across websites, business systems, publishing technology, infrastructure, support, and recovery.
 
 ## Run locally
 

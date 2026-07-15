@@ -54,13 +54,6 @@ export const publicPages: PublicPage[] = [
   { path: "legal", state: "shared", stateLabel: "Airix Media · Legal", eyebrow: "LEGAL CENTRE", title: "Draft structure awaiting legal review.", summary: "Privacy, terms, cookies, accessibility, regional pricing and data-processing language are not final legal advice.", sections: [{ title: "Publication blocker", body: "Entity identity, jurisdiction, controller details, lawful basis, retention and final service terms require legal approval before launch." }] }
 ];
 
-const detailFallbacks: Array<[string, PublicPage]> = [
-  ["work/", { ...publicPages[0], path: "work/detail", eyebrow: "WORK RECORD", title: "Verified project record", summary: "Only source-captured evidence and approved responsibility statements appear here." }],
-  ["open-source/", { ...publicPages.find((p) => p.path === "open-source")!, path: "open-source/detail", eyebrow: "PUBLIC REPOSITORY", title: "Open-source project record", summary: "Repository purpose, release state, compatibility notes and limitations remain explicit." }],
-  ["insights/", { ...publicPages.find((p) => p.path === "insights")!, path: "insights/detail", title: "Plan an OJS upgrade without testing in production", summary: "Inventory, staging, compatibility, validation, rollback and communication before production change." }],
-  ["resources/", { ...publicPages.find((p) => p.path === "resources")!, path: "resources/detail", title: "Digital Systems Health Checklist", summary: "A structured review of ownership, access, performance, security, analytics, backups and support." }]
-];
-
 export function getPublicPage(path: string) {
   if (path === "work/ku-journals") return {
     path,
@@ -81,7 +74,7 @@ export function getPublicPage(path: string) {
     const slug = path.split("/")[1];
     if (names[slug]) return { ...publicPages.find((page) => page.path === "open-source")!, path, eyebrow: "VERIFIED PUBLIC REPOSITORY", title: names[slug], summary: slug === "paystack-ojs" ? "A public OJS 3.5 Paystack payment plugin. GitHub release v1.1.1.0 and README header 1.1.0 are both disclosed." : "A public OJS plugin record with source, release state and support boundaries kept explicit." };
   }
-  return publicPages.find((page) => page.path === path) ?? detailFallbacks.find(([prefix]) => path.startsWith(prefix))?.[1] ?? null;
+  return publicPages.find((page) => page.path === path) ?? null;
 }
 
 export const publishingPrices = [
