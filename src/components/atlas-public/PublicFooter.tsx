@@ -4,7 +4,7 @@ import styles from "./atlas-public.module.css";
 
 export function PublicFooter() {
   return <footer className={styles.footer}>
-    <div className={styles.footerStatement}><span>AIRIX MEDIA / AIRIX 360</span><h2>Invisible systems.<br/>Visible progress.</h2></div>
+    <div className={styles.footerStatement}><span>AIRIX MEDIA</span><h2>Invisible systems.<br/>Visible progress.</h2></div>
     <div className={styles.footerDirectory}>
       <nav aria-label="Services"><strong>Build</strong><Link href="/services/digital-experiences">Digital Experiences</Link><Link href="/services/business-systems">Business Systems</Link><Link href="/publishing">Publishing</Link></nav>
       <nav aria-label="Operations"><strong>Run & Rescue</strong><Link href="/services/managed-infrastructure">Infrastructure</Link><Link href="/support">Support</Link><Link href="/support/emergency">Emergency</Link></nav>
@@ -14,4 +14,3 @@ export function PublicFooter() {
     <div className={styles.footerMeta}><span>© {new Date().getFullYear()} Airix Media</span><a href={`mailto:${contact.email}`}>{contact.email}</a><span>{contact.nigeriaPhone}</span></div>
   </footer>;
 }
-

@@ -15,7 +15,7 @@ export default function Page() {
         <PublicArtwork id="oyo-publishing" alt="Ibadan hills, university publishing courtyard, library and print room" priority />
         <div className={styles.heroScrim} />
         <div className={styles.pageHeroCopy}>
-          <span className={styles.routeLabel}>AIRIX ATLAS / OYO / PRICING</span>
+          <span className={styles.routeLabel}>AIRIX MEDIA / PRICING</span>
           <span className={styles.kicker}>OJS PRICING</span>
           <h1>A clear starting point. A proposal remains authoritative.</h1>
           <p>All public prices begin with “From”. Scope, billing country, platform condition and support requirements determine the final proposal.</p>

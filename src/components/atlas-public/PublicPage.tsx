@@ -15,12 +15,12 @@ export function PublicPage({ page, path }: { page: PublicPageRecord; path: strin
     <PublicHeader/>
     <main id="main-content">
       <header className={`${styles.pageHero} ${!page.art ? styles.pageHeroNoArt : ""}`}>
-        {page.art && <PublicArtwork id={page.art as PublicArtworkKey} alt={`${page.stateLabel} illustrated working environment`} priority/>}
+        {page.art && <PublicArtwork id={page.art as PublicArtworkKey} alt={`${page.title} illustrated working environment`} priority/>}
         <div className={styles.heroScrim}/>
-        <div className={styles.pageHeroCopy}><span className={styles.routeLabel}>AIRIX ATLAS / {page.stateLabel}</span><span className={styles.kicker}>{page.eyebrow}</span><h1>{page.title}</h1><p>{page.summary}</p>{page.action && <Link className={styles.primaryAction} href={page.action.href}>{page.action.label}<ArrowRight size={17}/></Link>}</div>
+        <div className={styles.pageHeroCopy}><span className={styles.routeLabel}>AIRIX MEDIA / {page.eyebrow}</span><span className={styles.kicker}>{page.eyebrow}</span><h1>{page.title}</h1><p>{page.summary}</p>{page.action && <Link className={styles.primaryAction} href={page.action.href}>{page.action.label}<ArrowRight size={17}/></Link>}</div>
       </header>
       <div className={styles.pageBody}>
-        <aside><span>Route</span><strong>{page.stateLabel}</strong><p>State identity supports the subject. Public labels remain direct.</p></aside>
+        <aside><span>Route</span><strong>AIRIX MEDIA / {page.eyebrow}</strong><p>Place and activity are carried by the image and the work, not a public geography label.</p></aside>
         <div className={styles.editorialSections}>{page.sections.map((section, index) => <section key={section.title}><span className={styles.sectionNumber}>0{index + 1}</span><h2>{section.title}</h2><p>{section.body}</p>{section.items && <ul>{section.items.map(item => <li key={item}>{item}</li>)}</ul>}</section>)}</div>
       </div>
       {showRepositories && <section className={styles.repositoryList} aria-labelledby="repositories-title"><span className={styles.kicker}>VERIFIED PUBLIC REPOSITORIES</span><h2 id="repositories-title">Inspect the work at source.</h2>{openSourceProjects.map((repo, index) => <a href={repo.url} key={repo.slug}><span>0{index + 1}</span><div><strong>{repo.name}</strong><p>{repo.summary}</p></div><ArrowRight size={18}/></a>)}</section>}
@@ -30,4 +30,3 @@ export function PublicPage({ page, path }: { page: PublicPageRecord; path: strin
     <PublicFooter/>
   </div>;
 }
-

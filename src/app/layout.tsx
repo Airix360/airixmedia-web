@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" suppressHydrationWarning className={`${archivo.variable} ${fragmentMono.variable}`}>
-      <head><script dangerouslySetInnerHTML={{ __html: `(function(){try{var saved=localStorage.getItem('airix-theme');var theme=saved||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',theme)}catch(e){document.documentElement.setAttribute('data-theme','light')}})()` }} /></head>
+      <head><script dangerouslySetInnerHTML={{ __html: `(function(){try{var saved=localStorage.getItem('airix-theme');var h=new Date().getHours();var theme=saved||(h>=6&&h<18?'light':'dark');document.documentElement.setAttribute('data-theme',theme)}catch(e){document.documentElement.setAttribute('data-theme',matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}})()` }} /></head>
       <body>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "Organization", name: "Airix Media", url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://airixmedia.com", email: "hello@airixmedia.com" }) }} />
         <a className="skip-link" href="#main-content">Skip to content</a>

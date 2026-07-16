@@ -3,9 +3,10 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
-import { Menu, Moon, Sun, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { contact, copy, type Locale } from "@/lib/content";
+import { ThemeControl } from "./theme-control";
 
 const routeFor = (locale: Locale, path: string) => locale === "en" ? path : `/${locale}${path === "/" ? "" : path}`;
 
@@ -42,9 +43,7 @@ export function Header({ locale = "en" }: { locale?: Locale }) {
           <select id="locale-switch" className="icon-button mono" value={locale} onChange={(event) => switchLocale(event.target.value as Locale)} aria-label={t.language}>
             <option value="en">EN</option><option value="fr">FR</option><option value="pt">PT</option>
           </select>
-          <button className="icon-button" onClick={() => { const root = document.documentElement; const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark"; root.setAttribute("data-theme", next); localStorage.setItem("airix-theme", next); }} aria-label="Toggle appearance">
-            <span className="theme-icon theme-icon-light"><Moon size={18} /></span><span className="theme-icon theme-icon-dark"><Sun size={18} /></span>
-          </button>
+          <ThemeControl className="theme-control" />
           <Link className="button compact" href={routeFor(locale, "/start-a-project")}>{t.nav.start}</Link>
           <button className="icon-button mobile-trigger" onClick={() => setOpen((value) => !value)} aria-expanded={open} aria-controls="mobile-navigation" aria-label={open ? "Close menu" : "Open menu"}>
             {open ? <X size={20} /> : <Menu size={20} />}

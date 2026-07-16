@@ -15,6 +15,10 @@ const nextConfig: NextConfig = {
       { source: "/company", destination: "/studio", permanent: true },
       { source: "/start-a-project", destination: "/discuss", permanent: true },
       { source: "/project-brief", destination: "/discuss", permanent: true },
+      { source: "/policy", destination: "/privacy", permanent: true },
+      { source: "/privacy-policy", destination: "/privacy", permanent: true },
+      { source: "/terms-of-use", destination: "/terms", permanent: true },
+      { source: "/cookie-policy", destination: "/cookies", permanent: true },
     ];
   },
   async headers() {
