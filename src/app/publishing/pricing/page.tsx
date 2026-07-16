@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { PublicArtwork } from "@/components/atlas-public/PublicArtwork";
 import { PublicFooter } from "@/components/atlas-public/PublicFooter";
 import { PublicHeader } from "@/components/atlas-public/PublicHeader";
 import { publishingPrices } from "@/content/atlas/public";
@@ -8,12 +7,10 @@ import styles from "@/components/atlas-public/atlas-public.module.css";
 export const metadata = { title: "OJS Pricing", description: "Owner-confirmed starting amounts for OJS setup, migration, hosting, support, training and plugin work.", alternates: { canonical: "/publishing/pricing" } };
 
 export default function Page() {
-  return <div className={`${styles.site} ${styles.state_oyo}`}>
+  return <div className={styles.site}>
     <PublicHeader />
     <main id="main-content">
-      <header className={styles.pageHero}>
-        <PublicArtwork id="oyo-publishing" alt="Ibadan hills, university publishing courtyard, library and print room" priority />
-        <div className={styles.heroScrim} />
+      <header className={`${styles.pageHero} ${styles.pageHeroNoArt}`}>
         <div className={styles.pageHeroCopy}>
           <span className={styles.routeLabel}>AIRIX MEDIA / PRICING</span>
           <span className={styles.kicker}>OJS PRICING</span>

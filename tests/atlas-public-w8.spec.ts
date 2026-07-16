@@ -11,7 +11,7 @@ test("public homepage presents the complete Atlas journey without review leakage
   await expect(page.getByRole("heading", { name: "Responsibility becomes visible." })).toBeVisible();
   await expect(page.getByRole("heading", { name: "Where shall we build next?" })).toBeVisible();
   await expect(page.locator("body")).not.toContainText(/owner approval required|internal review|candidate artwork/i);
-  await expect(page.locator("img[src*='ILL-0120']")).toBeVisible();
+  await expect(page.getByRole("img", { name: /long low bridge/i })).toBeVisible();
 });
 
 test("canonical navigation and direct utility routes remain explicit", async ({ page, isMobile }) => {
@@ -31,17 +31,17 @@ test("legacy routes redirect to the canonical public architecture", async ({ pag
   }
 });
 
-test("Oyo and Rivers pages use separately authored responsive state art", async ({ page }) => {
+test("publishing and infrastructure pages use neutral responsive runtime artwork", async ({ page }) => {
   await page.goto("/publishing");
-  await expect(page.locator("picture source").first()).toHaveAttribute("srcset", /oyo\/publishing\/.*mobile/);
-  await expect(page.locator("picture img").first()).toHaveAttribute("src", /oyo%2Fpublishing%2F.*desktop/);
+  await expect(page.locator("picture source").first()).toHaveAttribute("srcset", /runtime\/publishing\/compact/);
+  await expect(page.locator("picture img").first()).toHaveAttribute("src", /runtime%2Fpublishing%2Fdesktop/);
   await page.goto("/services/managed-infrastructure");
-  await expect(page.locator("picture source").first()).toHaveAttribute("srcset", /rivers\/infrastructure\/.*mobile/);
-  await expect(page.locator("picture img").first()).toHaveAttribute("src", /rivers%2Finfrastructure%2F.*desktop/);
+  await expect(page.locator("picture source").first()).toHaveAttribute("srcset", /runtime\/infrastructure\/compact/);
+  await expect(page.locator("picture img").first()).toHaveAttribute("src", /runtime%2Finfrastructure%2Fdesktop/);
 });
 
 test("public routes request only their responsive runtime artwork", async ({ page }) => {
-  for (const [route, expectedState] of [["/publishing", "/oyo/"], ["/services/managed-infrastructure", "/rivers/"]] as const) {
+  for (const [route, expectedArtwork] of [["/publishing", "/runtime/publishing/"], ["/services/managed-infrastructure", "/runtime/infrastructure/"]] as const) {
     const artworkRequests: string[] = [];
     const record = (request: { url: () => string }) => {
       const url = decodeURIComponent(request.url());
@@ -52,7 +52,7 @@ test("public routes request only their responsive runtime artwork", async ({ pag
     await page.locator("picture img").first().waitFor();
     await page.waitForLoadState("networkidle");
     page.off("request", record);
-    expect(artworkRequests.some(url => url.includes(expectedState) && url.includes(".webp"))).toBe(true);
+    expect(artworkRequests.some(url => url.includes(expectedArtwork) && url.includes(".webp"))).toBe(true);
     expect(artworkRequests.some(url => /\.png(?:\?|$)|\/source\/|\/scenes\/masters\//.test(url))).toBe(false);
   }
 });

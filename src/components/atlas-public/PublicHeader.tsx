@@ -1,12 +1,12 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { contact } from "@/lib/content";
 import styles from "./atlas-public.module.css";
 import { ThemeControl } from "../theme-control";
+import { OfficialLogo } from "../official-logo";
 
 const links = [
   ["Work", "/work"], ["Services", "/services"], ["Publishing", "/publishing"],
@@ -45,7 +45,7 @@ export function PublicHeader() {
   return <header className={`${styles.header} ${scrolled ? styles.scrolled : ""}`}>
     <div className={styles.headerInner}>
       <Link href="/" className={styles.brand} aria-label="Airix Media home">
-        <Image src="/airix-mark.svg" alt="" width={30} height={30} priority /><span>AIRIX MEDIA</span>
+        <OfficialLogo />
       </Link>
       <nav className={styles.desktopNav} aria-label="Primary navigation">{links.map(([label, href]) => <Link key={href} href={href}>{label}</Link>)}</nav>
       <div className={styles.headerTools}>

@@ -5,7 +5,8 @@ import path from "node:path";
 const output = (name: string) => path.join(process.cwd(), "output/playwright/atlas-launch-w9", name);
 
 async function settle(page: Page) {
-  await page.waitForLoadState("networkidle");
+  await page.waitForLoadState("domcontentloaded");
+  await page.waitForTimeout(100);
   await page.addStyleTag({ content: "nextjs-portal{display:none!important}" });
 }
 
@@ -37,7 +38,7 @@ test("review controls change only the current visual state", async ({ page }) =>
 test("compact mobile artwork derivatives exist for every active family", async ({ page }, info) => {
   test.skip(info.project.name !== "desktop", "The route matrix sets its own mobile viewport.");
   test.setTimeout(120_000);
-  const routes = ["/", "/publishing", "/publishing/ojs", "/publishing/pricing", "/publishing/plugins", "/services/managed-infrastructure", "/support", "/support/emergency", "/studio", "/open-source", "/atlas", "/insights", "/resources", "/discuss", "/contact", "/book"];
+  const routes = ["/", "/publishing", "/publishing/ojs", "/publishing/plugins", "/services/managed-infrastructure", "/support", "/support/emergency", "/studio", "/open-source", "/atlas", "/insights", "/resources", "/discuss", "/contact", "/book"];
   await page.setViewportSize({ width: 390, height: 844 });
   for (const route of routes) {
     const failures: string[] = [];
