@@ -13,13 +13,13 @@ const pathways = [
 ] as const;
 
 export function PublicHome() {
-  return <div className={`${styles.site} ${styles.state_lagos}`}>
+  return <div className={styles.site}>
     <PublicHeader/>
     <main id="main-content">
       <section className={styles.homeArrival} aria-labelledby="arrival-title">
         <PublicArtwork id="lagos-arrival" alt="Lagos lagoon, the long low span of Third Mainland Bridge, ferry routes and mainland skyline" priority/>
         <div className={styles.heroScrim}/>
-        <div className={styles.arrivalCopy}><span className={styles.routeLabel}>AIRIX ATLAS / LAGOS / ARRIVAL</span><h1 id="arrival-title">Every thriving city depends on invisible systems.</h1><a href="#proposition">Enter the Atlas <ArrowRight size={17}/></a></div>
+        <div className={styles.arrivalCopy}><span className={styles.routeLabel}>AIRIX MEDIA / HOME</span><h1 id="arrival-title">Every thriving city depends on invisible systems.</h1><a href="#proposition">Enter the Atlas <ArrowRight size={17}/></a></div>
       </section>
 
       <section className={styles.movement}><div><span>ROUTES</span><h2>Movement</h2></div><p>People, services, transactions, records and ideas move because many systems keep their promises at once.</p><div className={styles.routeLine} aria-hidden="true"><i/><i/><i/><i/></div></section>
@@ -32,9 +32,9 @@ export function PublicHome() {
 
       <section className={styles.pathways}><div><span className={styles.kicker}>DISTRICT PATHWAYS</span><h2>Choose the system that needs attention.</h2></div><nav aria-label="Service pathways">{pathways.map(([number, title, body, href]) => <Link key={title} href={href}><span>{number}</span><div><strong>{title}</strong><p>{body}</p></div><ArrowRight size={19}/></Link>)}</nav></section>
 
-      <section className={styles.trustChapter}><div className={styles.trustTree} aria-hidden="true"><span/><i/><i/><i/></div><div><span className={styles.kicker}>TRUST IS AN OPERATING PRACTICE</span><h2>Stay accountable after launch.</h2><p>Clear ownership, documented decisions, maintainable systems, honest limits and a practical route back to the people responsible.</p><Link href="/studio">How Airix works <ArrowRight size={17}/></Link></div></section>
+      <section className={styles.trustChapter}><div className={styles.trustTree}><picture><source media="(prefers-color-scheme: dark)" srcSet="/images/atlas/graphics/trust-tree/trust-tree-night.webp"/><img src="/images/atlas/graphics/trust-tree/trust-tree-day.webp" alt="A maintained civic courtyard with a mature tree and people caring for the shared space."/></picture></div><div><span className={styles.kicker}>TRUST IS AN OPERATING PRACTICE</span><h2>Stay accountable after launch.</h2><p>Clear ownership, documented decisions, maintainable systems, honest limits and a practical route back to the people responsible.</p><Link href="/studio">How Airix works <ArrowRight size={17}/></Link></div></section>
 
-      <section className={styles.homeGateway}><span>AIRIX ATLAS / GATEWAY</span><h2>Where shall we build next?</h2><p>Start with the challenge, not a preselected package.</p><Link href="/discuss">Discuss a Project <ArrowRight size={18}/></Link></section>
+      <section className={styles.homeGateway}><span>AIRIX MEDIA / DISCUSS</span><h2>Where shall we build next?</h2><p>Start with the challenge, not a preselected package.</p><Link href="/discuss">Discuss a Project <ArrowRight size={18}/></Link></section>
     </main>
     <PublicFooter/>
   </div>;

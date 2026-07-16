@@ -11,7 +11,7 @@ import styles from "./atlas-public.module.css";
 export function PublicPage({ page, path }: { page: PublicPageRecord; path: string }) {
   const showBrief = path === "discuss" || path === "contact";
   const showRepositories = path === "open-source" || path.startsWith("open-source/");
-  return <div className={`${styles.site} ${styles[`state_${page.state}`]}`}>
+  return <div className={styles.site}>
     <PublicHeader/>
     <main id="main-content">
       <header className={`${styles.pageHero} ${!page.art ? styles.pageHeroNoArt : ""}`}>
