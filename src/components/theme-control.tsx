@@ -28,6 +28,7 @@ export function ThemeControl({ className = "", expanded = false }: { className?:
   const [choice, setChoice] = useState<ThemeChoice>("auto");
   const [active, setActive] = useState<ActiveTheme>("light");
   const [announcement, setAnnouncement] = useState("");
+  const [ready, setReady] = useState(false);
 
   const apply = (next: ActiveTheme) => {
     document.documentElement.setAttribute("data-theme", next);
@@ -36,10 +37,11 @@ export function ThemeControl({ className = "", expanded = false }: { className?:
 
   useEffect(() => {
     const current = savedChoice();
-    queueMicrotask(() => { setChoice(current); apply(current === "auto" ? themeAt() : current); });
+    queueMicrotask(() => { setChoice(current); apply(current === "auto" ? themeAt() : current); setReady(true); });
   }, []);
 
   useEffect(() => {
+    if (!ready) return;
     if (choice !== "auto") {
       queueMicrotask(() => apply(choice));
       return;
@@ -55,7 +57,7 @@ export function ThemeControl({ className = "", expanded = false }: { className?:
     const onVisible = () => { if (document.visibilityState === "visible") evaluate(); };
     document.addEventListener("visibilitychange", onVisible);
     return () => { window.clearTimeout(timer); document.removeEventListener("visibilitychange", onVisible); };
-  }, [choice]);
+  }, [choice, ready]);
 
   function choose(next: ActiveTheme) {
     localStorage.setItem("airix-theme", next);

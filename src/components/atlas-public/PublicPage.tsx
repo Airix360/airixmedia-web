@@ -4,19 +4,22 @@ import type { PublicPage as PublicPageRecord } from "@/content/atlas/public";
 import { openSourceProjects } from "@/lib/content";
 import { LocalBrief } from "./PublicForms";
 import { PublicArtwork, type PublicArtworkKey } from "./PublicArtwork";
+import { RouteHeroArtwork } from "./RouteHeroArtwork";
 import { PublicFooter } from "./PublicFooter";
 import { PublicHeader } from "./PublicHeader";
+import { routeHeroFor } from "@/lib/atlas/route-heroes";
 import styles from "./atlas-public.module.css";
 import contrast from "./contrast.module.css";
 
 export function PublicPage({ page, path }: { page: PublicPageRecord; path: string }) {
+  const routeHero = routeHeroFor(path);
   const showBrief = path === "discuss" || path === "contact";
   const showRepositories = path === "open-source" || path.startsWith("open-source/");
   return <div className={styles.site}>
     <PublicHeader/>
     <main id="main-content">
       <header className={`${styles.pageHero} ${!page.art ? styles.pageHeroNoArt : ""}`}>
-        {page.art && <PublicArtwork id={page.art as PublicArtworkKey} alt={`${page.title} illustrated working environment`} priority/>}
+        {routeHero ? <RouteHeroArtwork asset={routeHero} alt={`${page.title} illustrated working environment`} priority/> : page.art && <PublicArtwork id={page.art as PublicArtworkKey} alt={`${page.title} illustrated working environment`} priority/>}
         <div className={styles.heroScrim}/>
         <div className={styles.pageHeroCopy}><span className={styles.routeLabel}>AIRIX MEDIA / {page.eyebrow}</span><span className={styles.kicker}>{page.eyebrow}</span><h1>{page.title}</h1><p>{page.summary}</p>{page.action && <Link className={styles.primaryAction} href={page.action.href}>{page.action.label}<ArrowRight size={17}/></Link>}</div>
       </header>
