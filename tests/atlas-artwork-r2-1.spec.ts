@@ -51,16 +51,22 @@ test("proves in-place day/night switching and captures public-route evidence", a
   await writeFile(path.join(out, "theme-proof.json"), JSON.stringify(report, null, 2));
 });
 
-test("fresh sessions request only the resolved initial hero", async ({ browser }, info) => {
+test("fresh sessions request only the resolved initial hero on every integrated route", async ({ browser }, info) => {
   test.skip(info.project.name !== "desktop", "Verified once with isolated Chromium contexts.");
-  const cases: Array<["light" | "dark", string]> = [["light", "day"], ["dark", "night"]];
-  for (const [saved, expected] of cases) {
-    const context = await browser.newContext();
-    await context.addInitScript(value => localStorage.setItem("airix-theme", value), saved);
-    const page = await context.newPage(); const requests: string[] = [];
-    page.on("request", request => { if (request.url().includes("/atlas/heroes/")) requests.push(request.url()); });
-    await page.goto("/"); await expect(page.locator("[data-active-hero]")).toHaveAttribute("data-active-hero", new RegExp(`-${expected}\\.webp$`));
-    expect(requests).toHaveLength(1); expect(requests[0]).toContain(`-${expected}.webp`);
-    await context.close();
+  for (const [route, key] of routes) for (const [saved, expected] of [["light", "day"], ["dark", "night"]] as const) {
+    const context = await browser.newContext(); await context.addInitScript(value => localStorage.setItem("airix-theme", value), saved);
+    const page = await context.newPage(); const requests: string[] = []; page.on("request", request => { if (request.url().includes("/atlas/heroes/")) requests.push(request.url()); });
+    await page.goto(route); await expect(page.locator("[data-active-hero]")).toHaveAttribute("data-active-hero", new RegExp(`${key}-${expected}\\.webp$`));
+    expect(requests).toHaveLength(1); expect(requests[0]).toContain(`${key}-${expected}.webp`); await context.close();
+  }
+});
+
+test("fresh Auto sessions resolve one correct hero on every integrated route", async ({ browser }, info) => {
+  test.skip(info.project.name !== "desktop", "Verified once with isolated Chromium contexts.");
+  for (const [hour, expected] of [[10, "day"], [22, "night"]] as const) for (const [route, key] of routes) {
+    const context = await browser.newContext(); await context.addInitScript(({ hour }) => { const RealDate = Date; class MockDate extends RealDate { constructor(...args: ConstructorParameters<typeof Date>) { super(...(args.length ? args : [2026, 6, 17, hour, 0, 0] as never)); } static now() { return new RealDate(2026, 6, 17, hour, 0, 0).getTime(); } } Object.defineProperty(window, "Date", { value: MockDate }); localStorage.removeItem("airix-theme"); }, { hour });
+    const page = await context.newPage(); const requests: string[] = []; page.on("request", request => { if (request.url().includes("/atlas/heroes/")) requests.push(request.url()); });
+    await page.goto(route); await expect(page.locator("[data-active-hero]")).toHaveAttribute("data-active-hero", new RegExp(`${key}-${expected}\\.webp$`));
+    expect(requests).toHaveLength(1); expect(requests[0]).toContain(`${key}-${expected}.webp`); await context.close();
   }
 });
