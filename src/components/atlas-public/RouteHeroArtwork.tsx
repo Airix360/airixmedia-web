@@ -20,5 +20,5 @@ export function RouteHeroArtwork({ asset, alt, priority = false }: { asset: Rout
 
   if (!theme) return <div aria-hidden="true" />;
   const src = theme === "dark" ? asset.night : asset.day;
-  return <img className="route-hero-artwork" src={src} alt={alt} fetchPriority={priority ? "high" : "auto"} loading={priority ? "eager" : "lazy"} style={{ objectPosition: asset.mobilePosition }} data-active-hero={src} />;
+  return <img key={`${asset.route}-${theme}`} className="route-hero-artwork" src={src} alt={alt} fetchPriority={priority ? "high" : "auto"} loading={priority ? "eager" : "lazy"} style={{ objectPosition: asset.mobilePosition }} data-active-hero={src} />;
 }
