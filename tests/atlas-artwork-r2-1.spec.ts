@@ -1,4 +1,4 @@
-import { expect, test, type Page } from "@playwright/test";
+import { expect, test, type Browser, type Page } from "@playwright/test";
 import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 
@@ -41,10 +41,26 @@ test("proves in-place day/night switching and captures public-route evidence", a
     expect((await state(page)).currentSrc).toContain(`${key}-day.webp`);
     await page.setViewportSize({ width: 390, height: 844 });
     await page.screenshot({ path: path.join(out, `${slug(route)}-light-390x844.png`), fullPage: true, animations: "disabled", scale: "css" });
+    await switchMode(page, "dark");
+    await page.screenshot({ path: path.join(out, `${slug(route)}-dark-390x844.png`), fullPage: true, animations: "disabled", scale: "css" });
     expect(requested.filter(url => url.includes(`${key}-day.webp`)).length).toBeGreaterThan(0);
     expect(requested.filter(url => url.includes(`${key}-night.webp`)).length).toBeGreaterThan(0);
     report.push({ route, light, dark, requested: [...new Set(requested)] });
     page.off("request", listener);
   }
   await writeFile(path.join(out, "theme-proof.json"), JSON.stringify(report, null, 2));
+});
+
+test("fresh sessions request only the resolved initial hero", async ({ browser }, info) => {
+  test.skip(info.project.name !== "desktop", "Verified once with isolated Chromium contexts.");
+  const cases: Array<["light" | "dark", string]> = [["light", "day"], ["dark", "night"]];
+  for (const [saved, expected] of cases) {
+    const context = await browser.newContext();
+    await context.addInitScript(value => localStorage.setItem("airix-theme", value), saved);
+    const page = await context.newPage(); const requests: string[] = [];
+    page.on("request", request => { if (request.url().includes("/atlas/heroes/")) requests.push(request.url()); });
+    await page.goto("/"); await expect(page.locator("[data-active-hero]")).toHaveAttribute("data-active-hero", new RegExp(`-${expected}\\.webp$`));
+    expect(requests).toHaveLength(1); expect(requests[0]).toContain(`-${expected}.webp`);
+    await context.close();
+  }
 });
