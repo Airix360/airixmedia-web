@@ -45,7 +45,7 @@ test("compact mobile artwork derivatives exist for every active family", async (
     const record = (response: import("@playwright/test").Response) => { if (response.url().includes("_mobile_640x800_") && response.status() >= 400) failures.push(response.url()); };
     page.on("response", record);
     await page.goto(route);
-    await page.locator("picture img").first().waitFor();
+    await page.locator("picture img, [data-active-hero]").first().waitFor();
     await page.waitForLoadState("networkidle");
     page.off("response", record);
     expect(failures, route).toEqual([]);

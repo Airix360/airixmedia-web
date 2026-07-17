@@ -3,6 +3,7 @@ import { expect, test, type Page } from "@playwright/test";
 const routes = [
   ["/", "homepage"], ["/work", "work"], ["/services", "services"], ["/publishing", "publishing"], ["/publishing/ojs", "ojs"], ["/publishing/pricing", "pricing"],
   ["/publishing/universities", "universities-delsu"], ["/publishing/journal-platforms", "journal-platforms-unilag"], ["/studio", "studio"], ["/open-source", "open-source"],
+  ["/atlas", "airix-atlas-highland-systems-overlook"], ["/discuss", "airix-project-discussion-granite-arrival"], ["/contact", "airix-contact-transport-interchange"], ["/book", "airix-consultation-courtyard-booking"],
 ] as const;
 
 async function chooseTheme(page: Page, theme: "light" | "dark") {

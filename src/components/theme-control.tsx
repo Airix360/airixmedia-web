@@ -77,7 +77,13 @@ export function ThemeControl({ className = "", expanded = false }: { className?:
   const switchTo = active === "dark" ? "light" : "dark";
   return <div className={`${className} theme-control ${expanded ? "theme-control-expanded" : ""}`}>
     <button type="button" className="theme-switch" role="switch" aria-checked={active === "dark"} aria-label={`Switch to ${switchTo} mode`} onClick={() => choose(switchTo)}>
-      <span className="theme-switch-label theme-switch-light">Light</span><Sun aria-hidden="true" size={15}/><span className="theme-switch-thumb"/><Moon aria-hidden="true" size={15}/><span className="theme-switch-label theme-switch-dark">Dark</span>
+      <span className="theme-switch-label">Light</span>
+      <span className="theme-switch-track" aria-hidden="true">
+        <span className="theme-switch-thumb"/>
+        <Sun className="theme-switch-icon theme-switch-sun" size={16}/>
+        <Moon className="theme-switch-icon theme-switch-moon" size={15}/>
+      </span>
+      <span className="theme-switch-label">Dark</span>
     </button>
     {expanded && choice !== "auto" && <button type="button" className="automatic-theme" onClick={useAutomaticTheme}>Use automatic theme</button>}
     <span className="sr-only" aria-live="polite">{announcement}</span>

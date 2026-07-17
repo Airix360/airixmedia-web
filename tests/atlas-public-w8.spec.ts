@@ -4,6 +4,10 @@ import path from "node:path";
 
 const output = (name: string) => path.join(process.cwd(), "output/playwright/atlas-public-w8", name);
 
+test.beforeEach(async ({ page }) => {
+  await page.addInitScript(() => localStorage.setItem("airix-theme", "light"));
+});
+
 test("public homepage presents the complete Atlas journey without review leakage", async ({ page }) => {
   await page.goto("/");
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Every thriving city depends on invisible systems.");
@@ -95,7 +99,7 @@ test("reduced motion retains the homepage narrative and captures evidence", asyn
   await page.goto("/");
   await expect(page.getByRole("heading", { name: /We build the invisible systems/ })).toBeVisible();
   await expect(page.getByRole("heading", { name: "Where shall we build next?" })).toBeVisible();
-  await expect(page.locator("picture img").first()).toHaveCSS("animation-name", "none");
+  await expect(page.locator("[data-active-hero]").first()).toHaveCSS("animation-name", "none");
   await page.screenshot({ path: output("home-reduced-motion-1440x1000.png"), fullPage: true, animations: "disabled", scale: "css" });
 });
 

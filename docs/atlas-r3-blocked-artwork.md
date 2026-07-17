@@ -1,13 +1,13 @@
 # R3 blocked artwork register
 
-Every route below is `blocked-missing-artwork`: no new runtime asset may be integrated until two standalone, compositionally matched masters exist and pass the readiness checklist in the production specification. Existing R2 assets are not candidates for reassignment.
+Routes remain blocked from human approval or launch until their stated review clears. Wave 1 now has technically integrated, compositionally matched runtime pairs; existing R2 assets were not reassigned.
 
 | Route | Purpose / proposed environment | Missing component | Priority | Blocking reason |
 |---|---|---|---|---|
-| `/atlas` | Jos civic road and verified Plateau granite formation | landmark verification, owner review | Wave 1 | Existing pair is `pending-independent-landmark-verification`; do not integrate yet. |
-| `/discuss` | Credible Olumo Rock arrival road and purposeful movement | both | Wave 1 | No matching master pair. |
-| `/contact` | Distinct Abeokuta station/interchange communications threshold | both | Wave 1 | No matching master pair. |
-| `/book` | Distinct contemporary meeting-arrival setting | both | Wave 1 | No matching master pair. |
+| `/atlas` | Jos civic road and Plateau granite formation | landmark verification, owner review | Wave 1 | Technically integrated; `pending-independent-landmark-verification`. |
+| `/discuss` | Olumo Rock arrival road and purposeful movement | landmark verification, owner review | Wave 1 | Technically integrated; `pending-landmark-verification`. |
+| `/contact` | Abeokuta station/interchange communications threshold | landmark verification, rights review, owner review | Wave 1 | Technically integrated; `pending-landmark-and-rights-review`; no railway endorsement claim. |
+| `/book` | Contemporary meeting-arrival setting | owner review | Wave 1 | Technically integrated; `pending-owner-review`. |
 | `/services/digital-experiences` | Nigerian cultural/public wayfinding and customer movement | both | Wave 2 | No route-specific pair. |
 | `/services/business-systems` | Civic/transport records, transactions and handoffs | both | Wave 2 | No route-specific pair. |
 | `/services/managed-infrastructure` | Quay, maintenance plant and accountable operations | both | Wave 2 | No route-specific pair. |

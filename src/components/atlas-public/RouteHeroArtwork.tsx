@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, type CSSProperties } from "react";
 import type { RouteHeroAsset } from "@/lib/atlas/route-heroes";
+import styles from "./atlas-public.module.css";
 
 function resolvedTheme() {
   return document.documentElement.dataset.theme === "dark" ? "dark" : "light";
@@ -20,5 +21,6 @@ export function RouteHeroArtwork({ asset, alt, priority = false }: { asset: Rout
 
   if (!theme) return <div aria-hidden="true" />;
   const src = theme === "dark" ? asset.night : asset.day;
-  return <img key={`${asset.route}-${theme}`} className="route-hero-artwork" src={src} alt={alt} fetchPriority={priority ? "high" : "auto"} loading={priority ? "eager" : "lazy"} style={{ objectPosition: asset.mobilePosition }} data-active-hero={src} />;
+  const position = { "--route-hero-desktop-position": asset.desktopPosition, "--route-hero-mobile-position": asset.mobilePosition } as CSSProperties;
+  return <img key={`${asset.route}-${theme}`} className={styles.routeHeroArtwork} src={src} alt={alt} fetchPriority={priority ? "high" : "auto"} loading={priority ? "eager" : "lazy"} style={position} data-active-hero={src} />;
 }

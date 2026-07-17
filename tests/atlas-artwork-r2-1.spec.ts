@@ -1,8 +1,8 @@
-import { expect, test, type Browser, type Page } from "@playwright/test";
+import { expect, test, type Page } from "@playwright/test";
 import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 
-const routes = [["/", "homepage"], ["/work", "work"], ["/services", "services"], ["/publishing", "publishing"], ["/publishing/ojs", "ojs"], ["/publishing/pricing", "pricing"], ["/publishing/universities", "universities-delsu"], ["/publishing/journal-platforms", "journal-platforms-unilag"], ["/studio", "studio"], ["/open-source", "open-source"]] as const;
+const routes = [["/", "homepage"], ["/work", "work"], ["/services", "services"], ["/publishing", "publishing"], ["/publishing/ojs", "ojs"], ["/publishing/pricing", "pricing"], ["/publishing/universities", "universities-delsu"], ["/publishing/journal-platforms", "journal-platforms-unilag"], ["/studio", "studio"], ["/open-source", "open-source"], ["/atlas", "airix-atlas-highland-systems-overlook"], ["/discuss", "airix-project-discussion-granite-arrival"], ["/contact", "airix-contact-transport-interchange"], ["/book", "airix-consultation-courtyard-booking"]] as const;
 const out = path.join(process.cwd(), "output/playwright/atlas-artwork-r2-1");
 const slug = (route: string) => route === "/" ? "home" : route.slice(1).replaceAll("/", "__");
 
@@ -16,6 +16,7 @@ async function switchMode(page: Page, mode: "light" | "dark") {
   if (await control.count()) await control.click();
   await expect(page.locator("html")).toHaveAttribute("data-theme", mode);
   await expect(page.locator("[data-active-hero]")).toHaveAttribute("data-active-hero", new RegExp(`-${mode === "dark" ? "night" : "day"}\\.webp$`));
+  await expect.poll(() => page.locator("[data-active-hero]").evaluate((node: HTMLImageElement) => node.currentSrc)).toContain(`-${mode === "dark" ? "night" : "day"}.webp`);
 }
 
 test.describe.configure({ mode: "serial" });
@@ -31,6 +32,7 @@ test("proves in-place day/night switching and captures public-route evidence", a
     await page.setViewportSize({ width: 1440, height: 1000 });
     await page.goto(route);
     await expect(page.locator("[data-active-hero]")).toHaveAttribute("data-active-hero", new RegExp(`${key}-day\\.webp$`));
+    await expect.poll(() => page.locator("[data-active-hero]").evaluate((node: HTMLImageElement) => node.currentSrc)).toContain(`${key}-day.webp`);
     const light = await state(page);
     await page.screenshot({ path: path.join(out, `${slug(route)}-light-1440x1000.png`), fullPage: true, animations: "disabled", scale: "css" });
     await switchMode(page, "dark");
