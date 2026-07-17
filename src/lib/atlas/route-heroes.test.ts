@@ -14,7 +14,7 @@ describe("route hero registry", () => {
     expect(routeHeroAssets["/atlas"].status).toBe("pending-independent-landmark-verification");
     expect(routeHeroAssets["/discuss"].status).toBe("pending-landmark-verification");
     expect(routeHeroAssets["/contact"].status).toBe("pending-landmark-and-rights-review");
-    expect(routeHeroAssets["/book"].status).toBe("pending-owner-review");
+    expect(routeHeroAssets["/book"].status).toBe("owner-approved-production-qa-pending");
     expect(routeHeroAssets["/contact"].warning).toMatch(/no railway endorsement/i);
   });
 

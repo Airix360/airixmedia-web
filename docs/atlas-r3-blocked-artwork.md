@@ -4,10 +4,10 @@ Routes remain blocked from human approval or launch until their stated review cl
 
 | Route | Purpose / proposed environment | Missing component | Priority | Blocking reason |
 |---|---|---|---|---|
-| `/atlas` | Jos civic road and Plateau granite formation | landmark verification, owner review | Wave 1 | Technically integrated; `pending-independent-landmark-verification`. |
-| `/discuss` | Olumo Rock arrival road and purposeful movement | landmark verification, owner review | Wave 1 | Technically integrated; `pending-landmark-verification`. |
-| `/contact` | Abeokuta station/interchange communications threshold | landmark verification, rights review, owner review | Wave 1 | Technically integrated; `pending-landmark-and-rights-review`; no railway endorsement claim. |
-| `/book` | Contemporary meeting-arrival setting | owner review | Wave 1 | Technically integrated; `pending-owner-review`. |
+| `/atlas` | Jos civic road and Plateau granite formation | independent landmark verification | Wave 1 | Technical integration and owner direction approved; `pending-independent-landmark-verification`. |
+| `/discuss` | Olumo Rock arrival road and purposeful movement | landmark verification, cultural review | Wave 1 | Technical integration and owner direction approved; `pending-landmark-verification`; `pending-cultural-review`. |
+| `/contact` | Abeokuta station/interchange communications threshold | landmark verification, rights review | Wave 1 | Technical integration and owner direction approved; `pending-landmark-verification`; `pending-rights-review`; no NRC endorsement, partnership, logo or station claim. |
+| `/book` | Contemporary meeting-arrival setting | normal production QA | Wave 1 | Technical integration and owner approval recorded; not culturally or final-launch approved. |
 | `/services/digital-experiences` | Nigerian cultural/public wayfinding and customer movement | both | Wave 2 | No route-specific pair. |
 | `/services/business-systems` | Civic/transport records, transactions and handoffs | both | Wave 2 | No route-specific pair. |
 | `/services/managed-infrastructure` | Quay, maintenance plant and accountable operations | both | Wave 2 | No route-specific pair. |
@@ -38,4 +38,4 @@ Routes remain blocked from human approval or launch until their stated review cl
 | `/data-processing` | Controlled provider/record handoff | both | Wave 4 | No route-specific pair. |
 | `/subprocessors` | Accountable service dependencies | both | Wave 4 | No route-specific pair. |
 
-`/atlas` has a technically paired source but is not a reusable or ready asset. `/publishing/projects` additionally requires owner permission for any real interface evidence. All new artwork remains pending owner review and, where a named landmark/institution is involved, pending rights/cultural or landmark review.
+Wave 1 owner decisions do not clear the remaining landmark, cultural or rights reviews and do not constitute a launch decision. `/publishing/projects` additionally requires owner permission for any real interface evidence. Unproduced Wave 2–4 artwork remains pending owner review after technical intake.
