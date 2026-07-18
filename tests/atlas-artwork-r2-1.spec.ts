@@ -2,21 +2,22 @@ import { expect, test, type Page } from "@playwright/test";
 import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 
-const routes = [["/", "homepage"], ["/work", "work"], ["/services", "services"], ["/publishing", "publishing"], ["/publishing/ojs", "ojs"], ["/publishing/pricing", "pricing"], ["/publishing/universities", "universities-delsu"], ["/publishing/journal-platforms", "journal-platforms-unilag"], ["/studio", "studio"], ["/open-source", "open-source"], ["/atlas", "airix-atlas-highland-systems-overlook"], ["/discuss", "airix-project-discussion-granite-arrival"], ["/contact", "airix-contact-transport-interchange"], ["/book", "airix-consultation-courtyard-booking"]] as const;
+const routes = [["/", "homepage"], ["/work", "work"], ["/services", "services"], ["/publishing", "publishing"], ["/publishing/ojs", "ojs"], ["/publishing/pricing", "pricing"], ["/studio", "studio"], ["/open-source", "open-source"], ["/atlas", "airix-atlas-highland-systems-overlook"], ["/discuss", "airix-project-discussion-granite-arrival"], ["/contact", "airix-contact-transport-interchange"], ["/book", "airix-consultation-courtyard-booking"]] as const;
 const out = path.join(process.cwd(), "output/playwright/atlas-artwork-r2-1");
 const slug = (route: string) => route === "/" ? "home" : route.slice(1).replaceAll("/", "__");
 
-async function state(page: Page) {
-  return page.locator("[data-active-hero]").evaluate((node: HTMLImageElement) => ({ theme: document.documentElement.dataset.theme, active: node.dataset.activeHero, currentSrc: node.currentSrc }));
+async function state(page: Page, key: string) {
+  return page.locator(`[data-active-hero*="${key}-"]`).evaluate((node: HTMLImageElement) => ({ theme: document.documentElement.dataset.theme, active: node.dataset.activeHero, currentSrc: node.currentSrc }));
 }
 
-async function switchMode(page: Page, mode: "light" | "dark") {
+async function switchMode(page: Page, mode: "light" | "dark", key: string) {
   const target = mode === "dark" ? "Switch to dark mode" : "Switch to light mode";
   const control = page.getByRole("switch", { name: target }).first();
   if (await control.count()) await control.click();
   await expect(page.locator("html")).toHaveAttribute("data-theme", mode);
-  await expect(page.locator("[data-active-hero]")).toHaveAttribute("data-active-hero", new RegExp(`-${mode === "dark" ? "night" : "day"}\\.webp$`));
-  await expect.poll(() => page.locator("[data-active-hero]").evaluate((node: HTMLImageElement) => node.currentSrc)).toContain(`-${mode === "dark" ? "night" : "day"}.webp`);
+  const image = page.locator(`[data-active-hero*="${key}-"]`);
+  await expect(image).toHaveAttribute("data-active-hero", new RegExp(`-${mode === "dark" ? "night" : "day"}\\.webp$`));
+  await expect.poll(() => image.evaluate((node: HTMLImageElement) => node.currentSrc)).toContain(`-${mode === "dark" ? "night" : "day"}.webp`);
 }
 
 test.describe.configure({ mode: "serial" });
@@ -31,19 +32,21 @@ test("proves in-place day/night switching and captures public-route evidence", a
     await page.addInitScript(() => localStorage.setItem("airix-theme", "light"));
     await page.setViewportSize({ width: 1440, height: 1000 });
     await page.goto(route);
-    await expect(page.locator("[data-active-hero]")).toHaveAttribute("data-active-hero", new RegExp(`${key}-day\\.webp$`));
-    await expect.poll(() => page.locator("[data-active-hero]").evaluate((node: HTMLImageElement) => node.currentSrc)).toContain(`${key}-day.webp`);
-    const light = await state(page);
+    const image = page.locator(`[data-active-hero*="${key}-"]`);
+    await expect(image).toHaveAttribute("data-active-hero", new RegExp(`${key}-day\\.webp$`));
+    await expect.poll(() => image.evaluate((node: HTMLImageElement) => node.currentSrc)).toContain(`${key}-day.webp`);
+    const light = await state(page, key);
     await page.screenshot({ path: path.join(out, `${slug(route)}-light-1440x1000.png`), fullPage: true, animations: "disabled", scale: "css" });
-    await switchMode(page, "dark");
-    const dark = await state(page);
+    if (await page.getByRole("dialog").count()) await page.keyboard.press("Escape");
+    await switchMode(page, "dark", key);
+    const dark = await state(page, key);
     await page.screenshot({ path: path.join(out, `${slug(route)}-dark-1440x1000.png`), fullPage: true, animations: "disabled", scale: "css" });
     expect(light.currentSrc).toContain(`${key}-day.webp`); expect(dark.currentSrc).toContain(`${key}-night.webp`); expect(dark.currentSrc).not.toBe(light.currentSrc);
-    await switchMode(page, "light");
-    expect((await state(page)).currentSrc).toContain(`${key}-day.webp`);
+    await switchMode(page, "light", key);
+    expect((await state(page, key)).currentSrc).toContain(`${key}-day.webp`);
     await page.setViewportSize({ width: 390, height: 844 });
     await page.screenshot({ path: path.join(out, `${slug(route)}-light-390x844.png`), fullPage: true, animations: "disabled", scale: "css" });
-    await switchMode(page, "dark");
+    await switchMode(page, "dark", key);
     await page.screenshot({ path: path.join(out, `${slug(route)}-dark-390x844.png`), fullPage: true, animations: "disabled", scale: "css" });
     expect(requested.filter(url => url.includes(`${key}-day.webp`)).length).toBeGreaterThan(0);
     expect(requested.filter(url => url.includes(`${key}-night.webp`)).length).toBeGreaterThan(0);
@@ -58,8 +61,8 @@ test("fresh sessions request only the resolved initial hero on every integrated 
   for (const [route, key] of routes) for (const [saved, expected] of [["light", "day"], ["dark", "night"]] as const) {
     const context = await browser.newContext(); await context.addInitScript(value => localStorage.setItem("airix-theme", value), saved);
     const page = await context.newPage(); const requests: string[] = []; page.on("request", request => { if (request.url().includes("/atlas/heroes/")) requests.push(request.url()); });
-    await page.goto(route); await expect(page.locator("[data-active-hero]")).toHaveAttribute("data-active-hero", new RegExp(`${key}-${expected}\\.webp$`));
-    expect(requests).toHaveLength(1); expect(requests[0]).toContain(`${key}-${expected}.webp`); await context.close();
+    await page.goto(route); const image = page.locator(`[data-active-hero*="${key}-"]`); await expect(image).toHaveAttribute("data-active-hero", new RegExp(`${key}-${expected}\\.webp$`)); await image.scrollIntoViewIfNeeded(); await expect.poll(() => image.evaluate((node: HTMLImageElement) => node.naturalWidth)).toBeGreaterThan(0);
+    expect(requests.filter(url => url.includes(`${key}-${expected}.webp`)), `${route} ${saved}`).toHaveLength(1); expect(requests.some(url => url.includes(`${key}-${expected === "day" ? "night" : "day"}.webp`))).toBe(false); expect(requests.every(url => url.includes(`-${expected}.webp`))).toBe(true); await context.close();
   }
 });
 
@@ -68,7 +71,11 @@ test("fresh Auto sessions resolve one correct hero on every integrated route", a
   for (const [hour, expected] of [[10, "day"], [22, "night"]] as const) for (const [route, key] of routes) {
     const context = await browser.newContext(); await context.addInitScript(({ hour }) => { const RealDate = Date; class MockDate extends RealDate { constructor(...args: ConstructorParameters<typeof Date>) { super(...(args.length ? args : [2026, 6, 17, hour, 0, 0] as never)); } static now() { return new RealDate(2026, 6, 17, hour, 0, 0).getTime(); } } Object.defineProperty(window, "Date", { value: MockDate }); localStorage.removeItem("airix-theme"); }, { hour });
     const page = await context.newPage(); const requests: string[] = []; page.on("request", request => { if (request.url().includes("/atlas/heroes/")) requests.push(request.url()); });
-    await page.goto(route); await expect(page.locator("[data-active-hero]")).toHaveAttribute("data-active-hero", new RegExp(`${key}-${expected}\\.webp$`));
-    expect(requests).toHaveLength(1); expect(requests[0]).toContain(`${key}-${expected}.webp`); await context.close();
+    await page.goto(route); const image = page.locator(`[data-active-hero*="${key}-"]`); await expect(image).toHaveAttribute("data-active-hero", new RegExp(`${key}-${expected}\\.webp$`)); await image.scrollIntoViewIfNeeded(); await expect.poll(() => image.evaluate((node: HTMLImageElement) => node.naturalWidth)).toBeGreaterThan(0);
+    expect(requests.filter(url => url.includes(`${key}-${expected}.webp`)), `${route} Auto ${hour}`).toHaveLength(1); expect(requests.some(url => url.includes(`${key}-${expected === "day" ? "night" : "day"}.webp`))).toBe(false); expect(requests.every(url => url.includes(`-${expected}.webp`))).toBe(true); await context.close();
   }
+});
+
+test("archived institutional pairs remain byte-addressable after consolidation", async ({ request }) => {
+  for (const key of ["universities-delsu", "journal-platforms-unilag"]) for (const mode of ["day", "night"]) expect((await request.get(`/atlas/heroes/${key}-${mode}.webp`)).status()).toBe(200);
 });

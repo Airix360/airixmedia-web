@@ -46,8 +46,8 @@ test("public route markup excludes internal geography and the legal draft hero",
   await expect(page.getByText("Draft structure awaiting legal review.")).toHaveCount(0);
   await expect(page.getByRole("switch")).toHaveAttribute("aria-checked", /true|false/);
   await expect(page.locator("header select")).toHaveCount(0);
-  await expect(page.locator(".official-logo-light")).toHaveAttribute("src", /airixmedia\.png/);
-  await expect(page.locator(".official-logo-dark")).toHaveAttribute("src", /airixmedia-dark\.png/);
+  await expect(page.locator(".official-logo-light")).toHaveAttribute("src", /airixmedia-r3\.png/);
+  await expect(page.locator(".official-logo-dark")).toHaveAttribute("src", /airixmedia-r3-dark\.png/);
   expect(testInfo.project.name).toBeTruthy();
 });
 

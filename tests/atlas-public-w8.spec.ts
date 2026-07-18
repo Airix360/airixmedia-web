@@ -19,26 +19,27 @@ test("public homepage presents the complete Atlas journey without review leakage
 });
 
 test("canonical navigation and direct utility routes remain explicit", async ({ page, isMobile }) => {
+  if (!isMobile) await page.setViewportSize({ width: 1440, height: 1000 });
   await page.goto("/");
   if (isMobile) await page.getByRole("button", { name: "Open menu" }).click();
   const navigation = isMobile ? page.getByRole("dialog", { name: "Site navigation" }).getByRole("navigation") : page.getByRole("navigation", { name: "Primary navigation" });
-  for (const label of ["Work", "Services", "Publishing", "Atlas", "Studio", "Discuss a Project"]) await expect(navigation.getByRole("link", { name: new RegExp(`${label}$`) })).toBeVisible();
+  for (const label of ["Work", "Services", "Publishing", "Open Source", "Studio", "Contact"]) await expect(navigation.getByRole("link", { name: new RegExp(`${label}$`) })).toBeVisible();
   const utilityScope = isMobile ? page.getByRole("dialog") : page.getByRole("banner");
-  await expect(utilityScope.getByRole("link", { name: "Emergency Support", exact: true })).toHaveAttribute("href", "/support/emergency");
+  await expect(utilityScope.getByRole("link", { name: "Emergency", exact: true })).toHaveAttribute("href", "/support/emergency");
   await expect(utilityScope.getByRole("link", { name: "Client Portal", exact: true })).toHaveAttribute("href", "https://portal.airixmedia.com");
 });
 
 test("legacy routes redirect to the canonical public architecture", async ({ page }) => {
-  for (const [legacy, canonical] of [["/systems", "/work"], ["/systems/ku-journals", "/work/ku-journals"], ["/company", "/studio"], ["/start-a-project", "/discuss"], ["/project-brief", "/discuss"]]) {
+  for (const [legacy, canonical] of [["/systems", "/work"], ["/systems/ku-journals", "/work"], ["/company", "/studio"], ["/start-a-project", "/contact?form=project"], ["/project-brief", "/contact?form=project"]]) {
     await page.goto(legacy);
-    await expect(page).toHaveURL(new RegExp(`${canonical.replaceAll("/", "\\/")}/?$`));
+    expect(new URL(page.url()).pathname + new URL(page.url()).search + new URL(page.url()).hash).toBe(canonical);
   }
 });
 
 test("managed infrastructure retains its adaptive hero after client navigation", async ({ page }) => {
   await page.goto("/publishing");
   await page.goto("/services/managed-infrastructure");
-  const hero = page.locator("[data-active-hero]");
+  const hero = page.locator('[data-active-hero$="airix-managed-infrastructure-operations-day.webp"]');
   await expect(hero).toHaveAttribute("data-active-hero", "/atlas/heroes/airix-managed-infrastructure-operations-day.webp");
   await expect(hero).toHaveAttribute("src", "/atlas/heroes/airix-managed-infrastructure-operations-day.webp");
 });
@@ -62,30 +63,26 @@ test("public routes request only their active runtime artwork", async ({ page })
 
 test("publishing prices use only the approved From amounts", async ({ page }) => {
   await page.goto("/publishing/pricing");
-  for (const value of ["From ₦150,000", "From ₦200,000", "From ₦300,000/year", "From ₦150,000/year", "From ₦100,000/session", "From ₦250,000"]) await expect(page.getByText(value, { exact: true }).first()).toBeVisible();
+  for (const value of ["From ₦150,000", "From ₦200,000", "From ₦300,000/year", "From ₦150,000/year", "From ₦100,000/session", "Quoted based on requirements"]) await expect(page.getByText(value, { exact: true }).first()).toBeVisible();
   await expect(page.locator("body")).not.toContainText(/₦36,000|₦70,000|₦100,000 per year|guaranteed response/i);
 });
 
-test("project brief creates a local summary without network submission", async ({ page }) => {
+test("project dialog validates locally without claiming submission", async ({ page }) => {
   const requests: string[] = [];
   page.on("request", request => {
     if (request.method() !== "GET" && !request.url().includes("/__nextjs_")) requests.push(request.url());
   });
-  await page.goto("/discuss");
-  await page.getByLabel("Organisation").fill("Example Organisation");
-  await page.getByLabel("Your name").fill("Ada Example");
-  await page.getByLabel("Email").fill("ada@example.com");
-  await page.getByLabel("Primary route").selectOption({ label: "Publishing or OJS" });
-  await page.getByLabel("What needs to work better?").fill("We need a controlled journal-platform migration and clearer ownership.");
-  await page.getByRole("button", { name: "Prepare local summary" }).click();
-  await expect(page.getByText("Prepared locally — not sent")).toBeVisible();
-  await expect(page.getByRole("link", { name: "Continue in email" })).toHaveAttribute("href", /^mailto:/);
+  await page.goto("/contact?form=project");
+  const dialog = page.getByRole("dialog", { name: "Discuss a Project" });
+  await dialog.getByRole("button", { name: "Submit enquiry" }).click();
+  await expect(dialog.getByRole("alert")).toContainText("Review the highlighted fields");
+  await expect(dialog.getByText("Enquiry accepted.")).toHaveCount(0);
   expect(requests).toEqual([]);
 });
 
 test("representative public routes have no critical or serious Axe violations", async ({ page }) => {
   test.setTimeout(120_000);
-  for (const route of ["/", "/publishing", "/services/managed-infrastructure", "/studio", "/open-source", "/atlas", "/discuss", "/support/emergency"]) {
+  for (const route of ["/", "/publishing", "/services", "/studio", "/open-source", "/contact", "/support/emergency"]) {
     await page.goto(route);
     const result = await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"]).analyze();
     const blocking = result.violations.filter(item => item.impact === "critical" || item.impact === "serious");
@@ -127,9 +124,9 @@ test("capture representative W8 desktop evidence", async ({ page }, info) => {
     ["/services/business-systems", /Move important work/, "lagos-business-systems-desktop.png"],
     ["/publishing", /African journals/, "oyo-publishing-opening-desktop.png"],
     ["/publishing/ojs", /OJS built/, "oyo-ojs-workflow-desktop.png"],
-    ["/publishing/plugins", /Extensions shaped/, "oyo-plugins-desktop.png"],
-    ["/work/ku-journals", "KU Journals", "oyo-project-evidence-desktop.png"],
-    ["/publishing/pricing", /A clear starting point/, "oyo-pricing-desktop.png"],
+    ["/publishing/plugins", /Extend OJS/, "oyo-plugins-desktop.png"],
+    ["/work/ku-journals", /Publishing systems with a visible public record/, "oyo-project-evidence-desktop.png"],
+    ["/publishing/pricing", /Starting points for a scoped proposal/, "oyo-pricing-desktop.png"],
     ["/services/managed-infrastructure", /Keep the operating layer/, "rivers-infrastructure-desktop.png"],
     ["/support", /remain understandable/, "rivers-support-desktop.png"],
     ["/support/emergency", /Describe what failed/, "rivers-emergency-desktop.png"],
@@ -137,12 +134,12 @@ test("capture representative W8 desktop evidence", async ({ page }, info) => {
     ["/studio", /Small by design/, "edo-studio-desktop.png"],
     ["/open-source", /improved in public/, "kaduna-open-source-desktop.png"],
     ["/open-source/paystack-ojs", "PaystackOJS", "kaduna-paystack-ojs-desktop.png"],
-    ["/atlas", /A wider view/, "plateau-atlas-desktop.png"],
-    ["/insights", /Practical thinking/, "plateau-insights-desktop.png"],
-    ["/resources", /Useful tools/, "plateau-resources-desktop.png"],
-    ["/discuss", /Where shall we build next/, "ogun-discuss-desktop.png"],
-    ["/contact", /Tell us what needs/, "ogun-contact-desktop.png"],
-    ["/book", /useful conversation/, "ogun-book-desktop.png"],
+    ["/atlas", /Invisible systems. Visible progress/, "plateau-atlas-desktop.png"],
+    ["/insights", /A focused support library/, "plateau-insights-desktop.png"],
+    ["/resources", /A focused support library/, "plateau-resources-desktop.png"],
+    ["/discuss", /Discuss a Project/, "ogun-discuss-desktop.png"],
+    ["/contact", /Start with the conversation/, "ogun-contact-desktop.png"],
+    ["/book", /Book a Consultation/, "ogun-book-desktop.png"],
   ] as const) await capture(route, heading, name);
   for (const [route, name] of [["/publishing", "oyo-hidden-label-desktop.png"], ["/services/managed-infrastructure", "rivers-hidden-label-desktop.png"]] as const) {
     await page.goto(route);

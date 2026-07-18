@@ -1,6 +1,9 @@
 import Image from "next/image";
 import { r3Wave1Review, r3Wave1SharedDecisions } from "@/lib/atlas/r3-wave1";
 import { r3Wave2Decision, r3Wave2Review } from "@/lib/atlas/r3-wave2";
+import { contactFormDefinitions, contactFormKeys } from "@/lib/contact-forms";
+import { retainedPublicRoutes, routeConsolidationRedirects } from "@/lib/route-consolidation";
+import { routeHeroAssets } from "@/lib/atlas/route-heroes";
 import styles from "../owner-review-r2/review.module.css";
 
 const wave2Captures = [
@@ -37,5 +40,19 @@ export default function OwnerReviewR3() {
       <p className={styles.captureNote}><strong>Light currentSrc and initial request:</strong> /atlas/heroes/{record.runtimeDay}<br/><strong>Dark currentSrc and initial request:</strong> /atlas/heroes/{record.runtimeNight}<br/>Fresh saved and Auto evidence: <code>output/playwright/atlas-artwork-r3-wave2/fresh-session-request-report.json</code>.</p>
       <div className={styles.evidence}>{wave2Captures.map(([label, suffix, width, height]) => <figure key={suffix}><Image unoptimized src={`/internal/owner-review-r3/evidence/${record.key}-${suffix}`} alt="" width={width} height={height}/><figcaption>{label}</figcaption></figure>)}</div>
     </section>)}
+
+    <h2>Route Consolidation</h2>
+    <section data-review-route="route-consolidation">
+      <div className={styles.heading}><div><span>R3 ARCHITECTURE CHANGE</span><h2>44 canonical English routes become 16 focused pages.</h2><p>The public interface now centres on a small number of substantial editorial pages. Removed routes resolve through permanent redirects; form query states retain the `/contact` canonical.</p></div><dl><div><dt>Old sitemap</dt><dd>44 routes</dd></div><div><dt>New sitemap</dt><dd>{retainedPublicRoutes.length} routes</dd></div><div><dt>Redirects</dt><dd>{routeConsolidationRedirects.length} recorded</dd></div></dl></div>
+      <h3>Retained sitemap</h3><p>{retainedPublicRoutes.join(" · ")}</p>
+      <h3>Redirect and removed-canonical table</h3>
+      <div className={styles.captureNote}>{routeConsolidationRedirects.map((redirect) => <p key={redirect.source}><code>{redirect.source}</code> → <code>{redirect.destination}</code> · 308 · canonical removed · sitemap removed · {redirect.reason}</p>)}</div>
+      <h3>Artwork disposition</h3><p>{Object.keys(routeHeroAssets).length} approved or review-gated day/night pairs remain in the typed asset registry. Page heroes, section visuals, supporting panels and preserved internal archive entries are documented in <code>docs/atlas-artwork-disposition-r3.md</code>.</p>
+      <h3>Contact architecture</h3>
+      <div className={styles.captureNote}>{contactFormKeys.map((key) => <p key={key}><strong>{contactFormDefinitions[key].title}</strong> · <code>/contact?form={key}</code> · {contactFormDefinitions[key].fields.length} fields</p>)}</div>
+      <div className={styles.evidence}><figure><Image unoptimized src="/internal/owner-review-r3/evidence/contact-project-desktop.png" alt="" width={1440} height={1000}/><figcaption>Project dialog · desktop</figcaption></figure><figure><Image unoptimized src="/internal/owner-review-r3/evidence/contact-publishing-mobile.png" alt="" width={390} height={844}/><figcaption>Publishing dialog · mobile</figcaption></figure><figure><Image unoptimized src="/internal/owner-review-r3/evidence/navigation-desktop.png" alt="" width={1440} height={1000}/><figcaption>Consolidated navigation</figcaption></figure></div>
+      <h3>Legal and navigation result</h3><p>Standalone Privacy, Terms, Service Terms, Security, Data Processing and Subprocessors remain procurement-safe routes. Cookies, accessibility and acceptable use are anchored in the Legal centre. Primary navigation is Work, Services, Publishing, Open Source, Studio and Contact; utilities are Support, Emergency and Client Portal.</p>
+      <h3>Verification proof</h3><p>Automated redirect, anchor, sitemap, canonical, navigation, privacy-link and dialog-behaviour tests live in <code>src/lib/route-consolidation.test.ts</code>, <code>src/lib/contact-forms.test.ts</code> and <code>tests/route-consolidation-r3.spec.ts</code>. Generated screenshots are read from <code>output/playwright/atlas-route-consolidation-r3/</code>.</p>
+    </section>
   </main>;
 }

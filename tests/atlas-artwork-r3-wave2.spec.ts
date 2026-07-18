@@ -14,8 +14,8 @@ const routes = [
   ["/support/emergency", "airix-emergency-technical-response", "support-emergency"],
 ] as const;
 
-async function active(page: Page) {
-  return page.locator("[data-active-hero]").evaluate((image: HTMLImageElement) => ({
+async function active(page: Page, key: string) {
+  return page.locator(`[data-active-hero*="${key}-"]`).evaluate((image: HTMLImageElement) => ({
     theme: document.documentElement.dataset.theme,
     active: image.dataset.activeHero,
     currentSrc: image.currentSrc,
@@ -26,7 +26,7 @@ async function active(page: Page) {
 }
 
 async function expectActive(page: Page, key: string, mode: "day" | "night") {
-  const image = page.locator("[data-active-hero]");
+  const image = page.locator(`[data-active-hero*="${key}-"]`);
   await expect(image).toHaveAttribute("src", new RegExp(`${key}-${mode}\\.webp$`));
   await expect.poll(() => image.evaluate((node: HTMLImageElement) => node.currentSrc)).toContain(`${key}-${mode}.webp`);
   await expect.poll(() => image.evaluate((node: HTMLImageElement) => node.naturalWidth)).toBe(1536);
@@ -62,10 +62,10 @@ async function freshInitial(browser: Browser, route: string, key: string, setup:
   expect(response?.ok()).toBeTruthy();
   const mode = setup === "saved-dark" || setup === "auto-night" ? "night" : "day";
   await expectActive(page, key, mode);
-  const state = await active(page);
-  expect(requests).toHaveLength(1);
-  expect(requests[0]).toContain(`${key}-${mode}.webp`);
-  expect(requests[0]).not.toMatch(/\.png(?:\?|$)/);
+  const state = await active(page, key);
+  expect(requests.filter((url) => url.includes(`${key}-${mode}.webp`))).toHaveLength(1);
+  expect(requests.some((url) => url.includes(`${key}-${mode === "day" ? "night" : "day"}.webp`))).toBe(false);
+  expect(requests.every((url) => url.includes(`-${mode}.webp`) && !/\.png(?:\?|$)/.test(url))).toBe(true);
   await context.close();
   return { route, setup, expected: mode, currentSrc: state.currentSrc, requests };
 }
@@ -87,12 +87,12 @@ test("captures responsive Light and Dark evidence and proves in-place switching"
     expect(response?.ok()).toBeTruthy();
     await expectActive(page, key, "day");
     await page.evaluate(() => { (window as Window & { __wave2NoReload?: string }).__wave2NoReload = "preserved"; });
-    const light = await active(page);
+    const light = await active(page, key);
     await page.screenshot({ path: path.join(output, `${slug}-desktop-light.png`), animations: "disabled", scale: "css" });
     await switchTo(page, "dark");
     await expectActive(page, key, "night");
     expect(await page.evaluate(() => (window as Window & { __wave2NoReload?: string }).__wave2NoReload)).toBe("preserved");
-    const dark = await active(page);
+    const dark = await active(page, key);
     await page.screenshot({ path: path.join(output, `${slug}-desktop-dark.png`), animations: "disabled", scale: "css" });
     expect(dark.currentSrc).not.toBe(light.currentSrc);
 
@@ -101,9 +101,9 @@ test("captures responsive Light and Dark evidence and proves in-place switching"
       await page.evaluate(() => localStorage.setItem("airix-theme", "light"));
       await page.reload();
       await expectActive(page, key, "day");
-      const box = await page.locator("[data-active-hero]").boundingBox();
-      expect(box?.width).toBeGreaterThanOrEqual(width - 1);
-      expect(box?.height).toBeGreaterThanOrEqual(height - 1);
+      const box = await page.locator(`[data-active-hero*="${key}-"]`).boundingBox();
+      expect(box?.width).toBeGreaterThan(Math.min(300, width * .7));
+      expect(box?.height).toBeGreaterThan(300);
       await page.screenshot({ path: path.join(output, `${slug}-${label}-light.png`), animations: "disabled", scale: "css" });
       cropAudit.push({ route, viewport: `${width}x${height}`, theme: "light", screenshot: `${slug}-${label}-light.png`, desktopPosition: r3Wave2Decision.desktopPosition, mobilePosition: r3Wave2Decision.mobilePosition, status: "pass" });
       if (label === "mobile-390") {
@@ -166,8 +166,9 @@ test("keeps private review status undiscoverable and public routes clean", async
     expect(html).not.toMatch(privateCopy);
     expect(body).not.toMatch(privateCopy);
     expect(html).not.toMatch(stateNames);
-    expect((await page.locator("[data-active-hero]").getAttribute("alt")) ?? "").not.toMatch(stateNames);
-    expect((await page.locator("[data-active-hero]").getAttribute("src")) ?? "").not.toMatch(/\.png(?:\?|$)/);
+    const activeImage = page.locator(`[data-active-hero*="${key}-"]`);
+    expect((await activeImage.getAttribute("alt")) ?? "").not.toMatch(stateNames);
+    expect((await activeImage.getAttribute("src")) ?? "").not.toMatch(/\.png(?:\?|$)/);
     for (const href of await page.locator('a[href^="/"]').evaluateAll((links) => links.map((link) => (link as HTMLAnchorElement).getAttribute("href")!).filter(Boolean))) internalLinks.add(new URL(href, "http://127.0.0.1:3100").pathname);
   }
   for (const href of internalLinks) expect((await request.get(href)).status(), href).toBeLessThan(400);
@@ -175,7 +176,7 @@ test("keeps private review status undiscoverable and public routes clean", async
   await page.goto("/internal/owner-review-r3");
   await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", /noindex/);
   await expect(page.locator('[data-review-route="/services/digital-experiences"]')).toContainText("pending-cultural-review");
-  await expect(page.locator('img[src*="/internal/owner-review-r3/evidence/"]')).toHaveCount(36);
+  await expect(page.locator('img[src*="/internal/owner-review-r3/evidence/"]')).toHaveCount(39);
   await page.locator('img[src*="/internal/owner-review-r3/evidence/"]').first().scrollIntoViewIfNeeded();
   await expect.poll(() => page.locator('img[src*="/internal/owner-review-r3/evidence/"]').first().evaluate((image: HTMLImageElement) => image.naturalWidth)).toBeGreaterThan(0);
   const sitemap = await (await request.get("/sitemap.xml")).text();

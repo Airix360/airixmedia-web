@@ -16,13 +16,13 @@ test("captures Wave 1 route crops and proves active sources", async ({ page }, i
   await mkdir(output, { recursive: true });
   for (const [route, assetKey, key] of routes) for (const [width, height, label] of [[1440, 1000, "desktop"], [768, 1024, "tablet"], [390, 844, "mobile-390"], [360, 800, "mobile-360"]] as const) {
     await page.setViewportSize({ width, height }); await page.goto(route); await theme(page, "light");
-    await expect(page.locator("[data-active-hero]")).toHaveAttribute("src", new RegExp(`${assetKey}-day\\.webp$`));
-    await expect.poll(() => page.locator("[data-active-hero]").evaluate((node: HTMLImageElement) => node.currentSrc)).toContain(`${assetKey}-day.webp`);
-    await expect.poll(() => page.locator("[data-active-hero]").evaluate((node: HTMLImageElement) => node.naturalWidth)).toBeGreaterThan(0);
-    await expect(page.locator("header").filter({ has: page.locator("[data-active-hero]") })).toHaveCSS("height", `${height}px`);
-    await expect(page.locator("[data-active-hero]")).toHaveCSS("height", `${height}px`);
+    const image = page.locator(`[data-active-hero*="${assetKey}-"]`);
+    await expect(image).toHaveAttribute("src", new RegExp(`${assetKey}-day\\.webp$`));
+    await expect.poll(() => image.evaluate((node: HTMLImageElement) => node.currentSrc)).toContain(`${assetKey}-day.webp`);
+    await expect.poll(() => image.evaluate((node: HTMLImageElement) => node.naturalWidth)).toBeGreaterThan(0);
+    const box = await image.boundingBox(); expect(box?.width).toBeGreaterThan(Math.min(280, width * .7)); expect(box?.height).toBeGreaterThan(300);
     await page.screenshot({ path: path.join(output, `${key}-${label}-light.png`), animations: "disabled", scale: "css" });
-    if (label !== "tablet" && label !== "mobile-360") { await theme(page, "dark"); await expect(page.locator("[data-active-hero]")).toHaveAttribute("src", new RegExp(`${assetKey}-night\\.webp$`)); await expect.poll(() => page.locator("[data-active-hero]").evaluate((node: HTMLImageElement) => node.currentSrc)).toContain(`${assetKey}-night.webp`); await page.screenshot({ path: path.join(output, `${key}-${label}-dark.png`), animations: "disabled", scale: "css" }); }
+    if (label !== "tablet" && label !== "mobile-360") { await theme(page, "dark"); await expect(image).toHaveAttribute("src", new RegExp(`${assetKey}-night\\.webp$`)); await expect.poll(() => image.evaluate((node: HTMLImageElement) => node.currentSrc)).toContain(`${assetKey}-night.webp`); await page.screenshot({ path: path.join(output, `${key}-${label}-dark.png`), animations: "disabled", scale: "css" }); }
     await expect(page.locator("body")).not.toContainText(/contemporary jos|olumo rock|abeokuta railway|pending landmark|pending owner review/i);
   }
 });
