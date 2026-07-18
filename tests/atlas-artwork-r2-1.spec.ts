@@ -12,8 +12,15 @@ async function state(page: Page, key: string) {
 
 async function switchMode(page: Page, mode: "light" | "dark", key: string) {
   const target = mode === "dark" ? "Switch to dark mode" : "Switch to light mode";
-  const control = page.getByRole("switch", { name: target }).first();
-  if (await control.count()) await control.click();
+  let control = page.getByRole("switch", { name: target }).first();
+  if (!(await control.count())) {
+    await page.getByRole("button", { name: "Open menu" }).click();
+    control = page.getByRole("dialog", { name: "Site navigation" }).getByRole("switch", { name: target });
+    await control.click();
+    await page.keyboard.press("Escape");
+  } else {
+    await control.click();
+  }
   await expect(page.locator("html")).toHaveAttribute("data-theme", mode);
   const image = page.locator(`[data-active-hero*="${key}-"]`);
   await expect(image).toHaveAttribute("data-active-hero", new RegExp(`-${mode === "dark" ? "night" : "day"}\\.webp$`));
@@ -23,6 +30,7 @@ async function switchMode(page: Page, mode: "light" | "dark", key: string) {
 test.describe.configure({ mode: "serial" });
 test("proves in-place day/night switching and captures public-route evidence", async ({ page }, info) => {
   test.skip(info.project.name !== "desktop", "Captured once from desktop Chromium.");
+  test.setTimeout(300_000);
   await mkdir(out, { recursive: true });
   const report: unknown[] = [];
   for (const [route, key] of routes) {

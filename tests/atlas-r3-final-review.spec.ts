@@ -68,7 +68,7 @@ test.describe("R3 final owner review evidence", () => {
     const runtimeFiles = fs.readdirSync(heroRoot).filter((file) => file.endsWith(".webp")).sort();
     const runtimeHashes = runtimeFiles.map((file) => ({ file, sha256: createHash("sha256").update(fs.readFileSync(path.join(heroRoot, file))).digest("hex") }));
     const sourceRasterMasters = fs.readdirSync(heroRoot).filter((file) => /\.(png|jpe?g)$/i.test(file));
-    const trackedTextFiles = spawnSync("git", ["ls-files", "-z"], { cwd: process.cwd(), encoding: "utf8" }).stdout.split("\0").filter((entry) => entry && /(?:^|\/)(?:[^/]+\.)?(?:ts|tsx|js|mjs|json|md|yml|yaml|toml|env|example)$/i.test(entry));
+    const trackedTextFiles = spawnSync("git", ["ls-files", "-z"], { cwd: process.cwd(), encoding: "utf8" }).stdout.split("\0").filter((entry) => entry && /(?:^|\/)(?:[^/]+\.)?(?:ts|tsx|js|mjs|json|md|yml|yaml|toml|env|example)$/i.test(entry) && fs.existsSync(path.join(process.cwd(), entry)));
     const secretPattern = /(?:api[_-]?key|secret|token|password|private[_-]?key)\s*[:=]\s*["'][^"']{8,}["']/ig;
     const possibleSecrets = trackedTextFiles.flatMap((entry) => {
       const file = path.join(process.cwd(), entry);

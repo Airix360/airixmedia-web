@@ -14,6 +14,21 @@ const pathways = [
   ["04", "Infrastructure", "Hosting, continuity, support and recovery.", "/services#managed-infrastructure"],
 ] as const;
 
+const trustMarks = [
+  ["Open Journal Systems", "/brand/trust/open-journal-systems-white-logo.png", "https://pkp.sfu.ca/software/ojs/", 560, 377],
+  ["Delta State University, Abraka", "/brand/trust/delta-state-university-abraka-white-logo.png", "https://delsu.edu.ng/", 420, 353],
+  ["Medical and Dental Consultants' Association of Nigeria", "/brand/trust/medical-dental-consultants-association-nigeria-white-logo.png", "https://www.mdcan.org.ng/", 631, 175],
+  ["Open Source Initiative", "/brand/trust/open-source-initiative-white-logo.png", "https://opensource.org/", 650, 294],
+] as const;
+
+function HeroTrust({ mobile = false }: { mobile?: boolean }) {
+  return <aside className={mobile ? styles.mobileHeroTrust : styles.heroTrust} aria-label="Organisations, platforms and communities connected to Airix Media's work">
+    <p>Trusted by institutions and organisations across Africa</p>
+    <div>{trustMarks.map(([name, src, href, width, height]) => <a key={name} href={href} target="_blank" rel="noreferrer" aria-label={`${name} website`}><Image src={src} alt={`${name} logo`} width={width} height={height}/></a>)}</div>
+    <small>Platform and community marks provide ecosystem context; no endorsement is implied.</small>
+  </aside>;
+}
+
 export function PublicHome() {
   return <div className={styles.site}>
     <PublicHeader/>
@@ -21,8 +36,18 @@ export function PublicHome() {
       <section className={styles.homeArrival} aria-labelledby="arrival-title">
         <RouteHeroArtwork asset={publicRouteHeroAsset(routeHeroAssets["/"])} alt="A long low bridge over lagoon water, ferry routes and a dense working waterfront" priority/>
         <div className={styles.heroScrim}/>
-        <div className={styles.arrivalCopy}><span className={styles.routeLabel}>AIRIX MEDIA / HOME</span><h1 id="arrival-title">Every thriving city depends on invisible systems.</h1><a href="#proposition">Enter the Atlas <ArrowRight size={17}/></a></div>
+        <div className={styles.arrivalCopy}>
+          <span className={styles.routeLabel}>CREATIVE TECHNOLOGY / DIGITAL OPERATIONS</span>
+          <h1 id="arrival-title">Every thriving city depends on invisible systems.</h1>
+          <p>We design, build, run and rescue the websites, business systems, publishing platforms and technical infrastructure organisations rely on.</p>
+          <div className={styles.arrivalActions}>
+            <Link className={styles.arrivalPrimary} href="/contact?form=project&amp;source=/">Discuss a Project <ArrowRight size={17}/></Link>
+            <Link className={styles.arrivalSecondary} href="/work">View selected work</Link>
+          </div>
+        </div>
+        <HeroTrust/>
       </section>
+      <HeroTrust mobile/>
 
       <section className={styles.movement}><div><span>ROUTES</span><h2>Movement</h2></div><p>People, services, transactions, records and ideas move because many systems keep their promises at once.</p><div className={styles.routeLine} aria-hidden="true"><i/><i/><i/><i/></div></section>
 
