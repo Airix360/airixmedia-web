@@ -24,3 +24,7 @@ Unit tests cover configuration, parsing, escaping, headers, routing, references,
 Deployment checklist: configure secrets; verify sender; approve logical recipient lists; confirm monitored emergency ownership; run controlled staged deliveries; force emergency fallback; inspect logs and acknowledgements; validate readiness; confirm sitemap/redirect/canonical/artwork hashes; then obtain owner/security/legal operations approval. Roll back by removing provider selection/credentials to fail closed.
 
 The contact and emergency P1s remain formally open until approved credentials, monitored mailboxes/rota and controlled live tests are recorded. Legal and artwork P1 states are unchanged.
+
+## Production configuration follow-up
+
+Approved sender, role routing, monitoring hours, fallback semantics and single-instance topology are now recorded in `docs/atlas-r3-production-operations-decisions.md`; the non-secret runtime template is `config/airixmedia-production.env.example`. Four missing cPanel role aliases were provisioned. The stored Brevo credential returned HTTP 401, sender/domain verification could not be established, no isolated staging process or approved synthetic requester was available, and human duty monitoring remains unconfirmed. No live Brevo message was sent; both operational P1s remain open.

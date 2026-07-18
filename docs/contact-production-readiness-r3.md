@@ -3,7 +3,7 @@
 Review date: 18 July 2026  
 Implementation base: `4bc5f85737ca88cf0dade638faede25d72171b09`
 Version: `2.4.0.0`
-Status: **adapters implemented; production delivery not yet live-verified**
+Status: **adapters and role aliases configured; production delivery blocked by rejected Brevo credential and unconfirmed monitoring**
 
 ## Delivery design
 
@@ -39,4 +39,4 @@ Before closing either operational P1: configure approved monitored recipient gro
 
 Rollback: remove `CONTACT_SUBMISSION_PROVIDER` and `EMERGENCY_ESCALATION_PROVIDER` (or their credentials/recipients) to fail closed with truthful unavailable responses, then revert the feature release if needed. Do not point emergency traffic at the general inbox.
 
-Remaining limitations: no ticket/system-of-record API, no distributed rate limiter, no challenge provider, no attachment adapter, no delivery retry queue, no calendar confirmation, and no live-credential evidence.
+Current infrastructure evidence is recorded in `docs/atlas-r3-live-delivery-verification.md`. The role aliases now exist, but receipt, sender authentication, duty coverage and live delivery remain unverified. Remaining limitations: rejected Brevo credential, no confirmed sender status, no ticket/system-of-record API, no distributed rate limiter, no challenge provider, no attachment adapter, no delivery retry queue, no calendar confirmation, and no live-delivery evidence.

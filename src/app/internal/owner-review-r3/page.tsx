@@ -68,6 +68,18 @@ export default function OwnerReviewR3() {
       <p className={styles.warning}><strong>Attachment state:</strong> disabled until approved private storage, signature validation, malware scanning and retention controls exist. <strong>Rate limiter:</strong> process-local; distributed deployment requires an approved shared adapter.</p>
       <p><strong>Reference examples:</strong> <code>AM-PROJ-…</code> · <code>AM-PUB-…</code> · <code>AM-SUP-…</code> · <code>AM-EMG-…</code>.</p>
       <p><strong>Acknowledgement boundaries:</strong> consultation request—not appointment; support delivery—not ticket; emergency delivery—not incident acceptance, engineer assignment or response underway.</p>
+      <h3>Operations readiness</h3>
+      <div className={styles.captureNote}>
+        <p><strong>Brevo selected:</strong> yes · <strong>Sender verified:</strong> no—stored credential rejected</p>
+        <p><strong>Logical groups:</strong> General Operations · Publishing Operations · Support Operations · Emergency Duty Operator · Operations Fallback</p>
+        <p><strong>Mailbox readiness:</strong> role addresses provisioned; end-to-end receipt and independent emergency/fallback observability unconfirmed</p>
+        <p><strong>Emergency monitoring:</strong> Emergency Duty Operator · daily 08:00–22:00 West Africa Time · outside-hours best effort</p>
+        <p><strong>Fallback readiness:</strong> alias configured; live fallback receipt unverified</p>
+        <p><strong>Deployment topology:</strong> one persistent Node.js instance behind a reverse proxy; not yet provisioned or deployed</p>
+        <p><strong>Rate limiter:</strong> process-local; restart clears buckets; horizontal scaling prohibited until an approved shared store exists</p>
+        <p><strong>Attachments:</strong> disabled · <strong>Live test:</strong> blocked before sending</p>
+        <p><strong>Contact P1:</strong> open · <strong>Emergency P1:</strong> open</p>
+      </div>
     </section>
   </main>;
 }
