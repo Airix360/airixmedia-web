@@ -4,6 +4,7 @@ import { r3Wave2Decision, r3Wave2Review } from "@/lib/atlas/r3-wave2";
 import { contactFormDefinitions, contactFormKeys } from "@/lib/contact-forms";
 import { retainedPublicRoutes, routeConsolidationRedirects } from "@/lib/route-consolidation";
 import { routeHeroAssets } from "@/lib/atlas/route-heroes";
+import { getContactProviderReadiness } from "@/lib/contact-submission";
 import styles from "../owner-review-r2/review.module.css";
 
 const wave2Captures = [
@@ -15,7 +16,10 @@ const wave2Captures = [
   ["360px Light", "mobile-360-light.png", 360, 800],
 ] as const;
 
+export const dynamic = "force-dynamic";
+
 export default function OwnerReviewR3() {
+  const operational = getContactProviderReadiness();
   return <main className={styles.review}>
     <header>
       <span>PRIVATE · NOINDEX · OWNER REVIEW R3</span>
@@ -53,6 +57,17 @@ export default function OwnerReviewR3() {
       <div className={styles.evidence}><figure><Image unoptimized src="/internal/owner-review-r3/evidence/contact-project-desktop.png" alt="" width={1440} height={1000}/><figcaption>Project dialog · desktop</figcaption></figure><figure><Image unoptimized src="/internal/owner-review-r3/evidence/contact-publishing-mobile.png" alt="" width={390} height={844}/><figcaption>Publishing dialog · mobile</figcaption></figure><figure><Image unoptimized src="/internal/owner-review-r3/evidence/navigation-desktop.png" alt="" width={1440} height={1000}/><figcaption>Consolidated navigation</figcaption></figure></div>
       <h3>Legal and navigation result</h3><p>Standalone Privacy, Terms, Service Terms, Security, Data Processing and Subprocessors remain procurement-safe routes. Cookies, accessibility and acceptable use are anchored in the Legal centre. Primary navigation is Work, Services, Publishing, Open Source, Studio and Contact; utilities are Support, Emergency and Client Portal.</p>
       <h3>Verification proof</h3><p>Automated redirect, anchor, sitemap, canonical, navigation, privacy-link and dialog-behaviour tests live in <code>src/lib/route-consolidation.test.ts</code>, <code>src/lib/contact-forms.test.ts</code> and <code>tests/route-consolidation-r3.spec.ts</code>. Generated screenshots are read from <code>output/playwright/atlas-route-consolidation-r3/</code>.</p>
+    </section>
+
+    <h2>Operational Forms</h2>
+    <section data-review-route="operational-forms">
+      <div className={styles.heading}><div><span>PRIVATE CONFIGURATION EVIDENCE</span><h2>Delivery is truthful and configuration-gated.</h2><p>Provider names and logical routing groups are shown without credentials, recipient addresses or provider error bodies.</p></div><dl><div><dt>Contact provider</dt><dd>{operational.contactProvider}</dd></div><div><dt>Emergency provider</dt><dd>{operational.emergencyProvider}</dd></div><div><dt>Overall readiness</dt><dd>{operational.ready ? "configured" : "configuration required"}</dd></div></dl></div>
+      <h3>Logical routing groups</h3><div className={styles.captureNote}>{Object.entries(operational.routingGroups).map(([group, ready]) => <p key={group}><strong>{group}</strong> · {ready ? "configured" : "missing or invalid"}</p>)}</div>
+      <h3>Provider and safeguard checks</h3><div className={styles.captureNote}>{Object.entries(operational.checks).map(([check, ready]) => <p key={check}><strong>{check}</strong> · {ready ? "ready" : "not ready"}</p>)}</div>
+      <h3>Mocked evidence register</h3><p>Project, publishing, support and emergency success; provider failure; emergency fallback; rate limit; disabled attachment; references; and truthful acknowledgement wording are captured under <code>output/playwright/atlas-r3-operational-forms/</code>. These deterministic states do not constitute live Brevo verification.</p>
+      <p className={styles.warning}><strong>Attachment state:</strong> disabled until approved private storage, signature validation, malware scanning and retention controls exist. <strong>Rate limiter:</strong> process-local; distributed deployment requires an approved shared adapter.</p>
+      <p><strong>Reference examples:</strong> <code>AM-PROJ-…</code> · <code>AM-PUB-…</code> · <code>AM-SUP-…</code> · <code>AM-EMG-…</code>.</p>
+      <p><strong>Acknowledgement boundaries:</strong> consultation request—not appointment; support delivery—not ticket; emergency delivery—not incident acceptance, engineer assignment or response underway.</p>
     </section>
   </main>;
 }

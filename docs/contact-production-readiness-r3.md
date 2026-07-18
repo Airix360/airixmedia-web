@@ -1,101 +1,42 @@
 # Contact production readiness, R3
 
 Review date: 18 July 2026  
-Review base: `4594c6f08b34c36b77096ea39a21667b67499851`  
-Status: **not ready to receive live form submissions**
+Implementation base: `4bc5f85737ca88cf0dade638faede25d72171b09`
+Version: `2.4.0.0`
+Status: **adapters implemented; production delivery not yet live-verified**
 
-## Current behaviour
+## Delivery design
 
-The six public contact choices are distinct and understandable: Discuss a Project, Publishing Enquiry, Book a Consultation, General Enquiry, Technical Support and Emergency Support. Query links open the correct accessible dialog, service links preselect the correct service, client-side and server-side Zod validation agree, dialogs retain entries during the current visit, and invalid submissions never display success.
+All six forms pass through typed server validation and a `ContactSubmissionProvider`. `BrevoContactSubmissionProvider` sends transactional email through Brevo's HTTPS API using a verified configured sender. Project, publishing, consultation, general and support requests each have an independent logical recipient group. Consultation remains a request; support email is not described as a ticket.
 
-`POST /api/leads` currently validates same-origin requests, rejects the honeypot field, validates the selected form, limits declared attachments to 10 MB and an allowlist of MIME types, then calls `submitContactEnquiry`. No approved provider adapter exists. With the repository's current environment, a valid request returns HTTP 503 with `provider_not_configured` and the explicit message that the enquiry was not sent.
+Emergency requests cross a separate `EmergencyEscalationProvider` boundary. The current approved implementation uses the Brevo transport with a distinct emergency recipient group. If the primary call fails, it attempts configured fallback recipients. Confirmed email acceptance is not described as incident acceptance, technician acknowledgement or response underway. An Airix Media OS/ticket adapter can replace this boundary only after a verified API is approved.
 
-## Missing provider and integration point
+## Server-only environment
 
-The integration point is `src/lib/contact-submission.ts`. `CONTACT_SUBMISSION_PROVIDER` is read, but every non-empty value currently returns `provider_not_supported`. There is no production-capable value that can be added to the environment without implementing and approving an adapter.
+Required: `CONTACT_SUBMISSION_PROVIDER=brevo`, `BREVO_API_KEY`, `CONTACT_FROM_EMAIL`, `CONTACT_FROM_NAME`, the five `CONTACT_*_RECIPIENTS` groups, `CONTACT_REPLY_TO_MODE`, `EMERGENCY_ESCALATION_PROVIDER=email`, and `EMERGENCY_RECIPIENTS`. Optional emergency values are `EMERGENCY_CC_RECIPIENTS`, `EMERGENCY_FALLBACK_RECIPIENTS`, `EMERGENCY_ACKNOWLEDGEMENT_ENABLED`, `EMERGENCY_PUBLIC_FALLBACK_MESSAGE`, and `EMERGENCY_PUBLIC_FALLBACK_URL`. Timeout and rate-limit settings are documented in `.env.example`. None may use `NEXT_PUBLIC_`.
 
-Recommended production direction:
+Recipient lists are comma/semicolon-separated and validated as email addresses. No recipient or sender is invented. Invalid or missing configuration fails readiness and returns an explicit not-sent response. The browser receives no credentials, internal addresses or raw provider body.
 
-1. Use a server-side Twenty CRM adapter as the system of record for project, publishing and general enquiries.
-2. Add an approved transactional notification provider for staff acknowledgement and routing. Email must not be treated as the only durable record.
-3. Route technical support to the approved client-support or ticket system.
-4. Route emergency submissions to a monitored incident channel with an explicit ownership rota. Do not rely on the ordinary CRM queue.
-5. Keep consultation requests as requests until an approved calendar adapter confirms availability.
+## References, acknowledgements and logs
 
-This recommendation does not authorise a provider, create an account or select a data region.
+References are generated server-side from cryptographically random bytes with form-specific non-sequential prefixes. Structured logs contain only reference, form type, timestamp, status, provider, safe provider request ID, failure category and environment. They exclude body text, email, telephone, files, recipients, API keys and raw responses.
 
-## Required secrets and configuration
+Success appears only after provider acceptance. Booking says consultation request received, support says support request delivered, and emergency says emergency request delivered. Emergency copy preserves chargeability, no-immediate-acceptance and public fallback boundaries. Optional requester acknowledgement is attempted only after confirmed emergency delivery and does not change the delivery result if the acknowledgement itself fails.
 
-No live secrets are present or required by the current mock. The chosen implementation will need server-only values. A likely Twenty integration would require an approved API origin and API key. A notification adapter would require its own server API key, verified sender and approved recipients. Booking, upload, spam and emergency providers will require separate server credentials where applicable.
+## Attachments and retention
 
-Proposed names such as `TWENTY_API_URL`, `TWENTY_API_KEY`, `CONTACT_NOTIFICATION_FROM`, `CONTACT_NOTIFICATION_TO`, `UPLOAD_BUCKET`, `TURNSTILE_SECRET_KEY` and calendar credentials are implementation recommendations, not currently supported variables. None should use a `NEXT_PUBLIC_` prefix.
+File upload is disabled visibly. The endpoint rejects any supplied file rather than discarding it. The defensive pre-check allows only PDF, PNG, JPEG, WebP and plain text extensions/MIME declarations up to 5 MB, but no file reaches delivery because approved private storage, file-signature validation, malware scanning, retention and deletion are not yet configured. No uploaded bytes are written to a public or local filesystem.
 
-## Validation required before go-live
+Brevo email and provider logs create processor-retained personal data. Before live enablement, approve Brevo's processing region/terms, retention, access ownership, deletion procedure, subprocessor/legal disclosures and mailbox retention. This implementation does not modify public legal copy.
 
-- Preserve the current typed server validation and same-origin check.
-- Add per-IP and per-identity rate limits with privacy-aware retention.
-- Validate the declared file type and the actual file signature.
-- Scan retained attachments for malware before staff access.
-- Reject unexpected fields and cap field lengths at the server boundary.
-- Normalise URLs, phone numbers, dates and time zones without silently changing meaning.
-- Record consent text and policy version with each accepted enquiry.
-- Test provider timeouts, retries, idempotency and duplicate submission handling.
-- Return a reference only after the system of record accepts the request.
-- Keep failure language explicit. Never show success after only queuing a browser request.
+## Abuse controls
 
-## Attachment handling
+Same-origin validation and the honeypot remain. Privacy-preserving SHA-256 request fingerprints back independent configurable per-IP and per-email limits, with stricter emergency defaults and a bounded in-memory bucket count. Trusted proxy headers must be preserved and stripped from untrusted clients at the reverse proxy. The current adapter is process-local and deterministic; a horizontally scaled deployment needs an approved shared rate-limit store. No CAPTCHA or external challenge is active.
 
-The browser accepts PDF, PNG, JPEG, WebP and plain-text files. The API validates declared type and size, but it discards the bytes and passes only name, type and size metadata to the unconfigured adapter. **Live file upload is not implemented.**
+## Production validation and rollback
 
-Production attachment handling needs encrypted object storage in an approved region, short-lived upload or retrieval URLs, file-signature validation, malware scanning, access logging, retention/deletion rules and a clear maximum. CRM records should link to controlled objects rather than copy unrestricted files into notifications.
+Before closing either operational P1: configure approved monitored recipient groups and rota; inject secrets through the deployment secret store; run a controlled project, publishing, booking, general, support and emergency delivery; force primary emergency failure and observe fallback; verify acknowledgements, headers and structured logs; verify no secrets/PII leak; and confirm mailbox monitoring ownership. Live Brevo delivery has not been exercised in this development environment.
 
-## Booking limitation
+Rollback: remove `CONTACT_SUBMISSION_PROVIDER` and `EMERGENCY_ESCALATION_PROVIDER` (or their credentials/recipients) to fail closed with truthful unavailable responses, then revert the feature release if needed. Do not point emergency traffic at the general inbox.
 
-Book a Consultation records a preferred date, time window and time zone, but no calendar availability is read and no event is created. The wording correctly says that a request is not a confirmed appointment. Production booking needs an approved calendar adapter, availability rules, conflict handling, confirmation, cancellation and time-zone tests.
-
-## Support and emergency limitations
-
-Technical Support does not create a ticket, associate a client agreement or notify an assigned operator. Emergency Support does not page, call, text or otherwise escalate to a monitored incident channel. Both currently reach the same unavailable endpoint. This is a launch blocker because a visitor could complete an urgent report that cannot be delivered.
-
-The emergency route must retain its warning about chargeable work and lack of guaranteed resolution, but it also needs a clearly monitored channel, operating ownership and a tested fallback when the primary provider is unavailable.
-
-## Spam protection
-
-Current controls are same-origin validation and a honeypot. There is no rate limit, abuse reputation, challenge, duplicate control or provider-side suppression. Before enabling public submission, add server-side rate limiting and an approved privacy-conscious challenge such as Cloudflare Turnstile where risk warrants it. The form must remain usable with assistive technology and must handle challenge failure without losing the draft.
-
-## Logging and notification routing
-
-No durable accepted-submission log exists. Production logging should record a generated reference, form type, source route, provider result, timestamps and routing outcome without copying message bodies or secrets into application logs. Define retention and access ownership before collection.
-
-Recommended routing matrix:
-
-| Form | System of record | Notification route | Production state |
-|---|---|---|---|
-| Discuss a Project | CRM opportunity | New-business owners | Missing |
-| Publishing Enquiry | CRM opportunity with publishing interest | Publishing practice owners | Missing |
-| Book a Consultation | CRM plus calendar request | Assigned consultant | Missing |
-| General Enquiry | CRM person/activity | General inbox owner | Missing |
-| Technical Support | Ticket/support system | Agreement owner or support queue | Missing |
-| Emergency Support | Incident system | Monitored on-call route plus fallback | Missing |
-
-## Privacy implications
-
-Enabling forms will create a new live personal-data collection flow. Before that happens, qualified legal review must confirm the controller identity, registered address and jurisdiction; lawful bases; provider and subprocessor records; international transfers; retention and deletion schedules; data-subject contact route; attachment handling; incident notification; and the policy version stored with consent. The current public Privacy, Data Processing and Subprocessors pages explicitly leave these fields unresolved.
-
-## Go-live checklist
-
-- [ ] Approve the production provider and processing region.
-- [ ] Complete and review the provider adapter.
-- [ ] Add server-only credentials through the deployment secret store.
-- [ ] Complete the legal controller, privacy, DPA and subprocessor records.
-- [ ] Implement rate limiting, abuse controls and operational monitoring.
-- [ ] Implement attachment storage, scanning, access and deletion, or remove file fields.
-- [ ] Implement consultation booking handoff, or keep it explicitly request-only.
-- [ ] Implement support ticket creation and agreement-aware routing.
-- [ ] Implement emergency escalation, fallback and owner rota.
-- [ ] Test accepted, rejected, timeout, duplicate, retry and provider-outage states.
-- [ ] Verify notification recipients and least-privilege provider access.
-- [ ] Run end-to-end tests against a non-production provider environment.
-- [ ] Confirm that an accepted enquiry appears in the system of record and reaches the correct owner.
-
-Until every checked item relevant to the enabled forms is complete, keep the endpoint unavailable or replace the forms with a clearly labelled verified direct contact channel.
+Remaining limitations: no ticket/system-of-record API, no distributed rate limiter, no challenge provider, no attachment adapter, no delivery retry queue, no calendar confirmation, and no live-credential evidence.
