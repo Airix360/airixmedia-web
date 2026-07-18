@@ -9,7 +9,7 @@ import styles from "./atlas-public.module.css";
 
 type Draft = Record<string, string | boolean>;
 type Drafts = Record<ContactFormKey, Draft>;
-type SubmissionState = { state: "idle" | "submitting" | "success" | "failure"; message?: string };
+type SubmissionState = { state: "idle" | "validating" | "sending" | "delivered" | "failure"; message?: string; fallbackUrl?: string };
 
 const cardCopy: Record<ContactFormKey, string> = {
   project: "A qualified brief for websites, systems, infrastructure or custom development.",
@@ -41,7 +41,8 @@ export function ContactFormLauncher({ form, service, source, children, className
 
 function Field({ field, value, error, onChange }: { field: ContactField; value: string | boolean; error?: string; onChange: (value: string | boolean) => void }) {
   const id = `contact-${field.name}`;
-  const describedBy = [field.hint ? `${id}-hint` : "", error ? `${id}-error` : ""].filter(Boolean).join(" ") || undefined;
+  const hint = field.hint || (field.type === "file" ? "File upload is unavailable until private storage and malware scanning are approved." : "");
+  const describedBy = [hint ? `${id}-hint` : "", error ? `${id}-error` : ""].filter(Boolean).join(" ") || undefined;
   if (field.type === "checkbox") return <div className={`${styles.dialogField} ${styles.dialogCheckbox} ${field.wide ? styles.dialogWide : ""}`}>
     <label htmlFor={id}><input id={id} name={field.name} type="checkbox" checked={Boolean(value)} onChange={(event) => onChange(event.target.checked)} aria-invalid={Boolean(error)} aria-describedby={describedBy}/><span>{field.label}</span></label>
     {field.name === "privacyAcknowledgement" && <Link href="/privacy" target="_blank">Open Privacy notice</Link>}
@@ -49,8 +50,8 @@ function Field({ field, value, error, onChange }: { field: ContactField; value: 
   </div>;
   const common = { id, name: field.name, required: field.required, value: String(value ?? ""), onChange: (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => onChange(event.target.value), "aria-invalid": Boolean(error), "aria-describedby": describedBy };
   return <label className={`${styles.dialogField} ${field.wide ? styles.dialogWide : ""}`} htmlFor={id}><span>{field.label}{field.required ? " *" : ""}</span>
-    {field.type === "textarea" ? <textarea {...common} rows={4}/> : field.type === "select" ? <select {...common}><option value="">Select one</option>{field.options?.map((option) => <option key={option} value={option}>{option}</option>)}</select> : field.type === "file" ? <input id={id} name={field.name} type="file" accept=".pdf,.png,.jpg,.jpeg,.webp,.txt" aria-describedby={describedBy}/> : <input {...common} type={field.type}/>} 
-    {field.hint && <small id={`${id}-hint`}>{field.hint}</small>}
+    {field.type === "textarea" ? <textarea {...common} rows={4}/> : field.type === "select" ? <select {...common}><option value="">Select one</option>{field.options?.map((option) => <option key={option} value={option}>{option}</option>)}</select> : field.type === "file" ? <input id={id} name={field.name} type="file" accept=".pdf,.png,.jpg,.jpeg,.webp,.txt" aria-describedby={describedBy} disabled/> : <input {...common} type={field.type}/>}
+    {hint && <small id={`${id}-hint`}>{hint}</small>}
     {error && <span id={`${id}-error`} className={styles.dialogError}>{error}</span>}
   </label>;
 }
@@ -88,8 +89,8 @@ export function ContactFormDialog({ active, draft, sourceRoute, errors, submissi
         {Object.keys(errors).length > 0 && <div ref={errorSummary} className={styles.dialogErrorSummary} role="alert" tabIndex={-1}><strong>Review the highlighted fields.</strong><ul>{Object.entries(errors).map(([name, message]) => <li key={name}><a href={`#contact-${name}`}>{message}</a></li>)}</ul></div>}
         <div className={styles.dialogGrid}>{definition.fields.map((field) => <Field key={field.name} field={field} value={draft[field.name] ?? (field.type === "checkbox" ? false : "")} error={errors[field.name]} onChange={(value) => onChange(field.name, value)}/>)}</div>
         {active === "support" && draft.severity === "Critical outage" && <p className={styles.emergencyNotice}>This may need the dedicated <Link href="/support/emergency">Emergency Support route</Link>.</p>}
-        <div className={styles.dialogActions}><button type="submit" disabled={submission.state === "submitting"}>{submission.state === "submitting" ? "Checking…" : active === "book" ? "Request consultation" : "Submit enquiry"}</button><button type="button" onClick={onClose}>Close</button></div>
-        <div className={styles.dialogStatus} aria-live="polite">{submission.state === "success" && <p><strong>Enquiry accepted.</strong> {submission.message}</p>}{submission.state === "failure" && <p><strong>Not sent.</strong> {submission.message} <a href={`mailto:${contact.email}`}>Continue by email</a>.</p>}</div>
+        <div className={styles.dialogActions}><button type="submit" disabled={submission.state === "validating" || submission.state === "sending"}>{submission.state === "validating" ? "Validating…" : submission.state === "sending" ? "Sending…" : active === "book" ? "Request consultation" : "Submit enquiry"}</button><button type="button" onClick={onClose}>Close</button></div>
+        <div className={styles.dialogStatus} aria-live="polite">{submission.state === "delivered" && <p>{submission.message}</p>}{submission.state === "failure" && <p><strong>Not sent.</strong> {submission.message} {submission.fallbackUrl ? <a href={submission.fallbackUrl}>Use the published emergency fallback</a> : <a href={`mailto:${contact.email}`}>Continue by email</a>}.</p>}</div>
       </form>
     </div>}
   </dialog>;
@@ -151,17 +152,18 @@ export function ContactHub() {
       for (const issue of result.error.issues) if (issue.path[0] && !next[String(issue.path[0])]) next[String(issue.path[0])] = issue.message;
       setErrors(next); setSubmission({ state: "idle" }); return;
     }
-    setErrors({}); setSubmission({ state: "submitting" });
+    setErrors({}); setSubmission({ state: "validating" });
     const payload = new FormData(event.currentTarget);
     for (const [name, value] of Object.entries(draft)) { payload.delete(name); if (typeof value === "boolean") { if (value) payload.set(name, "true"); } else payload.set(name, value); }
+    setSubmission({ state: "sending" });
     try {
       const response = await fetch("/api/leads", { method: "POST", body: payload, headers: { Accept: "application/json" } });
-      const body = await response.json() as { ok?: boolean; error?: string; reference?: string; fields?: Record<string, string[]> };
+      const body = await response.json() as { ok?: boolean; error?: string; reference?: string; message?: string; fallbackMessage?: string; fallbackUrl?: string; fields?: Record<string, string[]> };
       if (!response.ok || !body.ok) {
         if (body.fields) setErrors(Object.fromEntries(Object.entries(body.fields).flatMap(([name, messages]) => messages?.[0] ? [[name, messages[0]]] : [])));
-        setSubmission({ state: "failure", message: body.error || "The submission provider is unavailable." }); return;
+        setSubmission({ state: "failure", message: [body.error || "The submission provider is unavailable.", body.fallbackMessage].filter(Boolean).join(" "), fallbackUrl: body.fallbackUrl }); return;
       }
-      setSubmission({ state: "success", message: body.reference ? `Reference ${body.reference}.` : "The configured provider accepted it." });
+      setSubmission({ state: "delivered", message: body.message || (body.reference ? `Reference ${body.reference}.` : "The configured provider accepted it.") });
     } catch { setSubmission({ state: "failure", message: "The submission provider could not be reached." }); }
   }
 

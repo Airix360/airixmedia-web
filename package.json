@@ -1,6 +1,6 @@
 {
   "name": "airixmedia-web",
-  "version": "2.3.1.0",
+  "version": "2.4.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -11,6 +11,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:e2e": "playwright test",
+    "audit:operational-forms": "node scripts/audit-operational-forms.mjs",
+    "verify:operational-forms": "vitest run src/lib/contact-forms.test.ts src/lib/contact-submission.test.ts src/lib/contact-rate-limit.test.ts src/app/api/leads/route.test.ts && playwright test tests/atlas-r3-operational-forms.spec.ts && pnpm audit:operational-forms",
     "check": "pnpm lint && pnpm typecheck && pnpm test && pnpm build"
   },
   "dependencies": {
