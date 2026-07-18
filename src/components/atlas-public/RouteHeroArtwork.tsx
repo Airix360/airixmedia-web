@@ -8,7 +8,7 @@ function resolvedTheme() {
   return document.documentElement.dataset.theme === "dark" ? "dark" : "light";
 }
 
-export function RouteHeroArtwork({ asset, alt, priority = false }: { asset: PublicRouteHeroAsset; alt: string; priority?: boolean }) {
+export function RouteHeroArtwork({ asset, alt, priority = false, variant = "hero" }: { asset: PublicRouteHeroAsset; alt: string; priority?: boolean; variant?: "hero" | "section" }) {
   const [theme, setTheme] = useState<"light" | "dark" | null>(null);
 
   useEffect(() => {
@@ -22,5 +22,5 @@ export function RouteHeroArtwork({ asset, alt, priority = false }: { asset: Publ
   if (!theme) return <div aria-hidden="true" />;
   const src = theme === "dark" ? asset.night : asset.day;
   const position = { "--route-hero-desktop-position": asset.desktopPosition, "--route-hero-mobile-position": asset.mobilePosition } as CSSProperties;
-  return <img key={`${asset.route}-${theme}`} className={styles.routeHeroArtwork} src={src} alt={alt} fetchPriority={priority ? "high" : "auto"} loading={priority ? "eager" : "lazy"} style={position} data-active-hero={src} />;
+  return <img key={`${asset.route}-${theme}`} className={variant === "section" ? styles.routeSectionArtwork : styles.routeHeroArtwork} src={src} alt={alt} fetchPriority={priority ? "high" : "auto"} loading={priority ? "eager" : "lazy"} style={position} data-active-hero={src} />;
 }
