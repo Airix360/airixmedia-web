@@ -1,0 +1,49 @@
+{
+  "forms": [
+    {
+      "key": "project",
+      "title": "Discuss a Project",
+      "validation": "Review the highlighted fields.\nFull name is required.\nEnter a valid email address.\nAcknowledge the privacy notice to continue.\nOrganisation is required.\nService needed is required.\nExisting website or system is required.\nProject summary is required.\nMain problem is required.\nDesired outcome is required.\nEstimated timeline is required.\nBudget range is required.\nPreferred contact method is required.",
+      "visible": true
+    },
+    {
+      "key": "publishing",
+      "title": "Publishing Enquiry",
+      "validation": "Review the highlighted fields.\nFull name is required.\nEnter a valid email address.\nAcknowledge the privacy notice to continue.\nOrganisation or institution is required.\nJournal or platform name is required.\nJournal URL is required.\nOJS version is required.\nNumber of journals is required.\nService required is required.\nCurrent hosting arrangement is required.\nMigration requirement is required.\nDesired launch date is required.\nMain issue or objective is required.",
+      "visible": true
+    },
+    {
+      "key": "book",
+      "title": "Book a Consultation",
+      "validation": "Review the highlighted fields.\nFull name is required.\nEnter a valid email address.\nAcknowledge the privacy notice to continue.\nOrganisation is required.\nConsultation type is required.\nShort project summary is required.\nExisting website or platform is required.\nPreferred date is required.\nPreferred time window is required.\nTime zone is required.\nMaterial to review is required.",
+      "visible": true
+    },
+    {
+      "key": "general",
+      "title": "General Enquiry",
+      "validation": "Review the highlighted fields.\nFull name is required.\nEnter a valid email address.\nAcknowledge the privacy notice to continue.\nOrganisation is required.\nEnquiry type is required.\nMessage is required.",
+      "visible": true
+    },
+    {
+      "key": "support",
+      "title": "Technical Support",
+      "validation": "Review the highlighted fields.\nFull name is required.\nEnter a valid email address.\nAcknowledge the privacy notice to continue.\nOrganisation or client name is required.\nAffected website or system is required.\nIssue category is required.\nSeverity is required.\nWhen the issue began is required.\nDetailed description is required.\nAvailability status is required.\nError details is required.\nPreferred contact method is required.",
+      "visible": true
+    },
+    {
+      "key": "emergency",
+      "title": "Emergency Support",
+      "validation": "Review the highlighted fields.\nFull name is required.\nEnter a valid email address.\nAcknowledge the privacy notice to continue.\nOrganisation is required.\nUrgent contact number is required.\nAffected service is required.\nOutage status is required.\nSecurity-incident status is required.\nPublication-blocking status is required.\nWhen the incident began is required.\nIncident summary is required.\nAcknowledge that emergency work may be chargeable.",
+      "visible": true
+    }
+  ],
+  "servicePreselection": "Digital Experiences",
+  "providerResponse": {
+    "status": 503,
+    "body": {
+      "ok": false,
+      "error": "Online submission is not configured. Your enquiry has not been sent.",
+      "code": "provider_not_configured"
+    }
+  }
+}

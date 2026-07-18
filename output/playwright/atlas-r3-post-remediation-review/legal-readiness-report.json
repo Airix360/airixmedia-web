@@ -1,0 +1,37 @@
+[
+  {
+    "route": "/legal",
+    "status": "requires-legal-review",
+    "unresolvedWarningsPresent": true
+  },
+  {
+    "route": "/privacy",
+    "status": "requires-legal-review",
+    "unresolvedWarningsPresent": true
+  },
+  {
+    "route": "/terms",
+    "status": "requires-legal-review",
+    "unresolvedWarningsPresent": true
+  },
+  {
+    "route": "/service-terms",
+    "status": "requires-legal-review",
+    "unresolvedWarningsPresent": true
+  },
+  {
+    "route": "/security",
+    "status": "requires-legal-review",
+    "unresolvedWarningsPresent": true
+  },
+  {
+    "route": "/data-processing",
+    "status": "requires-legal-review",
+    "unresolvedWarningsPresent": true
+  },
+  {
+    "route": "/subprocessors",
+    "status": "requires-legal-review",
+    "unresolvedWarningsPresent": true
+  }
+]

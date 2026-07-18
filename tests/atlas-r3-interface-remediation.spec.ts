@@ -6,7 +6,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { retainedPublicRoutes, routeConsolidationRedirects } from "@/lib/route-consolidation";
 
-const output = path.join(process.cwd(), "output/playwright/atlas-r3-interface-remediation");
+const output = path.join(process.cwd(), "output/playwright/atlas-r3-post-remediation-review");
 
 function writeJson(name: string, value: unknown) {
   fs.mkdirSync(output, { recursive: true });
@@ -286,7 +286,9 @@ test.describe("R3 interface remediation verification", () => {
     }
     writeJson("trust-contrast-report.json", report);
     writeJson("computed-contrast-report.json", { emergency: JSON.parse(fs.readFileSync(path.join(output, "emergency-link-contrast-report.json"), "utf8")), trust: report });
+    writeJson("contrast-report.json", { emergency: JSON.parse(fs.readFileSync(path.join(output, "emergency-link-contrast-report.json"), "utf8")), trust: report });
     writeJson("accessibility-audit.json", accessibility);
+    writeJson("axe-report.json", accessibility);
   });
 
   test("mobile navigation remains in bounds and keyboard complete", async ({ page }, testInfo) => {
@@ -361,6 +363,7 @@ test.describe("R3 interface remediation verification", () => {
     report.reducedMotion = { mediaMatches: await page.evaluate(() => matchMedia("(prefers-reduced-motion: reduce)").matches), transitionDuration };
     await page.keyboard.press("Escape");
     writeJson("overflow-audit.json", report);
+    writeJson("overflow-report.json", report);
     writeJson("reduced-motion-audit.json", report.reducedMotion);
   });
 
@@ -371,30 +374,40 @@ test.describe("R3 interface remediation verification", () => {
     for (const level of levels) {
       const width = Math.round(1440 / (level / 100));
       await page.setViewportSize({ width, height: 1000 });
-      await page.goto("/", { waitUntil: "networkidle" });
-      const header = page.locator("header");
-      const trigger = header.getByRole("button", { name: "Open menu" });
-      const theme = header.getByRole("switch");
-      const primary = header.getByRole("navigation", { name: "Primary navigation" });
-      const state = await page.evaluate(() => ({ clientWidth: document.documentElement.clientWidth, rootScrollWidth: document.documentElement.scrollWidth, bodyScrollWidth: document.body.scrollWidth }));
-      expect(state.rootScrollWidth).toBeLessThanOrEqual(state.clientWidth + 1);
-      expect(state.bodyScrollWidth).toBeLessThanOrEqual(state.clientWidth + 1);
-      await expect(theme).toBeVisible();
-      if (level === 100) await expect(primary).toBeVisible();
-      else await expect(trigger).toBeVisible();
+      const themeResults: Record<string, unknown> = {};
+      for (const mode of ["light", "dark", "auto"] as const) {
+        await page.goto("/", { waitUntil: "networkidle" });
+        if (mode === "auto") {
+          await page.evaluate(() => localStorage.removeItem("airix-theme"));
+          await page.reload({ waitUntil: "networkidle" });
+        } else {
+          await setTheme(page, mode);
+        }
+        const header = page.locator("header");
+        const trigger = header.getByRole("button", { name: "Open menu" });
+        const theme = header.getByRole("switch");
+        const primary = header.getByRole("navigation", { name: "Primary navigation" });
+        const state = await page.evaluate(() => ({ activeTheme: document.documentElement.dataset.theme, clientWidth: document.documentElement.clientWidth, rootScrollWidth: document.documentElement.scrollWidth, bodyScrollWidth: document.body.scrollWidth }));
+        expect(state.rootScrollWidth).toBeLessThanOrEqual(state.clientWidth + 1);
+        expect(state.bodyScrollWidth).toBeLessThanOrEqual(state.clientWidth + 1);
+        await expect(theme).toBeVisible();
+        if (level === 100) await expect(primary).toBeVisible();
+        else await expect(trigger).toBeVisible();
 
-      const visible = level === 100 ? [header.getByRole("link", { name: "Airix Media home" }), primary, theme] : [header.getByRole("link", { name: "Airix Media home" }), theme, trigger];
-      const boxes = (await Promise.all(visible.map((locator) => locator.boundingBox()))).filter((box): box is NonNullable<typeof box> => Boolean(box));
-      for (let first = 0; first < boxes.length; first += 1) for (let second = first + 1; second < boxes.length; second += 1) {
-        const a = boxes[first]; const b = boxes[second];
-        expect(a.x < b.x + b.width && a.x + a.width > b.x && a.y < b.y + b.height && a.y + a.height > b.y).toBe(false);
+        const visible = level === 100 ? [header.getByRole("link", { name: "Airix Media home" }), primary, theme] : [header.getByRole("link", { name: "Airix Media home" }), theme, trigger];
+        const boxes = (await Promise.all(visible.map((locator) => locator.boundingBox()))).filter((box): box is NonNullable<typeof box> => Boolean(box));
+        for (let first = 0; first < boxes.length; first += 1) for (let second = first + 1; second < boxes.length; second += 1) {
+          const a = boxes[first]; const b = boxes[second];
+          expect(a.x < b.x + b.width && a.x + a.width > b.x && a.y < b.y + b.height && a.y + a.height > b.y).toBe(false);
+        }
+        await page.evaluate(() => window.scrollTo(0, innerHeight));
+        await expect(header).toHaveClass(/scrolled/);
+        await expect(theme).toBeVisible();
+        if (level !== 100) await expect(trigger).toBeVisible();
+        themeResults[mode] = { ...state, transparentUsable: true, stickyUsable: true };
+        if (level !== 100 && mode === "auto") await header.screenshot({ path: path.join(output, `${level}-percent-zoom-header.png`), animations: "disabled" });
       }
-      await page.evaluate(() => window.scrollTo(0, innerHeight));
-      await expect(header).toHaveClass(/scrolled/);
-      await expect(theme).toBeVisible();
-      if (level !== 100) await expect(trigger).toBeVisible();
-      report[`${level}%`] = { physicalWidth: 1440, effectiveCssWidth: width, ...state, responsiveMenu: level !== 100, controlsOverlap: false, stickyUsable: true };
-      if (level !== 100) await header.screenshot({ path: path.join(output, `${level}-percent-zoom-header.png`), animations: "disabled" });
+      report[`${level}%`] = { physicalWidth: 1440, effectiveCssWidth: width, responsiveMenu: level !== 100, controlsOverlap: false, themes: themeResults };
     }
     writeJson("zoom-reflow-audit.json", report);
   });
@@ -456,6 +469,37 @@ test.describe("R3 interface remediation verification", () => {
     });
     expect(possibleSecrets).toHaveLength(0);
 
+    const formKeys = ["project", "publishing", "book", "general", "support", "emergency"] as const;
+    const formTitles = ["Discuss a Project", "Publishing Enquiry", "Book a Consultation", "General Enquiry", "Technical Support", "Emergency Support"] as const;
+    const forms = [];
+    for (let index = 0; index < formKeys.length; index += 1) {
+      await page.goto(`/contact?form=${formKeys[index]}`, { waitUntil: "networkidle" });
+      const dialog = page.getByRole("dialog", { name: formTitles[index] });
+      await expect(dialog).toBeVisible();
+      await dialog.getByRole("button", { name: /Submit enquiry|Request consultation/ }).click();
+      const validation = await dialog.getByRole("alert").innerText();
+      expect(validation).toContain("Review the highlighted fields");
+      forms.push({ key: formKeys[index], title: formTitles[index], validation, visible: true });
+    }
+    await page.goto("/services", { waitUntil: "networkidle" });
+    await page.getByRole("link", { name: "Discuss Digital Experiences" }).click();
+    const servicePreselection = await page.getByRole("dialog", { name: "Discuss a Project" }).locator("select[name=serviceNeeded]").inputValue();
+    expect(servicePreselection).toBe("Digital Experiences");
+    const providerResponse = await request.post("/api/leads", { multipart: { selectedForm: "general", fullName: "Owner Review", email: "review@example.com", organisation: "Airix", enquiryType: "General question", message: "This is a complete validation-only post-remediation review message.", privacyAcknowledgement: "true", sourceRoute: "/contact" } });
+    const providerBody = await providerResponse.json();
+    expect(providerResponse.status()).toBe(503);
+    expect(providerBody).toMatchObject({ ok: false, code: "provider_not_configured" });
+
+    const legalRoutes = ["/legal", "/privacy", "/terms", "/service-terms", "/security", "/data-processing", "/subprocessors"];
+    const legalReview = [];
+    for (const route of legalRoutes) {
+      await page.goto(route, { waitUntil: "networkidle" });
+      const text = await page.locator("main").innerText();
+      const unresolved = /review|unresolved|draft|\brequire(?:s)?\b|must be completed|once .* approved/i.test(text);
+      expect(unresolved, route).toBe(true);
+      legalReview.push({ route, status: "requires-legal-review", unresolvedWarningsPresent: unresolved });
+    }
+
     writeJson("integrity-audit.json", {
       sitemap: { status: sitemapResponse.status(), expectedCount: 16, urls: sitemapUrls },
       redirects,
@@ -465,6 +509,15 @@ test.describe("R3 interface remediation verification", () => {
       secretsScan: { filesScanned: trackedText.length, possibleSecrets },
       runtimeArtwork: { count: runtimeFiles.length, unchangedFromSourceReviewCommit: artworkDiff.status === 0, hashes: runtimeHashes },
       sourcePngAudit: { disallowedRuntimeRasterMasters: sourceRasters },
+      forms: { forms, servicePreselection, providerResponse: { status: providerResponse.status(), body: providerBody } },
+      legalReview,
     });
+    writeJson("redirect-report.json", { count: redirects.length, redirects });
+    writeJson("sitemap-report.json", { status: sitemapResponse.status(), count: sitemapUrls.length, urls: sitemapUrls });
+    writeJson("canonical-report.json", canonicals);
+    writeJson("console-report.json", { errors: consoleErrors });
+    writeJson("runtime-artwork-hash-report.json", { count: runtimeFiles.length, unchangedFromSourceReviewCommit: artworkDiff.status === 0, hashes: runtimeHashes, sourcePngAudit: { disallowedRuntimeRasterMasters: sourceRasters } });
+    writeJson("form-readiness-report.json", { forms, servicePreselection, providerResponse: { status: providerResponse.status(), body: providerBody } });
+    writeJson("legal-readiness-report.json", legalReview);
   });
 });
