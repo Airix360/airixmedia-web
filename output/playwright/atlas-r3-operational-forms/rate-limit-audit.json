@@ -1,0 +1,7 @@
+{
+  "pass": true,
+  "adapter": "process-local",
+  "horizontallyScaledReady": false,
+  "honeypotRetained": true,
+  "sameOriginRetained": true
+}

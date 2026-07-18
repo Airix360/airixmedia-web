@@ -28,4 +28,11 @@ describe("contact form architecture", () => {
     expect(result).toMatchObject({ ok: false, code: "provider_not_configured" });
     if (previous) process.env.CONTACT_SUBMISSION_PROVIDER = previous;
   });
+
+  it("rejects header injection, invalid URLs, phones, dates and oversized messages", () => {
+    expect(validateContactForm("general", { fullName: "Ada\r\nBcc: x@example.com", email: "ada@example.com", organisation: "Airix", enquiryType: "Other", message: "This is a sufficiently complete general enquiry message.", privacyAcknowledgement: true, sourceRoute: "/contact" }).success).toBe(false);
+    expect(validateContactForm("publishing", { fullName: "Ada Person", email: "ada@example.com", organisation: "Institute", journalName: "Journal", journalUrl: "javascript:alert(1)", ojsVersion: "3.4", journalCount: "1", serviceRequired: "OJS setup", hostingArrangement: "Existing host", migrationRequired: "No", desiredLaunchDate: "This year", objective: "A sufficiently complete publishing objective.", privacyAcknowledgement: true, sourceRoute: "/contact" }).success).toBe(false);
+    expect(validateContactForm("emergency", { fullName: "Ada Person", email: "ada@example.com", organisation: "Institute", urgentPhone: "call me now!", affectedService: "OJS", outageStatus: "Fully unavailable", securityIncident: "Unknown", publicationBlocking: "Yes", incidentBegan: "Now", incidentSummary: "A sufficiently complete incident summary for validation.", chargeableAcknowledgement: true, privacyAcknowledgement: true, sourceRoute: "/support/emergency" }).success).toBe(false);
+    expect(validateContactForm("general", { fullName: "Ada Person", email: "ada@example.com", organisation: "Airix", enquiryType: "Other", message: "x".repeat(5001), privacyAcknowledgement: true, sourceRoute: "/contact" }).success).toBe(false);
+  });
 });

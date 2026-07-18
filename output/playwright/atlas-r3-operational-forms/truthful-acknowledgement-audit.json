@@ -1,0 +1,6 @@
+{
+  "pass": true,
+  "appointmentClaim": false,
+  "ticketClaim": false,
+  "incidentAcceptanceClaim": false
+}

@@ -1,0 +1,9 @@
+{
+  "maxFieldLengths": true,
+  "headerInjection": true,
+  "url": true,
+  "phone": true,
+  "date": true,
+  "strictUnknownFields": true,
+  "attachments": "disabled"
+}

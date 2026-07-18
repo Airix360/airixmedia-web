@@ -1,0 +1,22 @@
+{
+  "pass": true,
+  "loggedFields": [
+    "reference",
+    "formType",
+    "timestamp",
+    "status",
+    "provider",
+    "providerRequestId",
+    "failureCategory",
+    "environment"
+  ],
+  "excluded": [
+    "message body",
+    "email",
+    "phone",
+    "file",
+    "API key",
+    "recipient list",
+    "raw provider body"
+  ]
+}

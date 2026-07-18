@@ -1,0 +1,12 @@
+{
+  "groups": [
+    "project",
+    "publishing",
+    "book",
+    "general",
+    "support",
+    "emergency"
+  ],
+  "emergencyDistinct": true,
+  "addressesIncluded": false
+}

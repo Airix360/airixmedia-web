@@ -1,0 +1,14 @@
+{
+  "adapter": "process-local",
+  "generalDefault": {
+    "max": 8,
+    "seconds": 600
+  },
+  "emergencyDefault": {
+    "max": 3,
+    "seconds": 900
+  },
+  "maximumBuckets": 10000,
+  "independentIpAndEmailBuckets": true,
+  "distributedAdapterRequiredForHorizontalScale": true
+}

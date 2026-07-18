@@ -1,0 +1,7 @@
+{
+  "pass": true,
+  "primary": "configured emergency group",
+  "fallbackRecipients": "optional configured group",
+  "publicFallbackInstructionRequiredForReadiness": true,
+  "monitoredRotaVerified": false
+}
