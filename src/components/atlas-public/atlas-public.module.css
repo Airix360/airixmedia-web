@@ -67,4 +67,18 @@
   .menuThemeControl{grid-column:1/-1;min-width:0;width:100%}
   .menuThemeControl :global(.theme-switch){max-width:100%;justify-content:center;gap:clamp(4px,2vw,9px)}
 }
+
+/* Emergency remains a restrained, non-animated signal. The permanent
+   underline carries meaning without colour; the lighter terracotta is scoped
+   only to dark solid headers where the original brick red failed AA. */
+.emergencyLink,.menuEmergencyLink{text-decoration-line:underline;text-decoration-thickness:1px;text-underline-offset:5px}
+.emergencyLink:hover,.emergencyLink:focus-visible,.menuEmergencyLink:hover,.menuEmergencyLink:focus-visible{text-decoration-thickness:2px}
+.emergencyLink:focus-visible,.menuEmergencyLink:focus-visible{outline:3px solid currentColor;outline-offset:4px;border-radius:1px}
+.emergencyLink:active,.menuEmergencyLink:active{text-decoration-style:double}
+:global([data-theme="dark"]) .emergencyLink,:global([data-theme="dark"]) .menuEmergencyLink{color:#d86f4a}
+:global([data-theme="dark"]) .site:has(.homeArrival) .header.scrolled .emergencyLink,
+:global([data-theme="dark"]) .site:has(.pageHero) .header.scrolled .emergencyLink{color:#d86f4a}
+@media(forced-colors:active){
+  .emergencyLink,.menuEmergencyLink{color:LinkText;text-decoration-line:underline;text-decoration-style:double;forced-color-adjust:auto}
+}
 .catalogueList small{color:#d9e3e1}
