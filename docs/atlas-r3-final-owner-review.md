@@ -6,6 +6,8 @@ Review base: `4594c6f08b34c36b77096ea39a21667b67499851`
 Public sitemap reviewed: 16 routes  
 Recommendation: **do not merge for production or launch yet**
 
+> Remediation status — 18 July 2026: the four implementation-level interface defects (Dark trust contrast, expanded mobile-navigation clipping, 200% header reflow and Dark sticky-header Emergency-link contrast) have been corrected on `fix/atlas-r3-launch-interface-blockers`. See `docs/atlas-r3-interface-remediation.md`. The corrections remain subject to final owner re-review and do not change this review's original issue counts or launch recommendation.
+
 ## Executive summary
 
 The consolidated site is technically coherent, distinctive and substantially easier to review than the former 44-route structure. The public sitemap, canonicals, 30 consolidation redirects, navigation, anchor destinations, contact preselection, active day/night artwork, responsive page layouts and core accessibility mechanics are working. The homepage communicates the invisible-systems proposition and the Build. Run. Rescue. operating model. Studio, Services, Publishing and Open Source now behave as focused destinations rather than route collections.

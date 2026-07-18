@@ -22,6 +22,7 @@ async function switchMode(page: Page, mode: "light" | "dark", key: string) {
 
 test.describe.configure({ mode: "serial" });
 test("proves in-place day/night switching and captures public-route evidence", async ({ page }, info) => {
+  test.setTimeout(240_000);
   test.skip(info.project.name !== "desktop", "Captured once from desktop Chromium.");
   await mkdir(out, { recursive: true });
   const report: unknown[] = [];

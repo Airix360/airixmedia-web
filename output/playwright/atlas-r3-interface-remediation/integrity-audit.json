@@ -1,0 +1,447 @@
+{
+  "sitemap": {
+    "status": 200,
+    "expectedCount": 16,
+    "urls": [
+      "https://airixmedia.com/",
+      "https://airixmedia.com/studio",
+      "https://airixmedia.com/work",
+      "https://airixmedia.com/services",
+      "https://airixmedia.com/publishing",
+      "https://airixmedia.com/open-source",
+      "https://airixmedia.com/contact",
+      "https://airixmedia.com/support",
+      "https://airixmedia.com/support/emergency",
+      "https://airixmedia.com/legal",
+      "https://airixmedia.com/privacy",
+      "https://airixmedia.com/terms",
+      "https://airixmedia.com/service-terms",
+      "https://airixmedia.com/security",
+      "https://airixmedia.com/data-processing",
+      "https://airixmedia.com/subprocessors"
+    ]
+  },
+  "redirects": [
+    {
+      "source": "/atlas",
+      "destination": "/studio#atlas",
+      "status": 308,
+      "location": "/studio#atlas"
+    },
+    {
+      "source": "/discuss",
+      "destination": "/contact?form=project",
+      "status": 308,
+      "location": "/contact?form=project"
+    },
+    {
+      "source": "/book",
+      "destination": "/contact?form=book",
+      "status": 308,
+      "location": "/contact?form=book"
+    },
+    {
+      "source": "/services/digital-experiences",
+      "destination": "/services#digital-experiences",
+      "status": 308,
+      "location": "/services#digital-experiences"
+    },
+    {
+      "source": "/services/business-systems",
+      "destination": "/services#business-systems",
+      "status": 308,
+      "location": "/services#business-systems"
+    },
+    {
+      "source": "/services/managed-infrastructure",
+      "destination": "/services#managed-infrastructure",
+      "status": 308,
+      "location": "/services#managed-infrastructure"
+    },
+    {
+      "source": "/services/support-recovery",
+      "destination": "/services#support-recovery",
+      "status": 308,
+      "location": "/services#support-recovery"
+    },
+    {
+      "source": "/publishing/ojs",
+      "destination": "/publishing#ojs",
+      "status": 308,
+      "location": "/publishing#ojs"
+    },
+    {
+      "source": "/publishing/pricing",
+      "destination": "/publishing#pricing",
+      "status": 308,
+      "location": "/publishing#pricing"
+    },
+    {
+      "source": "/publishing/universities",
+      "destination": "/publishing#universities",
+      "status": 308,
+      "location": "/publishing#universities"
+    },
+    {
+      "source": "/publishing/journal-platforms",
+      "destination": "/publishing#journal-platforms",
+      "status": 308,
+      "location": "/publishing#journal-platforms"
+    },
+    {
+      "source": "/publishing/hosting-support",
+      "destination": "/publishing#hosting-support",
+      "status": 308,
+      "location": "/publishing#hosting-support"
+    },
+    {
+      "source": "/publishing/editorial-support",
+      "destination": "/publishing#editorial-support",
+      "status": 308,
+      "location": "/publishing#editorial-support"
+    },
+    {
+      "source": "/publishing/plugins",
+      "destination": "/publishing#plugins",
+      "status": 308,
+      "location": "/publishing#plugins"
+    },
+    {
+      "source": "/publishing/projects",
+      "destination": "/publishing#projects",
+      "status": 308,
+      "location": "/publishing#projects"
+    },
+    {
+      "source": "/publishing/resources",
+      "destination": "/publishing#resources",
+      "status": 308,
+      "location": "/publishing#resources"
+    },
+    {
+      "source": "/open-source/paystack-ojs",
+      "destination": "/open-source#paystack-ojs",
+      "status": 308,
+      "location": "/open-source#paystack-ojs"
+    },
+    {
+      "source": "/open-source/ojs-magic-login",
+      "destination": "/open-source#ojs-magic-login",
+      "status": 308,
+      "location": "/open-source#ojs-magic-login"
+    },
+    {
+      "source": "/open-source/submission-fee",
+      "destination": "/open-source#submission-fee",
+      "status": 308,
+      "location": "/open-source#submission-fee"
+    },
+    {
+      "source": "/open-source/multipay",
+      "destination": "/open-source#multipay",
+      "status": 308,
+      "location": "/open-source#multipay"
+    },
+    {
+      "source": "/open-source/request-waiver",
+      "destination": "/open-source#request-waiver",
+      "status": 308,
+      "location": "/open-source#request-waiver"
+    },
+    {
+      "source": "/knowledge-base",
+      "destination": "/support#guides",
+      "status": 308,
+      "location": "/support#guides"
+    },
+    {
+      "source": "/service-levels",
+      "destination": "/support#service-levels",
+      "status": 308,
+      "location": "/support#service-levels"
+    },
+    {
+      "source": "/status",
+      "destination": "/support",
+      "status": 308,
+      "location": "/support"
+    },
+    {
+      "source": "/cookies",
+      "destination": "/legal#cookies",
+      "status": 308,
+      "location": "/legal#cookies"
+    },
+    {
+      "source": "/accessibility",
+      "destination": "/legal#accessibility",
+      "status": 308,
+      "location": "/legal#accessibility"
+    },
+    {
+      "source": "/acceptable-use",
+      "destination": "/legal#acceptable-use",
+      "status": 308,
+      "location": "/legal#acceptable-use"
+    },
+    {
+      "source": "/work/ku-journals",
+      "destination": "/work#publishing",
+      "status": 308,
+      "location": "/work#publishing"
+    },
+    {
+      "source": "/insights",
+      "destination": "/support#guides",
+      "status": 308,
+      "location": "/support#guides"
+    },
+    {
+      "source": "/resources",
+      "destination": "/support#guides",
+      "status": 308,
+      "location": "/support#guides"
+    }
+  ],
+  "canonicals": [
+    {
+      "route": "/",
+      "canonical": "https://airixmedia.com"
+    },
+    {
+      "route": "/studio",
+      "canonical": "https://airixmedia.com/studio"
+    },
+    {
+      "route": "/work",
+      "canonical": "https://airixmedia.com/work"
+    },
+    {
+      "route": "/services",
+      "canonical": "https://airixmedia.com/services"
+    },
+    {
+      "route": "/publishing",
+      "canonical": "https://airixmedia.com/publishing"
+    },
+    {
+      "route": "/open-source",
+      "canonical": "https://airixmedia.com/open-source"
+    },
+    {
+      "route": "/contact",
+      "canonical": "https://airixmedia.com/contact"
+    },
+    {
+      "route": "/support",
+      "canonical": "https://airixmedia.com/support"
+    },
+    {
+      "route": "/support/emergency",
+      "canonical": "https://airixmedia.com/support/emergency"
+    },
+    {
+      "route": "/legal",
+      "canonical": "https://airixmedia.com/legal"
+    },
+    {
+      "route": "/privacy",
+      "canonical": "https://airixmedia.com/privacy"
+    },
+    {
+      "route": "/terms",
+      "canonical": "https://airixmedia.com/terms"
+    },
+    {
+      "route": "/service-terms",
+      "canonical": "https://airixmedia.com/service-terms"
+    },
+    {
+      "route": "/security",
+      "canonical": "https://airixmedia.com/security"
+    },
+    {
+      "route": "/data-processing",
+      "canonical": "https://airixmedia.com/data-processing"
+    },
+    {
+      "route": "/subprocessors",
+      "canonical": "https://airixmedia.com/subprocessors"
+    }
+  ],
+  "brokenLinks": [],
+  "consoleErrors": [],
+  "secretsScan": {
+    "filesScanned": 431,
+    "possibleSecrets": []
+  },
+  "runtimeArtwork": {
+    "count": 40,
+    "unchangedFromSourceReviewCommit": true,
+    "hashes": [
+      {
+        "file": "airix-atlas-highland-systems-overlook-day.webp",
+        "sha256": "52ccc5bd86662e938d831790678b5c6b167299e45b01c160bb3d68f22aa37e81"
+      },
+      {
+        "file": "airix-atlas-highland-systems-overlook-night.webp",
+        "sha256": "cd6d3cbe68197e52c4765df2b4b1a86352e9834cc35815e98bc317355c67274f"
+      },
+      {
+        "file": "airix-business-systems-operations-day.webp",
+        "sha256": "ead2e6e0c0d77fdca11b133597c864fc8378ad5e5d80accc56c2964219a20f47"
+      },
+      {
+        "file": "airix-business-systems-operations-night.webp",
+        "sha256": "65f1d8dbbec952ba0ae625f973c3ba3cb9baa5f2ba5e8fbf1126700c4a7a457a"
+      },
+      {
+        "file": "airix-consultation-courtyard-booking-day.webp",
+        "sha256": "7a6949ff535b42be201340e0cade27101addcff6c04c68235fffb1150127827a"
+      },
+      {
+        "file": "airix-consultation-courtyard-booking-night.webp",
+        "sha256": "a8938ef9d88fea554cbe66a3338dc11e4c8de79f4b16b45d72c6fa6659bbd5e4"
+      },
+      {
+        "file": "airix-contact-transport-interchange-day.webp",
+        "sha256": "c0d9c34a6ee95f4c6d99b86fd94aedbdb0dc16156627133fab958e3b3114ee3f"
+      },
+      {
+        "file": "airix-contact-transport-interchange-night.webp",
+        "sha256": "515763a2bf05dc7e3250aea28146bbc8e48d189b98c510ea1d30d8fea26e19a4"
+      },
+      {
+        "file": "airix-digital-experiences-service-journey-day.webp",
+        "sha256": "0a3422db51a541a8008b390373ba38ff1abe57d4624dbbe2c1c152a49b726f23"
+      },
+      {
+        "file": "airix-digital-experiences-service-journey-night.webp",
+        "sha256": "cf8c5ad012472ee396812a30a3f4fb008aec202c075423cda30e7a28b284971f"
+      },
+      {
+        "file": "airix-emergency-technical-response-day.webp",
+        "sha256": "655bba43b8339de9a821fe2dd164eaaa1e391b6ff306fe963a3bb5416cbc6617"
+      },
+      {
+        "file": "airix-emergency-technical-response-night.webp",
+        "sha256": "a7740dc4b0af95b424796b2a9d2e177efc40e3a8ad825b1c1a0556d279d831eb"
+      },
+      {
+        "file": "airix-managed-infrastructure-operations-day.webp",
+        "sha256": "91314e26d84b21d94f199740f844912fd752c081343398778b8c34efeb6b91cd"
+      },
+      {
+        "file": "airix-managed-infrastructure-operations-night.webp",
+        "sha256": "cd58745ecd0f0d5d876e6025173294134b80549fd7f009be85455964274e93f0"
+      },
+      {
+        "file": "airix-project-discussion-granite-arrival-day.webp",
+        "sha256": "3f7f93c0337986a5c02d6d215f846c577273390dd53b0b184809a7bf59a28746"
+      },
+      {
+        "file": "airix-project-discussion-granite-arrival-night.webp",
+        "sha256": "9ad4a8bd48f1f51d495d7863611829c88d08abc6db31bc73518db80268d8dce8"
+      },
+      {
+        "file": "airix-support-operations-day.webp",
+        "sha256": "a38979e3d0a3b3d9c1a053bb070a89806afbff592fcc1ac60fb037576217a7d0"
+      },
+      {
+        "file": "airix-support-operations-night.webp",
+        "sha256": "2fb7484521f319048c4b1cdd84bb40706c1f88839691d62d955774323f578a81"
+      },
+      {
+        "file": "airix-support-recovery-restoration-day.webp",
+        "sha256": "862e9ec3abd5d3ec4ed994464321cc0735a45a5b0f4aa111cfa4916a03fa2956"
+      },
+      {
+        "file": "airix-support-recovery-restoration-night.webp",
+        "sha256": "b761ad0e37340cce5dc2231e4e6b24ca3c8c6b50f07e3155a3c193a9398717fd"
+      },
+      {
+        "file": "homepage-day.webp",
+        "sha256": "e556b63c9fac3549a2f0fcdbc543f9098484a5ce48fb00934a074f782826a98a"
+      },
+      {
+        "file": "homepage-night.webp",
+        "sha256": "6ba7ac0ff5a4f6c7ca95489dc9c7915fbf381b5f52155b69d28eba7f23db1bd4"
+      },
+      {
+        "file": "journal-platforms-unilag-day.webp",
+        "sha256": "94399c3db6a7e9e3464d47479090c9e400f8981d34649de4fa48fb1c44ccbb23"
+      },
+      {
+        "file": "journal-platforms-unilag-night.webp",
+        "sha256": "92cd14ed0aea727e25f27754dbbbdc0cb9467ec02856100adaae36833d6eeae9"
+      },
+      {
+        "file": "ojs-day.webp",
+        "sha256": "42cc8572b1d9e8bede5d810c69eb453e0af7e471c1d1358a9712a75dfd3d3c1a"
+      },
+      {
+        "file": "ojs-night.webp",
+        "sha256": "c58b13f8023bc3901d2a55a4beb55dc53bf3bcbd242c60cfe90dcb6cabd6272b"
+      },
+      {
+        "file": "open-source-day.webp",
+        "sha256": "1d91239b19ba9cc3b4f7bcd2412f19101cf1a7d02da9cec719eaaa83f1486018"
+      },
+      {
+        "file": "open-source-night.webp",
+        "sha256": "31868c4fb691ea576ac24c3ced65db0cf3054edea7de337d983d3304fee8b7c5"
+      },
+      {
+        "file": "pricing-day.webp",
+        "sha256": "498d8e7c55a7efa3014842f9c2cb5a142edb4a4bcd628a07056956555499e197"
+      },
+      {
+        "file": "pricing-night.webp",
+        "sha256": "8e003b640796d50886284134c093f5f4d4b2f404aab8fd284fffa5bb44024987"
+      },
+      {
+        "file": "publishing-day.webp",
+        "sha256": "8cd8ec1c5ca553a647bae834962b2e21ac40143c039eb0383a90b0ab9a9d359b"
+      },
+      {
+        "file": "publishing-night.webp",
+        "sha256": "bf89da85de1eb553a9b9b7a0ffa86b792456f147a7f3f0add830a76c7bb0e8df"
+      },
+      {
+        "file": "services-day.webp",
+        "sha256": "cf7399682c3c975237efb84effcaa4c5ce591b912159b3257878855c3be38d62"
+      },
+      {
+        "file": "services-night.webp",
+        "sha256": "e86609b39f05157483d8ea654356531529f222e55740888d7ac24b91973b3d2b"
+      },
+      {
+        "file": "studio-day.webp",
+        "sha256": "26b6381975d6c9ede620e7c4f1ab5ae3b23ab2bb77150c60974da2348aacaa8a"
+      },
+      {
+        "file": "studio-night.webp",
+        "sha256": "4d0233fda4167740aba3d39d426fa9e3bb138355163b348ac069ffc3b93c8902"
+      },
+      {
+        "file": "universities-delsu-day.webp",
+        "sha256": "0039f7e5c3d863d242a208ce08a17965c6aa4bdd907e64ae394f89ae9d6896c5"
+      },
+      {
+        "file": "universities-delsu-night.webp",
+        "sha256": "eb69e6e6a954966251c8ca00117d9c5e7956b3ea02362d64a2c278b57c798c4b"
+      },
+      {
+        "file": "work-day.webp",
+        "sha256": "fc6ce9efcebdd9a5f7b54c02eccd48ea65bbae9f93c3bea8072246bfdec3744d"
+      },
+      {
+        "file": "work-night.webp",
+        "sha256": "38fcfa33f496c68a908f598541d11633d59766609cd9d9c828e7be249e82c283"
+      }
+    ]
+  },
+  "sourcePngAudit": {
+    "disallowedRuntimeRasterMasters": []
+  }
+}
