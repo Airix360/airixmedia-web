@@ -1,72 +1,136 @@
-export type PublicPage = {
-  path: string;
-  eyebrow: string;
+import type { RouteHeroAsset } from "@/lib/atlas/route-heroes";
+
+export type PublicSection = {
+  id?: string;
+  eyebrow?: string;
   title: string;
-  summary: string;
-  art?: "arrival" | "publishing" | "workflow" | "migration" | "engineering" | "infrastructure" | "continuity" | "recovery" | "studio" | "labs" | "observatory" | "insights" | "resources" | "gateway" | "contact" | "booking";
-  sections: Array<{ title: string; body: string; items?: string[] }>;
+  body: string;
+  items?: string[];
+  details?: Array<{ label: string; body: string }>;
+  visualRoute?: RouteHeroAsset["route"];
   action?: { label: string; href: string };
 };
 
-const serviceSections = {
-  digital: [
-    { title: "Clear on the surface. Accountable underneath.", body: "Strategy, content, interaction, engineering and performance are treated as one customer journey.", items: ["Website strategy and content architecture", "UX and accessible interface design", "Website and web-application engineering", "Commerce, payments and service journeys", "Measurement, SEO and performance"] },
-    { title: "Built to remain useful", body: "Every launch needs ownership, documentation, maintenance and a path for measured improvement." },
-  ],
-  systems: [
-    { title: "Work moves through people, rules and exceptions.", body: "Airix maps those realities before choosing the platform or integration.", items: ["Custom applications", "Client and staff portals", "Workflow automation", "API and payment integrations", "Operational dashboards", "Data migration and handoff"] },
-    { title: "One visible responsibility", body: "Customer experience, operational record, external services and long-term support are designed as one connected system." },
-  ],
+export type PublicPage = {
+  path: "work" | "services" | "publishing" | "studio" | "open-source" | "contact" | "support" | "support/emergency";
+  eyebrow: string;
+  title: string;
+  summary: string;
+  sections: PublicSection[];
+  action?: { label: string; href: string };
+};
+
+const projectLink = (service?: string, source?: string) => {
+  const params = new URLSearchParams({ form: "project" });
+  if (service) params.set("service", service);
+  if (source) params.set("source", source);
+  return `/contact?${params.toString()}`;
 };
 
 export const publicPages: PublicPage[] = [
-  { path: "work", eyebrow: "WORK", title: "Proof lives in the system, not the pitch.", summary: "A restrained record of public evidence, responsibilities and work that can be verified.", art: "arrival", sections: [{ title: "Current public proof", body: "KU Journals has a source-captured public interface whose footer credits Airix Media with design, development and maintenance. Broader project narratives and outcomes remain withheld until evidence and permission are complete." }, { title: "Evidence standard", body: "Real interfaces replace decorative browser frames. Missing constraints, responsibilities or outcomes are named rather than invented." }], action: { label: "Discuss a related system", href: "/discuss" } },
-  { path: "services", eyebrow: "SERVICES", title: "Build. Run. Rescue.", summary: "Digital experiences, operating systems and infrastructure organised around responsibility across the life of the work.", art: "arrival", sections: [{ title: "Build", body: "Websites, commerce, applications, portals, publishing platforms and integrations." }, { title: "Run", body: "Hosting, maintenance, monitoring, documentation and operational improvement." }, { title: "Rescue", body: "Audits, migrations, recovery and control restored to systems that have drifted or failed." }], action: { label: "Choose a service route", href: "/discuss" } },
-  { path: "services/digital-experiences", eyebrow: "DIGITAL EXPERIENCES", title: "Make the first interaction clear, fast and useful.", summary: "Websites and commerce systems shaped around real customer journeys and dependable operations.", art: "arrival", sections: serviceSections.digital, action: { label: "Discuss a digital experience", href: "/discuss" } },
-  { path: "services/business-systems", eyebrow: "BUSINESS SYSTEMS", title: "Move important work through a system people can trust.", summary: "Applications, portals, automation and integrations grounded in the way the organisation actually operates.", art: "arrival", sections: serviceSections.systems, action: { label: "Discuss an operating system", href: "/discuss" } },
-  { path: "services/managed-infrastructure", eyebrow: "MANAGED INFRASTRUCTURE", title: "Keep the operating layer visible, maintained and recoverable.", summary: "Hosting, domains, email, backups, monitoring and provider coordination treated as one practical responsibility.", art: "infrastructure", sections: [{ title: "Operating foundations", body: "Infrastructure choices follow the system, access model, risks and agreement.", items: ["Managed hosting and server administration", "Domains, DNS and SSL", "Business and transactional email", "Backups and monitoring", "Security hardening", "Provider and integration coordination"] }, { title: "No decorative uptime claims", body: "Availability, response and recovery commitments belong to a verified agreement. This site does not invent them." }], action: { label: "Discuss infrastructure", href: "/discuss" } },
-  { path: "services/support-recovery", eyebrow: "SUPPORT & RECOVERY", title: "Maintain control. Recover it when necessary.", summary: "Ongoing care and focused recovery for systems that cannot be allowed to drift.", art: "continuity", sections: [{ title: "Continuity work", body: "Maintenance, technical audits, migrations, documentation and measured improvement." }, { title: "Recovery work", body: "Triage, evidence preservation, access recovery, staged repair, validation and handover. Timing and outcome depend on diagnosis and access." }], action: { label: "Open support", href: "/support" } },
-  { path: "publishing", eyebrow: "PUBLISHING TECHNOLOGY", title: "African journals deserve world-class publishing infrastructure.", summary: "OJS platforms, editorial systems and long-term technical operations for journals, publishers and universities.", art: "publishing", sections: [{ title: "Publishing is an operating system", body: "The platform connects submissions, people, review, metadata, production, payments, discovery and preservation." }, { title: "From foundation to continuity", body: "Airix works across installation, themes, plugins, migrations, hosting, security, training, documentation and publishing support." }], action: { label: "Discuss a publishing platform", href: "/discuss" } },
-  { path: "publishing/ojs", eyebrow: "OPEN JOURNAL SYSTEMS", title: "OJS built around real editorial operations.", summary: "Configuration, extension, migration, recovery and long-term operation with staging-led change control.", art: "workflow", sections: [{ title: "A configurable workflow", body: "Submission, assessment, review, revision, production, publication and discovery are shown as an illustrative model—not a universal journal process." }, { title: "Platform lifecycle", body: "Installation, multi-journal architecture, themes, plugins, payments, upgrades, migration, training, hosting and maintenance." }], action: { label: "Plan an OJS project", href: "/discuss" } },
-  { path: "publishing/universities", eyebrow: "UNIVERSITIES", title: "One publishing foundation. Distinct journals. Clear governance.", summary: "Shared OJS infrastructure with room for journal identity, editorial autonomy and manageable institutional operations.", art: "publishing", sections: [{ title: "Institutional architecture", body: "Governance, onboarding, roles, themes, plugins, integrations, training and support planned as one programme." }] },
-  { path: "publishing/journal-platforms", eyebrow: "JOURNAL PLATFORMS", title: "Build a platform the publishing team can own.", summary: "Single- and multi-journal OJS systems designed for clear responsibility and long-term operation.", art: "workflow", sections: [{ title: "Platform design", body: "Shared infrastructure and standards with appropriate identity, workflow and access boundaries for each journal." }] },
-  { path: "publishing/hosting-support", eyebrow: "PUBLISHING HOSTING & SUPPORT", title: "Keep the journal available, secure and supportable.", summary: "A publishing platform needs both editorial understanding and maintained operating infrastructure.", art: "continuity", sections: [{ title: "Managed continuity", body: "Hosting, updates, backups, monitoring, security, documentation and package-dependent support." }, { title: "Terms remain explicit", body: "Response commitments and coverage belong to the purchased package and agreement." }] },
-  { path: "publishing/editorial-support", eyebrow: "EDITORIAL SUPPORT", title: "Technology that supports the publishing team.", summary: "Workflow configuration, metadata assistance, DOI and Crossref implementation support, documentation and training.", art: "publishing", sections: [{ title: "People remain accountable", body: "Tools can make publishing work clearer. Editorial decisions, policies and scholarly responsibility remain human." }] },
-  { path: "publishing/plugins", eyebrow: "OJS PLUGINS", title: "Extensions shaped by publishing workflows.", summary: "Verified public repositories across payments, access, submission fees, multi-provider payments and waiver requests.", art: "engineering", sections: [{ title: "Open-source boundaries", body: "Public code is distinct from installation, compatibility work, customisation, maintenance and commercial support." }, { title: "Release clarity", body: "PaystackOJS currently has a GitHub release labelled v1.1.1.0 while its README header displays 1.1.0. Both are disclosed until reconciled." }], action: { label: "Inspect open-source work", href: "/open-source" } },
-  { path: "support", eyebrow: "SUPPORT", title: "The system should remain understandable after launch.", summary: "Maintenance, investigation, recovery and improvement grounded in the active system and agreement.", art: "continuity", sections: [{ title: "Existing clients", body: "Use the Client Portal or authenticated project support route for work tied to an active agreement." }, { title: "New support needs", body: "Describe the system, symptoms, recent changes, access state, impact and available backups." }], action: { label: "Describe a support need", href: "/contact" } },
-  { path: "support/emergency", eyebrow: "EMERGENCY RECOVERY", title: "Describe what failed and what is at risk.", summary: "For unavailable, compromised, corrupted or severely impaired production systems. Submission does not guarantee immediate response or resolution.", art: "recovery", sections: [{ title: "Prepare the first record", body: "Share the affected URL or system, visible symptoms, when it began, recent changes, access state and available backups." }, { title: "Response boundary", body: "An initial diagnostic may be chargeable. Coverage and timing depend on availability and the active agreement." }], action: { label: "Prepare an emergency summary", href: "/contact?route=emergency" } },
-  { path: "knowledge-base", eyebrow: "KNOWLEDGE BASE", title: "Answers for operating the system.", summary: "A structured home for verified platform, publishing, hosting, security, billing and support guidance.", art: "continuity", sections: [{ title: "Publishing platforms", body: "OJS administration, workflow, upgrades, plugins and editorial operations." }, { title: "Websites and infrastructure", body: "Access, hosting, domains, email, backups, monitoring and recovery." }] },
-  { path: "status", eyebrow: "STATUS", title: "No live service feed is connected.", summary: "This page refuses to simulate operational status. Verified monitoring integration remains a launch decision.", art: "infrastructure", sections: [{ title: "Current state", body: "No public uptime, incident or component data is available from a verified endpoint." }] },
-  { path: "security", eyebrow: "SECURITY", title: "Security is an operating practice.", summary: "Controlled access, secure defaults, backups, monitoring, recovery and documented responsibility.", art: "infrastructure", sections: [{ title: "Responsible disclosure", body: "Report suspected security issues privately to hello@airixmedia.com. Do not include credentials or secrets in the first message." }, { title: "Evidence before badges", body: "No certification, partnership or control claim appears without current verification." }] },
-  { path: "service-levels", eyebrow: "SERVICE LEVELS", title: "Commitments belong to the agreement.", summary: "Coverage, response and resolution depend on the system, provider, access and purchased package.", art: "continuity", sections: [{ title: "Response is not resolution", body: "A response confirms receipt and triage. Resolution depends on diagnosis, dependencies, access and scope." }] },
-  { path: "studio", eyebrow: "STUDIO", title: "Small by design. Accountable by practice.", summary: "Airix Media is a boutique creative technology studio and digital operations partner within Airix 360.", art: "studio", sections: [{ title: "How Airix works", body: "Senior oversight, explicit responsibility, evidence-led decisions and a practical relationship after launch." }, { title: "Part of Airix 360", body: "Airix Media is described at brand level only. Entity, jurisdiction and final legal language remain pending verification." }], action: { label: "Discuss a project", href: "/discuss" } },
-  { path: "open-source", eyebrow: "OPEN SOURCE", title: "Useful publishing infrastructure, improved in public.", summary: "Verified repositories with release state, documentation and limitations made visible.", art: "labs", sections: [{ title: "Five public records", body: "PaystackOJS, OJS Magic Login, Submission Fee, MultiPay and Request Waiver. Private repository names and contents are never exposed." }] },
-  { path: "atlas", eyebrow: "AIRIX ATLAS", title: "A wider view of the systems organisations depend on.", summary: "Atlas turns infrastructure, exchange, knowledge, making and stewardship into one navigable Nigerian world.", art: "observatory", sections: [{ title: "Build worlds, not pages", body: "Place, movement and infrastructure make technical responsibility easier to understand without replacing clear public labels." }] },
-  { path: "insights", eyebrow: "INSIGHTS", title: "Practical thinking for people who operate digital systems.", summary: "Publishing technology, recovery, infrastructure and workflow design without generic filler.", art: "insights", sections: [{ title: "Featured field note", body: "Planning an OJS upgrade without turning production into a test environment." }] },
-  { path: "resources", eyebrow: "RESOURCES", title: "Useful tools before you start a project.", summary: "Clear review prompts for ownership, risk, access and the next practical decision.", art: "resources", sections: [{ title: "Publication boundary", body: "Downloadable files remain unavailable until real resources, ownership, accessibility and versioning are verified." }] },
-  { path: "discuss", eyebrow: "DISCUSS A PROJECT", title: "Where shall we build next?", summary: "Start with the organisation, the challenge and what is at risk. The local summary helps shape a useful conversation.", art: "gateway", sections: [{ title: "A qualified first brief", body: "Choose a route, describe the current system, timing, budget context and support need. Nothing is transmitted without a verified endpoint." }], action: { label: "Prepare the brief", href: "#project-brief" } },
-  { path: "contact", eyebrow: "CONTACT", title: "Tell us what needs to work better.", summary: "Prepare a local message summary or use a verified direct channel. No form submission is simulated.", art: "contact", sections: [{ title: "Verified channels", body: "hello@airixmedia.com · +234 905 091 7937 · WhatsApp available on the Nigerian number." }], action: { label: "Prepare a message", href: "#contact-summary" } },
-  { path: "book", eyebrow: "BOOK A CONVERSATION", title: "A useful conversation starts with context.", summary: "No scheduling provider or availability endpoint is verified. Prepare meeting context, then continue through email.", art: "booking", sections: [{ title: "No fake calendar", body: "The site does not expose invented slots, holds or appointment confirmations." }], action: { label: "Prepare a project brief", href: "/discuss" } },
+  {
+    path: "work",
+    eyebrow: "WORK",
+    title: "Proof lives in the system, not the pitch.",
+    summary: "A restrained record of public evidence, responsibilities and work that can be verified.",
+    sections: [
+      { id: "publishing", eyebrow: "PUBLISHING", title: "Publishing systems with a visible public record.", body: "KU Journals has a public interface whose footer credits Airix Media with design, development and maintenance. Broader institutional claims, project scope and outcomes remain withheld until permission and evidence are complete.", details: [{ label: "Evidence", body: "Current public interface and visible footer credit." }, { label: "Boundary", body: "No fabricated metrics, testimonials or institutional outcomes." }], action: { label: "Start a publishing enquiry", href: "/contact?form=publishing&source=/work#publishing" } },
+      { id: "digital-experiences", eyebrow: "DIGITAL EXPERIENCES", title: "Interfaces judged by what people can complete.", body: "Public case-study detail remains intentionally limited until authentic interface captures, responsibilities and permissions are ready.", items: ["Web and commerce journeys", "Accessible interaction", "Performance and measurement", "Operational ownership"] },
+      { id: "business-systems", eyebrow: "BUSINESS SYSTEMS", title: "Operational work before decorative screens.", body: "The evidence standard covers the problem, system responsibility, constraints and ongoing operation—not a fabricated browser frame.", items: ["Applications and portals", "Workflow automation", "Payments and integrations", "Data and operational handoff"] },
+      { id: "infrastructure", eyebrow: "INFRASTRUCTURE", title: "The operating layer is part of the work.", body: "Hosting, access, backups, monitoring, email, domains and recovery are treated as accountable responsibilities. Service commitments remain agreement-specific." },
+      { id: "open-source", eyebrow: "OPEN SOURCE", title: "Public code can be inspected directly.", body: "Five verified OJS repositories provide the clearest current source-level proof.", action: { label: "Open the catalogue", href: "/open-source" } },
+    ],
+    action: { label: "Discuss a related system", href: projectLink(undefined, "/work") },
+  },
+  {
+    path: "services",
+    eyebrow: "SERVICES",
+    title: "Build. Run. Rescue.",
+    summary: "Four connected practices organised around responsibility across the life of the system.",
+    sections: [
+      { id: "digital-experiences", eyebrow: "01 / DIGITAL EXPERIENCES", title: "Make the first interaction clear, fast and useful.", body: "For websites and commerce journeys that are difficult to understand, slow to change or disconnected from the organisation behind them.", items: ["Capabilities — strategy, content architecture, UX, accessible interface design, engineering, commerce, SEO and performance", "Typical engagements — new platforms, redesigns, service journeys and measured improvement programmes", "Example outcomes — clearer journeys, stronger ownership and a maintainable release path", "Related proof — public work is shown only when interface evidence and permission support it"], visualRoute: "/services/digital-experiences", action: { label: "Discuss Digital Experiences", href: projectLink("Digital Experiences", "/services#digital-experiences") } },
+      { id: "business-systems", eyebrow: "02 / BUSINESS SYSTEMS", title: "Move important work through a system people can trust.", body: "For repeated operational work spread across messages, spreadsheets, manual handoffs and disconnected tools.", items: ["Capabilities — custom applications, portals, workflow automation, APIs, payments, dashboards and data migration", "Typical engagements — operating systems, client workspaces, internal tools and integration programmes", "Example outcomes — one clearer record, fewer fragile handoffs and explicit operational responsibility", "Related proof — project relationships and outcomes remain evidence-gated"], visualRoute: "/services/business-systems", action: { label: "Discuss Business Systems", href: projectLink("Business Systems", "/services#business-systems") } },
+      { id: "managed-infrastructure", eyebrow: "03 / MANAGED INFRASTRUCTURE", title: "Keep the operating layer visible and recoverable.", body: "For hosting, access, domains, email, backups and providers that have become difficult to govern as one system.", items: ["Capabilities — managed hosting, server administration, DNS, SSL, email, backups, monitoring and hardening", "Typical engagements — managed operations, infrastructure transition, stabilisation and provider coordination", "Example outcomes — documented access, clearer ownership and a tested recovery path", "Related proof — availability and response commitments belong to a verified agreement"], visualRoute: "/services/managed-infrastructure", action: { label: "Discuss Managed Infrastructure", href: projectLink("Managed Infrastructure", "/services#managed-infrastructure") } },
+      { id: "support-recovery", eyebrow: "04 / SUPPORT & RECOVERY", title: "Maintain control. Recover it when necessary.", body: "For active systems that need structured maintenance, investigation, migration or controlled recovery.", items: ["Capabilities — maintenance, audits, staged repair, access recovery, migrations, documentation and handover", "Typical engagements — support agreements, failed-project rescue, platform recovery and continuity work", "Example outcomes — restored control, a reliable record and a practical next operating state", "Related proof — timing and outcome depend on diagnosis, access and scope"], visualRoute: "/services/support-recovery", action: { label: "Discuss Support & Recovery", href: projectLink("Support & Recovery", "/services#support-recovery") } },
+    ],
+    action: { label: "Choose a service route", href: projectLink(undefined, "/services") },
+  },
+  {
+    path: "publishing",
+    eyebrow: "PUBLISHING TECHNOLOGY",
+    title: "African journals deserve world-class publishing infrastructure.",
+    summary: "One complete route through OJS, editorial operations, hosting, pricing, public work and long-term support.",
+    sections: [
+      { id: "overview", eyebrow: "OVERVIEW", title: "Publishing is an operating system.", body: "The platform connects submissions, people, review, metadata, production, payments, discovery, preservation and institutional responsibility." },
+      { id: "ojs", eyebrow: "OPEN JOURNAL SYSTEMS", title: "OJS built around real editorial operations.", body: "Installation, configuration, workflow design, upgrades, migrations and recovery are handled through staging-led change control.", items: ["Single- and multi-journal architecture", "Workflow and role configuration", "Upgrade and migration planning", "Training, documentation and handover"], visualRoute: "/publishing/ojs" },
+      { id: "hosting-support", eyebrow: "HOSTING & TECHNICAL SUPPORT", title: "Keep the journal available, secure and supportable.", body: "Hosting, updates, backups, monitoring, security and documentation are operated as one responsibility. Coverage remains package- and agreement-specific." },
+      { id: "editorial-support", eyebrow: "EDITORIAL & PRODUCTION", title: "Technology that supports the publishing team.", body: "Workflow configuration, metadata assistance, DOI and Crossref implementation support, documentation and training can be scoped without displacing editorial responsibility." },
+      { id: "plugins", eyebrow: "THEMES & PLUGINS", title: "Extend OJS for a verified publishing need.", body: "Themes and plugins are scoped against the exact platform version, workflow, security boundary and maintenance plan.", action: { label: "Inspect public plugins", href: "/open-source" } },
+      { id: "universities", eyebrow: "UNIVERSITIES", title: "One foundation. Distinct journals. Clear governance.", body: "Multi-journal programmes need shared infrastructure, onboarding, roles, identity, training and support without erasing journal autonomy." },
+      { id: "journal-platforms", eyebrow: "JOURNAL PLATFORMS", title: "Build a platform the publishing team can own.", body: "Shared standards and infrastructure sit alongside appropriate workflow, identity and access boundaries for each journal." },
+      { id: "pricing", eyebrow: "PRICING", title: "Starting points for a scoped proposal.", body: "Every public amount begins with “From”. Platform condition, scope, billing country and support requirements determine the final proposal.", visualRoute: "/publishing/pricing" },
+      { id: "projects", eyebrow: "SELECTED PUBLISHING WORK", title: "Evidence before narrative.", body: "The current public record supports KU Journals’ live interface and visible Airix Media footer credit. Unsupported scope, metrics and outcomes remain withheld.", action: { label: "View publishing work", href: "/work#publishing" } },
+      { id: "resources", eyebrow: "RESOURCES", title: "Useful guidance, published only when it is real.", body: "Guides and downloadable material remain unavailable until ownership, accessibility, maintenance and versioning are verified." },
+    ],
+    action: { label: "Start a publishing enquiry", href: "/contact?form=publishing&source=/publishing" },
+  },
+  {
+    path: "studio",
+    eyebrow: "STUDIO",
+    title: "Small by design. Accountable by practice.",
+    summary: "Airix Media is a boutique creative technology studio and digital operations partner within Airix 360.",
+    sections: [
+      { id: "studio", eyebrow: "WHO WE ARE", title: "Senior attention across the life of the system.", body: "Airix Media brings strategy, design, engineering, infrastructure, publishing technology and support into one accountable practice." },
+      { id: "airix-360", eyebrow: "AIRIX 360", title: "A studio within a wider operating group.", body: "Airix Media is described as part of Airix 360 at brand level. Final entity, jurisdiction and legal language remain subject to verification." },
+      { id: "atlas", eyebrow: "AIRIX ATLAS", title: "Invisible systems. Visible progress.", body: "Build worlds, not pages. Atlas is the operating philosophy that connects strategy, digital experiences, business systems, infrastructure, publishing and support as parts of one living environment.", details: [{ label: "Build", body: "Shape the experience and the system behind it." }, { label: "Run", body: "Keep ownership, access and operation visible." }, { label: "Rescue", body: "Restore control through evidence and staged recovery." }], visualRoute: "/atlas" },
+      { id: "principles", eyebrow: "WORKING PRINCIPLES", title: "Clarity before spectacle. Evidence before claims.", body: "Airix works with organisations that depend on digital systems to publish, serve customers, coordinate work or maintain critical operations.", items: ["Start with the operating problem", "Make responsibility visible", "Design for access and handover", "Test change away from production", "Keep support and recovery routes explicit", "Build for the long term, not only launch day"] },
+      { id: "organisations", eyebrow: "WHO WE WORK WITH", title: "Organisations whose work continues after the website launches.", body: "Publishing organisations, universities, growing businesses, institutions and service teams that need a dependable digital operating partner." },
+    ],
+    action: { label: "Discuss a project", href: projectLink(undefined, "/studio") },
+  },
+  {
+    path: "open-source",
+    eyebrow: "OPEN SOURCE",
+    title: "Useful publishing infrastructure, improved in public.",
+    summary: "One verified catalogue for five public OJS projects, their source, compatibility evidence and limitations.",
+    sections: [{ id: "catalogue", eyebrow: "PUBLIC CATALOGUE", title: "Inspect the work at source.", body: "Repository facts are maintained in one editable typed data structure. Unknown compatibility, support and maintenance claims are omitted rather than guessed." }],
+  },
+  {
+    path: "contact",
+    eyebrow: "CONTACT",
+    title: "Start with the conversation you actually need.",
+    summary: "Six focused routes replace one oversized form. Choose a purpose, provide useful context and keep urgent work visible.",
+    sections: [{ id: "contact-options", eyebrow: "ENQUIRY ROUTES", title: "Choose the right starting point.", body: "Each route keeps only the fields needed for useful triage. Nothing is described as sent unless a configured provider accepts it." }],
+  },
+  {
+    path: "support",
+    eyebrow: "SUPPORT",
+    title: "The system should remain understandable after launch.",
+    summary: "Maintenance, investigation, recovery and guidance grounded in the active system and agreement.",
+    sections: [
+      { id: "request-support", eyebrow: "REQUEST SUPPORT", title: "Describe the affected system and its impact.", body: "Existing clients should use the Client Portal for work tied to an active agreement. New requests can begin through the technical-support form.", action: { label: "Request technical support", href: "/contact?form=support&source=/support#request-support" } },
+      { id: "what-to-include", eyebrow: "WHAT TO INCLUDE", title: "A useful first record shortens diagnosis.", body: "Include the affected URL or system, symptoms, timing, recent changes, access state, business impact, error details and available backups." },
+      { id: "service-levels", eyebrow: "SERVICE LEVELS", title: "Commitments belong to the agreement.", body: "Response confirms receipt and triage. Resolution depends on diagnosis, access, dependencies, scope and the purchased support arrangement." },
+      { id: "guides", eyebrow: "GUIDES", title: "A focused support library, not an empty knowledge base.", body: "Verified guidance will be published as real operational material becomes available, owned and maintained." },
+      { id: "security-reporting", eyebrow: "SECURITY REPORTING", title: "Report suspected security issues privately.", body: "Use the security route without including credentials or secrets in the initial message.", action: { label: "Review security guidance", href: "/security" } },
+      { id: "emergency", eyebrow: "EMERGENCY", title: "Keep critical incidents on a direct route.", body: "Unavailable, compromised, corrupted or publication-blocking systems should use the dedicated emergency page.", visualRoute: "/services/support-recovery", action: { label: "Open Emergency Support", href: "/support/emergency" } },
+    ],
+  },
+  {
+    path: "support/emergency",
+    eyebrow: "EMERGENCY RECOVERY",
+    title: "Describe what failed and what is at risk.",
+    summary: "For unavailable, compromised, corrupted or severely impaired production systems. Submission does not guarantee immediate response or resolution.",
+    sections: [
+      { id: "instructions", eyebrow: "FIRST RECORD", title: "Keep the first report short and operational.", body: "Share the affected service, outage state, security concern, publication impact, when the incident began and the safest urgent contact route." },
+      { id: "response-boundary", eyebrow: "RESPONSE BOUNDARY", title: "Emergency work may be chargeable.", body: "Coverage, availability, timing and resolution depend on diagnosis, access and the active agreement. Do not send passwords, API keys or recovery codes." },
+      { id: "emergency-form", eyebrow: "EMERGENCY FORM", title: "Prepare the incident record now.", body: "The dedicated form keeps emergency details separate from general enquiries.", action: { label: "Open Emergency Support form", href: "/contact?form=emergency&source=/support/emergency" } },
+    ],
+    action: { label: "Open Emergency Support form", href: "/contact?form=emergency&source=/support/emergency" },
+  },
 ];
 
 export function getPublicPage(path: string) {
-  if (path === "work/ku-journals") return {
-    path,
-    eyebrow: "SOURCE-CAPTURED WORK RECORD",
-    title: "KU Journals",
-    summary: "A current public journal interface whose footer credits Airix Media with design, development and maintenance.",
-    art: "publishing" as const,
-    sections: [
-      { title: "What the public record supports", body: "The live interface and dated captures support the existence of the platform and the visible Airix Media footer credit." },
-      { title: "What remains withheld", body: "Original need, constraints, complete responsibility, editorial decisions, institutional claims, journal metrics and measurable outcomes remain unverified." }
-    ],
-    action: { label: "Discuss a publishing system", href: "/discuss" }
-  };
-  if (path.startsWith("open-source/")) {
-    const names: Record<string, string> = { "paystack-ojs": "PaystackOJS", "ojs-magic-login": "OJS Magic Login", "submission-fee": "Submission Fee for OJS", multipay: "MultiPay for OJS", "request-waiver": "Request Waiver for OJS" };
-    const slug = path.split("/")[1];
-    if (names[slug]) return { ...publicPages.find((page) => page.path === "open-source")!, path, eyebrow: "VERIFIED PUBLIC REPOSITORY", title: names[slug], summary: slug === "paystack-ojs" ? "A public OJS 3.5 Paystack payment plugin. GitHub release v1.1.1.0 and README header 1.1.0 are both disclosed." : "A public OJS plugin record with source, release state and support boundaries kept explicit." };
-  }
   return publicPages.find((page) => page.path === path) ?? null;
 }
 
@@ -74,8 +138,8 @@ export const publishingPrices = [
   ["OJS setup", "From ₦150,000"],
   ["Migration", "From ₦200,000"],
   ["Theme and branding", "From ₦150,000"],
-  ["Managed hosting, domain, SSL and Cloudflare", "From ₦300,000/year"],
+  ["Managed hosting", "From ₦300,000/year"],
   ["Support and maintenance", "From ₦150,000/year"],
-  ["Training · up to 10 participants", "From ₦100,000/session"],
-  ["Custom plugins", "From ₦250,000"]
+  ["Training", "From ₦100,000/session"],
+  ["Custom plugin development", "Quoted based on requirements"],
 ] as const;

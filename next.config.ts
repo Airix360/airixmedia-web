@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { routeConsolidationRedirects } from "./src/lib/route-consolidation";
 
 const scriptSource = process.env.NODE_ENV === "production" ? "script-src 'self' 'unsafe-inline'" : "script-src 'self' 'unsafe-inline' 'unsafe-eval'";
 
@@ -10,15 +11,16 @@ const nextConfig: NextConfig = {
   experimental: { optimizePackageImports: ["lucide-react"] },
   async redirects() {
     return [
+      ...routeConsolidationRedirects.map(({ source, destination, permanent }) => ({ source, destination, permanent })),
       { source: "/systems", destination: "/work", permanent: true },
-      { source: "/systems/:slug*", destination: "/work/:slug*", permanent: true },
+      { source: "/systems/:slug*", destination: "/work", permanent: true },
       { source: "/company", destination: "/studio", permanent: true },
-      { source: "/start-a-project", destination: "/discuss", permanent: true },
-      { source: "/project-brief", destination: "/discuss", permanent: true },
+      { source: "/start-a-project", destination: "/contact?form=project", permanent: true },
+      { source: "/project-brief", destination: "/contact?form=project", permanent: true },
       { source: "/policy", destination: "/privacy", permanent: true },
       { source: "/privacy-policy", destination: "/privacy", permanent: true },
       { source: "/terms-of-use", destination: "/terms", permanent: true },
-      { source: "/cookie-policy", destination: "/cookies", permanent: true },
+      { source: "/cookie-policy", destination: "/legal#cookies", permanent: true },
     ];
   },
   async headers() {
