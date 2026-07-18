@@ -1,0 +1,7 @@
+{
+  "deterministicTest": "pass",
+  "successDisplayed": false,
+  "publicFallbackDisplayed": true,
+  "formValuesPreserved": true,
+  "rawProviderErrorExposed": false
+}

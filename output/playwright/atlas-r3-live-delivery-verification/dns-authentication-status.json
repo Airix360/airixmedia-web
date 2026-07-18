@@ -1,0 +1,7 @@
+{
+  "mx": "present",
+  "spf": "present-provider-authorization-unconfirmed",
+  "dkim": "present-provider-status-unconfirmed",
+  "dmarc": "present-no-conflict-observed",
+  "dnsChanged": false
+}

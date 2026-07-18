@@ -59,6 +59,24 @@ export function parseRecipientList(raw: string | undefined): { recipients: Recip
 function env(name: string) { return process.env[name]?.trim() || ""; }
 function enabled(name: string, defaultValue = false) { const value = env(name).toLowerCase(); return value ? value === "true" : defaultValue; }
 
+export function safePublicFallbackUrl(value: string | undefined): string | undefined {
+  const candidate = value?.trim();
+  if (!candidate || /[\r\n]/.test(candidate)) return undefined;
+  try {
+    const parsed = new URL(candidate);
+    if (parsed.protocol === "https:") return parsed.toString();
+    if (parsed.protocol === "mailto:") {
+      const recipient = decodeURIComponent(parsed.pathname);
+      const queryKeys = [...parsed.searchParams.keys()];
+      const subject = parsed.searchParams.get("subject");
+      const queryIsSafe = queryKeys.every((key) => key === "subject")
+        && (!subject || !/[\r\n]/.test(subject));
+      if (emailSchema.safeParse(recipient).success && queryIsSafe) return candidate;
+    }
+  } catch { return undefined; }
+  return undefined;
+}
+
 const recipientEnvironment: Record<ContactFormKey, string> = {
   project: "CONTACT_PROJECT_RECIPIENTS",
   publishing: "CONTACT_PUBLISHING_RECIPIENTS",
@@ -79,7 +97,7 @@ export function getContactProviderReadiness(): ProviderReadiness {
   const ccValid = !env("EMERGENCY_CC_RECIPIENTS") || emergencyCc.valid;
   const fallbackRecipientsValid = !env("EMERGENCY_FALLBACK_RECIPIENTS") || emergencyFallback.valid;
   const fallbackUrl = env("EMERGENCY_PUBLIC_FALLBACK_URL");
-  const publicFallbackValid = Boolean(env("EMERGENCY_PUBLIC_FALLBACK_MESSAGE")) && (!fallbackUrl || /^https?:\/\/[^\s]+$/i.test(fallbackUrl));
+  const publicFallbackValid = Boolean(env("EMERGENCY_PUBLIC_FALLBACK_MESSAGE")) && (!fallbackUrl || Boolean(safePublicFallbackUrl(fallbackUrl)));
   const checks = {
     apiKeyConfigured: Boolean(env("BREVO_API_KEY")),
     senderConfigured: sender,
@@ -128,7 +146,7 @@ function subjectFor(submission: ContactSubmission): string {
         : submission.type === "support" ? `[Technical support] ${identity} · ${safeHeaderValue(v.severity)}`
           : submission.type === "emergency" ? `[Emergency request] ${identity} · ${safeHeaderValue(v.outageStatus)}`
             : `[General enquiry] ${identity} · ${safeHeaderValue(v.enquiryType)}`;
-  return safeHeaderValue(subject);
+  return safeHeaderValue(`${env("APP_ENVIRONMENT").toLowerCase() === "staging" ? "[STAGING TEST — NO ACTION REQUIRED] " : ""}${subject}`);
 }
 
 function buildMessage(submission: ContactSubmission, reference: string, recipients: Recipient[], cc: Recipient[] = []): EmailMessage {
@@ -190,10 +208,10 @@ function logDelivery(event: { reference: string; formType: ContactFormKey; statu
   console.info(JSON.stringify({ event: "contact_delivery", timestamp: new Date().toISOString(), environment: env("APP_ENVIRONMENT") || process.env.NODE_ENV || "unknown", ...event }));
 }
 
-function successMessage(type: ContactFormKey, reference: string, fallbackInstruction = "") {
-  if (type === "book") return `Consultation request received. Reference ${reference}. This is a request, not a confirmed appointment.`;
-  if (type === "support") return `Support request delivered. Reference ${reference}. Delivery does not mean that a ticket has been created.`;
-  if (type === "emergency") return `Emergency request delivered. Reference ${reference}. Emergency work may be chargeable. Delivery does not guarantee immediate acceptance or mean a technician has seen the request.${fallbackInstruction ? ` ${fallbackInstruction}` : ""}`;
+function successMessage(type: ContactFormKey, reference: string, usedFallback = false) {
+  if (type === "book") return `Your consultation request was delivered. Reference: ${reference}. This is not a confirmed appointment. Airix Media will review your preferred date and contact you to confirm availability.`;
+  if (type === "support") return `Your support request was delivered. Reference: ${reference}. This confirms delivery only and does not mean a support ticket has been created or assigned.`;
+  if (type === "emergency") return `Your emergency request was delivered${usedFallback ? " through the fallback route" : ""}. Reference: ${reference}. Delivery does not mean that the incident has been accepted, assigned or seen by a technician. Emergency work may be chargeable. Airix Media monitors emergency requests daily from 08:00 to 22:00 West Africa Time. Requests outside those hours are handled on a best-effort basis.`;
   return `Enquiry delivered. Reference ${reference}.`;
 }
 
@@ -208,7 +226,7 @@ export async function submitContactEnquiry(submission: ContactSubmission, provid
   const provider = providerOverride || createContactProvider();
   if (!provider || !recipients.valid) {
     const fallbackMessage = submission.type === "emergency" ? env("EMERGENCY_PUBLIC_FALLBACK_MESSAGE") || undefined : undefined;
-    const fallbackUrl = submission.type === "emergency" && /^https?:\/\//.test(env("EMERGENCY_PUBLIC_FALLBACK_URL")) ? env("EMERGENCY_PUBLIC_FALLBACK_URL") : undefined;
+    const fallbackUrl = submission.type === "emergency" ? safePublicFallbackUrl(env("EMERGENCY_PUBLIC_FALLBACK_URL")) : undefined;
     logDelivery({ reference, formType: submission.type, status: "not_configured", provider: readiness.contactProvider });
     return { ok: false, code: "provider_not_configured", message: submission.type === "emergency" ? "Emergency delivery is not configured. Your request has not been sent." : "Online submission is not configured. Your enquiry has not been sent.", fallbackMessage, fallbackUrl };
   }
@@ -225,18 +243,18 @@ export async function submitContactEnquiry(submission: ContactSubmission, provid
     }
     if (!delivered.ok) {
       logDelivery({ reference, formType: submission.type, status: "failed", provider: provider.name, failureCategory: delivered.category });
-      return { ok: false, code: delivered.category === "timeout" ? "provider_unavailable" : "delivery_failed", message: "Emergency delivery failed. Your request has not been sent.", fallbackMessage: env("EMERGENCY_PUBLIC_FALLBACK_MESSAGE") || undefined, fallbackUrl: /^https?:\/\//.test(env("EMERGENCY_PUBLIC_FALLBACK_URL")) ? env("EMERGENCY_PUBLIC_FALLBACK_URL") : undefined };
+      return { ok: false, code: delivered.category === "timeout" ? "provider_unavailable" : "delivery_failed", message: "Emergency delivery failed. Your request has not been sent.", fallbackMessage: env("EMERGENCY_PUBLIC_FALLBACK_MESSAGE") || undefined, fallbackUrl: safePublicFallbackUrl(env("EMERGENCY_PUBLIC_FALLBACK_URL")) };
     }
     logDelivery({ reference, formType: submission.type, status: usedFallback ? "delivered_fallback" : "delivered", provider: provider.name, providerRequestId: delivered.requestId });
     if (enabled("EMERGENCY_ACKNOWLEDGEMENT_ENABLED", true) && emailSchema.safeParse(submission.values.email).success) {
       const acknowledgement = buildMessage(submission, reference, [{ email: String(submission.values.email).toLowerCase() }]);
       acknowledgement.subject = `Airix Media emergency request delivered · ${reference}`;
-      acknowledgement.textContent = successMessage("emergency", reference, env("EMERGENCY_PUBLIC_FALLBACK_MESSAGE"));
+      acknowledgement.textContent = successMessage("emergency", reference, usedFallback);
       acknowledgement.htmlContent = `<p>${escapeHtml(acknowledgement.textContent)}</p>`;
       const acknowledgementResult = await provider.deliver(acknowledgement);
       logDelivery({ reference, formType: "emergency", status: acknowledgementResult.ok ? "acknowledgement_delivered" : "acknowledgement_failed", provider: provider.name, ...(!acknowledgementResult.ok ? { failureCategory: acknowledgementResult.category } : {}) });
     }
-    return { ok: true, reference, provider: provider.name, providerRequestId: delivered.requestId, usedFallback, message: successMessage("emergency", reference, env("EMERGENCY_PUBLIC_FALLBACK_MESSAGE")) };
+    return { ok: true, reference, provider: provider.name, providerRequestId: delivered.requestId, usedFallback, message: successMessage("emergency", reference, usedFallback) };
   }
   const delivered = await provider.deliver(buildMessage(submission, reference, recipients.recipients));
   if (!delivered.ok) {

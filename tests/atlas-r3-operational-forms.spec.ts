@@ -6,10 +6,10 @@ const output = path.join(process.cwd(), "output/playwright/atlas-r3-operational-
 const forms = [
   ["project", "Discuss a Project", "AM-PROJ-MOCK123456", "Enquiry delivered. Reference AM-PROJ-MOCK123456."],
   ["publishing", "Publishing Enquiry", "AM-PUB-MOCK123456", "Enquiry delivered. Reference AM-PUB-MOCK123456."],
-  ["book", "Book a Consultation", "AM-BOOK-MOCK123456", "Consultation request received. Reference AM-BOOK-MOCK123456. This is a request, not a confirmed appointment."],
+  ["book", "Book a Consultation", "AM-BOOK-MOCK123456", "Your consultation request was delivered. Reference: AM-BOOK-MOCK123456. This is not a confirmed appointment. Airix Media will review your preferred date and contact you to confirm availability."],
   ["general", "General Enquiry", "AM-GEN-MOCK123456", "Enquiry delivered. Reference AM-GEN-MOCK123456."],
-  ["support", "Technical Support", "AM-SUP-MOCK123456", "Support request delivered. Reference AM-SUP-MOCK123456. Delivery does not mean that a ticket has been created."],
-  ["emergency", "Emergency Support", "AM-EMG-MOCK123456", "Emergency request delivered. Reference AM-EMG-MOCK123456. Emergency work may be chargeable. Delivery does not guarantee immediate acceptance or mean a technician has seen the request. Use the verified client portal if service continuity requires immediate action."],
+  ["support", "Technical Support", "AM-SUP-MOCK123456", "Your support request was delivered. Reference: AM-SUP-MOCK123456. This confirms delivery only and does not mean a support ticket has been created or assigned."],
+  ["emergency", "Emergency Support", "AM-EMG-MOCK123456", "Your emergency request was delivered. Reference: AM-EMG-MOCK123456. Delivery does not mean that the incident has been accepted, assigned or seen by a technician. Emergency work may be chargeable. Airix Media monitors emergency requests daily from 08:00 to 22:00 West Africa Time. Requests outside those hours are handled on a best-effort basis."],
 ] as const;
 
 test.describe.configure({ mode: "serial" });
@@ -85,12 +85,13 @@ test("provider unavailable, delivery failure, retry preservation and rate limit 
 
 test("emergency failure shows configured public fallback without a false success", async ({ page }, testInfo) => {
   test.skip(testInfo.project.name === "mobile");
-  await page.route("**/api/leads", (route) => route.fulfill({ status: 503, contentType: "application/json", body: JSON.stringify({ ok: false, code: "delivery_failed", error: "Emergency delivery failed. Your request has not been sent.", fallbackMessage: "Use the verified client portal if service continuity requires immediate action.", fallbackUrl: "https://portal.airixmedia.com" }) }));
+  await page.route("**/api/leads", (route) => route.fulfill({ status: 503, contentType: "application/json", body: JSON.stringify({ ok: false, code: "delivery_failed", error: "Emergency delivery failed. Your request has not been sent.", fallbackMessage: "We could not confirm electronic delivery. Email Airix Media Operations directly.", fallbackUrl: "mailto:operations@airixmedia.com?subject=Emergency%20Support%20Fallback" }) }));
   await page.goto("/contact?form=emergency"); await fillValidForm(page);
   const dialog = page.getByRole("dialog"); await dialog.getByRole("button", { name: "Submit enquiry" }).click();
   await expect(dialog.getByText(/Emergency delivery failed/)).toBeVisible();
-  await expect(dialog.getByRole("link", { name: "Use the published emergency fallback" })).toHaveAttribute("href", "https://portal.airixmedia.com");
-  await expect(dialog.getByText(/Emergency request delivered/)).toHaveCount(0);
+  await expect(dialog.getByRole("link", { name: "Use the published emergency fallback" })).toHaveAttribute("href", "mailto:operations@airixmedia.com?subject=Emergency%20Support%20Fallback");
+  await expect(dialog.locator('[name="urgentPhone"]')).toHaveValue("+234 800 000 0000");
+  await expect(dialog.getByText(/emergency request was delivered/i)).toHaveCount(0);
   await page.screenshot({ path: path.join(output, "emergency-failure-fallback.png"), fullPage: true });
 });
 

@@ -1,7 +1,7 @@
 # Airix Media production operations decisions
 
-Date: 18 July 2026  
-Branch: `feat/atlas-r3-form-delivery-emergency-routing`  
+Date: 18 July 2026
+Branch: `feat/atlas-r3-form-delivery-emergency-routing`
 Version: `2.4.0.0`
 
 ## Approved delivery model

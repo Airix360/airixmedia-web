@@ -1,0 +1,8 @@
+{
+  "form": "emergency",
+  "marker": "STAGING TEST — NO ACTION REQUIRED",
+  "attempted": false,
+  "acceptedByProvider": false,
+  "recipientConfirmed": false,
+  "reason": "blocked-before-send"
+}

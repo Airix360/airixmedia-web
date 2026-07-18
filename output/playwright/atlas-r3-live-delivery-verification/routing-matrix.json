@@ -1,0 +1,17 @@
+{
+  "groups": [
+    "General Operations",
+    "Project Operations",
+    "Publishing Operations",
+    "Booking Operations",
+    "Support Operations",
+    "Emergency Duty Operator",
+    "Operations Fallback"
+  ],
+  "sharedGeneralProjectBooking": true,
+  "publishingDistinct": true,
+  "supportDistinct": true,
+  "emergencyDistinct": true,
+  "fallbackDistinctAlias": true,
+  "addressesIncluded": false
+}

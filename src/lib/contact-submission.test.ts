@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import { BrevoContactSubmissionProvider, escapeHtml, generateSubmissionReference, getContactProviderReadiness, parseRecipientList, safeHeaderValue, submitContactEnquiry, type ContactSubmissionProvider } from "./contact-submission";
+import { BrevoContactSubmissionProvider, escapeHtml, generateSubmissionReference, getContactProviderReadiness, parseRecipientList, safeHeaderValue, safePublicFallbackUrl, submitContactEnquiry, type ContactSubmissionProvider } from "./contact-submission";
 
 const original = { ...process.env };
 const general = { type: "general" as const, sourceRoute: "/contact", values: { fullName: "Ada Person", email: "ada@example.com", organisation: "Example Institute", enquiryType: "General question", message: "A sufficiently complete general enquiry message.", privacyAcknowledgement: true, sourceRoute: "/contact" } };
@@ -30,6 +30,15 @@ describe("contact delivery configuration", () => {
   it("escapes fields and strips header injection", () => {
     expect(escapeHtml(`<script>alert("x")</script>`)).toBe("&lt;script&gt;alert(&quot;x&quot;)&lt;/script&gt;");
     expect(safeHeaderValue("Institute\r\nBcc: attacker@example.com")).toBe("Institute Bcc: attacker@example.com");
+  });
+
+  it("accepts only safe HTTPS or mailto public fallback URLs", () => {
+    expect(safePublicFallbackUrl("mailto:operations@airixmedia.com?subject=Emergency%20Support%20Fallback")).toContain("mailto:operations@airixmedia.com");
+    expect(safePublicFallbackUrl("https://portal.airixmedia.com/emergency")).toBe("https://portal.airixmedia.com/emergency");
+    expect(safePublicFallbackUrl("javascript:alert(1)")).toBeUndefined();
+    expect(safePublicFallbackUrl("mailto:not-an-email")).toBeUndefined();
+    expect(safePublicFallbackUrl("mailto:operations@airixmedia.com?bcc=attacker@example.com")).toBeUndefined();
+    expect(safePublicFallbackUrl("mailto:operations@airixmedia.com?subject=Emergency%0d%0aBcc%3Aattacker%40example.com")).toBeUndefined();
   });
 
   it("generates collision-resistant form-specific references", () => {
@@ -98,9 +107,16 @@ describe("providers and routing", () => {
     process.env.EMERGENCY_PUBLIC_FALLBACK_MESSAGE = "Use the verified client portal if continuity requires immediate action.";
     const deliver = vi.fn().mockResolvedValueOnce({ ok: false, category: "rejected" }).mockResolvedValueOnce({ ok: true, requestId: "fallback-id" });
     const result = await submitContactEnquiry(emergency, { name: "mock", deliver });
-    expect(result).toMatchObject({ ok: true, usedFallback: true });
+    expect(result).toMatchObject({ ok: true, usedFallback: true, message: expect.stringContaining("through the fallback route") });
     expect(deliver.mock.calls[0][0].to).toEqual([{ email: "emergency@example.com" }]);
     expect(deliver.mock.calls[1][0].to).toEqual([{ email: "fallback@example.com" }]);
+  });
+
+  it("adds a prominent no-action marker to staging subjects", async () => {
+    process.env.APP_ENVIRONMENT = "staging";
+    const deliver = vi.fn().mockResolvedValue({ ok: true, requestId: "safe-id" });
+    await submitContactEnquiry(general, { name: "mock", deliver });
+    expect(deliver.mock.calls[0][0].subject).toMatch(/^\[STAGING TEST — NO ACTION REQUIRED\]/);
   });
 
   it("fails truthfully when no emergency route exists", async () => {

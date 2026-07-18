@@ -1,0 +1,8 @@
+{
+  "provider": "brevo",
+  "configurationTemplate": true,
+  "apiKeyInGit": false,
+  "apiCredentialUsable": false,
+  "applicationTopologyProvisioned": false,
+  "liveReady": false
+}

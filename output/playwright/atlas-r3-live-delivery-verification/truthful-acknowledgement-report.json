@@ -1,0 +1,8 @@
+{
+  "booking": "request-only",
+  "support": "delivery-not-ticket",
+  "emergency": "delivery-not-acceptance",
+  "fallbackSuccessDisclosed": true,
+  "monitoringHoursPresent": true,
+  "claim24x7": false
+}

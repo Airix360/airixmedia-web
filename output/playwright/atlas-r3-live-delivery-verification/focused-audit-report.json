@@ -1,0 +1,22 @@
+{
+  "pass": true,
+  "audits": {
+    "productionConfiguration": true,
+    "senderIdentity": true,
+    "mailboxRouting": true,
+    "monitoringHours": true,
+    "fallback": true,
+    "acknowledgement": true,
+    "attachmentDisabled": true,
+    "processLocalLimiter": true,
+    "serverOnlySecrets": true,
+    "recipientExposure": true,
+    "sitemapUnchanged": true,
+    "redirectsUnchanged": true,
+    "canonicalsUnchanged": true,
+    "artworkHashes": true,
+    "sourcePng": true
+  },
+  "legalCopyRewritten": false,
+  "liveDeliveryVerified": false
+}

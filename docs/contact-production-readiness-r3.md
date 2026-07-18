@@ -21,7 +21,7 @@ Recipient lists are comma/semicolon-separated and validated as email addresses. 
 
 References are generated server-side from cryptographically random bytes with form-specific non-sequential prefixes. Structured logs contain only reference, form type, timestamp, status, provider, safe provider request ID, failure category and environment. They exclude body text, email, telephone, files, recipients, API keys and raw responses.
 
-Success appears only after provider acceptance. Booking says consultation request received, support says support request delivered, and emergency says emergency request delivered. Emergency copy preserves chargeability, no-immediate-acceptance and public fallback boundaries. Optional requester acknowledgement is attempted only after confirmed emergency delivery and does not change the delivery result if the acknowledgement itself fails.
+Success appears only after provider acceptance. Booking says the consultation request was delivered but is not a confirmed appointment, support says delivery did not create or assign a ticket, and emergency says delivery did not establish incident acceptance, assignment or technician review. Emergency copy preserves chargeability, monitoring hours and public fallback boundaries. Optional requester acknowledgement is attempted only after confirmed emergency delivery and does not change the delivery result if the acknowledgement itself fails.
 
 ## Attachments and retention
 

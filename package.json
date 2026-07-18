@@ -12,6 +12,7 @@
     "test:watch": "vitest",
     "test:e2e": "playwright test",
     "audit:operational-forms": "node scripts/audit-operational-forms.mjs",
+    "audit:production-operations": "node scripts/audit-production-operations.mjs",
     "verify:operational-forms": "vitest run src/lib/contact-forms.test.ts src/lib/contact-submission.test.ts src/lib/contact-rate-limit.test.ts src/app/api/leads/route.test.ts && playwright test tests/atlas-r3-operational-forms.spec.ts && pnpm audit:operational-forms",
     "check": "pnpm lint && pnpm typecheck && pnpm test && pnpm build"
   },

@@ -1,0 +1,8 @@
+{
+  "GeneralOperations": "not-requested",
+  "PublishingOperations": "not-requested",
+  "SupportOperations": "not-requested",
+  "EmergencyDutyOperator": "not-requested",
+  "OperationsFallback": "not-requested",
+  "namedIndividualsIncluded": false
+}

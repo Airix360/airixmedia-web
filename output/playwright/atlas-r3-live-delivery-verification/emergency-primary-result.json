@@ -1,0 +1,8 @@
+{
+  "attempted": false,
+  "acceptedByProvider": false,
+  "recipientConfirmed": false,
+  "reason": "blocked-before-send",
+  "monitoringHours": "08:00–22:00 WAT daily",
+  "monitoringOwner": "Emergency Duty Operator"
+}

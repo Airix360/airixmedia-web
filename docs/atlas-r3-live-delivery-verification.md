@@ -1,6 +1,6 @@
 # Atlas R3 live delivery verification
 
-Verification date: 18 July 2026  
+Verification date: 18 July 2026
 Status: **live phase blocked; no Brevo message sent**
 
 ## Gate results
