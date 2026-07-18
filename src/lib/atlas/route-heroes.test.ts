@@ -1,13 +1,39 @@
 import { describe, expect, it } from "vitest";
-import { routeHeroAssets, routeHeroFor } from "./route-heroes";
+import { publicRouteHeroAsset, routeHeroAssets, routeHeroFor } from "./route-heroes";
 
 describe("route hero registry", () => {
   it("assigns a unique day/night pair to every integrated route", () => {
     const assets = Object.values(routeHeroAssets);
-    expect(assets).toHaveLength(14);
-    expect(new Set(assets.flatMap((asset) => [asset.day, asset.night])).size).toBe(28);
+    expect(assets).toHaveLength(20);
+    expect(new Set(assets.flatMap((asset) => [asset.day, asset.night])).size).toBe(40);
     expect(routeHeroFor("work")?.day).toBe("/atlas/heroes/work-day.webp");
     expect(routeHeroFor("publishing/pricing")?.day).not.toBe(routeHeroFor("publishing")?.day);
+  });
+
+  it("assigns approved Wave 2 directions without clearing specialist review", () => {
+    const routes = ["/services/digital-experiences", "/services/business-systems", "/services/managed-infrastructure", "/services/support-recovery", "/support", "/support/emergency"] as const;
+    for (const route of routes) {
+      const asset = routeHeroAssets[route];
+      expect(asset.status).toBe("owner-direction-approved-pending-reviews");
+      expect(asset.internalContext).toMatch(/cultural, rights and launch review remain pending/i);
+      expect(asset.day).toMatch(/\/airix-[a-z-]+-day\.webp$/);
+      expect(asset.night).toMatch(/\/airix-[a-z-]+-night\.webp$/);
+      expect(asset.alt).toBeTruthy();
+      expect(asset.alt).not.toMatch(/Lagos|Oyo|Rivers|Edo|Kaduna|Plateau|Ogun|Nigeria/i);
+    }
+  });
+
+  it("strips private review metadata from public client props", () => {
+    const value = publicRouteHeroAsset(routeHeroAssets["/services/digital-experiences"]);
+    expect(value).toEqual({
+      route: "/services/digital-experiences",
+      day: "/atlas/heroes/airix-digital-experiences-service-journey-day.webp",
+      night: "/atlas/heroes/airix-digital-experiences-service-journey-night.webp",
+      desktopPosition: "50% 50%",
+      mobilePosition: "50% bottom",
+    });
+    expect(value).not.toHaveProperty("status");
+    expect(value).not.toHaveProperty("internalContext");
   });
 
   it("preserves the R3 human-review boundaries", () => {

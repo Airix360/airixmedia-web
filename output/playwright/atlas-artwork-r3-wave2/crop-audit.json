@@ -1,0 +1,218 @@
+[
+  {
+    "route": "/services/digital-experiences",
+    "viewport": "768x1024",
+    "theme": "light",
+    "screenshot": "digital-experiences-tablet-light.png",
+    "desktopPosition": "50% 50%",
+    "mobilePosition": "50% bottom",
+    "status": "pass"
+  },
+  {
+    "route": "/services/digital-experiences",
+    "viewport": "390x844",
+    "theme": "light",
+    "screenshot": "digital-experiences-mobile-390-light.png",
+    "desktopPosition": "50% 50%",
+    "mobilePosition": "50% bottom",
+    "status": "pass"
+  },
+  {
+    "route": "/services/digital-experiences",
+    "viewport": "390x844",
+    "theme": "dark",
+    "screenshot": "digital-experiences-mobile-390-dark.png",
+    "desktopPosition": "50% 50%",
+    "mobilePosition": "50% bottom",
+    "status": "pass"
+  },
+  {
+    "route": "/services/digital-experiences",
+    "viewport": "360x800",
+    "theme": "light",
+    "screenshot": "digital-experiences-mobile-360-light.png",
+    "desktopPosition": "50% 50%",
+    "mobilePosition": "50% bottom",
+    "status": "pass"
+  },
+  {
+    "route": "/services/business-systems",
+    "viewport": "768x1024",
+    "theme": "light",
+    "screenshot": "business-systems-tablet-light.png",
+    "desktopPosition": "50% 50%",
+    "mobilePosition": "50% bottom",
+    "status": "pass"
+  },
+  {
+    "route": "/services/business-systems",
+    "viewport": "390x844",
+    "theme": "light",
+    "screenshot": "business-systems-mobile-390-light.png",
+    "desktopPosition": "50% 50%",
+    "mobilePosition": "50% bottom",
+    "status": "pass"
+  },
+  {
+    "route": "/services/business-systems",
+    "viewport": "390x844",
+    "theme": "dark",
+    "screenshot": "business-systems-mobile-390-dark.png",
+    "desktopPosition": "50% 50%",
+    "mobilePosition": "50% bottom",
+    "status": "pass"
+  },
+  {
+    "route": "/services/business-systems",
+    "viewport": "360x800",
+    "theme": "light",
+    "screenshot": "business-systems-mobile-360-light.png",
+    "desktopPosition": "50% 50%",
+    "mobilePosition": "50% bottom",
+    "status": "pass"
+  },
+  {
+    "route": "/services/managed-infrastructure",
+    "viewport": "768x1024",
+    "theme": "light",
+    "screenshot": "managed-infrastructure-tablet-light.png",
+    "desktopPosition": "50% 50%",
+    "mobilePosition": "50% bottom",
+    "status": "pass"
+  },
+  {
+    "route": "/services/managed-infrastructure",
+    "viewport": "390x844",
+    "theme": "light",
+    "screenshot": "managed-infrastructure-mobile-390-light.png",
+    "desktopPosition": "50% 50%",
+    "mobilePosition": "50% bottom",
+    "status": "pass"
+  },
+  {
+    "route": "/services/managed-infrastructure",
+    "viewport": "390x844",
+    "theme": "dark",
+    "screenshot": "managed-infrastructure-mobile-390-dark.png",
+    "desktopPosition": "50% 50%",
+    "mobilePosition": "50% bottom",
+    "status": "pass"
+  },
+  {
+    "route": "/services/managed-infrastructure",
+    "viewport": "360x800",
+    "theme": "light",
+    "screenshot": "managed-infrastructure-mobile-360-light.png",
+    "desktopPosition": "50% 50%",
+    "mobilePosition": "50% bottom",
+    "status": "pass"
+  },
+  {
+    "route": "/services/support-recovery",
+    "viewport": "768x1024",
+    "theme": "light",
+    "screenshot": "support-recovery-tablet-light.png",
+    "desktopPosition": "50% 50%",
+    "mobilePosition": "50% bottom",
+    "status": "pass"
+  },
+  {
+    "route": "/services/support-recovery",
+    "viewport": "390x844",
+    "theme": "light",
+    "screenshot": "support-recovery-mobile-390-light.png",
+    "desktopPosition": "50% 50%",
+    "mobilePosition": "50% bottom",
+    "status": "pass"
+  },
+  {
+    "route": "/services/support-recovery",
+    "viewport": "390x844",
+    "theme": "dark",
+    "screenshot": "support-recovery-mobile-390-dark.png",
+    "desktopPosition": "50% 50%",
+    "mobilePosition": "50% bottom",
+    "status": "pass"
+  },
+  {
+    "route": "/services/support-recovery",
+    "viewport": "360x800",
+    "theme": "light",
+    "screenshot": "support-recovery-mobile-360-light.png",
+    "desktopPosition": "50% 50%",
+    "mobilePosition": "50% bottom",
+    "status": "pass"
+  },
+  {
+    "route": "/support",
+    "viewport": "768x1024",
+    "theme": "light",
+    "screenshot": "support-tablet-light.png",
+    "desktopPosition": "50% 50%",
+    "mobilePosition": "50% bottom",
+    "status": "pass"
+  },
+  {
+    "route": "/support",
+    "viewport": "390x844",
+    "theme": "light",
+    "screenshot": "support-mobile-390-light.png",
+    "desktopPosition": "50% 50%",
+    "mobilePosition": "50% bottom",
+    "status": "pass"
+  },
+  {
+    "route": "/support",
+    "viewport": "390x844",
+    "theme": "dark",
+    "screenshot": "support-mobile-390-dark.png",
+    "desktopPosition": "50% 50%",
+    "mobilePosition": "50% bottom",
+    "status": "pass"
+  },
+  {
+    "route": "/support",
+    "viewport": "360x800",
+    "theme": "light",
+    "screenshot": "support-mobile-360-light.png",
+    "desktopPosition": "50% 50%",
+    "mobilePosition": "50% bottom",
+    "status": "pass"
+  },
+  {
+    "route": "/support/emergency",
+    "viewport": "768x1024",
+    "theme": "light",
+    "screenshot": "support-emergency-tablet-light.png",
+    "desktopPosition": "50% 50%",
+    "mobilePosition": "50% bottom",
+    "status": "pass"
+  },
+  {
+    "route": "/support/emergency",
+    "viewport": "390x844",
+    "theme": "light",
+    "screenshot": "support-emergency-mobile-390-light.png",
+    "desktopPosition": "50% 50%",
+    "mobilePosition": "50% bottom",
+    "status": "pass"
+  },
+  {
+    "route": "/support/emergency",
+    "viewport": "390x844",
+    "theme": "dark",
+    "screenshot": "support-emergency-mobile-390-dark.png",
+    "desktopPosition": "50% 50%",
+    "mobilePosition": "50% bottom",
+    "status": "pass"
+  },
+  {
+    "route": "/support/emergency",
+    "viewport": "360x800",
+    "theme": "light",
+    "screenshot": "support-emergency-mobile-360-light.png",
+    "desktopPosition": "50% 50%",
+    "mobilePosition": "50% bottom",
+    "status": "pass"
+  }
+]

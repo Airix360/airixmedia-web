@@ -35,15 +35,16 @@ test("legacy routes redirect to the canonical public architecture", async ({ pag
   }
 });
 
-test("legacy infrastructure pages retain neutral responsive runtime artwork", async ({ page }) => {
+test("managed infrastructure retains its adaptive hero after client navigation", async ({ page }) => {
   await page.goto("/publishing");
   await page.goto("/services/managed-infrastructure");
-  await expect(page.locator("picture source").first()).toHaveAttribute("srcset", /runtime\/infrastructure\/compact/);
-  await expect(page.locator("picture img").first()).toHaveAttribute("src", /runtime%2Finfrastructure%2Fdesktop/);
+  const hero = page.locator("[data-active-hero]");
+  await expect(hero).toHaveAttribute("data-active-hero", "/atlas/heroes/airix-managed-infrastructure-operations-day.webp");
+  await expect(hero).toHaveAttribute("src", "/atlas/heroes/airix-managed-infrastructure-operations-day.webp");
 });
 
 test("public routes request only their active runtime artwork", async ({ page }) => {
-  for (const [route, expectedArtwork] of [["/publishing", "/atlas/heroes/publishing-day.webp"], ["/services/managed-infrastructure", "/runtime/infrastructure/"]] as const) {
+  for (const [route, expectedArtwork] of [["/publishing", "/atlas/heroes/publishing-day.webp"], ["/services/managed-infrastructure", "/atlas/heroes/airix-managed-infrastructure-operations-day.webp"]] as const) {
     const artworkRequests: string[] = [];
     const record = (request: { url: () => string }) => {
       const url = decodeURIComponent(request.url());
@@ -51,7 +52,7 @@ test("public routes request only their active runtime artwork", async ({ page })
     };
     page.on("request", record);
     await page.goto(route);
-    await page.locator(route === "/publishing" ? "[data-active-hero]" : "picture img").first().waitFor();
+    await page.locator("[data-active-hero]").first().waitFor();
     await page.waitForLoadState("networkidle");
     page.off("request", record);
     expect(artworkRequests.some(url => url.includes(expectedArtwork) && url.includes(".webp"))).toBe(true);
