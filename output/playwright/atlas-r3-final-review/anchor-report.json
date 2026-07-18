@@ -1,0 +1,188 @@
+[
+  {
+    "route": "/",
+    "anchors": []
+  },
+  {
+    "route": "/studio",
+    "anchors": [
+      {
+        "anchor": "atlas",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "route": "/work",
+    "anchors": []
+  },
+  {
+    "route": "/services",
+    "anchors": [
+      {
+        "anchor": "digital-experiences",
+        "count": 1
+      },
+      {
+        "anchor": "business-systems",
+        "count": 1
+      },
+      {
+        "anchor": "managed-infrastructure",
+        "count": 1
+      },
+      {
+        "anchor": "support-recovery",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "route": "/publishing",
+    "anchors": [
+      {
+        "anchor": "overview",
+        "count": 1
+      },
+      {
+        "anchor": "ojs",
+        "count": 1
+      },
+      {
+        "anchor": "hosting-support",
+        "count": 1
+      },
+      {
+        "anchor": "editorial-support",
+        "count": 1
+      },
+      {
+        "anchor": "plugins",
+        "count": 1
+      },
+      {
+        "anchor": "universities",
+        "count": 1
+      },
+      {
+        "anchor": "journal-platforms",
+        "count": 1
+      },
+      {
+        "anchor": "pricing",
+        "count": 1
+      },
+      {
+        "anchor": "projects",
+        "count": 1
+      },
+      {
+        "anchor": "resources",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "route": "/open-source",
+    "anchors": [
+      {
+        "anchor": "paystack-ojs",
+        "count": 1
+      },
+      {
+        "anchor": "ojs-magic-login",
+        "count": 1
+      },
+      {
+        "anchor": "submission-fee",
+        "count": 1
+      },
+      {
+        "anchor": "multipay",
+        "count": 1
+      },
+      {
+        "anchor": "request-waiver",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "route": "/contact",
+    "anchors": []
+  },
+  {
+    "route": "/support",
+    "anchors": [
+      {
+        "anchor": "request-support",
+        "count": 1
+      },
+      {
+        "anchor": "what-to-include",
+        "count": 1
+      },
+      {
+        "anchor": "service-levels",
+        "count": 1
+      },
+      {
+        "anchor": "guides",
+        "count": 1
+      },
+      {
+        "anchor": "security-reporting",
+        "count": 1
+      },
+      {
+        "anchor": "emergency",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "route": "/support/emergency",
+    "anchors": []
+  },
+  {
+    "route": "/legal",
+    "anchors": [
+      {
+        "anchor": "cookies",
+        "count": 1
+      },
+      {
+        "anchor": "accessibility",
+        "count": 1
+      },
+      {
+        "anchor": "acceptable-use",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "route": "/privacy",
+    "anchors": []
+  },
+  {
+    "route": "/terms",
+    "anchors": []
+  },
+  {
+    "route": "/service-terms",
+    "anchors": []
+  },
+  {
+    "route": "/security",
+    "anchors": []
+  },
+  {
+    "route": "/data-processing",
+    "anchors": []
+  },
+  {
+    "route": "/subprocessors",
+    "anchors": []
+  }
+]

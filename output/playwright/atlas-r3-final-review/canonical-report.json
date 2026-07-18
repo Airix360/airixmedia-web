@@ -1,0 +1,98 @@
+[
+  {
+    "route": "/",
+    "canonical": "https://airixmedia.com",
+    "expected": "https://airixmedia.com",
+    "pass": true
+  },
+  {
+    "route": "/studio",
+    "canonical": "https://airixmedia.com/studio",
+    "expected": "https://airixmedia.com/studio",
+    "pass": true
+  },
+  {
+    "route": "/work",
+    "canonical": "https://airixmedia.com/work",
+    "expected": "https://airixmedia.com/work",
+    "pass": true
+  },
+  {
+    "route": "/services",
+    "canonical": "https://airixmedia.com/services",
+    "expected": "https://airixmedia.com/services",
+    "pass": true
+  },
+  {
+    "route": "/publishing",
+    "canonical": "https://airixmedia.com/publishing",
+    "expected": "https://airixmedia.com/publishing",
+    "pass": true
+  },
+  {
+    "route": "/open-source",
+    "canonical": "https://airixmedia.com/open-source",
+    "expected": "https://airixmedia.com/open-source",
+    "pass": true
+  },
+  {
+    "route": "/contact",
+    "canonical": "https://airixmedia.com/contact",
+    "expected": "https://airixmedia.com/contact",
+    "pass": true
+  },
+  {
+    "route": "/support",
+    "canonical": "https://airixmedia.com/support",
+    "expected": "https://airixmedia.com/support",
+    "pass": true
+  },
+  {
+    "route": "/support/emergency",
+    "canonical": "https://airixmedia.com/support/emergency",
+    "expected": "https://airixmedia.com/support/emergency",
+    "pass": true
+  },
+  {
+    "route": "/legal",
+    "canonical": "https://airixmedia.com/legal",
+    "expected": "https://airixmedia.com/legal",
+    "pass": true
+  },
+  {
+    "route": "/privacy",
+    "canonical": "https://airixmedia.com/privacy",
+    "expected": "https://airixmedia.com/privacy",
+    "pass": true
+  },
+  {
+    "route": "/terms",
+    "canonical": "https://airixmedia.com/terms",
+    "expected": "https://airixmedia.com/terms",
+    "pass": true
+  },
+  {
+    "route": "/service-terms",
+    "canonical": "https://airixmedia.com/service-terms",
+    "expected": "https://airixmedia.com/service-terms",
+    "pass": true
+  },
+  {
+    "route": "/security",
+    "canonical": "https://airixmedia.com/security",
+    "expected": "https://airixmedia.com/security",
+    "pass": true
+  },
+  {
+    "route": "/data-processing",
+    "canonical": "https://airixmedia.com/data-processing",
+    "expected": "https://airixmedia.com/data-processing",
+    "pass": true
+  },
+  {
+    "route": "/subprocessors",
+    "canonical": "https://airixmedia.com/subprocessors",
+    "expected": "https://airixmedia.com/subprocessors",
+    "pass": true
+  }
+]

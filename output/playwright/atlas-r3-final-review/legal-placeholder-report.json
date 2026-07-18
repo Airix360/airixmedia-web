@@ -1,0 +1,107 @@
+[
+  {
+    "route": "/legal",
+    "effectiveDate": "18 July 2026",
+    "version": "2.3.0.0",
+    "reviewRequired": [
+      {
+        "section": "Legal overview",
+        "body": "Privacy, website terms, service terms, security, data processing and subprocessors remain independently linkable. Final entity, jurisdiction and governing-law language require qualified review."
+      },
+      {
+        "section": "Policy directory",
+        "body": "Use the legal navigation on this page to open each standalone policy. Project proposals and signed agreements remain authoritative for paid work."
+      }
+    ]
+  },
+  {
+    "route": "/privacy",
+    "effectiveDate": "18 July 2026",
+    "version": "2.3.0.0",
+    "reviewRequired": [
+      {
+        "section": "Controller field",
+        "body": "The final legal entity, controller identity, registered address and jurisdiction remain unresolved and must be completed by the owner and qualified counsel."
+      },
+      {
+        "section": "Information and purposes",
+        "body": "Potential information includes contact details, organisation context, project requirements, URLs, support context, uploaded material and communications. Purposes may include responding, scoping, delivering an agreed service, security and records management."
+      },
+      {
+        "section": "Basis, providers and transfers",
+        "body": "Lawful basis, processors, international transfers, retention and deletion schedules require region-specific legal review. No analytics or session replay loads in this prototype."
+      },
+      {
+        "section": "Rights and contact",
+        "body": "Requests about access, correction, deletion, objection or portability should use the verified privacy contact once the controller route is approved. Children’s data and automated decision-making require explicit review."
+      }
+    ]
+  },
+  {
+    "route": "/terms",
+    "effectiveDate": "18 July 2026",
+    "version": "2.3.0.0",
+    "reviewRequired": [
+      {
+        "section": "Third parties and limits",
+        "body": "Links and handoffs may lead to third-party services. Availability, accuracy and responsibility for those services require separate verification. Limitation, governing-law and jurisdiction language remain counsel-review fields."
+      }
+    ]
+  },
+  {
+    "route": "/service-terms",
+    "effectiveDate": "18 July 2026",
+    "version": "2.3.0.0",
+    "reviewRequired": [
+      {
+        "section": "Suspension and termination",
+        "body": "Payment default, security risk, unlawful use, unavailable client dependencies and termination assistance require project-specific language."
+      },
+      {
+        "section": "Warranties and liability",
+        "body": "Warranty, indemnity, liability cap, governing law and dispute language remain qualified-counsel review fields and are not invented here."
+      }
+    ]
+  },
+  {
+    "route": "/security",
+    "effectiveDate": "18 July 2026",
+    "version": "2.3.0.0",
+    "reviewRequired": [
+      {
+        "section": "Access management",
+        "body": "Access should be least-privilege, individually attributable, reviewed at handoff and removed when no longer required. Exact controls remain service-specific."
+      },
+      {
+        "section": "Backups and monitoring",
+        "body": "Backup scope, retention, restoration tests and monitoring coverage must be documented for the service. No universal recovery or uptime claim is made."
+      },
+      {
+        "section": "Client responsibilities",
+        "body": "Clients remain responsible for lawful use, appropriate user access, timely decisions, secure credential handling and following agreed operational procedures."
+      }
+    ]
+  },
+  {
+    "route": "/data-processing",
+    "effectiveDate": "18 July 2026",
+    "version": "2.3.0.0",
+    "reviewRequired": [
+      {
+        "section": "DPA framework",
+        "body": "Subject matter, duration, processing purpose, data categories, data-subject categories, assistance, deletion, audit and notification terms require a signed project-specific schedule."
+      }
+    ]
+  },
+  {
+    "route": "/subprocessors",
+    "effectiveDate": "18 July 2026",
+    "version": "2.3.0.0",
+    "reviewRequired": [
+      {
+        "section": "Confirmed provider register",
+        "body": "No universal production subprocessor is confirmed for publication in this prototype. The editable register remains intentionally empty rather than inferring providers from unrelated infrastructure evidence."
+      }
+    ]
+  }
+]

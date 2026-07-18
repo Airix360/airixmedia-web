@@ -1,0 +1,65 @@
+{
+  "primary": [],
+  "footer": [
+    {
+      "text": "Legal",
+      "href": "/legal"
+    },
+    {
+      "text": "Privacy",
+      "href": "/privacy"
+    },
+    {
+      "text": "Terms",
+      "href": "/terms"
+    },
+    {
+      "text": "Service Terms",
+      "href": "/service-terms"
+    },
+    {
+      "text": "Security",
+      "href": "/security"
+    },
+    {
+      "text": "Data Processing",
+      "href": "/data-processing"
+    },
+    {
+      "text": "Subprocessors",
+      "href": "/subprocessors"
+    },
+    {
+      "text": "Work",
+      "href": "/work"
+    },
+    {
+      "text": "Open Source",
+      "href": "/open-source"
+    },
+    {
+      "text": "GitHub",
+      "href": "https://github.com/thathman"
+    },
+    {
+      "text": "Contact",
+      "href": "/contact"
+    },
+    {
+      "text": "Support",
+      "href": "/support"
+    },
+    {
+      "text": "Emergency",
+      "href": "/support/emergency"
+    },
+    {
+      "text": "Client Portal",
+      "href": "https://portal.airixmedia.com"
+    },
+    {
+      "text": "hello@airixmedia.com",
+      "href": "mailto:hello@airixmedia.com"
+    }
+  ]
+}

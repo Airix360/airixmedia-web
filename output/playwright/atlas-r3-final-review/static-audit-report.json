@@ -1,0 +1,16 @@
+{
+  "sourcePngAudit": {
+    "directory": "public/atlas/heroes",
+    "disallowedRasterMasters": []
+  },
+  "secretsScan": {
+    "scope": "all tracked text and configuration files",
+    "possibleSecrets": []
+  },
+  "runtimeArtwork": {
+    "count": 40,
+    "expectedCount": 40,
+    "unchangedFromReviewBase": true,
+    "reviewBase": "4594c6f08b34c36b77096ea39a21667b67499851"
+  }
+}

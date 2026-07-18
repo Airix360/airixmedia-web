@@ -1,0 +1,90 @@
+[
+  {
+    "route": "/",
+    "violations": []
+  },
+  {
+    "route": "/studio",
+    "violations": []
+  },
+  {
+    "route": "/work",
+    "violations": []
+  },
+  {
+    "route": "/services",
+    "violations": []
+  },
+  {
+    "route": "/publishing",
+    "violations": []
+  },
+  {
+    "route": "/open-source",
+    "violations": []
+  },
+  {
+    "route": "/contact",
+    "violations": []
+  },
+  {
+    "route": "/support",
+    "violations": []
+  },
+  {
+    "route": "/support/emergency",
+    "violations": []
+  },
+  {
+    "route": "/legal",
+    "violations": []
+  },
+  {
+    "route": "/privacy",
+    "violations": []
+  },
+  {
+    "route": "/terms",
+    "violations": []
+  },
+  {
+    "route": "/service-terms",
+    "violations": []
+  },
+  {
+    "route": "/security",
+    "violations": []
+  },
+  {
+    "route": "/data-processing",
+    "violations": []
+  },
+  {
+    "route": "/subprocessors",
+    "violations": []
+  },
+  {
+    "route": "/ (dark)",
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "nodes": [
+          [
+            "div:nth-child(2) > .atlas-public-module__xSQSFa__kicker"
+          ],
+          [
+            "div:nth-child(2) > h2"
+          ],
+          [
+            ".atlas-public-module__xSQSFa__trustChapter > div:nth-child(2) > p"
+          ],
+          [
+            "div:nth-child(2) > a[href$=\"studio\"]"
+          ]
+        ]
+      }
+    ]
+  }
+]
