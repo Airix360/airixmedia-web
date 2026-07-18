@@ -1,14 +1,14 @@
 "use client";
 
 import { useEffect, useState, type CSSProperties } from "react";
-import type { RouteHeroAsset } from "@/lib/atlas/route-heroes";
+import type { PublicRouteHeroAsset } from "@/lib/atlas/route-heroes";
 import styles from "./atlas-public.module.css";
 
 function resolvedTheme() {
   return document.documentElement.dataset.theme === "dark" ? "dark" : "light";
 }
 
-export function RouteHeroArtwork({ asset, alt, priority = false }: { asset: RouteHeroAsset; alt: string; priority?: boolean }) {
+export function RouteHeroArtwork({ asset, alt, priority = false }: { asset: PublicRouteHeroAsset; alt: string; priority?: boolean }) {
   const [theme, setTheme] = useState<"light" | "dark" | null>(null);
 
   useEffect(() => {

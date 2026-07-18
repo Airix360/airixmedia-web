@@ -1,4 +1,4 @@
-# Atlas R3 Wave 1 runtime and decision manifest
+# Atlas R3 runtime and decision manifest
 
 All source masters remain external PNGs. Runtime derivatives were converted with `cwebp -q 84 -metadata none`, preserving 1536×1024 dimensions without crop or resize. Technical integration and owner direction are approved, but neither establishes landmark accuracy, rights clearance, cultural approval or launch approval.
 
@@ -12,3 +12,18 @@ All source masters remain external PNGs. Runtime derivatives were converted with
 Approved shared decisions: Light/Dark switching, Auto resolution, one active hero request, the redesigned theme switch, desktop/tablet/390×844/360×800 crops, claim-safe alt text, WebP processing and the private review implementation.
 
 Runtime byte counts and SHA-256 values remain unchanged. Full hashes are retained in the private R3 review metadata. No runtime PNG or cache-busting query is used.
+
+## Wave 2 service artwork
+
+The six Wave 2 pairs use the same metadata-stripped 1536×1024 WebP process. Each route is technically integrated and `owner-direction-approved`; each retains `pending-cultural-review`, `pending-rights-review` and `pending-launch-review`.
+
+| Route | Day / night runtime | Bytes and SHA-256 | Focal desktop / mobile | Technical integration | Owner decision | Remaining review |
+|---|---|---|---|---|---|---|
+| `/services/digital-experiences` | `airix-digital-experiences-service-journey-day.webp` / `airix-digital-experiences-service-journey-night.webp` | 498202 / 286184; `0a3422db…b726f23` / `cf8c5ad0…b284971f` | 50% 50% / 50% bottom | `technically-integrated` | `owner-direction-approved` | cultural; rights; launch |
+| `/services/business-systems` | `airix-business-systems-operations-day.webp` / `airix-business-systems-operations-night.webp` | 519128 / 304294; `ead2e6e0…19a20f47` / `65f1d8db…4a7a457a` | 50% 50% / 50% bottom | `technically-integrated` | `owner-direction-approved` | cultural; rights; launch |
+| `/services/managed-infrastructure` | `airix-managed-infrastructure-operations-day.webp` / `airix-managed-infrastructure-operations-night.webp` | 485138 / 282814; `91314e26…eb6b91cd` / `cd58745e…74e93f0` | 50% 50% / 50% bottom | `technically-integrated` | `owner-direction-approved` | cultural; rights; launch |
+| `/services/support-recovery` | `airix-support-recovery-restoration-day.webp` / `airix-support-recovery-restoration-night.webp` | 517186 / 297970; `862e9ec3…03fa2956` / `b761ad0e…398717fd` | 50% 50% / 50% bottom | `technically-integrated` | `owner-direction-approved` | cultural; rights; launch |
+| `/support` | `airix-support-operations-day.webp` / `airix-support-operations-night.webp` | 491718 / 278516; `a38979e3…6217a7d0` / `2fb74845…3f578a81` | 50% 50% / 50% bottom | `technically-integrated` | `owner-direction-approved` | cultural; rights; launch |
+| `/support/emergency` | `airix-emergency-technical-response-day.webp` / `airix-emergency-technical-response-night.webp` | 465036 / 224842; `655bba43…6cbc6617` / `a7740dc4…79d831eb` | 50% 50% / 50% bottom | `technically-integrated` | `owner-direction-approved` | cultural; rights; launch |
+
+Full source and runtime hashes, luminance, perceptual difference and evidence filenames are retained in the private R3 review metadata and Wave 2 intake record. Owner direction does not establish cultural, rights or launch approval.

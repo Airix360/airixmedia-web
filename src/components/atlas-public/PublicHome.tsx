@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { RouteHeroArtwork } from "./RouteHeroArtwork";
 import { PublicFooter } from "./PublicFooter";
 import { PublicHeader } from "./PublicHeader";
-import { routeHeroAssets } from "@/lib/atlas/route-heroes";
+import { publicRouteHeroAsset, routeHeroAssets } from "@/lib/atlas/route-heroes";
 import styles from "./atlas-public.module.css";
 
 const pathways = [
@@ -19,7 +19,7 @@ export function PublicHome() {
     <PublicHeader/>
     <main id="main-content">
       <section className={styles.homeArrival} aria-labelledby="arrival-title">
-        <RouteHeroArtwork asset={routeHeroAssets["/"]} alt="A long low bridge over lagoon water, ferry routes and a dense working waterfront" priority/>
+        <RouteHeroArtwork asset={publicRouteHeroAsset(routeHeroAssets["/"])} alt="A long low bridge over lagoon water, ferry routes and a dense working waterfront" priority/>
         <div className={styles.heroScrim}/>
         <div className={styles.arrivalCopy}><span className={styles.routeLabel}>AIRIX MEDIA / HOME</span><h1 id="arrival-title">Every thriving city depends on invisible systems.</h1><a href="#proposition">Enter the Atlas <ArrowRight size={17}/></a></div>
       </section>

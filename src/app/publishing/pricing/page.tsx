@@ -3,7 +3,7 @@ import { PublicFooter } from "@/components/atlas-public/PublicFooter";
 import { PublicHeader } from "@/components/atlas-public/PublicHeader";
 import { RouteHeroArtwork } from "@/components/atlas-public/RouteHeroArtwork";
 import { publishingPrices } from "@/content/atlas/public";
-import { routeHeroAssets } from "@/lib/atlas/route-heroes";
+import { publicRouteHeroAsset, routeHeroAssets } from "@/lib/atlas/route-heroes";
 import styles from "@/components/atlas-public/atlas-public.module.css";
 
 export const metadata = { title: "OJS Pricing", description: "Owner-confirmed starting amounts for OJS setup, migration, hosting, support, training and plugin work.", alternates: { canonical: "/publishing/pricing" } };
@@ -13,7 +13,7 @@ export default function Page() {
     <PublicHeader />
     <main id="main-content">
       <header className={styles.pageHero}>
-        <RouteHeroArtwork asset={routeHeroAssets["/publishing/pricing"]} alt="A publishing service working environment" priority />
+        <RouteHeroArtwork asset={publicRouteHeroAsset(routeHeroAssets["/publishing/pricing"])} alt="A publishing service working environment" priority />
         <div className={styles.heroScrim}/>
         <div className={styles.pageHeroCopy}>
           <span className={styles.routeLabel}>AIRIX MEDIA / PRICING</span>
