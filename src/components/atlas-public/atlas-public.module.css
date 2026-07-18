@@ -33,4 +33,38 @@
 @media(max-width:700px){.routeSectionArtwork{object-position:var(--route-hero-mobile-position,50% bottom)}.brand :global(.official-logo){width:150px!important;height:30px!important}.sectionVisual{min-height:480px}.catalogueList article{grid-template-columns:1fr}.catalogueList article>span,.catalogueList nav{grid-column:1}.contactCards>button{grid-template-columns:34px 1fr}.contactCards>button svg{display:none}.contactArtwork .sectionVisual{min-height:430px}}
 @media(prefers-reduced-motion:no-preference){.contactCards>button{transition:padding-left 190ms ease,color 190ms ease}.contactDialog[open]{animation:dialog-in 190ms ease-out both}@keyframes dialog-in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}}
 .sectionCopy>.kicker{color:#874218}:global([data-theme="dark"]) .sectionCopy>.kicker{color:#dba276}
+
+/* R3 launch remediation: keep the approved trust composition while giving its
+   dark state a genuine Atlas-ink surface and AA-compliant text contrast. */
+:global([data-theme="dark"]) .trustChapter{background:#243632;color:#f2e8d2}
+:global([data-theme="dark"]) .trustChapter p{color:#ded4c2}
+.trustChapter a{text-decoration-thickness:1px;text-decoration-color:currentColor}
+.trustChapter a:focus-visible{outline:3px solid currentColor;outline-offset:5px;border-radius:1px}
+
+/* The header becomes its own responsive container so CSS reflow also responds
+   to browser/element zoom, not only the outer viewport media query. */
+.header{container-name:airix-header;container-type:inline-size}
+.headerInner,.headerTools,.desktopNav{min-width:0}
+@container airix-header (max-width:1280px){
+  .desktopNav,.supportLink,.emergencyLink,.portalLink{display:none}
+  .headerTools{margin-left:auto}
+  .menuButton{display:grid}
+}
+
+/* The full-screen directory owns its width and lets utilities reflow rather
+   than centring an over-wide single row beyond both viewport edges. */
+.menuOverlay{box-sizing:border-box;max-width:100vw;overscroll-behavior:contain;padding:max(28px,env(safe-area-inset-top)) max(5vw,env(safe-area-inset-right)) max(28px,env(safe-area-inset-bottom)) max(5vw,env(safe-area-inset-left))}
+.menuTop{min-width:0;gap:1rem}
+.menuTop>span{min-width:0;overflow-wrap:anywhere}
+.menuUtilities{max-width:900px;margin-inline:auto;flex-wrap:wrap;align-items:flex-start;padding-bottom:env(safe-area-inset-bottom)}
+
+@media(max-width:700px){
+  .menuOverlay{padding:max(20px,env(safe-area-inset-top)) max(20px,env(safe-area-inset-right)) max(20px,env(safe-area-inset-bottom)) max(20px,env(safe-area-inset-left))}
+  .menuOverlay nav{margin:clamp(1.5rem,4vh,3rem) auto}
+  .menuOverlay nav a{min-width:0;font-size:clamp(1.65rem,8vw,2.2rem)}
+  .menuUtilities{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem;width:100%;justify-content:stretch}
+  .menuUtilities a{display:flex;min-width:0;min-height:44px;align-items:center;justify-content:center;text-align:center;overflow-wrap:anywhere}
+  .menuThemeControl{grid-column:1/-1;min-width:0;width:100%}
+  .menuThemeControl :global(.theme-switch){max-width:100%;justify-content:center;gap:clamp(4px,2vw,9px)}
+}
 .catalogueList small{color:#d9e3e1}

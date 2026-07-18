@@ -22,6 +22,11 @@ export function PublicHeader() {
 
   useEffect(() => {
     if (!open) return;
+    const previousOverflow = document.body.style.overflow;
+    const previousPaddingRight = document.body.style.paddingRight;
+    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+    document.body.style.overflow = "hidden";
+    if (scrollbarWidth > 0) document.body.style.paddingRight = `${scrollbarWidth}px`;
     close.current?.focus();
     const onKey = (event: KeyboardEvent) => {
       if (event.key === "Escape") { setOpen(false); requestAnimationFrame(() => trigger.current?.focus()); }
@@ -33,7 +38,11 @@ export function PublicHeader() {
       }
     };
     document.addEventListener("keydown", onKey);
-    return () => document.removeEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = previousOverflow;
+      document.body.style.paddingRight = previousPaddingRight;
+    };
   }, [open]);
 
   useEffect(() => {
