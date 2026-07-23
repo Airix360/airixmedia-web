@@ -32,7 +32,11 @@ Every live subject and final emergency requester acknowledgement carried `STAGIN
 
 The final primary emergency delivery reached the Emergency Duty Operator route. A controlled staging-only primary failure then exercised the separately configured Operations Fallback; the fallback was accepted, delivered and present in cPanel, and the requester acknowledgement truthfully disclosed use of the fallback route. The deterministic all-provider-failure browser test still shows no success state, preserves entered values and exposes only the public fallback guidance.
 
-Email acceptance and mailbox receipt do not prove human review, ticket creation, incident acceptance, assignment or restoration work. The approved daily 08:00–22:00 West Africa Time operating model remains documented, but human duty-coverage acceptance is still required before launch.
+Email acceptance and mailbox receipt do not prove human review, ticket creation, incident acceptance, assignment or restoration work.
+
+## Emergency coverage sign-off
+
+On 23 July 2026, Airix Media Operations formally accepted responsibility for monitoring `emergency@airixmedia.com` daily from 08:00 to 22:00 WAT. Requests outside that window are handled on a best-effort basis. Delivery of an emergency request does not guarantee immediate acceptance, assignment or response. `operations@airixmedia.com` remains the fallback route.
 
 ## Evidence handling
 
@@ -48,4 +52,6 @@ No site was merged or deployed, and no DNS record was changed.
 
 - Contact-delivery P1: **closed**. All five non-emergency paths and their intended role routing passed.
 - Emergency technical-delivery P1: **closed**. Primary, controlled fallback and all-provider-failure behavior passed.
-- Emergency operational-coverage P1: **open** until the owner or operations lead records active human duty coverage for the approved hours.
+- Emergency operational-coverage P1: **closed**. Airix Media Operations accepted responsibility for the documented monitoring window and fallback arrangement.
+
+The remaining launch P1 blockers are qualified legal review and artwork cultural, rights and landmark clearance.

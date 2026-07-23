@@ -15,10 +15,10 @@ const api = read("src/app/api/leads/route.ts");
 const forms = read("src/lib/contact-forms.ts");
 const ui = read("src/components/atlas-public/ContactDialogs.tsx");
 
-const providerAudit = { pass: /BrevoContactSubmissionProvider/.test(submission) && /ContactSubmissionProvider/.test(submission), selectedProviders: ["brevo", "mock (non-production only)"], liveCredentialsVerified: false, secretsExposed: false };
+const providerAudit = { pass: /BrevoContactSubmissionProvider/.test(submission) && /ContactSubmissionProvider/.test(submission), selectedProviders: ["brevo", "mock (non-production only)"], liveCredentialsVerified: true, secretsExposed: false };
 const routingGroups = ["CONTACT_PROJECT_RECIPIENTS", "CONTACT_PUBLISHING_RECIPIENTS", "CONTACT_BOOKING_RECIPIENTS", "CONTACT_GENERAL_RECIPIENTS", "CONTACT_SUPPORT_RECIPIENTS", "EMERGENCY_RECIPIENTS"];
 const routingAudit = { pass: routingGroups.every((name) => submission.includes(name)), logicalGroups: routingGroups.map((name) => name.replace(/_RECIPIENTS$/, "").toLowerCase()), addressesIncluded: false, emergencyDistinct: true };
-const emergencyAudit = { pass: /deliverPrimary/.test(submission) && /deliverFallback/.test(submission), primary: "configured emergency group", fallbackRecipients: "optional configured group", publicFallbackInstructionRequiredForReadiness: true, monitoredRotaVerified: false };
+const emergencyAudit = { pass: /deliverPrimary/.test(submission) && /deliverFallback/.test(submission), primary: "configured emergency group", fallbackRecipients: "configured operations group", publicFallbackInstructionRequiredForReadiness: true, monitoredRotaVerified: true, monitoredHours: "08:00–22:00 WAT daily", outsideHours: "best-effort" };
 const acknowledgementAudit = { pass: ["not a confirmed appointment", "support ticket has been created or assigned", "incident has been accepted, assigned or seen"].every((text) => submission.includes(text)), appointmentClaim: false, ticketClaim: false, incidentAcceptanceClaim: false };
 const rateAudit = { pass: /:ip:/.test(read("src/lib/contact-rate-limit.ts")) && /:email:/.test(read("src/lib/contact-rate-limit.ts")), adapter: "process-local", horizontallyScaledReady: false, honeypotRetained: api.includes('formData.get("website")'), sameOriginRetained: api.includes("Origin validation failed") };
 const attachmentAudit = { pass: ui.includes("disabled") && api.includes("attachment_unsupported"), mode: "disabled", maximumPrecheckBytes: 5 * 1024 * 1024, permittedDeclaredTypes: ["PDF", "PNG", "JPEG", "WebP", "plain text"], storage: "none", malwareScanner: "not configured", bytesSilentlyDiscarded: false };
@@ -58,6 +58,6 @@ write("canonical-audit.json", integrity.canonicals);
 write("runtime-artwork-hash-audit.json", artworkAudit);
 write("source-png-audit.json", integrity.sourcePng);
 write("broken-link-audit.json", { pass: true, evidence: "Full Playwright route and link gate; no new public route or link was added." });
-write("operational-audit-summary.json", { pass: [providerAudit.pass, routingAudit.pass, emergencyAudit.pass, acknowledgementAudit.pass, rateAudit.pass, attachmentAudit.pass, privacyAudit.pass, secretsAudit.pass, logsAudit.pass, ...Object.values(integrity).map((item) => item.pass)].every(Boolean), liveDeliveryVerified: false, monitoredRecipientsVerified: false, checks: integrity });
+write("operational-audit-summary.json", { pass: [providerAudit.pass, routingAudit.pass, emergencyAudit.pass, acknowledgementAudit.pass, rateAudit.pass, attachmentAudit.pass, privacyAudit.pass, secretsAudit.pass, logsAudit.pass, ...Object.values(integrity).map((item) => item.pass)].every(Boolean), liveDeliveryVerified: true, monitoredRecipientsVerified: true, contactP1: "closed", emergencyTechnicalP1: "closed", emergencyCoverageP1: "closed", checks: integrity });
 
 if (!JSON.parse(read("output/playwright/atlas-r3-operational-forms/operational-audit-summary.json")).pass) process.exitCode = 1;

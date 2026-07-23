@@ -23,7 +23,7 @@ Unit tests cover configuration, parsing, escaping, headers, routing, references,
 
 Deployment checklist: configure secrets; verify sender; approve logical recipient lists; confirm monitored emergency ownership; run controlled staged deliveries; force emergency fallback; inspect logs and acknowledgements; validate readiness; confirm sitemap/redirect/canonical/artwork hashes; then obtain owner/security/legal operations approval. Roll back by removing provider selection/credentials to fail closed.
 
-Contact delivery and emergency technical routing are closed by the staged live verification. Emergency operational coverage remains open until the approved human duty arrangement is formally accepted. Legal and artwork P1 states are unchanged.
+Contact delivery and emergency technical routing are closed by the staged live verification. Airix Media Operations has formally accepted emergency operational coverage for the documented monitoring window and fallback arrangement, closing the third operational P1. Legal and artwork P1 states are unchanged.
 
 ## Production configuration follow-up
 

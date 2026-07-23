@@ -1,7 +1,10 @@
 {
   "pass": true,
-  "liveDeliveryVerified": false,
-  "monitoredRecipientsVerified": false,
+  "liveDeliveryVerified": true,
+  "monitoredRecipientsVerified": true,
+  "contactP1": "closed",
+  "emergencyTechnicalP1": "closed",
+  "emergencyCoverageP1": "closed",
   "checks": {
     "sitemap": {
       "pass": true,

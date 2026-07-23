@@ -4,6 +4,6 @@
     "brevo",
     "mock (non-production only)"
   ],
-  "liveCredentialsVerified": false,
+  "liveCredentialsVerified": true,
   "secretsExposed": false
 }

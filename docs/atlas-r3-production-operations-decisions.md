@@ -14,13 +14,15 @@ Sanitized verification identifies these logical groups: General Operations, Proj
 
 ## Monitoring and acknowledgement boundaries
 
-Airix Media Operations owns enquiry and support mail. The Emergency Duty Operator owns primary emergency monitoring, with Operations Fallback as the fallback role. Approved monitoring hours are daily 08:00–22:00 West Africa Time; outside-hours handling is best effort. This is not 24/7 coverage and carries no response-time guarantee. The owner or operations lead must confirm the duty arrangement before launch. Brevo acceptance proves electronic delivery only—not human review, incident acceptance, assignment, ticket creation or restoration work.
+Airix Media Operations owns enquiry and support mail. On 23 July 2026, Airix Media Operations formally accepted responsibility for monitoring `emergency@airixmedia.com` daily from 08:00 to 22:00 WAT. Requests outside that window are handled on a best-effort basis. Delivery of an emergency request does not guarantee immediate acceptance, assignment or response. `operations@airixmedia.com` remains the fallback route.
+
+The approved window is 08:00–22:00 West Africa Time; outside-hours handling is best effort. This is not 24/7 coverage and carries no response-time guarantee. Brevo acceptance proves electronic delivery only—not human review, incident acceptance, assignment, ticket creation or restoration work.
 
 Consultation acknowledgement: the request was delivered, but no appointment exists until Airix confirms availability. Support acknowledgement: delivery only, with no ticket or assignment claim. Emergency acknowledgement: delivery only, chargeability warning, monitoring hours and no acceptance/assignment/technician-seen claim. A fallback-success acknowledgement explicitly says the fallback route was used.
 
 ## Mailbox implementation and verified result
 
-The approved cPanel model permits aliases into one monitored operations mailbox. `hello@airixmedia.com` and `support@airixmedia.com` exist as independent mailboxes; publishing, emergency, operations and notifications are configured role aliases. On 23 July 2026, received raw mail confirmed end-to-end receipt, preservation of the addressed role alias, distinct emergency and fallback routing, requester Reply-To headers, matching references and no observed automatic-reply loop. Human monitoring remains an operational acceptance item.
+The approved cPanel model permits aliases into one monitored operations mailbox. `hello@airixmedia.com` and `support@airixmedia.com` exist as independent mailboxes; publishing, emergency, operations and notifications are configured role aliases. On 23 July 2026, received raw mail confirmed end-to-end receipt, preservation of the addressed role alias, distinct emergency and fallback routing, requester Reply-To headers, matching references and no observed automatic-reply loop. Airix Media Operations has accepted the documented monitoring responsibility.
 
 Provisioning checklist:
 
@@ -33,7 +35,7 @@ Provisioning checklist:
 - [x] Send one synthetic message to every role address and confirm the addressed alias in the received headers.
 - [x] Confirm emergency and fallback can be distinguished in the monitored mailbox.
 - [x] Confirm no forward or automatic-reply loop was observed.
-- [ ] Confirm Emergency Duty Operator coverage for the approved hours.
+- [x] Confirm Airix Media Operations coverage for the approved hours.
 
 ## DNS and sender authentication
 
@@ -58,4 +60,4 @@ No website production process currently runs on the inspected cPanel host. The a
 
 `CONTACT_ATTACHMENT_PROVIDER=disabled`. No form accepts, stores or delivers file bytes. Crafted uploads are rejected server-side. Private storage, malware scanning and retention are out of scope.
 
-Technical delivery handover is complete for secret injection, six staged deliveries, role-based receipt, requester Reply-To, controlled emergency primary failure, fallback receipt, all-provider-failure UI and log/PII review. Launch still requires one-instance topology proof and signed acceptance of emergency duty ownership/hours.
+Technical delivery handover is complete for secret injection, six staged deliveries, role-based receipt, requester Reply-To, controlled emergency primary failure, fallback receipt, all-provider-failure UI and log/PII review. Emergency duty ownership and hours are formally accepted. Deployment must still preserve the approved one-instance topology until a shared rate-limit store is introduced.

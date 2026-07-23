@@ -33,7 +33,7 @@ write("dns-authentication-status.json", { mx: "present", spf: "present", dkim: "
 write("routing-matrix.json", { groups, sharedGeneralProjectBooking: true, publishingDistinct: true, supportDistinct: true, emergencyDistinct: true, fallbackDistinctAlias: true, addressesIncluded: false });
 for (const [form, result] of Object.entries(liveResults)) write(`synthetic-${form}-result.json`, { form, marker, attempted: true, acceptedByProvider: true, deliveredEventObserved: true, rawMailboxReceiptConfirmed: true, addressedRoleMatched: true, referenceMatched: true, replyToRequesterConfirmed: true, multipartReadable: true, ...result });
 write("recipient-confirmation-matrix.json", { GeneralOperations: "confirmed", ProjectOperations: "confirmed", PublishingOperations: "confirmed", BookingOperations: "confirmed", SupportOperations: "confirmed", EmergencyDutyOperator: "confirmed", OperationsFallback: "confirmed", confirmationMethod: "received-raw-mail-and-addressed-alias", namedIndividualsIncluded: false });
-write("emergency-primary-result.json", { marker, attempted: true, acceptedByProvider: true, deliveredEventObserved: true, rawMailboxReceiptConfirmed: true, requesterAcknowledgementDelivered: true, reference: "AM-EMG-3UDWTCQPXKUI", fingerprint: "9bb076b20fa6d8b1", monitoringHours: "08:00–22:00 WAT daily", monitoringOwner: "Emergency Duty Operator", humanDutyCoverageConfirmation: "pending" });
+write("emergency-primary-result.json", { marker, attempted: true, acceptedByProvider: true, deliveredEventObserved: true, rawMailboxReceiptConfirmed: true, requesterAcknowledgementDelivered: true, reference: "AM-EMG-3UDWTCQPXKUI", fingerprint: "9bb076b20fa6d8b1", monitoringHours: "08:00–22:00 WAT daily", monitoringOwner: "Airix Media Operations", humanDutyCoverageConfirmation: "formally-accepted", outsideHours: "best-effort" });
 write("emergency-fallback-result.json", { marker, aliasProvisioned: true, controlledPrimaryFailureInjected: true, fallbackAcceptedByProvider: true, deliveredEventObserved: true, rawMailboxReceiptConfirmed: true, requesterAcknowledgementDelivered: true, fallbackUseDisclosed: true, reference: "AM-EMG-6-Q2CQS78LFY", fingerprint: "82e101c5f7c32f01" });
 write("all-provider-failure-result.json", { deterministicTest: "pass", successDisplayed: false, publicFallbackDisplayed: true, formValuesPreserved: true, rawProviderErrorExposed: false });
 write("truthful-acknowledgement-report.json", { booking: "request-only", support: "delivery-not-ticket", emergency: "delivery-not-acceptance", fallbackSuccessDisclosed: true, monitoringHoursPresent: true, claim24x7: false, stagingMarkerPresentOnFinalEmergencyAcknowledgements: true });
@@ -50,7 +50,7 @@ const audits = {
   productionConfiguration: config.includes("CONTACT_SUBMISSION_PROVIDER=brevo") && config.includes("BREVO_API_KEY=<supplied-securely-outside-git>"),
   senderIdentity: config.includes("CONTACT_FROM_EMAIL=notifications@airixmedia.com"),
   mailboxRouting: groups.every((group) => decisions.includes(group) || group === "Project Operations" || group === "Booking Operations"),
-  monitoringHours: submission.includes("08:00 to 22:00 West Africa Time") && !submission.includes("24/7"),
+  monitoringHours: submission.includes("08:00 to 22:00 West Africa Time") && decisions.includes("formally accepted responsibility") && !submission.includes("24/7"),
   fallback: submission.includes("through the fallback route") && submission.includes("safePublicFallbackUrl"),
   acknowledgement: ["not a confirmed appointment", "support ticket has been created or assigned", "incident has been accepted, assigned or seen"].every((text) => submission.includes(text)),
   stagingAcknowledgement: submission.includes("stagingMarker()") && submission.includes("${stagingMarker()}Airix Media emergency request"),
@@ -64,5 +64,5 @@ const audits = {
   artworkHashes: artwork.length === 40 && artwork.every((item) => item.sha256 === item.expected),
   sourcePng: sourceRasters.length === 0,
 };
-write("focused-audit-report.json", { pass: Object.values(audits).every(Boolean), audits, legalCopyRewritten: false, liveDeliveryVerified: true, contactP1: "closed", emergencyDeliveryP1: "technical-delivery-closed", emergencyOperationsP1: "open-pending-human-duty-coverage-confirmation", merged: false, deployed: false, dnsChanged: false });
+write("focused-audit-report.json", { pass: Object.values(audits).every(Boolean), audits, legalCopyRewritten: false, liveDeliveryVerified: true, contactP1: "closed", emergencyDeliveryP1: "closed", emergencyOperationsP1: "closed", launchCounts: { P0: 0, P1: 2, P2: 3, P3: 3 }, remainingLaunchBlockers: ["qualified-legal-review", "artwork-cultural-rights-landmark-clearance"], merged: false, deployed: false, dnsChanged: false });
 if (!Object.values(audits).every(Boolean)) process.exitCode = 1;

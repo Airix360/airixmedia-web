@@ -21,8 +21,18 @@
   "legalCopyRewritten": false,
   "liveDeliveryVerified": true,
   "contactP1": "closed",
-  "emergencyDeliveryP1": "technical-delivery-closed",
-  "emergencyOperationsP1": "open-pending-human-duty-coverage-confirmation",
+  "emergencyDeliveryP1": "closed",
+  "emergencyOperationsP1": "closed",
+  "launchCounts": {
+    "P0": 0,
+    "P1": 2,
+    "P2": 3,
+    "P3": 3
+  },
+  "remainingLaunchBlockers": [
+    "qualified-legal-review",
+    "artwork-cultural-rights-landmark-clearance"
+  ],
   "merged": false,
   "deployed": false,
   "dnsChanged": false

@@ -1,6 +1,6 @@
 # Atlas R3 post-remediation owner review
 
-Review date: 18 July 2026
+Review date: 23 July 2026
 Source review commit: `1adc7e110766cc5bc6db59509b6073fefc0f5ea4`
 Review base: `7c56134b5d28603cde88fdab5cc964092efe2ec6`
 Branch: `fix/atlas-r3-launch-interface-blockers`
@@ -11,7 +11,9 @@ Version: `2.3.1.0`
 
 The four implementation-level interface blockers from the original R3 review are closed. The homepage trust section is compliant in Light, Dark and Auto; the Emergency link is compliant in transparent, sticky and mobile states; the expanded mobile navigation remains fully in bounds at every required viewport; and the header reflows into its accessible menu state through 200% zoom without overlap or horizontal overflow.
 
-The site is still **not ready to merge for production or launch**. Four P1 categories remain: live form delivery, monitored emergency escalation, qualified legal approval and artwork cultural, rights and landmark clearance. No new P0 or P1 defect was found. The issue count is now **P0 0 · P1 4 · P2 3 · P3 3**.
+The form-delivery and emergency-escalation implementation is complete. All six marked form routes delivered through Brevo, intended role routing and requester Reply-To were confirmed in received cPanel mail, controlled emergency fallback passed, and Airix Media Operations formally accepted the documented emergency monitoring window and fallback responsibility.
+
+The site remains **conditionally mergeable but not ready for production deployment**. Two P1 categories remain: qualified legal approval and artwork cultural, rights and landmark clearance. No new P0, P2 or P3 defect was found. The issue count is now **P0 0 · P1 2 · P2 3 · P3 3**.
 
 The approved 16-route architecture, navigation, 30 redirects, sitemap, canonicals, public content, pricing, artwork files and artwork assignments remain unchanged. This review does not merge, deploy or change DNS.
 
@@ -26,26 +28,26 @@ The approved 16-route architecture, navigation, 30 redirects, sitemap, canonical
 
 ## Remaining launch blockers
 
-### P1-01: Live form delivery
+### Closed: Live form delivery
 
-All six dialogs open correctly, validate honestly, support direct query states and retain the approved service preselection. A valid submission returns HTTP 503 with `provider_not_configured`; no success is shown. No supported production provider, durable accepted-submission record or delivery verification exists.
+Brevo authentication, all six form routes, role routing, requester Reply-To, matching references, plain-text/HTML rendering and truthful acknowledgements passed staged live verification. Missing or failed providers continue to fail closed without a false success.
 
-### P1-02: Monitored emergency escalation
+### Closed: Monitored emergency escalation
 
-Emergency Support remains visually distinct and clearly scoped, but the request reaches the same unavailable endpoint as other enquiries. It creates no ticket, incident, email, SMS, call, page or on-call notification. It must not be treated as a monitored response channel.
+Primary emergency delivery, controlled fallback and all-provider-failure behavior passed. Airix Media Operations formally accepts responsibility for monitoring `emergency@airixmedia.com` daily from 08:00 to 22:00 WAT; outside-window requests are best effort, delivery does not guarantee immediate acceptance, assignment or response, and `operations@airixmedia.com` remains the fallback route. Email delivery is not described as a ticket or incident record.
 
-### P1-03: Qualified legal approval
+### P1-01: Qualified legal approval
 
 All seven legal routes remain `requires-legal-review`. Entity, controller, jurisdiction, lawful-basis, retention, processor, transfer, liability, governing-law, data-processing and subprocessor details remain intentionally unresolved or subject to signed schedules and provider selection.
 
-### P1-04: Artwork clearance
+### P1-02: Artwork clearance
 
 Technical integration, responsive crops, adaptive switching and runtime delivery pass, but technical or owner-direction approval does not establish cultural accuracy, landmark accuracy, rights clearance or launch approval. Three public landmark/location placements, eight public cultural placements and nine public rights placements remain open. The archived Universities campus pair and Journal Platforms pair retain their separate archived review requirements.
 
 ## Updated issue classification
 
 - P0: 0.
-- P1: 4 — form delivery, emergency escalation, legal approval and artwork clearance.
+- P1: 2 — legal approval and artwork clearance.
 - P2: 3 — homepage proof breadth, form field burden and Publishing Resources readiness.
 - P3: 3 — repeated gateway, duplicate Services numbering and the long evenly weighted Services sequence.
 
@@ -59,9 +61,9 @@ Technical integration, responsive crops, adaptive switching and runtime delivery
 | `/services` | Conditional pass | Four anchors and service preselection pass. Wave 2 artwork review and existing P3 presentation refinements remain. |
 | `/publishing` | Conditional pass | Offer, OJS, pricing and enquiry journey remain correct. Publishing Resources remains P2. |
 | `/open-source` | Conditional pass | Five verified public repositories remain correctly presented; hero rights clearance remains open. |
-| `/contact` | Fail for production | Six accessible dialogs, queries, validation and service preselection pass; live delivery is unavailable. |
-| `/support` | Conditional pass | Support guidance and emergency handoff pass; no operational ticket provider exists. |
-| `/support/emergency` | Fail for production | Visual urgency and scope pass; no monitored delivery or escalation exists. |
+| `/contact` | Operational pass | Six accessible dialogs, queries, validation, service preselection and live role-based delivery pass. |
+| `/support` | Operational pass | Support guidance and live support-mail delivery pass; delivery is truthfully not described as ticket creation. |
+| `/support/emergency` | Operational pass | Primary delivery, monitored coverage, controlled fallback and all-provider-failure behavior pass with explicit service boundaries. |
 | `/legal` | `requires-legal-review` | Directory remains accurate; final entity, jurisdiction and counsel approval remain unresolved. |
 | `/privacy` | `requires-legal-review` | Controller, basis, provider, transfer, retention and rights details remain unresolved. |
 | `/terms` | `requires-legal-review` | Liability, governing law and jurisdiction remain counsel-review fields. |
@@ -75,15 +77,15 @@ Technical integration, responsive crops, adaptive switching and runtime delivery
 - Dialogs: all six pass opening, local validation and accessible labelling.
 - Query parameters and browser state: pass.
 - Service preselection: pass.
-- Valid submission: explicit non-success, HTTP 503 `provider_not_configured`.
+- Valid submission: provider-confirmed success only; missing or failed providers remain explicit non-success states.
 - Booking: request-only; no availability lookup, reservation or calendar event.
 - Uploads: declared metadata is validated, but file bytes are not stored or delivered.
-- Spam protection: same-origin validation and honeypot only; no rate limit, challenge, reputation or duplicate control.
+- Spam protection: same-origin validation, honeypot and bounded process-local IP/email rate limiting. Horizontal scaling requires an approved shared store.
 - False success: none.
 
 ## Emergency readiness
 
-The emergency route remains visually distinct, uses direct language and links from Support correctly. It is not operationally ready: there is no ticket or incident creation, delivery acknowledgement, monitored rota, notification fan-out or tested fallback. Keep this as P1 until a monitored end-to-end escalation is proven.
+The emergency route remains visually distinct, uses direct language and links from Support correctly. End-to-end primary delivery, a controlled fallback and the failure state are proven. Airix Media Operations owns monitoring daily from 08:00 to 22:00 WAT; outside-window handling is best effort. Delivery does not establish ticket creation, incident acceptance, assignment or immediate response.
 
 ## Legal readiness
 
@@ -107,8 +109,8 @@ The mobile directory passes at all six required viewport states, including lands
 
 ## Evidence
 
-Fresh evidence is stored under `output/playwright/atlas-r3-post-remediation-review/`. It contains the required trust, Emergency, mobile-menu and zoom screenshots plus contrast, Axe, overflow, reduced-motion, redirect, sitemap, canonical, console, form, legal and runtime-artwork reports. The original final-review and interface-remediation evidence directories remain part of the historical record and are not included in this new package.
+Interface evidence is stored under `output/playwright/atlas-r3-post-remediation-review/`. Sanitized live-delivery and emergency-fallback evidence is stored under `output/playwright/atlas-r3-live-delivery-verification/`. Together they cover contrast, accessibility, overflow, reduced motion, redirects, sitemap, canonicals, forms, provider delivery, mailbox receipt, legal status and runtime-artwork integrity.
 
 ## Exact next action
 
-Implement and test the production form provider and a separately monitored emergency-escalation path on an authorised integration branch. In parallel, obtain qualified legal approval and close the outstanding cultural, rights and landmark reviews. Only after those four P1 categories have evidence-backed closure should the owner run one final launch review and decide whether to merge and deploy.
+The branch is recommended for merge into the approved release baseline because implementation and operational P1s are closed and the remaining blockers are explicitly governed publication approvals. Do not deploy publicly until qualified legal review and the outstanding cultural, rights and landmark clearances are complete. Deployment must also provision the documented one-instance runtime and secure environment configuration without changing the approved public architecture.

@@ -1,7 +1,9 @@
 {
   "pass": true,
   "primary": "configured emergency group",
-  "fallbackRecipients": "optional configured group",
+  "fallbackRecipients": "configured operations group",
   "publicFallbackInstructionRequiredForReadiness": true,
-  "monitoredRotaVerified": false
+  "monitoredRotaVerified": true,
+  "monitoredHours": "08:00–22:00 WAT daily",
+  "outsideHours": "best-effort"
 }

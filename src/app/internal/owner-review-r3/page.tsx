@@ -73,12 +73,12 @@ export default function OwnerReviewR3() {
         <p><strong>Brevo selected:</strong> yes · <strong>Authentication:</strong> passed · <strong>Sender/domain operation:</strong> confirmed by delivery and Airix-domain DKIM signing</p>
         <p><strong>Logical groups:</strong> General Operations · Publishing Operations · Support Operations · Emergency Duty Operator · Operations Fallback</p>
         <p><strong>Mailbox readiness:</strong> role addresses provisioned; end-to-end receipt, addressed aliases and independent emergency/fallback observability confirmed</p>
-        <p><strong>Emergency monitoring:</strong> Emergency Duty Operator · daily 08:00–22:00 West Africa Time · outside-hours best effort</p>
+        <p><strong>Emergency monitoring:</strong> formally accepted by Airix Media Operations · daily 08:00–22:00 West Africa Time · outside-hours best effort</p>
         <p><strong>Fallback readiness:</strong> controlled primary failure and live fallback receipt confirmed</p>
         <p><strong>Deployment topology:</strong> one persistent Node.js instance behind a reverse proxy; not yet provisioned or deployed</p>
         <p><strong>Rate limiter:</strong> process-local; restart clears buckets; horizontal scaling prohibited until an approved shared store exists</p>
         <p><strong>Attachments:</strong> disabled · <strong>Live test:</strong> all six form routes and emergency fallback passed</p>
-        <p><strong>Contact P1:</strong> closed · <strong>Emergency delivery P1:</strong> technically closed · <strong>Emergency operations P1:</strong> open pending human duty-coverage confirmation</p>
+        <p><strong>Contact P1:</strong> closed · <strong>Emergency delivery P1:</strong> closed · <strong>Emergency operations P1:</strong> closed</p>
       </div>
     </section>
   </main>;
