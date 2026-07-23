@@ -1,7 +1,11 @@
 import type { NextConfig } from "next";
 import { routeConsolidationRedirects } from "./src/lib/route-consolidation";
 
-const scriptSource = process.env.NODE_ENV === "production" ? "script-src 'self' 'unsafe-inline'" : "script-src 'self' 'unsafe-inline' 'unsafe-eval'";
+const cloudflareAnalyticsScript = "https://static.cloudflareinsights.com";
+const cloudflareAnalyticsEndpoint = "https://cloudflareinsights.com";
+const scriptSource = process.env.NODE_ENV === "production"
+  ? `script-src 'self' 'unsafe-inline' ${cloudflareAnalyticsScript}`
+  : `script-src 'self' 'unsafe-inline' 'unsafe-eval' ${cloudflareAnalyticsScript}`;
 
 const nextConfig: NextConfig = {
   output: "standalone",
@@ -25,7 +29,7 @@ const nextConfig: NextConfig = {
   },
   async headers() {
     return [{ source: "/:path*", headers: [
-      { key: "Content-Security-Policy", value: `default-src 'self'; base-uri 'self'; connect-src 'self'; font-src 'self' data:; form-action 'self' mailto: https://wa.me; frame-ancestors 'none'; img-src 'self' data:; object-src 'none'; ${scriptSource}; style-src 'self' 'unsafe-inline'; upgrade-insecure-requests` },
+      { key: "Content-Security-Policy", value: `default-src 'self'; base-uri 'self'; connect-src 'self' ${cloudflareAnalyticsEndpoint}; font-src 'self' data:; form-action 'self' mailto: https://wa.me; frame-ancestors 'none'; img-src 'self' data:; object-src 'none'; ${scriptSource}; style-src 'self' 'unsafe-inline'; upgrade-insecure-requests` },
       { key: "X-Content-Type-Options", value: "nosniff" },
       { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
       { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
