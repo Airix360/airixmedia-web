@@ -1,0 +1,54 @@
+import { fireEvent, render, screen } from "@testing-library/react";
+import { describe, expect, it, vi } from "vitest";
+import {
+  ContactReviewForm,
+  BookingReviewForm,
+  ProjectRouteSelector,
+} from "./ReviewForms";
+import {
+  atlasScenes,
+  getAtlasScene,
+  CandidateAssetAccessError,
+} from "@/lib/atlas/assets";
+import { existsSync } from "node:fs";
+import { join } from "node:path";
+describe("Atlas W7", () => {
+  it("gates and registers every responsive candidate", () => {
+    for (const id of [
+      "ill-0090",
+      "ill-0091",
+      "ill-0092",
+      "ill-0083",
+      "ill-0084",
+      "ill-0085",
+    ]) {
+      expect(() => getAtlasScene(id)).toThrow(CandidateAssetAccessError);
+      for (const path of Object.values(atlasScenes[id].responsive)) {
+        expect(path).not.toContain("/source/");
+        expect(existsSync(join(process.cwd(), "public", path))).toBe(true);
+      }
+    }
+  });
+  it("selects a project route in component state", () => {
+    render(<ProjectRouteSelector />);
+    fireEvent.click(screen.getByRole("button", { name: /Publishing or OJS/ }));
+    expect(screen.getByRole("status")).toHaveTextContent("Publishing or OJS");
+  });
+  it("validates contact locally without fetch", () => {
+    const fetch = vi.spyOn(globalThis, "fetch");
+    render(<ContactReviewForm />);
+    fireEvent.click(
+      screen.getByRole("button", { name: "Review enquiry locally" }),
+    );
+    expect(screen.getByRole("alert")).toHaveTextContent("Enter your name");
+    expect(fetch).not.toHaveBeenCalled();
+    fetch.mockRestore();
+  });
+  it("never presents booking availability", () => {
+    render(<BookingReviewForm />);
+    expect(
+      screen.getByText(/No live calendar or available times/),
+    ).toBeInTheDocument();
+    expect(screen.queryByText(/available at/i)).not.toBeInTheDocument();
+  });
+});

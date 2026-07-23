@@ -1,0 +1,146 @@
+[
+  {
+    "route": "/services/digital-experiences",
+    "light": {
+      "theme": "light",
+      "active": "/atlas/heroes/airix-digital-experiences-service-journey-day.webp",
+      "currentSrc": "http://127.0.0.1:3100/atlas/heroes/airix-digital-experiences-service-journey-day.webp",
+      "src": "/atlas/heroes/airix-digital-experiences-service-journey-day.webp",
+      "naturalWidth": 1536,
+      "naturalHeight": 1024
+    },
+    "dark": {
+      "theme": "dark",
+      "active": "/atlas/heroes/airix-digital-experiences-service-journey-night.webp",
+      "currentSrc": "http://127.0.0.1:3100/atlas/heroes/airix-digital-experiences-service-journey-night.webp",
+      "src": "/atlas/heroes/airix-digital-experiences-service-journey-night.webp",
+      "naturalWidth": 1536,
+      "naturalHeight": 1024
+    },
+    "requested": [
+      "http://127.0.0.1:3100/atlas/heroes/airix-digital-experiences-service-journey-day.webp",
+      "http://127.0.0.1:3100/atlas/heroes/airix-digital-experiences-service-journey-night.webp"
+    ],
+    "switchWithoutReload": true
+  },
+  {
+    "route": "/services/business-systems",
+    "light": {
+      "theme": "light",
+      "active": "/atlas/heroes/airix-business-systems-operations-day.webp",
+      "currentSrc": "http://127.0.0.1:3100/atlas/heroes/airix-business-systems-operations-day.webp",
+      "src": "/atlas/heroes/airix-business-systems-operations-day.webp",
+      "naturalWidth": 1536,
+      "naturalHeight": 1024
+    },
+    "dark": {
+      "theme": "dark",
+      "active": "/atlas/heroes/airix-business-systems-operations-night.webp",
+      "currentSrc": "http://127.0.0.1:3100/atlas/heroes/airix-business-systems-operations-night.webp",
+      "src": "/atlas/heroes/airix-business-systems-operations-night.webp",
+      "naturalWidth": 1536,
+      "naturalHeight": 1024
+    },
+    "requested": [
+      "http://127.0.0.1:3100/atlas/heroes/airix-business-systems-operations-day.webp",
+      "http://127.0.0.1:3100/atlas/heroes/airix-business-systems-operations-night.webp"
+    ],
+    "switchWithoutReload": true
+  },
+  {
+    "route": "/services/managed-infrastructure",
+    "light": {
+      "theme": "light",
+      "active": "/atlas/heroes/airix-managed-infrastructure-operations-day.webp",
+      "currentSrc": "http://127.0.0.1:3100/atlas/heroes/airix-managed-infrastructure-operations-day.webp",
+      "src": "/atlas/heroes/airix-managed-infrastructure-operations-day.webp",
+      "naturalWidth": 1536,
+      "naturalHeight": 1024
+    },
+    "dark": {
+      "theme": "dark",
+      "active": "/atlas/heroes/airix-managed-infrastructure-operations-night.webp",
+      "currentSrc": "http://127.0.0.1:3100/atlas/heroes/airix-managed-infrastructure-operations-night.webp",
+      "src": "/atlas/heroes/airix-managed-infrastructure-operations-night.webp",
+      "naturalWidth": 1536,
+      "naturalHeight": 1024
+    },
+    "requested": [
+      "http://127.0.0.1:3100/atlas/heroes/airix-managed-infrastructure-operations-day.webp",
+      "http://127.0.0.1:3100/atlas/heroes/airix-managed-infrastructure-operations-night.webp"
+    ],
+    "switchWithoutReload": true
+  },
+  {
+    "route": "/services/support-recovery",
+    "light": {
+      "theme": "light",
+      "active": "/atlas/heroes/airix-support-recovery-restoration-day.webp",
+      "currentSrc": "http://127.0.0.1:3100/atlas/heroes/airix-support-recovery-restoration-day.webp",
+      "src": "/atlas/heroes/airix-support-recovery-restoration-day.webp",
+      "naturalWidth": 1536,
+      "naturalHeight": 1024
+    },
+    "dark": {
+      "theme": "dark",
+      "active": "/atlas/heroes/airix-support-recovery-restoration-night.webp",
+      "currentSrc": "http://127.0.0.1:3100/atlas/heroes/airix-support-recovery-restoration-night.webp",
+      "src": "/atlas/heroes/airix-support-recovery-restoration-night.webp",
+      "naturalWidth": 1536,
+      "naturalHeight": 1024
+    },
+    "requested": [
+      "http://127.0.0.1:3100/atlas/heroes/airix-support-recovery-restoration-day.webp",
+      "http://127.0.0.1:3100/atlas/heroes/airix-support-recovery-restoration-night.webp"
+    ],
+    "switchWithoutReload": true
+  },
+  {
+    "route": "/support",
+    "light": {
+      "theme": "light",
+      "active": "/atlas/heroes/airix-support-operations-day.webp",
+      "currentSrc": "http://127.0.0.1:3100/atlas/heroes/airix-support-operations-day.webp",
+      "src": "/atlas/heroes/airix-support-operations-day.webp",
+      "naturalWidth": 1536,
+      "naturalHeight": 1024
+    },
+    "dark": {
+      "theme": "dark",
+      "active": "/atlas/heroes/airix-support-operations-night.webp",
+      "currentSrc": "http://127.0.0.1:3100/atlas/heroes/airix-support-operations-night.webp",
+      "src": "/atlas/heroes/airix-support-operations-night.webp",
+      "naturalWidth": 1536,
+      "naturalHeight": 1024
+    },
+    "requested": [
+      "http://127.0.0.1:3100/atlas/heroes/airix-support-operations-day.webp",
+      "http://127.0.0.1:3100/atlas/heroes/airix-support-operations-night.webp"
+    ],
+    "switchWithoutReload": true
+  },
+  {
+    "route": "/support/emergency",
+    "light": {
+      "theme": "light",
+      "active": "/atlas/heroes/airix-emergency-technical-response-day.webp",
+      "currentSrc": "http://127.0.0.1:3100/atlas/heroes/airix-emergency-technical-response-day.webp",
+      "src": "/atlas/heroes/airix-emergency-technical-response-day.webp",
+      "naturalWidth": 1536,
+      "naturalHeight": 1024
+    },
+    "dark": {
+      "theme": "dark",
+      "active": "/atlas/heroes/airix-emergency-technical-response-night.webp",
+      "currentSrc": "http://127.0.0.1:3100/atlas/heroes/airix-emergency-technical-response-night.webp",
+      "src": "/atlas/heroes/airix-emergency-technical-response-night.webp",
+      "naturalWidth": 1536,
+      "naturalHeight": 1024
+    },
+    "requested": [
+      "http://127.0.0.1:3100/atlas/heroes/airix-emergency-technical-response-day.webp",
+      "http://127.0.0.1:3100/atlas/heroes/airix-emergency-technical-response-night.webp"
+    ],
+    "switchWithoutReload": true
+  }
+]

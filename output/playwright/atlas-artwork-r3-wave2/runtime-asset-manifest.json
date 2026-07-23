@@ -1,0 +1,134 @@
+[
+  {
+    "route": "/services/digital-experiences",
+    "mode": "day",
+    "file": "airix-digital-experiences-service-journey-day.webp",
+    "bytes": 498202,
+    "sha256": "0a3422db51a541a8008b390373ba38ff1abe57d4624dbbe2c1c152a49b726f23",
+    "width": 1536,
+    "height": 1024,
+    "format": "WEBP",
+    "metadata": "stripped"
+  },
+  {
+    "route": "/services/digital-experiences",
+    "mode": "night",
+    "file": "airix-digital-experiences-service-journey-night.webp",
+    "bytes": 286184,
+    "sha256": "cf8c5ad012472ee396812a30a3f4fb008aec202c075423cda30e7a28b284971f",
+    "width": 1536,
+    "height": 1024,
+    "format": "WEBP",
+    "metadata": "stripped"
+  },
+  {
+    "route": "/services/business-systems",
+    "mode": "day",
+    "file": "airix-business-systems-operations-day.webp",
+    "bytes": 519128,
+    "sha256": "ead2e6e0c0d77fdca11b133597c864fc8378ad5e5d80accc56c2964219a20f47",
+    "width": 1536,
+    "height": 1024,
+    "format": "WEBP",
+    "metadata": "stripped"
+  },
+  {
+    "route": "/services/business-systems",
+    "mode": "night",
+    "file": "airix-business-systems-operations-night.webp",
+    "bytes": 304294,
+    "sha256": "65f1d8dbbec952ba0ae625f973c3ba3cb9baa5f2ba5e8fbf1126700c4a7a457a",
+    "width": 1536,
+    "height": 1024,
+    "format": "WEBP",
+    "metadata": "stripped"
+  },
+  {
+    "route": "/services/managed-infrastructure",
+    "mode": "day",
+    "file": "airix-managed-infrastructure-operations-day.webp",
+    "bytes": 485138,
+    "sha256": "91314e26d84b21d94f199740f844912fd752c081343398778b8c34efeb6b91cd",
+    "width": 1536,
+    "height": 1024,
+    "format": "WEBP",
+    "metadata": "stripped"
+  },
+  {
+    "route": "/services/managed-infrastructure",
+    "mode": "night",
+    "file": "airix-managed-infrastructure-operations-night.webp",
+    "bytes": 282814,
+    "sha256": "cd58745ecd0f0d5d876e6025173294134b80549fd7f009be85455964274e93f0",
+    "width": 1536,
+    "height": 1024,
+    "format": "WEBP",
+    "metadata": "stripped"
+  },
+  {
+    "route": "/services/support-recovery",
+    "mode": "day",
+    "file": "airix-support-recovery-restoration-day.webp",
+    "bytes": 517186,
+    "sha256": "862e9ec3abd5d3ec4ed994464321cc0735a45a5b0f4aa111cfa4916a03fa2956",
+    "width": 1536,
+    "height": 1024,
+    "format": "WEBP",
+    "metadata": "stripped"
+  },
+  {
+    "route": "/services/support-recovery",
+    "mode": "night",
+    "file": "airix-support-recovery-restoration-night.webp",
+    "bytes": 297970,
+    "sha256": "b761ad0e37340cce5dc2231e4e6b24ca3c8c6b50f07e3155a3c193a9398717fd",
+    "width": 1536,
+    "height": 1024,
+    "format": "WEBP",
+    "metadata": "stripped"
+  },
+  {
+    "route": "/support",
+    "mode": "day",
+    "file": "airix-support-operations-day.webp",
+    "bytes": 491718,
+    "sha256": "a38979e3d0a3b3d9c1a053bb070a89806afbff592fcc1ac60fb037576217a7d0",
+    "width": 1536,
+    "height": 1024,
+    "format": "WEBP",
+    "metadata": "stripped"
+  },
+  {
+    "route": "/support",
+    "mode": "night",
+    "file": "airix-support-operations-night.webp",
+    "bytes": 278516,
+    "sha256": "2fb7484521f319048c4b1cdd84bb40706c1f88839691d62d955774323f578a81",
+    "width": 1536,
+    "height": 1024,
+    "format": "WEBP",
+    "metadata": "stripped"
+  },
+  {
+    "route": "/support/emergency",
+    "mode": "day",
+    "file": "airix-emergency-technical-response-day.webp",
+    "bytes": 465036,
+    "sha256": "655bba43b8339de9a821fe2dd164eaaa1e391b6ff306fe963a3bb5416cbc6617",
+    "width": 1536,
+    "height": 1024,
+    "format": "WEBP",
+    "metadata": "stripped"
+  },
+  {
+    "route": "/support/emergency",
+    "mode": "night",
+    "file": "airix-emergency-technical-response-night.webp",
+    "bytes": 224842,
+    "sha256": "a7740dc4b0af95b424796b2a9d2e177efc40e3a8ad825b1c1a0556d279d831eb",
+    "width": 1536,
+    "height": 1024,
+    "format": "WEBP",
+    "metadata": "stripped"
+  }
+]

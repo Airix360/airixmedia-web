@@ -1,0 +1,15 @@
+{
+  "pass": true,
+  "mode": "disabled",
+  "maximumPrecheckBytes": 5242880,
+  "permittedDeclaredTypes": [
+    "PDF",
+    "PNG",
+    "JPEG",
+    "WebP",
+    "plain text"
+  ],
+  "storage": "none",
+  "malwareScanner": "not configured",
+  "bytesSilentlyDiscarded": false
+}

@@ -1,0 +1,14 @@
+{
+  "form": "project",
+  "marker": "STAGING TEST — NO ACTION REQUIRED",
+  "attempted": true,
+  "acceptedByProvider": true,
+  "deliveredEventObserved": true,
+  "rawMailboxReceiptConfirmed": true,
+  "addressedRoleMatched": true,
+  "referenceMatched": true,
+  "replyToRequesterConfirmed": true,
+  "multipartReadable": true,
+  "reference": "AM-PROJ-TZW7XLM2UMDD",
+  "fingerprint": "19481ccb55aec034"
+}

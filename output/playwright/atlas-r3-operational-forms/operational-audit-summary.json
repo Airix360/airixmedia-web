@@ -1,0 +1,30 @@
+{
+  "pass": true,
+  "liveDeliveryVerified": true,
+  "monitoredRecipientsVerified": true,
+  "contactP1": "closed",
+  "emergencyTechnicalP1": "closed",
+  "emergencyCoverageP1": "closed",
+  "checks": {
+    "sitemap": {
+      "pass": true,
+      "changedFiles": []
+    },
+    "redirects": {
+      "pass": true,
+      "changedFiles": []
+    },
+    "canonicals": {
+      "pass": true,
+      "changedFiles": []
+    },
+    "runtimeArtwork": {
+      "pass": true,
+      "count": 40
+    },
+    "sourcePng": {
+      "pass": true,
+      "files": []
+    }
+  }
+}

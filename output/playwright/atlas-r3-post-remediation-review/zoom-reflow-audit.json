@@ -1,0 +1,162 @@
+{
+  "100%": {
+    "physicalWidth": 1440,
+    "effectiveCssWidth": 1440,
+    "responsiveMenu": false,
+    "controlsOverlap": false,
+    "themes": {
+      "light": {
+        "activeTheme": "light",
+        "clientWidth": 1440,
+        "rootScrollWidth": 1440,
+        "bodyScrollWidth": 1440,
+        "transparentUsable": true,
+        "stickyUsable": true
+      },
+      "dark": {
+        "activeTheme": "dark",
+        "clientWidth": 1440,
+        "rootScrollWidth": 1440,
+        "bodyScrollWidth": 1440,
+        "transparentUsable": true,
+        "stickyUsable": true
+      },
+      "auto": {
+        "activeTheme": "dark",
+        "clientWidth": 1440,
+        "rootScrollWidth": 1440,
+        "bodyScrollWidth": 1440,
+        "transparentUsable": true,
+        "stickyUsable": true
+      }
+    }
+  },
+  "125%": {
+    "physicalWidth": 1440,
+    "effectiveCssWidth": 1152,
+    "responsiveMenu": true,
+    "controlsOverlap": false,
+    "themes": {
+      "light": {
+        "activeTheme": "light",
+        "clientWidth": 1152,
+        "rootScrollWidth": 1152,
+        "bodyScrollWidth": 1152,
+        "transparentUsable": true,
+        "stickyUsable": true
+      },
+      "dark": {
+        "activeTheme": "dark",
+        "clientWidth": 1152,
+        "rootScrollWidth": 1152,
+        "bodyScrollWidth": 1152,
+        "transparentUsable": true,
+        "stickyUsable": true
+      },
+      "auto": {
+        "activeTheme": "dark",
+        "clientWidth": 1152,
+        "rootScrollWidth": 1152,
+        "bodyScrollWidth": 1152,
+        "transparentUsable": true,
+        "stickyUsable": true
+      }
+    }
+  },
+  "150%": {
+    "physicalWidth": 1440,
+    "effectiveCssWidth": 960,
+    "responsiveMenu": true,
+    "controlsOverlap": false,
+    "themes": {
+      "light": {
+        "activeTheme": "light",
+        "clientWidth": 960,
+        "rootScrollWidth": 960,
+        "bodyScrollWidth": 960,
+        "transparentUsable": true,
+        "stickyUsable": true
+      },
+      "dark": {
+        "activeTheme": "dark",
+        "clientWidth": 960,
+        "rootScrollWidth": 960,
+        "bodyScrollWidth": 960,
+        "transparentUsable": true,
+        "stickyUsable": true
+      },
+      "auto": {
+        "activeTheme": "dark",
+        "clientWidth": 960,
+        "rootScrollWidth": 960,
+        "bodyScrollWidth": 960,
+        "transparentUsable": true,
+        "stickyUsable": true
+      }
+    }
+  },
+  "175%": {
+    "physicalWidth": 1440,
+    "effectiveCssWidth": 823,
+    "responsiveMenu": true,
+    "controlsOverlap": false,
+    "themes": {
+      "light": {
+        "activeTheme": "light",
+        "clientWidth": 823,
+        "rootScrollWidth": 823,
+        "bodyScrollWidth": 823,
+        "transparentUsable": true,
+        "stickyUsable": true
+      },
+      "dark": {
+        "activeTheme": "dark",
+        "clientWidth": 823,
+        "rootScrollWidth": 823,
+        "bodyScrollWidth": 823,
+        "transparentUsable": true,
+        "stickyUsable": true
+      },
+      "auto": {
+        "activeTheme": "dark",
+        "clientWidth": 823,
+        "rootScrollWidth": 823,
+        "bodyScrollWidth": 823,
+        "transparentUsable": true,
+        "stickyUsable": true
+      }
+    }
+  },
+  "200%": {
+    "physicalWidth": 1440,
+    "effectiveCssWidth": 720,
+    "responsiveMenu": true,
+    "controlsOverlap": false,
+    "themes": {
+      "light": {
+        "activeTheme": "light",
+        "clientWidth": 720,
+        "rootScrollWidth": 720,
+        "bodyScrollWidth": 720,
+        "transparentUsable": true,
+        "stickyUsable": true
+      },
+      "dark": {
+        "activeTheme": "dark",
+        "clientWidth": 720,
+        "rootScrollWidth": 720,
+        "bodyScrollWidth": 720,
+        "transparentUsable": true,
+        "stickyUsable": true
+      },
+      "auto": {
+        "activeTheme": "dark",
+        "clientWidth": 720,
+        "rootScrollWidth": 720,
+        "bodyScrollWidth": 720,
+        "transparentUsable": true,
+        "stickyUsable": true
+      }
+    }
+  }
+}

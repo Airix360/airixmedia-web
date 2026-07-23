@@ -1,0 +1,13 @@
+{
+  "generalMailbox": "present",
+  "supportMailbox": "present",
+  "publishingAlias": "present",
+  "emergencyAlias": "present",
+  "operationsFallbackAlias": "present",
+  "notificationsAlias": "present",
+  "endToEndReceipt": "confirmed",
+  "addressedAliasPreserved": true,
+  "independentlyObservableEmergencyFallback": "confirmed",
+  "replyToRequesterConfirmed": true,
+  "autoReplyLoopObserved": false
+}

@@ -1,0 +1,12 @@
+{
+  "marker": "STAGING TEST — NO ACTION REQUIRED",
+  "aliasProvisioned": true,
+  "controlledPrimaryFailureInjected": true,
+  "fallbackAcceptedByProvider": true,
+  "deliveredEventObserved": true,
+  "rawMailboxReceiptConfirmed": true,
+  "requesterAcknowledgementDelivered": true,
+  "fallbackUseDisclosed": true,
+  "reference": "AM-EMG-6-Q2CQS78LFY",
+  "fingerprint": "82e101c5f7c32f01"
+}

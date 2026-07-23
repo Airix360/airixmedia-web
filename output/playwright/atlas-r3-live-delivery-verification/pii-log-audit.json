@@ -1,0 +1,22 @@
+{
+  "pass": true,
+  "logged": [
+    "reference",
+    "form type",
+    "timestamp",
+    "status",
+    "provider",
+    "safe request ID",
+    "failure category",
+    "environment"
+  ],
+  "excluded": [
+    "body",
+    "email",
+    "phone",
+    "file",
+    "credential",
+    "recipient list",
+    "raw provider body"
+  ]
+}

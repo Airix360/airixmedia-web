@@ -1,0 +1,112 @@
+{
+  "assetId": "ILL-0051",
+  "originalAssetId": "ILL-0050",
+  "supersedes": "ILL-0050",
+  "name": "Edo Studio radial-city candidate",
+  "state": "edo",
+  "route": "/internal/atlas-studio",
+  "district": "studio",
+  "status": "candidate",
+  "generationDate": "2026-07-14",
+  "generationMethod": "OpenAI built-in image generation",
+  "sources": [
+    {
+      "file": "source/ILL-0051_edo-studio-master_source-desktop_1672x941_v01.png",
+      "dimensions": "1672x941",
+      "composition": "desktop"
+    },
+    {
+      "file": "source/ILL-0051_edo-studio-master_source-mobile_864x1821_v01.png",
+      "dimensions": "864x1821",
+      "composition": "mobile"
+    }
+  ],
+  "derivatives": [
+    {
+      "file": "web/ILL-0051_edo-studio_desktop_1440x811_v01.webp",
+      "dimensions": "1440x811"
+    },
+    {
+      "file": "web/ILL-0051_edo-studio_tablet_1024x768_v01.webp",
+      "dimensions": "1024x768"
+    },
+    {
+      "file": "web/ILL-0051_edo-studio_mobile_960x1200_v01.webp",
+      "dimensions": "960x1200"
+    },
+    {
+      "file": "web/ILL-0051_edo-studio_thumbnail_480x270_v01.webp",
+      "dimensions": "480x270"
+    }
+  ],
+  "focalPoints": {
+    "desktop": "72% 52%",
+    "tablet": "65% 54%",
+    "mobile": "50% 66%"
+  },
+  "safeZones": {
+    "desktop": "left",
+    "tablet": "left",
+    "mobile": "top"
+  },
+  "researchSources": [
+    "decisions/2026-07-14-state-recognition-and-infrastructure-standard.md",
+    "decisions/2026-07-14-multi-state-internal-page-identity.md"
+  ],
+  "geographicAnchor": "Benin City radial urban morphology expressed as a circular civic workshop court and spoke routes",
+  "infrastructureAnchor": "Covered workshop wings and pedestrian routes radiate from the shared court",
+  "activityAnchor": "Makers review drawings, prototypes and material samples across connected work bays",
+  "materialAnchor": "Red-earth paths, warm masonry, timber screens and shaded planting",
+  "recognitionExplanation": "The radial plan organises the work and remains legible without Edo labels.",
+  "infrastructureCompositionRole": "The spoke routes carry people and work between the central table and specialist bays.",
+  "sensitivities": [
+    "Candidate remains private and non-publishable",
+    "No exact sacred, royal or protected place is represented"
+  ],
+  "simplifiedOrExcluded": [
+    "No readable generated signage",
+    "No public claims, logos or exact monument reconstruction",
+    "No decorative-only state label dependency"
+  ],
+  "accuracyRisks": [
+    "Fictional composite; not a mapped Benin site",
+    "Radial morphology is interpretive and must not imply a historic or royal precinct"
+  ],
+  "desktopAnchorSurvival": "pass",
+  "mobileAnchorSurvival": "pass",
+  "hiddenLabelRecognition": "pass",
+  "anatomyDefects": "No blocking defect observed at audit scale; hands, tools, rail and paper geometry remain owner-review items.",
+  "generatedTextDefects": "No readable generated text accepted as page content; abstract marks remain non-semantic.",
+  "ownerReviewStatus": "pending",
+  "culturalReviewStatus": "pending",
+  "finalAuditOutcome": "pass",
+  "anchorRationale": {
+    "geography": "The radial plan organises the work and remains legible without Edo labels.",
+    "infrastructure": "The spoke routes carry people and work between the central table and specialist bays.",
+    "activity": "The depicted contemporary work directly supports the studio route rather than acting as background theatre.",
+    "materials": "The recorded palette and construction system reinforce the geographic and infrastructure anchors without relying on labels."
+  },
+  "culturalOrInstitutionalSensitivities": [
+    "Fictional composite; not a mapped Benin site",
+    "Radial morphology is interpretive and must not imply a historic or royal precinct"
+  ],
+  "simplifications": [
+    "Geography and urban form are respectfully simplified into a fictional composite",
+    "Small people, documents, tools and transport are illustrative rather than documentary"
+  ],
+  "deliberateExclusions": [
+    "Exact sacred, royal, protected or institutional sites",
+    "Readable generated text, logos, flags and claims",
+    "Tourism, costume and monument-poster treatment"
+  ],
+  "landmarkInfrastructureAccuracyRisks": [
+    "Fictional composite; not a mapped Benin site",
+    "Radial morphology is interpretive and must not imply a historic or royal precinct"
+  ],
+  "anatomyAndGeneratedTextDefects": {
+    "anatomy": "No blocking defect observed at audit scale; hands, tools, rail and paper geometry remain owner-review items.",
+    "generatedText": "No readable generated text accepted as page content; abstract marks remain non-semantic."
+  },
+  "originalAuditOutcome": "regenerate",
+  "correctionPerformed": "Regenerated separate desktop and mobile masters as ILL-0051."
+}

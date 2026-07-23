@@ -1,0 +1,25 @@
+.marker { position: relative; z-index: 4; min-height: 5rem; display: grid; grid-template-columns: 1fr auto auto; gap: 2rem; align-items: center; padding: 1rem clamp(1rem,5vw,5rem); color: var(--atlas-color-charcoal-ink); background: var(--atlas-color-paper-aged); border-block: 1px solid currentColor; }
+.path { display: flex; align-items: center; gap: .7rem; font: .61rem/1.2 var(--atlas-font-wayfinding); text-transform: uppercase; letter-spacing: .08em; }
+.path i { width: 2rem; height: 1px; background: currentColor; opacity: .45; }
+.path strong { color: var(--state-accent,var(--atlas-color-terracotta)); }
+.path b { font-weight: 650; }
+.context { display: grid; gap: .25rem; padding-left: 1.5rem; border-left: 1px solid currentColor; }
+.context span { font: 650 .66rem/1.2 var(--atlas-font-wayfinding); text-transform: uppercase; }
+.context small { font: .72rem/1.3 var(--atlas-font-editorial); }
+.marker > a { min-height: 2.8rem; display: inline-flex; align-items: center; gap: .8rem; padding: .5rem .8rem; border: 1px solid currentColor; font: 650 .64rem/1 var(--atlas-font-wayfinding); text-decoration: none; }
+.marker a:hover,.marker a:focus-visible { color: var(--atlas-color-paper-cream); background: var(--atlas-color-charcoal-ink); }
+.transition { display: grid; grid-template-columns: auto 1fr minmax(16rem,.35fr); gap: 2rem; align-items: center; margin: 0 clamp(1rem,5vw,5rem); padding: clamp(3rem,6vw,6rem) 0; border-top: 1px solid currentColor; }
+.transition > span { font: .62rem/1 var(--atlas-font-wayfinding); text-transform: uppercase; }
+.transition > div { position: relative; height: 2rem; display: flex; align-items: center; justify-content: space-around; }
+.transition > div::before { content:""; position:absolute; left:0; right:0; height:2px; background:currentColor; transform-origin:left; }
+.transition > div i { position:relative; z-index:1; width:.65rem; aspect-ratio:1; background:var(--atlas-color-paper-cream); border:2px solid currentColor; border-radius:50%; }
+.transition[data-transition-mode="rail"] > div::after { content:""; position:absolute; left:0; right:0; top:calc(50% + .35rem); border-top:1px dashed currentColor; }
+.transition a { min-height: 4rem; display: grid; grid-template-columns: 1fr auto; align-items: center; padding: .8rem 1rem; color: inherit; border: 1px solid currentColor; text-decoration:none; }
+.transition a small { grid-column:1; font: .58rem/1 var(--atlas-font-wayfinding); text-transform:uppercase; }
+.transition a strong { grid-column:1; margin-top:.35rem; font: 650 1rem/1.1 var(--atlas-font-structural); }
+.transition a b { grid-column:2; grid-row:1/3; font-size:1.5rem; }
+.transition a:hover,.transition a:focus-visible { color:var(--atlas-color-paper-cream); background:var(--atlas-color-charcoal-ink); }
+@supports (animation-timeline:view()) { .transition > div::before { animation:stateRoute both linear; animation-timeline:view(); animation-range:entry 0% cover 40%; } }
+@keyframes stateRoute { from { transform:scaleX(0); } to { transform:scaleX(1); } }
+@media (max-width:800px) { .marker { grid-template-columns:1fr; gap:.8rem; } .context { padding:0; border:0; } .marker > a { width:max-content; } .transition { grid-template-columns:1fr; gap:1rem; } .transition > div { width:100%; } }
+@media (prefers-reduced-motion:reduce) { .transition > div::before { animation:none!important; transform:none!important; } }

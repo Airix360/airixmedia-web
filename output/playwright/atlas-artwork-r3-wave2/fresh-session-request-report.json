@@ -1,0 +1,218 @@
+[
+  {
+    "route": "/services/digital-experiences",
+    "setup": "saved-light",
+    "expected": "day",
+    "currentSrc": "http://127.0.0.1:3100/atlas/heroes/airix-digital-experiences-service-journey-day.webp",
+    "requests": [
+      "http://127.0.0.1:3100/atlas/heroes/airix-digital-experiences-service-journey-day.webp"
+    ]
+  },
+  {
+    "route": "/services/business-systems",
+    "setup": "saved-light",
+    "expected": "day",
+    "currentSrc": "http://127.0.0.1:3100/atlas/heroes/airix-business-systems-operations-day.webp",
+    "requests": [
+      "http://127.0.0.1:3100/atlas/heroes/airix-business-systems-operations-day.webp"
+    ]
+  },
+  {
+    "route": "/services/managed-infrastructure",
+    "setup": "saved-light",
+    "expected": "day",
+    "currentSrc": "http://127.0.0.1:3100/atlas/heroes/airix-managed-infrastructure-operations-day.webp",
+    "requests": [
+      "http://127.0.0.1:3100/atlas/heroes/airix-managed-infrastructure-operations-day.webp"
+    ]
+  },
+  {
+    "route": "/services/support-recovery",
+    "setup": "saved-light",
+    "expected": "day",
+    "currentSrc": "http://127.0.0.1:3100/atlas/heroes/airix-support-recovery-restoration-day.webp",
+    "requests": [
+      "http://127.0.0.1:3100/atlas/heroes/airix-support-recovery-restoration-day.webp"
+    ]
+  },
+  {
+    "route": "/support",
+    "setup": "saved-light",
+    "expected": "day",
+    "currentSrc": "http://127.0.0.1:3100/atlas/heroes/airix-support-operations-day.webp",
+    "requests": [
+      "http://127.0.0.1:3100/atlas/heroes/airix-support-operations-day.webp"
+    ]
+  },
+  {
+    "route": "/support/emergency",
+    "setup": "saved-light",
+    "expected": "day",
+    "currentSrc": "http://127.0.0.1:3100/atlas/heroes/airix-emergency-technical-response-day.webp",
+    "requests": [
+      "http://127.0.0.1:3100/atlas/heroes/airix-emergency-technical-response-day.webp"
+    ]
+  },
+  {
+    "route": "/services/digital-experiences",
+    "setup": "saved-dark",
+    "expected": "night",
+    "currentSrc": "http://127.0.0.1:3100/atlas/heroes/airix-digital-experiences-service-journey-night.webp",
+    "requests": [
+      "http://127.0.0.1:3100/atlas/heroes/airix-digital-experiences-service-journey-night.webp"
+    ]
+  },
+  {
+    "route": "/services/business-systems",
+    "setup": "saved-dark",
+    "expected": "night",
+    "currentSrc": "http://127.0.0.1:3100/atlas/heroes/airix-business-systems-operations-night.webp",
+    "requests": [
+      "http://127.0.0.1:3100/atlas/heroes/airix-business-systems-operations-night.webp"
+    ]
+  },
+  {
+    "route": "/services/managed-infrastructure",
+    "setup": "saved-dark",
+    "expected": "night",
+    "currentSrc": "http://127.0.0.1:3100/atlas/heroes/airix-managed-infrastructure-operations-night.webp",
+    "requests": [
+      "http://127.0.0.1:3100/atlas/heroes/airix-managed-infrastructure-operations-night.webp"
+    ]
+  },
+  {
+    "route": "/services/support-recovery",
+    "setup": "saved-dark",
+    "expected": "night",
+    "currentSrc": "http://127.0.0.1:3100/atlas/heroes/airix-support-recovery-restoration-night.webp",
+    "requests": [
+      "http://127.0.0.1:3100/atlas/heroes/airix-support-recovery-restoration-night.webp"
+    ]
+  },
+  {
+    "route": "/support",
+    "setup": "saved-dark",
+    "expected": "night",
+    "currentSrc": "http://127.0.0.1:3100/atlas/heroes/airix-support-operations-night.webp",
+    "requests": [
+      "http://127.0.0.1:3100/atlas/heroes/airix-support-operations-night.webp"
+    ]
+  },
+  {
+    "route": "/support/emergency",
+    "setup": "saved-dark",
+    "expected": "night",
+    "currentSrc": "http://127.0.0.1:3100/atlas/heroes/airix-emergency-technical-response-night.webp",
+    "requests": [
+      "http://127.0.0.1:3100/atlas/heroes/airix-emergency-technical-response-night.webp"
+    ]
+  },
+  {
+    "route": "/services/digital-experiences",
+    "setup": "auto-day",
+    "expected": "day",
+    "currentSrc": "http://127.0.0.1:3100/atlas/heroes/airix-digital-experiences-service-journey-day.webp",
+    "requests": [
+      "http://127.0.0.1:3100/atlas/heroes/airix-digital-experiences-service-journey-day.webp"
+    ]
+  },
+  {
+    "route": "/services/business-systems",
+    "setup": "auto-day",
+    "expected": "day",
+    "currentSrc": "http://127.0.0.1:3100/atlas/heroes/airix-business-systems-operations-day.webp",
+    "requests": [
+      "http://127.0.0.1:3100/atlas/heroes/airix-business-systems-operations-day.webp"
+    ]
+  },
+  {
+    "route": "/services/managed-infrastructure",
+    "setup": "auto-day",
+    "expected": "day",
+    "currentSrc": "http://127.0.0.1:3100/atlas/heroes/airix-managed-infrastructure-operations-day.webp",
+    "requests": [
+      "http://127.0.0.1:3100/atlas/heroes/airix-managed-infrastructure-operations-day.webp"
+    ]
+  },
+  {
+    "route": "/services/support-recovery",
+    "setup": "auto-day",
+    "expected": "day",
+    "currentSrc": "http://127.0.0.1:3100/atlas/heroes/airix-support-recovery-restoration-day.webp",
+    "requests": [
+      "http://127.0.0.1:3100/atlas/heroes/airix-support-recovery-restoration-day.webp"
+    ]
+  },
+  {
+    "route": "/support",
+    "setup": "auto-day",
+    "expected": "day",
+    "currentSrc": "http://127.0.0.1:3100/atlas/heroes/airix-support-operations-day.webp",
+    "requests": [
+      "http://127.0.0.1:3100/atlas/heroes/airix-support-operations-day.webp"
+    ]
+  },
+  {
+    "route": "/support/emergency",
+    "setup": "auto-day",
+    "expected": "day",
+    "currentSrc": "http://127.0.0.1:3100/atlas/heroes/airix-emergency-technical-response-day.webp",
+    "requests": [
+      "http://127.0.0.1:3100/atlas/heroes/airix-emergency-technical-response-day.webp"
+    ]
+  },
+  {
+    "route": "/services/digital-experiences",
+    "setup": "auto-night",
+    "expected": "night",
+    "currentSrc": "http://127.0.0.1:3100/atlas/heroes/airix-digital-experiences-service-journey-night.webp",
+    "requests": [
+      "http://127.0.0.1:3100/atlas/heroes/airix-digital-experiences-service-journey-night.webp"
+    ]
+  },
+  {
+    "route": "/services/business-systems",
+    "setup": "auto-night",
+    "expected": "night",
+    "currentSrc": "http://127.0.0.1:3100/atlas/heroes/airix-business-systems-operations-night.webp",
+    "requests": [
+      "http://127.0.0.1:3100/atlas/heroes/airix-business-systems-operations-night.webp"
+    ]
+  },
+  {
+    "route": "/services/managed-infrastructure",
+    "setup": "auto-night",
+    "expected": "night",
+    "currentSrc": "http://127.0.0.1:3100/atlas/heroes/airix-managed-infrastructure-operations-night.webp",
+    "requests": [
+      "http://127.0.0.1:3100/atlas/heroes/airix-managed-infrastructure-operations-night.webp"
+    ]
+  },
+  {
+    "route": "/services/support-recovery",
+    "setup": "auto-night",
+    "expected": "night",
+    "currentSrc": "http://127.0.0.1:3100/atlas/heroes/airix-support-recovery-restoration-night.webp",
+    "requests": [
+      "http://127.0.0.1:3100/atlas/heroes/airix-support-recovery-restoration-night.webp"
+    ]
+  },
+  {
+    "route": "/support",
+    "setup": "auto-night",
+    "expected": "night",
+    "currentSrc": "http://127.0.0.1:3100/atlas/heroes/airix-support-operations-night.webp",
+    "requests": [
+      "http://127.0.0.1:3100/atlas/heroes/airix-support-operations-night.webp"
+    ]
+  },
+  {
+    "route": "/support/emergency",
+    "setup": "auto-night",
+    "expected": "night",
+    "currentSrc": "http://127.0.0.1:3100/atlas/heroes/airix-emergency-technical-response-night.webp",
+    "requests": [
+      "http://127.0.0.1:3100/atlas/heroes/airix-emergency-technical-response-night.webp"
+    ]
+  }
+]

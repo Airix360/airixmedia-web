@@ -1,0 +1,2 @@
+# ILL-0090 prompts
+Desktop: contemporary Plateau elevated research terrace and field station; systems, routes and evidence observed across misty highland horizons; people compare maps and field notes; granite, timber, paper and metal; calm upper-left space. Mobile: separately authored vertical research station with observation frame and working table below a calm upper field. Shared Atlas Gongbi-influenced ink and risograph language. No readable text, tourism, safari, fantasy astronomy, colonial nostalgia, photorealism, CGI, logos, flags or watermarks.

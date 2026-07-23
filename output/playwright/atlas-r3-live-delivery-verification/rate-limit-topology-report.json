@@ -1,0 +1,8 @@
+{
+  "adapter": "process-local",
+  "launchInstances": 1,
+  "restartClearsBuckets": true,
+  "horizontalScalingAllowed": false,
+  "sharedStoreRequiredBeforeScaling": true,
+  "captcha": "none"
+}

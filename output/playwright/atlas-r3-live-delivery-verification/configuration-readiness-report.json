@@ -1,0 +1,10 @@
+{
+  "verificationDate": "2026-07-23",
+  "provider": "brevo",
+  "configurationTemplate": true,
+  "apiKeyInGit": false,
+  "apiCredentialUsable": true,
+  "applicationTopologyProvisioned": false,
+  "stagedLiveDeliveryVerified": true,
+  "publicDeploymentPerformed": false
+}

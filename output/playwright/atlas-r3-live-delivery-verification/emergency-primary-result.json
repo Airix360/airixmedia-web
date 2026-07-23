@@ -1,0 +1,14 @@
+{
+  "marker": "STAGING TEST — NO ACTION REQUIRED",
+  "attempted": true,
+  "acceptedByProvider": true,
+  "deliveredEventObserved": true,
+  "rawMailboxReceiptConfirmed": true,
+  "requesterAcknowledgementDelivered": true,
+  "reference": "AM-EMG-3UDWTCQPXKUI",
+  "fingerprint": "9bb076b20fa6d8b1",
+  "monitoringHours": "08:00–22:00 WAT daily",
+  "monitoringOwner": "Airix Media Operations",
+  "humanDutyCoverageConfirmation": "formally-accepted",
+  "outsideHours": "best-effort"
+}

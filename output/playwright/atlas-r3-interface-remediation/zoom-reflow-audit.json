@@ -1,0 +1,52 @@
+{
+  "100%": {
+    "physicalWidth": 1440,
+    "effectiveCssWidth": 1440,
+    "clientWidth": 1440,
+    "rootScrollWidth": 1440,
+    "bodyScrollWidth": 1440,
+    "responsiveMenu": false,
+    "controlsOverlap": false,
+    "stickyUsable": true
+  },
+  "125%": {
+    "physicalWidth": 1440,
+    "effectiveCssWidth": 1152,
+    "clientWidth": 1152,
+    "rootScrollWidth": 1152,
+    "bodyScrollWidth": 1152,
+    "responsiveMenu": true,
+    "controlsOverlap": false,
+    "stickyUsable": true
+  },
+  "150%": {
+    "physicalWidth": 1440,
+    "effectiveCssWidth": 960,
+    "clientWidth": 960,
+    "rootScrollWidth": 960,
+    "bodyScrollWidth": 960,
+    "responsiveMenu": true,
+    "controlsOverlap": false,
+    "stickyUsable": true
+  },
+  "175%": {
+    "physicalWidth": 1440,
+    "effectiveCssWidth": 823,
+    "clientWidth": 823,
+    "rootScrollWidth": 823,
+    "bodyScrollWidth": 823,
+    "responsiveMenu": true,
+    "controlsOverlap": false,
+    "stickyUsable": true
+  },
+  "200%": {
+    "physicalWidth": 1440,
+    "effectiveCssWidth": 720,
+    "clientWidth": 720,
+    "rootScrollWidth": 720,
+    "bodyScrollWidth": 720,
+    "responsiveMenu": true,
+    "controlsOverlap": false,
+    "stickyUsable": true
+  }
+}

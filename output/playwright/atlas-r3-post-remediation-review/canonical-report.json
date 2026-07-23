@@ -1,0 +1,66 @@
+[
+  {
+    "route": "/",
+    "canonical": "https://airixmedia.com"
+  },
+  {
+    "route": "/studio",
+    "canonical": "https://airixmedia.com/studio"
+  },
+  {
+    "route": "/work",
+    "canonical": "https://airixmedia.com/work"
+  },
+  {
+    "route": "/services",
+    "canonical": "https://airixmedia.com/services"
+  },
+  {
+    "route": "/publishing",
+    "canonical": "https://airixmedia.com/publishing"
+  },
+  {
+    "route": "/open-source",
+    "canonical": "https://airixmedia.com/open-source"
+  },
+  {
+    "route": "/contact",
+    "canonical": "https://airixmedia.com/contact"
+  },
+  {
+    "route": "/support",
+    "canonical": "https://airixmedia.com/support"
+  },
+  {
+    "route": "/support/emergency",
+    "canonical": "https://airixmedia.com/support/emergency"
+  },
+  {
+    "route": "/legal",
+    "canonical": "https://airixmedia.com/legal"
+  },
+  {
+    "route": "/privacy",
+    "canonical": "https://airixmedia.com/privacy"
+  },
+  {
+    "route": "/terms",
+    "canonical": "https://airixmedia.com/terms"
+  },
+  {
+    "route": "/service-terms",
+    "canonical": "https://airixmedia.com/service-terms"
+  },
+  {
+    "route": "/security",
+    "canonical": "https://airixmedia.com/security"
+  },
+  {
+    "route": "/data-processing",
+    "canonical": "https://airixmedia.com/data-processing"
+  },
+  {
+    "route": "/subprocessors",
+    "canonical": "https://airixmedia.com/subprocessors"
+  }
+]

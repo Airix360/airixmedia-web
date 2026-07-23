@@ -1,0 +1,50 @@
+[
+  {
+    "day": "airix-business-systems-operations-day.webp",
+    "night": "airix-business-systems-operations-night.webp",
+    "dayLuminance": 98.39,
+    "nightLuminance": 51.51,
+    "perceptualDifference": 43.7,
+    "status": "pass"
+  },
+  {
+    "day": "airix-digital-experiences-service-journey-day.webp",
+    "night": "airix-digital-experiences-service-journey-night.webp",
+    "dayLuminance": 122.18,
+    "nightLuminance": 54.68,
+    "perceptualDifference": 64.34,
+    "status": "pass"
+  },
+  {
+    "day": "airix-emergency-technical-response-day.webp",
+    "night": "airix-emergency-technical-response-night.webp",
+    "dayLuminance": 150.99,
+    "nightLuminance": 42.3,
+    "perceptualDifference": 102.96,
+    "status": "pass"
+  },
+  {
+    "day": "airix-managed-infrastructure-operations-day.webp",
+    "night": "airix-managed-infrastructure-operations-night.webp",
+    "dayLuminance": 130.67,
+    "nightLuminance": 39.32,
+    "perceptualDifference": 85.04,
+    "status": "pass"
+  },
+  {
+    "day": "airix-support-operations-day.webp",
+    "night": "airix-support-operations-night.webp",
+    "dayLuminance": 114.28,
+    "nightLuminance": 47.94,
+    "perceptualDifference": 61.88,
+    "status": "pass"
+  },
+  {
+    "day": "airix-support-recovery-restoration-day.webp",
+    "night": "airix-support-recovery-restoration-night.webp",
+    "dayLuminance": 117.82,
+    "nightLuminance": 44.47,
+    "perceptualDifference": 69.26,
+    "status": "pass"
+  }
+]

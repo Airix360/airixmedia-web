@@ -1,0 +1,63 @@
+import { describe, expect, it } from "vitest";
+import { publicRouteHeroAsset, routeHeroAssets, routeHeroFor } from "./route-heroes";
+
+describe("route hero registry", () => {
+  it("assigns a unique day/night pair to every integrated route", () => {
+    const assets = Object.values(routeHeroAssets);
+    expect(assets).toHaveLength(20);
+    expect(new Set(assets.flatMap((asset) => [asset.day, asset.night])).size).toBe(40);
+    expect(routeHeroFor("work")?.day).toBe("/atlas/heroes/work-day.webp");
+    expect(routeHeroFor("publishing/pricing")?.day).not.toBe(routeHeroFor("publishing")?.day);
+  });
+
+  it("assigns approved Wave 2 directions without clearing specialist review", () => {
+    const routes = ["/services/digital-experiences", "/services/business-systems", "/services/managed-infrastructure", "/services/support-recovery", "/support", "/support/emergency"] as const;
+    for (const route of routes) {
+      const asset = routeHeroAssets[route];
+      expect(asset.status).toBe("owner-direction-approved-pending-reviews");
+      expect(asset.internalContext).toMatch(/cultural, rights and launch review remain pending/i);
+      expect(asset.day).toMatch(/\/airix-[a-z-]+-day\.webp$/);
+      expect(asset.night).toMatch(/\/airix-[a-z-]+-night\.webp$/);
+      expect(asset.alt).toBeTruthy();
+      expect(asset.alt).not.toMatch(/Lagos|Oyo|Rivers|Edo|Kaduna|Plateau|Ogun|Nigeria/i);
+    }
+  });
+
+  it("strips private review metadata from public client props", () => {
+    const value = publicRouteHeroAsset(routeHeroAssets["/services/digital-experiences"]);
+    expect(value).toEqual({
+      route: "/services/digital-experiences",
+      day: "/atlas/heroes/airix-digital-experiences-service-journey-day.webp",
+      night: "/atlas/heroes/airix-digital-experiences-service-journey-night.webp",
+      desktopPosition: "50% 50%",
+      mobilePosition: "50% bottom",
+    });
+    expect(value).not.toHaveProperty("status");
+    expect(value).not.toHaveProperty("internalContext");
+  });
+
+  it("preserves the R3 human-review boundaries", () => {
+    expect(routeHeroAssets["/atlas"].status).toBe("pending-independent-landmark-verification");
+    expect(routeHeroAssets["/discuss"].status).toBe("pending-landmark-verification");
+    expect(routeHeroAssets["/contact"].status).toBe("pending-landmark-and-rights-review");
+    expect(routeHeroAssets["/book"].status).toBe("owner-approved-production-qa-pending");
+    expect(routeHeroAssets["/contact"].warning).toMatch(/no railway endorsement/i);
+  });
+
+  it("uses descriptive R3 filenames and visible-scene alternative text", () => {
+    for (const route of ["/atlas", "/discuss", "/contact", "/book"] as const) {
+      const asset = routeHeroAssets[route];
+      expect(asset.day).toMatch(/\/airix-[a-z-]+-day\.webp$/);
+      expect(asset.night).toMatch(/\/airix-[a-z-]+-night\.webp$/);
+      expect(asset.alt).toBeTruthy();
+      expect(asset.alt).not.toMatch(/Jos|Olumo|Abeokuta|Nigeria/i);
+    }
+  });
+
+  it("keeps DELSU internal and UNILAG out of public project claims", () => {
+    expect(routeHeroAssets["/publishing/universities"].status).toBe("pending-campus-accuracy-review");
+    expect(routeHeroAssets["/publishing/universities"].internalContext).toContain("Abraka");
+    expect(routeHeroAssets["/publishing/journal-platforms"].status).toBe("context-only-pending-rights-review");
+    expect(routeHeroAssets["/publishing/journal-platforms"].internalContext).toMatch(/never a client/i);
+  });
+});

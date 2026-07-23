@@ -1,0 +1,36 @@
+{
+  "checkedAt": "2026-07-18",
+  "method": "Direct review of the public repository pages on GitHub",
+  "projects": [
+    {
+      "name": "PaystackOJS",
+      "url": "https://github.com/thathman/PaystackOJS",
+      "reachable": true,
+      "publicRepository": true
+    },
+    {
+      "name": "OJS Magic Login",
+      "url": "https://github.com/thathman/ojs-magic-login",
+      "reachable": true,
+      "publicRepository": true
+    },
+    {
+      "name": "Submission Fee",
+      "url": "https://github.com/thathman/submissionFee-OJS",
+      "reachable": true,
+      "publicRepository": true
+    },
+    {
+      "name": "MultiPay",
+      "url": "https://github.com/thathman/ojs-multipay",
+      "reachable": true,
+      "publicRepository": true
+    },
+    {
+      "name": "Request Waiver",
+      "url": "https://github.com/thathman/ojs-request-waiver",
+      "reachable": true,
+      "publicRepository": true
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "assetId": "ILL-0083",
+  "originalAssetId": "ILL-0080",
+  "supersedes": "ILL-0080",
+  "name": "Ogun granite Gateway candidate",
+  "state": "ogun",
+  "route": "/internal/atlas-gateway",
+  "district": "gateway",
+  "status": "candidate",
+  "generationDate": "2026-07-14",
+  "generationMethod": "OpenAI built-in image generation",
+  "sources": [
+    {
+      "file": "source/ILL-0083_ogun-gateway-master_source-desktop_v01.png",
+      "dimensions": "1672x941",
+      "composition": "desktop"
+    },
+    {
+      "file": "source/ILL-0083_ogun-gateway-master_source-mobile_v01.png",
+      "dimensions": "1003x1568",
+      "composition": "mobile"
+    }
+  ],
+  "derivatives": [
+    {
+      "file": "web/ILL-0083_ogun-gateway_desktop_1440x811_v01.webp",
+      "dimensions": "1440x811"
+    },
+    {
+      "file": "web/ILL-0083_ogun-gateway_tablet_1024x768_v01.webp",
+      "dimensions": "1024x768"
+    },
+    {
+      "file": "web/ILL-0083_ogun-gateway_mobile_960x1200_v01.webp",
+      "dimensions": "960x1200"
+    },
+    {
+      "file": "web/ILL-0083_ogun-gateway_thumbnail_480x270_v01.webp",
+      "dimensions": "480x270"
+    }
+  ],
+  "focalPoints": {
+    "desktop": "68% 56%",
+    "tablet": "62% 58%",
+    "mobile": "54% 68%"
+  },
+  "safeZones": {
+    "desktop": "left",
+    "tablet": "left",
+    "mobile": "top"
+  },
+  "researchSources": [
+    "decisions/2026-07-14-state-recognition-and-infrastructure-standard.md",
+    "decisions/2026-07-14-multi-state-internal-page-identity.md",
+    "https://olumorock.ogunstate.gov.ng/about.html",
+    "https://nrc.gov.ng/schedules/",
+    "https://journal.funaab.edu.ng/index.php/JNSET/article/view/1959"
+  ],
+  "geographicAnchor": "Abeokuta-like layered granite outcrop and rocky urban horizon",
+  "infrastructureAnchor": "Rail line, road approach, route pavilion and pedestrian handoff bend around the granite",
+  "activityAnchor": "Teams arrive with briefs, compare routes and hand work into the pavilion",
+  "materialAnchor": "Layered granite, weathered timber, concrete, rail steel and southwest vegetation",
+  "recognitionExplanation": "Granite terrain forces gateway infrastructure into a recognisable Ogun/Abeokuta composition.",
+  "infrastructureCompositionRole": "Rail, road and pedestrian routes converge at the rock-shaped project-entry threshold.",
+  "sensitivities": [
+    "Candidate remains private and non-publishable",
+    "No exact sacred, royal or protected place is represented"
+  ],
+  "simplifiedOrExcluded": [
+    "No readable generated signage",
+    "No public claims, logos or exact monument reconstruction",
+    "No decorative-only state label dependency"
+  ],
+  "accuracyRisks": [
+    "Fictional composite; deliberately not Olumo Rock",
+    "No tourism, sacred-site or exact-landmark claim may be inferred"
+  ],
+  "desktopAnchorSurvival": "pass",
+  "mobileAnchorSurvival": "pass",
+  "hiddenLabelRecognition": "pass",
+  "anatomyDefects": "No blocking defect observed at audit scale; hands, tools, rail and paper geometry remain owner-review items.",
+  "generatedTextDefects": "No readable generated text accepted as page content; abstract marks remain non-semantic.",
+  "ownerReviewStatus": "pending",
+  "culturalReviewStatus": "pending",
+  "finalAuditOutcome": "pass",
+  "anchorRationale": {
+    "geography": "Granite terrain forces gateway infrastructure into a recognisable Ogun/Abeokuta composition.",
+    "infrastructure": "Rail, road and pedestrian routes converge at the rock-shaped project-entry threshold.",
+    "activity": "The depicted contemporary work directly supports the gateway route rather than acting as background theatre.",
+    "materials": "The recorded palette and construction system reinforce the geographic and infrastructure anchors without relying on labels."
+  },
+  "culturalOrInstitutionalSensitivities": [
+    "Fictional composite; deliberately not Olumo Rock",
+    "No tourism, sacred-site or exact-landmark claim may be inferred"
+  ],
+  "simplifications": [
+    "Geography and urban form are respectfully simplified into a fictional composite",
+    "Small people, documents, tools and transport are illustrative rather than documentary"
+  ],
+  "deliberateExclusions": [
+    "Exact sacred, royal, protected or institutional sites",
+    "Readable generated text, logos, flags and claims",
+    "Tourism, costume and monument-poster treatment"
+  ],
+  "landmarkInfrastructureAccuracyRisks": [
+    "Fictional composite; deliberately not Olumo Rock",
+    "No tourism, sacred-site or exact-landmark claim may be inferred"
+  ],
+  "anatomyAndGeneratedTextDefects": {
+    "anatomy": "No blocking defect observed at audit scale; hands, tools, rail and paper geometry remain owner-review items.",
+    "generatedText": "No readable generated text accepted as page content; abstract marks remain non-semantic."
+  },
+  "originalAuditOutcome": "regenerate",
+  "correctionPerformed": "Regenerated separate desktop and mobile masters as ILL-0083."
+}

@@ -1,0 +1,11 @@
+{
+  "GeneralOperations": "confirmed",
+  "ProjectOperations": "confirmed",
+  "PublishingOperations": "confirmed",
+  "BookingOperations": "confirmed",
+  "SupportOperations": "confirmed",
+  "EmergencyDutyOperator": "confirmed",
+  "OperationsFallback": "confirmed",
+  "confirmationMethod": "received-raw-mail-and-addressed-alias",
+  "namedIndividualsIncluded": false
+}

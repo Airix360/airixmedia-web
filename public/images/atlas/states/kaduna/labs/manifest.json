@@ -1,0 +1,112 @@
+{
+  "assetId": "ILL-0060",
+  "name": "Kaduna Labs master candidate",
+  "state": "kaduna",
+  "route": "/internal/atlas-labs",
+  "district": "labs",
+  "status": "candidate",
+  "generationDate": "2026-07-14",
+  "generationMethod": "OpenAI built-in image generation",
+  "sources": [
+    {
+      "file": "source/ILL-0060_kaduna-labs-master_source-desktop_1672x941_v01.png",
+      "dimensions": "1672x941",
+      "composition": "desktop"
+    },
+    {
+      "file": "source/ILL-0060_kaduna-labs-master_source-mobile_1003x1568_v01.png",
+      "dimensions": "1003x1568",
+      "composition": "mobile"
+    }
+  ],
+  "derivatives": [
+    {
+      "file": "web/ILL-0060_kaduna-labs_desktop_1440x811_v01.webp",
+      "dimensions": "1440x811"
+    },
+    {
+      "file": "web/ILL-0060_kaduna-labs_tablet_1024x768_v01.webp",
+      "dimensions": "1024x768"
+    },
+    {
+      "file": "web/ILL-0060_kaduna-labs_mobile_960x1200_v01.webp",
+      "dimensions": "960x1200"
+    },
+    {
+      "file": "web/ILL-0060_kaduna-labs_thumbnail_480x270_v01.webp",
+      "dimensions": "480x270"
+    }
+  ],
+  "focalPoints": {
+    "desktop": "38% 58%",
+    "tablet": "44% 58%",
+    "mobile": "56% 66%"
+  },
+  "safeZones": {
+    "desktop": "right",
+    "tablet": "right",
+    "mobile": "top"
+  },
+  "researchSources": [
+    "decisions/2026-07-14-state-recognition-and-infrastructure-standard.md",
+    "decisions/2026-07-14-multi-state-internal-page-identity.md",
+    "https://nrc.gov.ng/akts/",
+    "https://www.rpmcl.nrc.gov.ng/contact-us/"
+  ],
+  "geographicAnchor": "Dry-season Kaduna engineering landscape and red-earth rail yard",
+  "infrastructureAnchor": "Rail-inspired test routes, workshop sheds and service yard",
+  "activityAnchor": "Teams assemble, test, repair and document prototypes",
+  "materialAnchor": "Red earth, concrete, corrugated metal and restrained dry-season planting",
+  "recognitionExplanation": "Rail-yard infrastructure and engineering activity govern the composition, surviving label removal.",
+  "infrastructureCompositionRole": "Tracks and service routes sequence fabrication, testing and documentation.",
+  "sensitivities": [
+    "Candidate remains private and non-publishable",
+    "No exact sacred, royal or protected place is represented"
+  ],
+  "simplifiedOrExcluded": [
+    "No readable generated signage",
+    "No public claims, logos or exact monument reconstruction",
+    "No decorative-only state label dependency"
+  ],
+  "accuracyRisks": [
+    "Rail geometry is illustrative, not a real Kaduna railway compound",
+    "Small tool and hand geometry requires close review"
+  ],
+  "desktopAnchorSurvival": "pass",
+  "mobileAnchorSurvival": "pass",
+  "hiddenLabelRecognition": "pass",
+  "anatomyDefects": "No blocking defect observed at audit scale; hands, tools, rail and paper geometry remain owner-review items.",
+  "generatedTextDefects": "No readable generated text accepted as page content; abstract marks remain non-semantic.",
+  "ownerReviewStatus": "pending",
+  "culturalReviewStatus": "pending",
+  "finalAuditOutcome": "pass",
+  "anchorRationale": {
+    "geography": "Rail-yard infrastructure and engineering activity govern the composition, surviving label removal.",
+    "infrastructure": "Tracks and service routes sequence fabrication, testing and documentation.",
+    "activity": "The depicted contemporary work directly supports the labs route rather than acting as background theatre.",
+    "materials": "The recorded palette and construction system reinforce the geographic and infrastructure anchors without relying on labels."
+  },
+  "culturalOrInstitutionalSensitivities": [
+    "Rail geometry is illustrative, not a real Kaduna railway compound",
+    "Small tool and hand geometry requires close review"
+  ],
+  "simplifications": [
+    "Geography and urban form are respectfully simplified into a fictional composite",
+    "Small people, documents, tools and transport are illustrative rather than documentary"
+  ],
+  "deliberateExclusions": [
+    "Exact sacred, royal, protected or institutional sites",
+    "Readable generated text, logos, flags and claims",
+    "Tourism, costume and monument-poster treatment"
+  ],
+  "landmarkInfrastructureAccuracyRisks": [
+    "Rail geometry is illustrative, not a real Kaduna railway compound",
+    "Small tool and hand geometry requires close review"
+  ],
+  "anatomyAndGeneratedTextDefects": {
+    "anatomy": "No blocking defect observed at audit scale; hands, tools, rail and paper geometry remain owner-review items.",
+    "generatedText": "No readable generated text accepted as page content; abstract marks remain non-semantic."
+  },
+  "originalAuditOutcome": "pass",
+  "correctionPerformed": "Original candidate retained after desktop and mobile hidden-label review."
+}

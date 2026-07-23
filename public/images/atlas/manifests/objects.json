@@ -1,0 +1,127 @@
+[
+  {
+    "id": "obj-0001-atlas-signal",
+    "svg": "svg/obj-0001-atlas-signal.svg",
+    "png": "png/obj-0001-atlas-signal.png"
+  },
+  {
+    "id": "obj-0002-danfo",
+    "svg": "svg/obj-0002-danfo.svg",
+    "png": "png/obj-0002-danfo.png"
+  },
+  {
+    "id": "obj-0003-lagos-ferry",
+    "svg": "svg/obj-0003-lagos-ferry.svg",
+    "png": "png/obj-0003-lagos-ferry.png"
+  },
+  {
+    "id": "obj-0004-third-mainland-bridge",
+    "svg": "svg/obj-0004-third-mainland-bridge.svg",
+    "png": "png/obj-0004-third-mainland-bridge.png"
+  },
+  {
+    "id": "obj-0005-trust-tree",
+    "svg": "svg/obj-0005-trust-tree.svg",
+    "png": "png/obj-0005-trust-tree.png"
+  },
+  {
+    "id": "obj-0006-market-canopy",
+    "svg": "svg/obj-0006-market-canopy.svg",
+    "png": "png/obj-0006-market-canopy.png"
+  },
+  {
+    "id": "obj-0007-community-archive",
+    "svg": "svg/obj-0007-community-archive.svg",
+    "png": "png/obj-0007-community-archive.png"
+  },
+  {
+    "id": "obj-0008-workshop-table",
+    "svg": "svg/obj-0008-workshop-table.svg",
+    "png": "png/obj-0008-workshop-table.png"
+  },
+  {
+    "id": "obj-0009-airix-sign",
+    "svg": "svg/obj-0009-airix-sign.svg",
+    "png": "png/obj-0009-airix-sign.png"
+  },
+  {
+    "id": "obj-0010-route-map",
+    "svg": "svg/obj-0010-route-map.svg",
+    "png": "png/obj-0010-route-map.png"
+  },
+  {
+    "id": "obj-0011-keke",
+    "svg": "svg/obj-0011-keke.svg",
+    "png": "png/obj-0011-keke.png"
+  },
+  {
+    "id": "obj-0012-okada",
+    "svg": "svg/obj-0012-okada.svg",
+    "png": "png/obj-0012-okada.png"
+  },
+  {
+    "id": "obj-0013-wooden-canoe",
+    "svg": "svg/obj-0013-wooden-canoe.svg",
+    "png": "png/obj-0013-wooden-canoe.png"
+  },
+  {
+    "id": "obj-0014-logistics-truck",
+    "svg": "svg/obj-0014-logistics-truck.svg",
+    "png": "png/obj-0014-logistics-truck.png"
+  },
+  {
+    "id": "obj-0015-produce-handcart",
+    "svg": "svg/obj-0015-produce-handcart.svg",
+    "png": "png/obj-0015-produce-handcart.png"
+  },
+  {
+    "id": "obj-0016-streetlight",
+    "svg": "svg/obj-0016-streetlight.svg",
+    "png": "png/obj-0016-streetlight.png"
+  },
+  {
+    "id": "obj-0017-telecom-mast",
+    "svg": "svg/obj-0017-telecom-mast.svg",
+    "png": "png/obj-0017-telecom-mast.png"
+  },
+  {
+    "id": "obj-0018-waterfront-bollard",
+    "svg": "svg/obj-0018-waterfront-bollard.svg",
+    "png": "png/obj-0018-waterfront-bollard.png"
+  },
+  {
+    "id": "obj-0019-civic-bench",
+    "svg": "svg/obj-0019-civic-bench.svg",
+    "png": "png/obj-0019-civic-bench.png"
+  },
+  {
+    "id": "obj-0020-wayfinding-totem",
+    "svg": "svg/obj-0020-wayfinding-totem.svg",
+    "png": "png/obj-0020-wayfinding-totem.png"
+  },
+  {
+    "id": "obj-0021-market-scale",
+    "svg": "svg/obj-0021-market-scale.svg",
+    "png": "png/obj-0021-market-scale.png"
+  },
+  {
+    "id": "obj-0022-letterpress",
+    "svg": "svg/obj-0022-letterpress.svg",
+    "png": "png/obj-0022-letterpress.png"
+  },
+  {
+    "id": "obj-0023-archive-cabinet",
+    "svg": "svg/obj-0023-archive-cabinet.svg",
+    "png": "png/obj-0023-archive-cabinet.png"
+  },
+  {
+    "id": "obj-0024-gateway-pavilion",
+    "svg": "svg/obj-0024-gateway-pavilion.svg",
+    "png": "png/obj-0024-gateway-pavilion.png"
+  },
+  {
+    "id": "obj-0025-lagoon-compass-emblem",
+    "svg": "svg/obj-0025-lagoon-compass-emblem.svg",
+    "png": "png/obj-0025-lagoon-compass-emblem.png"
+  }
+]

@@ -1,0 +1,539 @@
+{
+  "forms": [
+    {
+      "key": "project",
+      "title": "Discuss a Project",
+      "description": "Describe the organisation, operating problem and outcome before choosing a solution.",
+      "fields": [
+        {
+          "name": "website",
+          "type": "text",
+          "required": false,
+          "label": ""
+        },
+        {
+          "name": "fullName",
+          "type": "text",
+          "required": true,
+          "label": "Full name *"
+        },
+        {
+          "name": "email",
+          "type": "email",
+          "required": true,
+          "label": "Email *"
+        },
+        {
+          "name": "organisation",
+          "type": "text",
+          "required": true,
+          "label": "Organisation *"
+        },
+        {
+          "name": "serviceNeeded",
+          "type": "select-one",
+          "required": true,
+          "label": "Service needed *Select oneDigital ExperiencesBusiness SystemsManaged InfrastructureSupport & RecoveryPublishingCustom DevelopmentNot Sure Yet"
+        },
+        {
+          "name": "existingSystem",
+          "type": "text",
+          "required": true,
+          "label": "Existing website or system *"
+        },
+        {
+          "name": "projectSummary",
+          "type": "textarea",
+          "required": true,
+          "label": "Project summary *"
+        },
+        {
+          "name": "mainProblem",
+          "type": "textarea",
+          "required": true,
+          "label": "Main problem *"
+        },
+        {
+          "name": "desiredOutcome",
+          "type": "textarea",
+          "required": true,
+          "label": "Desired outcome *"
+        },
+        {
+          "name": "estimatedTimeline",
+          "type": "text",
+          "required": true,
+          "label": "Estimated timeline *"
+        },
+        {
+          "name": "budgetRange",
+          "type": "select-one",
+          "required": true,
+          "label": "Budget range *Select oneUnder ₦500,000₦500,000–₦1,500,000₦1,500,000–₦5,000,000Above ₦5,000,000Needs scoping"
+        },
+        {
+          "name": "relevantLinks",
+          "type": "url",
+          "required": false,
+          "label": "Relevant links"
+        },
+        {
+          "name": "preferredContactMethod",
+          "type": "select-one",
+          "required": true,
+          "label": "Preferred contact method *Select oneEmailPhoneWhatsApp"
+        },
+        {
+          "name": "attachment",
+          "type": "file",
+          "required": false,
+          "label": "Optional fileUpload integration is prepared; a live provider is not configured."
+        },
+        {
+          "name": "privacyAcknowledgement",
+          "type": "checkbox",
+          "required": false,
+          "label": "I have read and acknowledge the Privacy notice."
+        }
+      ],
+      "validation": "Review the highlighted fields.\nFull name is required.\nEnter a valid email address.\nAcknowledge the privacy notice to continue.\nOrganisation is required.\nService needed is required.\nExisting website or system is required.\nProject summary is required.\nMain problem is required.\nDesired outcome is required.\nEstimated timeline is required.\nBudget range is required.\nPreferred contact method is required."
+    },
+    {
+      "key": "publishing",
+      "title": "Publishing Enquiry",
+      "description": "Share the platform, journal programme and publishing objective that need attention.",
+      "fields": [
+        {
+          "name": "website",
+          "type": "text",
+          "required": false,
+          "label": ""
+        },
+        {
+          "name": "fullName",
+          "type": "text",
+          "required": true,
+          "label": "Full name *"
+        },
+        {
+          "name": "email",
+          "type": "email",
+          "required": true,
+          "label": "Email *"
+        },
+        {
+          "name": "organisation",
+          "type": "text",
+          "required": true,
+          "label": "Organisation or institution *"
+        },
+        {
+          "name": "journalName",
+          "type": "text",
+          "required": true,
+          "label": "Journal or platform name *"
+        },
+        {
+          "name": "journalUrl",
+          "type": "text",
+          "required": true,
+          "label": "Journal URL *"
+        },
+        {
+          "name": "ojsVersion",
+          "type": "text",
+          "required": true,
+          "label": "OJS version *"
+        },
+        {
+          "name": "journalCount",
+          "type": "text",
+          "required": true,
+          "label": "Number of journals *"
+        },
+        {
+          "name": "serviceRequired",
+          "type": "select-one",
+          "required": true,
+          "label": "Service required *Select oneOJS setupOJS migrationOJS upgradeManaged hostingTechnical supportTheme developmentPlugin developmentEditorial or production supportTrainingMulti-journal platformNot Sure Yet"
+        },
+        {
+          "name": "hostingArrangement",
+          "type": "text",
+          "required": true,
+          "label": "Current hosting arrangement *"
+        },
+        {
+          "name": "migrationRequired",
+          "type": "select-one",
+          "required": true,
+          "label": "Is migration required? *Select oneYesNoNot sure"
+        },
+        {
+          "name": "desiredLaunchDate",
+          "type": "text",
+          "required": true,
+          "label": "Desired launch date *"
+        },
+        {
+          "name": "objective",
+          "type": "textarea",
+          "required": true,
+          "label": "Main issue or objective *"
+        },
+        {
+          "name": "attachment",
+          "type": "file",
+          "required": false,
+          "label": "Optional file"
+        },
+        {
+          "name": "privacyAcknowledgement",
+          "type": "checkbox",
+          "required": false,
+          "label": "I have read and acknowledge the Privacy notice."
+        }
+      ],
+      "validation": "Review the highlighted fields.\nFull name is required.\nEnter a valid email address.\nAcknowledge the privacy notice to continue.\nOrganisation or institution is required.\nJournal or platform name is required.\nJournal URL is required.\nOJS version is required.\nNumber of journals is required.\nService required is required.\nCurrent hosting arrangement is required.\nMigration requirement is required.\nDesired launch date is required.\nMain issue or objective is required."
+    },
+    {
+      "key": "book",
+      "title": "Book a Consultation",
+      "description": "Prepare the context for a useful conversation. A request is not a confirmed appointment.",
+      "fields": [
+        {
+          "name": "website",
+          "type": "text",
+          "required": false,
+          "label": ""
+        },
+        {
+          "name": "fullName",
+          "type": "text",
+          "required": true,
+          "label": "Full name *"
+        },
+        {
+          "name": "email",
+          "type": "email",
+          "required": true,
+          "label": "Email *"
+        },
+        {
+          "name": "organisation",
+          "type": "text",
+          "required": true,
+          "label": "Organisation *"
+        },
+        {
+          "name": "consultationType",
+          "type": "select-one",
+          "required": true,
+          "label": "Consultation type *Select oneProject discoveryPublishing technologyInfrastructure reviewRecovery planningTechnical advisory"
+        },
+        {
+          "name": "projectSummary",
+          "type": "textarea",
+          "required": true,
+          "label": "Short project summary *"
+        },
+        {
+          "name": "existingPlatform",
+          "type": "text",
+          "required": true,
+          "label": "Existing website or platform *"
+        },
+        {
+          "name": "preferredDate",
+          "type": "date",
+          "required": true,
+          "label": "Preferred date *"
+        },
+        {
+          "name": "preferredTimeWindow",
+          "type": "text",
+          "required": true,
+          "label": "Preferred time window *"
+        },
+        {
+          "name": "timeZone",
+          "type": "text",
+          "required": true,
+          "label": "Time zone *"
+        },
+        {
+          "name": "relevantLinks",
+          "type": "url",
+          "required": false,
+          "label": "Relevant links"
+        },
+        {
+          "name": "reviewMaterial",
+          "type": "textarea",
+          "required": true,
+          "label": "Material Airix should review beforehand *"
+        },
+        {
+          "name": "privacyAcknowledgement",
+          "type": "checkbox",
+          "required": false,
+          "label": "I have read and acknowledge the Privacy notice."
+        }
+      ],
+      "validation": "Review the highlighted fields.\nFull name is required.\nEnter a valid email address.\nAcknowledge the privacy notice to continue.\nOrganisation is required.\nConsultation type is required.\nShort project summary is required.\nExisting website or platform is required.\nPreferred date is required.\nPreferred time window is required.\nTime zone is required.\nMaterial to review is required."
+    },
+    {
+      "key": "general",
+      "title": "General Enquiry",
+      "description": "For partnerships, institutional questions, media, vendors and other non-project messages.",
+      "fields": [
+        {
+          "name": "website",
+          "type": "text",
+          "required": false,
+          "label": ""
+        },
+        {
+          "name": "fullName",
+          "type": "text",
+          "required": true,
+          "label": "Full name *"
+        },
+        {
+          "name": "email",
+          "type": "email",
+          "required": true,
+          "label": "Email *"
+        },
+        {
+          "name": "organisation",
+          "type": "text",
+          "required": true,
+          "label": "Organisation *"
+        },
+        {
+          "name": "enquiryType",
+          "type": "select-one",
+          "required": true,
+          "label": "Enquiry type *Select onePartnershipInstitutional enquiryMediaVendorOpen-sourceGeneral questionOther"
+        },
+        {
+          "name": "message",
+          "type": "textarea",
+          "required": true,
+          "label": "Message *"
+        },
+        {
+          "name": "privacyAcknowledgement",
+          "type": "checkbox",
+          "required": false,
+          "label": "I have read and acknowledge the Privacy notice."
+        }
+      ],
+      "validation": "Review the highlighted fields.\nFull name is required.\nEnter a valid email address.\nAcknowledge the privacy notice to continue.\nOrganisation is required.\nEnquiry type is required.\nMessage is required."
+    },
+    {
+      "key": "support",
+      "title": "Technical Support",
+      "description": "Record the affected system, impact and evidence needed for initial triage.",
+      "fields": [
+        {
+          "name": "website",
+          "type": "text",
+          "required": false,
+          "label": ""
+        },
+        {
+          "name": "fullName",
+          "type": "text",
+          "required": true,
+          "label": "Full name *"
+        },
+        {
+          "name": "email",
+          "type": "email",
+          "required": true,
+          "label": "Email *"
+        },
+        {
+          "name": "organisation",
+          "type": "text",
+          "required": true,
+          "label": "Organisation or client name *"
+        },
+        {
+          "name": "affectedSystem",
+          "type": "text",
+          "required": true,
+          "label": "Affected website or system *"
+        },
+        {
+          "name": "issueCategory",
+          "type": "select-one",
+          "required": true,
+          "label": "Issue category *Select oneAccessPublishing or OJSHostingEmailPerformanceSecurity concernFailed updateIntegrationOther"
+        },
+        {
+          "name": "severity",
+          "type": "select-one",
+          "required": true,
+          "label": "Severity *Select oneNormalImportantUrgentCritical outage"
+        },
+        {
+          "name": "issueBegan",
+          "type": "text",
+          "required": true,
+          "label": "When the issue began *"
+        },
+        {
+          "name": "description",
+          "type": "textarea",
+          "required": true,
+          "label": "Detailed description *"
+        },
+        {
+          "name": "unavailable",
+          "type": "select-one",
+          "required": true,
+          "label": "Is the service unavailable? *Select oneYesNoIntermittentlyNot sure"
+        },
+        {
+          "name": "errorDetails",
+          "type": "textarea",
+          "required": true,
+          "label": "Error details *"
+        },
+        {
+          "name": "attachment",
+          "type": "file",
+          "required": false,
+          "label": "Optional screenshot or file"
+        },
+        {
+          "name": "preferredContactMethod",
+          "type": "select-one",
+          "required": true,
+          "label": "Preferred contact method *Select oneEmailPhoneWhatsApp"
+        },
+        {
+          "name": "privacyAcknowledgement",
+          "type": "checkbox",
+          "required": false,
+          "label": "I have read and acknowledge the Privacy notice."
+        }
+      ],
+      "validation": "Review the highlighted fields.\nFull name is required.\nEnter a valid email address.\nAcknowledge the privacy notice to continue.\nOrganisation or client name is required.\nAffected website or system is required.\nIssue category is required.\nSeverity is required.\nWhen the issue began is required.\nDetailed description is required.\nAvailability status is required.\nError details is required.\nPreferred contact method is required."
+    },
+    {
+      "key": "emergency",
+      "title": "Emergency Support",
+      "description": "For unavailable, compromised, corrupted or publication-blocking production systems.",
+      "fields": [
+        {
+          "name": "website",
+          "type": "text",
+          "required": false,
+          "label": ""
+        },
+        {
+          "name": "fullName",
+          "type": "text",
+          "required": true,
+          "label": "Full name *"
+        },
+        {
+          "name": "email",
+          "type": "email",
+          "required": true,
+          "label": "Email *"
+        },
+        {
+          "name": "organisation",
+          "type": "text",
+          "required": true,
+          "label": "Organisation *"
+        },
+        {
+          "name": "urgentPhone",
+          "type": "tel",
+          "required": true,
+          "label": "Urgent contact number *"
+        },
+        {
+          "name": "affectedService",
+          "type": "text",
+          "required": true,
+          "label": "Affected service *"
+        },
+        {
+          "name": "outageStatus",
+          "type": "select-one",
+          "required": true,
+          "label": "Outage status *Select oneFully unavailablePartially unavailableSeverely impairedUnknown"
+        },
+        {
+          "name": "securityIncident",
+          "type": "select-one",
+          "required": true,
+          "label": "Security incident? *Select oneYesNoSuspectedUnknown"
+        },
+        {
+          "name": "publicationBlocking",
+          "type": "select-one",
+          "required": true,
+          "label": "Publication blocking? *Select oneYesNoNot applicableUnknown"
+        },
+        {
+          "name": "incidentBegan",
+          "type": "text",
+          "required": true,
+          "label": "When the incident began *"
+        },
+        {
+          "name": "incidentSummary",
+          "type": "textarea",
+          "required": true,
+          "label": "Concise incident summary *"
+        },
+        {
+          "name": "attachment",
+          "type": "file",
+          "required": false,
+          "label": "Optional evidence upload"
+        },
+        {
+          "name": "chargeableAcknowledgement",
+          "type": "checkbox",
+          "required": false,
+          "label": "I understand emergency work may be chargeable."
+        },
+        {
+          "name": "privacyAcknowledgement",
+          "type": "checkbox",
+          "required": false,
+          "label": "I have read and acknowledge the Privacy notice."
+        }
+      ],
+      "validation": "Review the highlighted fields.\nFull name is required.\nEnter a valid email address.\nAcknowledge the privacy notice to continue.\nOrganisation is required.\nUrgent contact number is required.\nAffected service is required.\nOutage status is required.\nSecurity-incident status is required.\nPublication-blocking status is required.\nWhen the incident began is required.\nIncident summary is required.\nAcknowledge that emergency work may be chargeable."
+    }
+  ],
+  "mobileDimensions": {
+    "scrollWidth": 390,
+    "clientWidth": 390,
+    "viewport": 390
+  },
+  "servicePreselection": {
+    "Digital Experiences": "Digital Experiences",
+    "Business Systems": "Business Systems",
+    "Managed Infrastructure": "Managed Infrastructure",
+    "Support & Recovery": "Support & Recovery"
+  },
+  "providerResponse": {
+    "status": 503,
+    "body": {
+      "ok": false,
+      "error": "Online submission is not configured. Your enquiry has not been sent.",
+      "code": "provider_not_configured"
+    }
+  }
+}

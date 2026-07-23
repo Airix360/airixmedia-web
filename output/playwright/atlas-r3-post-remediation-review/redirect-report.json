@@ -1,0 +1,185 @@
+{
+  "count": 30,
+  "redirects": [
+    {
+      "source": "/atlas",
+      "destination": "/studio#atlas",
+      "status": 308,
+      "location": "/studio#atlas"
+    },
+    {
+      "source": "/discuss",
+      "destination": "/contact?form=project",
+      "status": 308,
+      "location": "/contact?form=project"
+    },
+    {
+      "source": "/book",
+      "destination": "/contact?form=book",
+      "status": 308,
+      "location": "/contact?form=book"
+    },
+    {
+      "source": "/services/digital-experiences",
+      "destination": "/services#digital-experiences",
+      "status": 308,
+      "location": "/services#digital-experiences"
+    },
+    {
+      "source": "/services/business-systems",
+      "destination": "/services#business-systems",
+      "status": 308,
+      "location": "/services#business-systems"
+    },
+    {
+      "source": "/services/managed-infrastructure",
+      "destination": "/services#managed-infrastructure",
+      "status": 308,
+      "location": "/services#managed-infrastructure"
+    },
+    {
+      "source": "/services/support-recovery",
+      "destination": "/services#support-recovery",
+      "status": 308,
+      "location": "/services#support-recovery"
+    },
+    {
+      "source": "/publishing/ojs",
+      "destination": "/publishing#ojs",
+      "status": 308,
+      "location": "/publishing#ojs"
+    },
+    {
+      "source": "/publishing/pricing",
+      "destination": "/publishing#pricing",
+      "status": 308,
+      "location": "/publishing#pricing"
+    },
+    {
+      "source": "/publishing/universities",
+      "destination": "/publishing#universities",
+      "status": 308,
+      "location": "/publishing#universities"
+    },
+    {
+      "source": "/publishing/journal-platforms",
+      "destination": "/publishing#journal-platforms",
+      "status": 308,
+      "location": "/publishing#journal-platforms"
+    },
+    {
+      "source": "/publishing/hosting-support",
+      "destination": "/publishing#hosting-support",
+      "status": 308,
+      "location": "/publishing#hosting-support"
+    },
+    {
+      "source": "/publishing/editorial-support",
+      "destination": "/publishing#editorial-support",
+      "status": 308,
+      "location": "/publishing#editorial-support"
+    },
+    {
+      "source": "/publishing/plugins",
+      "destination": "/publishing#plugins",
+      "status": 308,
+      "location": "/publishing#plugins"
+    },
+    {
+      "source": "/publishing/projects",
+      "destination": "/publishing#projects",
+      "status": 308,
+      "location": "/publishing#projects"
+    },
+    {
+      "source": "/publishing/resources",
+      "destination": "/publishing#resources",
+      "status": 308,
+      "location": "/publishing#resources"
+    },
+    {
+      "source": "/open-source/paystack-ojs",
+      "destination": "/open-source#paystack-ojs",
+      "status": 308,
+      "location": "/open-source#paystack-ojs"
+    },
+    {
+      "source": "/open-source/ojs-magic-login",
+      "destination": "/open-source#ojs-magic-login",
+      "status": 308,
+      "location": "/open-source#ojs-magic-login"
+    },
+    {
+      "source": "/open-source/submission-fee",
+      "destination": "/open-source#submission-fee",
+      "status": 308,
+      "location": "/open-source#submission-fee"
+    },
+    {
+      "source": "/open-source/multipay",
+      "destination": "/open-source#multipay",
+      "status": 308,
+      "location": "/open-source#multipay"
+    },
+    {
+      "source": "/open-source/request-waiver",
+      "destination": "/open-source#request-waiver",
+      "status": 308,
+      "location": "/open-source#request-waiver"
+    },
+    {
+      "source": "/knowledge-base",
+      "destination": "/support#guides",
+      "status": 308,
+      "location": "/support#guides"
+    },
+    {
+      "source": "/service-levels",
+      "destination": "/support#service-levels",
+      "status": 308,
+      "location": "/support#service-levels"
+    },
+    {
+      "source": "/status",
+      "destination": "/support",
+      "status": 308,
+      "location": "/support"
+    },
+    {
+      "source": "/cookies",
+      "destination": "/legal#cookies",
+      "status": 308,
+      "location": "/legal#cookies"
+    },
+    {
+      "source": "/accessibility",
+      "destination": "/legal#accessibility",
+      "status": 308,
+      "location": "/legal#accessibility"
+    },
+    {
+      "source": "/acceptable-use",
+      "destination": "/legal#acceptable-use",
+      "status": 308,
+      "location": "/legal#acceptable-use"
+    },
+    {
+      "source": "/work/ku-journals",
+      "destination": "/work#publishing",
+      "status": 308,
+      "location": "/work#publishing"
+    },
+    {
+      "source": "/insights",
+      "destination": "/support#guides",
+      "status": 308,
+      "location": "/support#guides"
+    },
+    {
+      "source": "/resources",
+      "destination": "/support#guides",
+      "status": 308,
+      "location": "/support#guides"
+    }
+  ]
+}

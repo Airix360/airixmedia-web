@@ -1,0 +1,24 @@
+{
+  "tool": "Lighthouse 13.0.3",
+  "mode": "local production build",
+  "desktop": {
+    "performance": 95,
+    "accessibility": 100,
+    "bestPractices": 96,
+    "seo": 100,
+    "lcpSeconds": 1.1,
+    "cls": 0
+  },
+  "mobileRuns": [
+    { "performance": 89, "accessibility": 100, "bestPractices": 96, "seo": 100, "lcpSeconds": 3.2, "tbtMs": 220 },
+    { "performance": 95, "accessibility": 100, "bestPractices": 96, "seo": 100, "lcpSeconds": 2.9, "tbtMs": 60 },
+    { "performance": 94, "accessibility": 100, "bestPractices": 96, "seo": 100, "lcpSeconds": 3.0, "tbtMs": 60 }
+  ],
+  "mobileMedian": {
+    "performance": 94,
+    "accessibility": 100,
+    "bestPractices": 96,
+    "seo": 100
+  },
+  "note": "The cold-run performance variation is retained. Repeat on staging behind the approved proxy and CDN."
+}

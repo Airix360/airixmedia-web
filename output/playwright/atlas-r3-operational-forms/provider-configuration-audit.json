@@ -1,0 +1,9 @@
+{
+  "pass": true,
+  "selectedProviders": [
+    "brevo",
+    "mock (non-production only)"
+  ],
+  "liveCredentialsVerified": true,
+  "secretsExposed": false
+}

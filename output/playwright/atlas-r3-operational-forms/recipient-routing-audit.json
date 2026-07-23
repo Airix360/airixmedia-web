@@ -1,0 +1,13 @@
+{
+  "pass": true,
+  "logicalGroups": [
+    "contact_project",
+    "contact_publishing",
+    "contact_booking",
+    "contact_general",
+    "contact_support",
+    "emergency"
+  ],
+  "addressesIncluded": false,
+  "emergencyDistinct": true
+}

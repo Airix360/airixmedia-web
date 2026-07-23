@@ -1,0 +1,1019 @@
+{
+  "group": "Group 2 \u2014 Responsive Crops",
+  "format": "WebP",
+  "quality": 90,
+  "variants": {
+    "desktop-16x9": {
+      "dimensions": [
+        1600,
+        900
+      ]
+    },
+    "tablet-4x3": {
+      "dimensions": [
+        1200,
+        900
+      ]
+    },
+    "mobile-4x5": {
+      "dimensions": [
+        1080,
+        1350
+      ]
+    },
+    "social-og": {
+      "dimensions": [
+        1200,
+        630
+      ]
+    },
+    "thumbnail-16x9": {
+      "dimensions": [
+        640,
+        360
+      ]
+    }
+  },
+  "assets": [
+    {
+      "id": "ill-0001-arrival-district",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "focal_point": [
+        0.64,
+        0.58
+      ],
+      "files": {
+        "desktop-16x9": {
+          "path": "ill-0001-arrival-district/ill-0001-arrival-district-desktop-16x9.webp",
+          "dimensions": [
+            1600,
+            900
+          ],
+          "source_box": [
+            0,
+            1,
+            1672,
+            941
+          ],
+          "focal_point": [
+            0.64,
+            0.58
+          ]
+        },
+        "tablet-4x3": {
+          "path": "ill-0001-arrival-district/ill-0001-arrival-district-tablet-4x3.webp",
+          "dimensions": [
+            1200,
+            900
+          ],
+          "source_box": [
+            417,
+            0,
+            1672,
+            941
+          ],
+          "focal_point": [
+            0.64,
+            0.58
+          ]
+        },
+        "mobile-4x5": {
+          "path": "ill-0001-arrival-district/ill-0001-arrival-district-mobile-4x5.webp",
+          "dimensions": [
+            1080,
+            1350
+          ],
+          "source_box": [
+            694,
+            0,
+            1447,
+            941
+          ],
+          "focal_point": [
+            0.64,
+            0.58
+          ]
+        },
+        "social-og": {
+          "path": "ill-0001-arrival-district/ill-0001-arrival-district-social-og.webp",
+          "dimensions": [
+            1200,
+            630
+          ],
+          "source_box": [
+            0,
+            63,
+            1672,
+            941
+          ],
+          "focal_point": [
+            0.64,
+            0.58
+          ]
+        },
+        "thumbnail-16x9": {
+          "path": "ill-0001-arrival-district/ill-0001-arrival-district-thumbnail-16x9.webp",
+          "dimensions": [
+            640,
+            360
+          ],
+          "source_box": [
+            0,
+            1,
+            1672,
+            941
+          ],
+          "focal_point": [
+            0.64,
+            0.58
+          ]
+        }
+      }
+    },
+    {
+      "id": "ill-0002-knowledge-district",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "focal_point": [
+        0.62,
+        0.58
+      ],
+      "files": {
+        "desktop-16x9": {
+          "path": "ill-0002-knowledge-district/ill-0002-knowledge-district-desktop-16x9.webp",
+          "dimensions": [
+            1600,
+            900
+          ],
+          "source_box": [
+            0,
+            1,
+            1672,
+            941
+          ],
+          "focal_point": [
+            0.62,
+            0.58
+          ]
+        },
+        "tablet-4x3": {
+          "path": "ill-0002-knowledge-district/ill-0002-knowledge-district-tablet-4x3.webp",
+          "dimensions": [
+            1200,
+            900
+          ],
+          "source_box": [
+            409,
+            0,
+            1664,
+            941
+          ],
+          "focal_point": [
+            0.62,
+            0.58
+          ]
+        },
+        "mobile-4x5": {
+          "path": "ill-0002-knowledge-district/ill-0002-knowledge-district-mobile-4x5.webp",
+          "dimensions": [
+            1080,
+            1350
+          ],
+          "source_box": [
+            660,
+            0,
+            1413,
+            941
+          ],
+          "focal_point": [
+            0.62,
+            0.58
+          ]
+        },
+        "social-og": {
+          "path": "ill-0002-knowledge-district/ill-0002-knowledge-district-social-og.webp",
+          "dimensions": [
+            1200,
+            630
+          ],
+          "source_box": [
+            0,
+            63,
+            1672,
+            941
+          ],
+          "focal_point": [
+            0.62,
+            0.58
+          ]
+        },
+        "thumbnail-16x9": {
+          "path": "ill-0002-knowledge-district/ill-0002-knowledge-district-thumbnail-16x9.webp",
+          "dimensions": [
+            640,
+            360
+          ],
+          "source_box": [
+            0,
+            1,
+            1672,
+            941
+          ],
+          "focal_point": [
+            0.62,
+            0.58
+          ]
+        }
+      }
+    },
+    {
+      "id": "ill-0003-commerce-district",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "focal_point": [
+        0.56,
+        0.62
+      ],
+      "files": {
+        "desktop-16x9": {
+          "path": "ill-0003-commerce-district/ill-0003-commerce-district-desktop-16x9.webp",
+          "dimensions": [
+            1600,
+            900
+          ],
+          "source_box": [
+            0,
+            1,
+            1672,
+            941
+          ],
+          "focal_point": [
+            0.56,
+            0.62
+          ]
+        },
+        "tablet-4x3": {
+          "path": "ill-0003-commerce-district/ill-0003-commerce-district-tablet-4x3.webp",
+          "dimensions": [
+            1200,
+            900
+          ],
+          "source_box": [
+            309,
+            0,
+            1564,
+            941
+          ],
+          "focal_point": [
+            0.56,
+            0.62
+          ]
+        },
+        "mobile-4x5": {
+          "path": "ill-0003-commerce-district/ill-0003-commerce-district-mobile-4x5.webp",
+          "dimensions": [
+            1080,
+            1350
+          ],
+          "source_box": [
+            560,
+            0,
+            1313,
+            941
+          ],
+          "focal_point": [
+            0.56,
+            0.62
+          ]
+        },
+        "social-og": {
+          "path": "ill-0003-commerce-district/ill-0003-commerce-district-social-og.webp",
+          "dimensions": [
+            1200,
+            630
+          ],
+          "source_box": [
+            0,
+            63,
+            1672,
+            941
+          ],
+          "focal_point": [
+            0.56,
+            0.62
+          ]
+        },
+        "thumbnail-16x9": {
+          "path": "ill-0003-commerce-district/ill-0003-commerce-district-thumbnail-16x9.webp",
+          "dimensions": [
+            640,
+            360
+          ],
+          "source_box": [
+            0,
+            1,
+            1672,
+            941
+          ],
+          "focal_point": [
+            0.56,
+            0.62
+          ]
+        }
+      }
+    },
+    {
+      "id": "ill-0004-infrastructure-district",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "focal_point": [
+        0.63,
+        0.56
+      ],
+      "files": {
+        "desktop-16x9": {
+          "path": "ill-0004-infrastructure-district/ill-0004-infrastructure-district-desktop-16x9.webp",
+          "dimensions": [
+            1600,
+            900
+          ],
+          "source_box": [
+            0,
+            1,
+            1672,
+            941
+          ],
+          "focal_point": [
+            0.63,
+            0.56
+          ]
+        },
+        "tablet-4x3": {
+          "path": "ill-0004-infrastructure-district/ill-0004-infrastructure-district-tablet-4x3.webp",
+          "dimensions": [
+            1200,
+            900
+          ],
+          "source_box": [
+            417,
+            0,
+            1672,
+            941
+          ],
+          "focal_point": [
+            0.63,
+            0.56
+          ]
+        },
+        "mobile-4x5": {
+          "path": "ill-0004-infrastructure-district/ill-0004-infrastructure-district-mobile-4x5.webp",
+          "dimensions": [
+            1080,
+            1350
+          ],
+          "source_box": [
+            677,
+            0,
+            1430,
+            941
+          ],
+          "focal_point": [
+            0.63,
+            0.56
+          ]
+        },
+        "social-og": {
+          "path": "ill-0004-infrastructure-district/ill-0004-infrastructure-district-social-og.webp",
+          "dimensions": [
+            1200,
+            630
+          ],
+          "source_box": [
+            0,
+            63,
+            1672,
+            941
+          ],
+          "focal_point": [
+            0.63,
+            0.56
+          ]
+        },
+        "thumbnail-16x9": {
+          "path": "ill-0004-infrastructure-district/ill-0004-infrastructure-district-thumbnail-16x9.webp",
+          "dimensions": [
+            640,
+            360
+          ],
+          "source_box": [
+            0,
+            1,
+            1672,
+            941
+          ],
+          "focal_point": [
+            0.63,
+            0.56
+          ]
+        }
+      }
+    },
+    {
+      "id": "ill-0005-studio-district",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "focal_point": [
+        0.56,
+        0.58
+      ],
+      "files": {
+        "desktop-16x9": {
+          "path": "ill-0005-studio-district/ill-0005-studio-district-desktop-16x9.webp",
+          "dimensions": [
+            1600,
+            900
+          ],
+          "source_box": [
+            0,
+            1,
+            1672,
+            941
+          ],
+          "focal_point": [
+            0.56,
+            0.58
+          ]
+        },
+        "tablet-4x3": {
+          "path": "ill-0005-studio-district/ill-0005-studio-district-tablet-4x3.webp",
+          "dimensions": [
+            1200,
+            900
+          ],
+          "source_box": [
+            309,
+            0,
+            1564,
+            941
+          ],
+          "focal_point": [
+            0.56,
+            0.58
+          ]
+        },
+        "mobile-4x5": {
+          "path": "ill-0005-studio-district/ill-0005-studio-district-mobile-4x5.webp",
+          "dimensions": [
+            1080,
+            1350
+          ],
+          "source_box": [
+            560,
+            0,
+            1313,
+            941
+          ],
+          "focal_point": [
+            0.56,
+            0.58
+          ]
+        },
+        "social-og": {
+          "path": "ill-0005-studio-district/ill-0005-studio-district-social-og.webp",
+          "dimensions": [
+            1200,
+            630
+          ],
+          "source_box": [
+            0,
+            63,
+            1672,
+            941
+          ],
+          "focal_point": [
+            0.56,
+            0.58
+          ]
+        },
+        "thumbnail-16x9": {
+          "path": "ill-0005-studio-district/ill-0005-studio-district-thumbnail-16x9.webp",
+          "dimensions": [
+            640,
+            360
+          ],
+          "source_box": [
+            0,
+            1,
+            1672,
+            941
+          ],
+          "focal_point": [
+            0.56,
+            0.58
+          ]
+        }
+      }
+    },
+    {
+      "id": "ill-0006-gateway-district",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "focal_point": [
+        0.59,
+        0.57
+      ],
+      "files": {
+        "desktop-16x9": {
+          "path": "ill-0006-gateway-district/ill-0006-gateway-district-desktop-16x9.webp",
+          "dimensions": [
+            1600,
+            900
+          ],
+          "source_box": [
+            0,
+            1,
+            1672,
+            941
+          ],
+          "focal_point": [
+            0.59,
+            0.57
+          ]
+        },
+        "tablet-4x3": {
+          "path": "ill-0006-gateway-district/ill-0006-gateway-district-tablet-4x3.webp",
+          "dimensions": [
+            1200,
+            900
+          ],
+          "source_box": [
+            359,
+            0,
+            1614,
+            941
+          ],
+          "focal_point": [
+            0.59,
+            0.57
+          ]
+        },
+        "mobile-4x5": {
+          "path": "ill-0006-gateway-district/ill-0006-gateway-district-mobile-4x5.webp",
+          "dimensions": [
+            1080,
+            1350
+          ],
+          "source_box": [
+            610,
+            0,
+            1363,
+            941
+          ],
+          "focal_point": [
+            0.59,
+            0.57
+          ]
+        },
+        "social-og": {
+          "path": "ill-0006-gateway-district/ill-0006-gateway-district-social-og.webp",
+          "dimensions": [
+            1200,
+            630
+          ],
+          "source_box": [
+            0,
+            63,
+            1672,
+            941
+          ],
+          "focal_point": [
+            0.59,
+            0.57
+          ]
+        },
+        "thumbnail-16x9": {
+          "path": "ill-0006-gateway-district/ill-0006-gateway-district-thumbnail-16x9.webp",
+          "dimensions": [
+            640,
+            360
+          ],
+          "source_box": [
+            0,
+            1,
+            1672,
+            941
+          ],
+          "focal_point": [
+            0.59,
+            0.57
+          ]
+        }
+      }
+    },
+    {
+      "id": "ill-0007-community-square",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "focal_point": [
+        0.53,
+        0.56
+      ],
+      "files": {
+        "desktop-16x9": {
+          "path": "ill-0007-community-square/ill-0007-community-square-desktop-16x9.webp",
+          "dimensions": [
+            1600,
+            900
+          ],
+          "source_box": [
+            0,
+            1,
+            1672,
+            941
+          ],
+          "focal_point": [
+            0.53,
+            0.56
+          ]
+        },
+        "tablet-4x3": {
+          "path": "ill-0007-community-square/ill-0007-community-square-tablet-4x3.webp",
+          "dimensions": [
+            1200,
+            900
+          ],
+          "source_box": [
+            259,
+            0,
+            1514,
+            941
+          ],
+          "focal_point": [
+            0.53,
+            0.56
+          ]
+        },
+        "mobile-4x5": {
+          "path": "ill-0007-community-square/ill-0007-community-square-mobile-4x5.webp",
+          "dimensions": [
+            1080,
+            1350
+          ],
+          "source_box": [
+            510,
+            0,
+            1263,
+            941
+          ],
+          "focal_point": [
+            0.53,
+            0.56
+          ]
+        },
+        "social-og": {
+          "path": "ill-0007-community-square/ill-0007-community-square-social-og.webp",
+          "dimensions": [
+            1200,
+            630
+          ],
+          "source_box": [
+            0,
+            63,
+            1672,
+            941
+          ],
+          "focal_point": [
+            0.53,
+            0.56
+          ]
+        },
+        "thumbnail-16x9": {
+          "path": "ill-0007-community-square/ill-0007-community-square-thumbnail-16x9.webp",
+          "dimensions": [
+            640,
+            360
+          ],
+          "source_box": [
+            0,
+            1,
+            1672,
+            941
+          ],
+          "focal_point": [
+            0.53,
+            0.56
+          ]
+        }
+      }
+    },
+    {
+      "id": "ill-0008-marina-waterfront",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "focal_point": [
+        0.58,
+        0.55
+      ],
+      "files": {
+        "desktop-16x9": {
+          "path": "ill-0008-marina-waterfront/ill-0008-marina-waterfront-desktop-16x9.webp",
+          "dimensions": [
+            1600,
+            900
+          ],
+          "source_box": [
+            0,
+            1,
+            1672,
+            941
+          ],
+          "focal_point": [
+            0.58,
+            0.55
+          ]
+        },
+        "tablet-4x3": {
+          "path": "ill-0008-marina-waterfront/ill-0008-marina-waterfront-tablet-4x3.webp",
+          "dimensions": [
+            1200,
+            900
+          ],
+          "source_box": [
+            342,
+            0,
+            1597,
+            941
+          ],
+          "focal_point": [
+            0.58,
+            0.55
+          ]
+        },
+        "mobile-4x5": {
+          "path": "ill-0008-marina-waterfront/ill-0008-marina-waterfront-mobile-4x5.webp",
+          "dimensions": [
+            1080,
+            1350
+          ],
+          "source_box": [
+            593,
+            0,
+            1346,
+            941
+          ],
+          "focal_point": [
+            0.58,
+            0.55
+          ]
+        },
+        "social-og": {
+          "path": "ill-0008-marina-waterfront/ill-0008-marina-waterfront-social-og.webp",
+          "dimensions": [
+            1200,
+            630
+          ],
+          "source_box": [
+            0,
+            63,
+            1672,
+            941
+          ],
+          "focal_point": [
+            0.58,
+            0.55
+          ]
+        },
+        "thumbnail-16x9": {
+          "path": "ill-0008-marina-waterfront/ill-0008-marina-waterfront-thumbnail-16x9.webp",
+          "dimensions": [
+            640,
+            360
+          ],
+          "source_box": [
+            0,
+            1,
+            1672,
+            941
+          ],
+          "focal_point": [
+            0.58,
+            0.55
+          ]
+        }
+      }
+    },
+    {
+      "id": "ill-0009-logistics-hub",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "focal_point": [
+        0.6,
+        0.58
+      ],
+      "files": {
+        "desktop-16x9": {
+          "path": "ill-0009-logistics-hub/ill-0009-logistics-hub-desktop-16x9.webp",
+          "dimensions": [
+            1600,
+            900
+          ],
+          "source_box": [
+            0,
+            1,
+            1672,
+            941
+          ],
+          "focal_point": [
+            0.6,
+            0.58
+          ]
+        },
+        "tablet-4x3": {
+          "path": "ill-0009-logistics-hub/ill-0009-logistics-hub-tablet-4x3.webp",
+          "dimensions": [
+            1200,
+            900
+          ],
+          "source_box": [
+            376,
+            0,
+            1631,
+            941
+          ],
+          "focal_point": [
+            0.6,
+            0.58
+          ]
+        },
+        "mobile-4x5": {
+          "path": "ill-0009-logistics-hub/ill-0009-logistics-hub-mobile-4x5.webp",
+          "dimensions": [
+            1080,
+            1350
+          ],
+          "source_box": [
+            627,
+            0,
+            1380,
+            941
+          ],
+          "focal_point": [
+            0.6,
+            0.58
+          ]
+        },
+        "social-og": {
+          "path": "ill-0009-logistics-hub/ill-0009-logistics-hub-social-og.webp",
+          "dimensions": [
+            1200,
+            630
+          ],
+          "source_box": [
+            0,
+            63,
+            1672,
+            941
+          ],
+          "focal_point": [
+            0.6,
+            0.58
+          ]
+        },
+        "thumbnail-16x9": {
+          "path": "ill-0009-logistics-hub/ill-0009-logistics-hub-thumbnail-16x9.webp",
+          "dimensions": [
+            640,
+            360
+          ],
+          "source_box": [
+            0,
+            1,
+            1672,
+            941
+          ],
+          "focal_point": [
+            0.6,
+            0.58
+          ]
+        }
+      }
+    },
+    {
+      "id": "ill-0010-night-waterfront",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "focal_point": [
+        0.58,
+        0.56
+      ],
+      "files": {
+        "desktop-16x9": {
+          "path": "ill-0010-night-waterfront/ill-0010-night-waterfront-desktop-16x9.webp",
+          "dimensions": [
+            1600,
+            900
+          ],
+          "source_box": [
+            0,
+            1,
+            1672,
+            941
+          ],
+          "focal_point": [
+            0.58,
+            0.56
+          ]
+        },
+        "tablet-4x3": {
+          "path": "ill-0010-night-waterfront/ill-0010-night-waterfront-tablet-4x3.webp",
+          "dimensions": [
+            1200,
+            900
+          ],
+          "source_box": [
+            342,
+            0,
+            1597,
+            941
+          ],
+          "focal_point": [
+            0.58,
+            0.56
+          ]
+        },
+        "mobile-4x5": {
+          "path": "ill-0010-night-waterfront/ill-0010-night-waterfront-mobile-4x5.webp",
+          "dimensions": [
+            1080,
+            1350
+          ],
+          "source_box": [
+            593,
+            0,
+            1346,
+            941
+          ],
+          "focal_point": [
+            0.58,
+            0.56
+          ]
+        },
+        "social-og": {
+          "path": "ill-0010-night-waterfront/ill-0010-night-waterfront-social-og.webp",
+          "dimensions": [
+            1200,
+            630
+          ],
+          "source_box": [
+            0,
+            63,
+            1672,
+            941
+          ],
+          "focal_point": [
+            0.58,
+            0.56
+          ]
+        },
+        "thumbnail-16x9": {
+          "path": "ill-0010-night-waterfront/ill-0010-night-waterfront-thumbnail-16x9.webp",
+          "dimensions": [
+            640,
+            360
+          ],
+          "source_box": [
+            0,
+            1,
+            1672,
+            941
+          ],
+          "focal_point": [
+            0.58,
+            0.56
+          ]
+        }
+      }
+    }
+  ]
+}

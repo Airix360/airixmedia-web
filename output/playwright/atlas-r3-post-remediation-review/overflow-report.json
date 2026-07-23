@@ -1,0 +1,382 @@
+{
+  "320x568": {
+    "bounds": {
+      "support": {
+        "left": 20,
+        "right": 105.328125,
+        "top": 592.65625,
+        "bottom": 636.65625,
+        "width": 85.328125,
+        "height": 44
+      },
+      "emergency": {
+        "left": 117.328125,
+        "right": 202.65625,
+        "top": 592.65625,
+        "bottom": 640.65625,
+        "width": 85.328125,
+        "height": 48
+      },
+      "clientPortal": {
+        "left": 214.65625,
+        "right": 300,
+        "top": 592.65625,
+        "bottom": 640.65625,
+        "width": 85.34375,
+        "height": 48
+      },
+      "theme": {
+        "left": 20,
+        "right": 300,
+        "top": 652.65625,
+        "bottom": 696.65625,
+        "width": 280,
+        "height": 44
+      },
+      "close": {
+        "left": 258,
+        "right": 300,
+        "top": 20,
+        "bottom": 62,
+        "width": 42,
+        "height": 42
+      }
+    },
+    "documentState": {
+      "viewportWidth": 320,
+      "clientWidth": 320,
+      "rootScrollWidth": 320,
+      "bodyScrollWidth": 320,
+      "bodyOverflow": "hidden"
+    }
+  },
+  "360x800": {
+    "bounds": {
+      "support": {
+        "left": 20,
+        "right": 118.65625,
+        "top": 630.125,
+        "bottom": 674.125,
+        "width": 98.65625,
+        "height": 44
+      },
+      "emergency": {
+        "left": 130.65625,
+        "right": 229.328125,
+        "top": 630.125,
+        "bottom": 674.125,
+        "width": 98.671875,
+        "height": 44
+      },
+      "clientPortal": {
+        "left": 241.328125,
+        "right": 339.984375,
+        "top": 630.125,
+        "bottom": 674.125,
+        "width": 98.65625,
+        "height": 44
+      },
+      "theme": {
+        "left": 20,
+        "right": 339.984375,
+        "top": 686.125,
+        "bottom": 730.125,
+        "width": 319.984375,
+        "height": 44
+      },
+      "close": {
+        "left": 298,
+        "right": 340,
+        "top": 20,
+        "bottom": 62,
+        "width": 42,
+        "height": 42
+      }
+    },
+    "documentState": {
+      "viewportWidth": 360,
+      "clientWidth": 360,
+      "rootScrollWidth": 360,
+      "bodyScrollWidth": 360,
+      "bodyOverflow": "hidden"
+    }
+  },
+  "375x667": {
+    "bounds": {
+      "support": {
+        "left": 20,
+        "right": 123.65625,
+        "top": 630.34375,
+        "bottom": 674.34375,
+        "width": 103.65625,
+        "height": 44
+      },
+      "emergency": {
+        "left": 135.65625,
+        "right": 239.328125,
+        "top": 630.34375,
+        "bottom": 674.34375,
+        "width": 103.671875,
+        "height": 44
+      },
+      "clientPortal": {
+        "left": 251.328125,
+        "right": 354.984375,
+        "top": 630.34375,
+        "bottom": 674.34375,
+        "width": 103.65625,
+        "height": 44
+      },
+      "theme": {
+        "left": 20,
+        "right": 354.984375,
+        "top": 686.34375,
+        "bottom": 730.34375,
+        "width": 334.984375,
+        "height": 44
+      },
+      "close": {
+        "left": 313,
+        "right": 355,
+        "top": 20,
+        "bottom": 62,
+        "width": 42,
+        "height": 42
+      }
+    },
+    "documentState": {
+      "viewportWidth": 375,
+      "clientWidth": 375,
+      "rootScrollWidth": 375,
+      "bodyScrollWidth": 375,
+      "bodyOverflow": "hidden"
+    }
+  },
+  "390x844": {
+    "bounds": {
+      "support": {
+        "left": 20,
+        "right": 128.65625,
+        "top": 655.28125,
+        "bottom": 699.28125,
+        "width": 108.65625,
+        "height": 44
+      },
+      "emergency": {
+        "left": 140.65625,
+        "right": 249.328125,
+        "top": 655.28125,
+        "bottom": 699.28125,
+        "width": 108.671875,
+        "height": 44
+      },
+      "clientPortal": {
+        "left": 261.328125,
+        "right": 369.984375,
+        "top": 655.28125,
+        "bottom": 699.28125,
+        "width": 108.65625,
+        "height": 44
+      },
+      "theme": {
+        "left": 20,
+        "right": 369.984375,
+        "top": 711.28125,
+        "bottom": 755.28125,
+        "width": 349.984375,
+        "height": 44
+      },
+      "close": {
+        "left": 328,
+        "right": 370,
+        "top": 20,
+        "bottom": 62,
+        "width": 42,
+        "height": 42
+      }
+    },
+    "documentState": {
+      "viewportWidth": 390,
+      "clientWidth": 390,
+      "rootScrollWidth": 390,
+      "bodyScrollWidth": 390,
+      "bodyOverflow": "hidden"
+    }
+  },
+  "412x915": {
+    "bounds": {
+      "support": {
+        "left": 20,
+        "right": 136,
+        "top": 676.71875,
+        "bottom": 720.71875,
+        "width": 116,
+        "height": 44
+      },
+      "emergency": {
+        "left": 148,
+        "right": 264,
+        "top": 676.71875,
+        "bottom": 720.71875,
+        "width": 116,
+        "height": 44
+      },
+      "clientPortal": {
+        "left": 276,
+        "right": 392,
+        "top": 676.71875,
+        "bottom": 720.71875,
+        "width": 116,
+        "height": 44
+      },
+      "theme": {
+        "left": 20,
+        "right": 392,
+        "top": 732.71875,
+        "bottom": 776.71875,
+        "width": 372,
+        "height": 44
+      },
+      "close": {
+        "left": 350,
+        "right": 392,
+        "top": 20,
+        "bottom": 62,
+        "width": 42,
+        "height": 42
+      }
+    },
+    "documentState": {
+      "viewportWidth": 412,
+      "clientWidth": 412,
+      "rootScrollWidth": 412,
+      "bodyScrollWidth": 412,
+      "bodyOverflow": "hidden"
+    }
+  },
+  "844x390": {
+    "bounds": {
+      "support": {
+        "left": 184.53125,
+        "right": 245.84375,
+        "top": 817.5,
+        "bottom": 841.5,
+        "width": 61.3125,
+        "height": 24
+      },
+      "emergency": {
+        "left": 275.84375,
+        "right": 363.078125,
+        "top": 817.5,
+        "bottom": 841.5,
+        "width": 87.234375,
+        "height": 24
+      },
+      "clientPortal": {
+        "left": 393.078125,
+        "right": 486.546875,
+        "top": 817.5,
+        "bottom": 841.5,
+        "width": 93.46875,
+        "height": 24
+      },
+      "theme": {
+        "left": 516.546875,
+        "right": 659.453125,
+        "top": 817.5,
+        "bottom": 861.5,
+        "width": 142.90625,
+        "height": 44
+      },
+      "close": {
+        "left": 759.8125,
+        "right": 801.8125,
+        "top": 28,
+        "bottom": 70,
+        "width": 42,
+        "height": 42
+      }
+    },
+    "documentState": {
+      "viewportWidth": 844,
+      "clientWidth": 844,
+      "rootScrollWidth": 844,
+      "bodyScrollWidth": 844,
+      "bodyOverflow": "hidden"
+    }
+  },
+  "increasedText125Percent": {
+    "bounds": {
+      "support": {
+        "left": 20,
+        "right": 126.65625,
+        "top": 671.5,
+        "bottom": 715.5,
+        "width": 106.65625,
+        "height": 44
+      },
+      "emergency": {
+        "left": 141.65625,
+        "right": 248.328125,
+        "top": 671.5,
+        "bottom": 731.5,
+        "width": 106.671875,
+        "height": 60
+      },
+      "clientPortal": {
+        "left": 263.328125,
+        "right": 369.984375,
+        "top": 671.5,
+        "bottom": 731.5,
+        "width": 106.65625,
+        "height": 60
+      },
+      "theme": {
+        "left": 20,
+        "right": 369.984375,
+        "top": 746.5,
+        "bottom": 790.5,
+        "width": 349.984375,
+        "height": 44
+      },
+      "close": {
+        "left": 328,
+        "right": 370,
+        "top": 20,
+        "bottom": 62,
+        "width": 42,
+        "height": 42
+      }
+    },
+    "documentState": {
+      "viewportWidth": 390,
+      "clientWidth": 390,
+      "rootScrollWidth": 390,
+      "bodyScrollWidth": 390,
+      "bodyOverflow": "hidden"
+    }
+  },
+  "keyboard": {
+    "visited": [
+      "Close menu",
+      "01Work",
+      "02Services",
+      "03Publishing",
+      "04Open Source",
+      "05Studio",
+      "06Contact",
+      "Support",
+      "Emergency",
+      "Client Portal",
+      "Switch to light mode",
+      "Close menu",
+      "01Work"
+    ],
+    "escapeClosed": true,
+    "focusReturned": true
+  },
+  "reducedMotion": {
+    "mediaMatches": true,
+    "transitionDuration": "0s"
+  }
+}

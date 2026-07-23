@@ -1,0 +1,88 @@
+.landmarks {
+  min-height: 100vh;
+  overflow-x: clip;
+  color: var(--atlas-color-charcoal-ink);
+  background-color: var(--atlas-color-paper-cream);
+  background-image: var(--proof-texture);
+  background-size: 24rem;
+  font-family: var(--atlas-font-body);
+}
+
+.landmarks * { box-sizing: border-box; }
+.landmarks a { color: inherit; }
+.landmarks :focus-visible { outline: var(--atlas-border-focus); outline-offset: 4px; }
+
+.reviewStatus { min-height: 2.65rem; display: flex; align-items: center; justify-content: center; gap: 1rem; padding: .55rem 1rem; color: var(--atlas-color-paper-cream); background: var(--atlas-color-deep-umber); border-bottom: 1px solid var(--atlas-color-charcoal-ink); font: .62rem/1.3 var(--atlas-font-wayfinding); letter-spacing: .045em; }
+.reviewStatus strong { color: var(--atlas-color-transit-yellow); text-transform: uppercase; }
+.reviewStatus span + span { padding-left: 1rem; border-left: 1px solid var(--atlas-color-rule-strong); }
+
+.introduction { min-height: 56svh; display: grid; grid-template-columns: 1.2fr .7fr; align-content: center; gap: 2rem 6vw; padding: clamp(4rem, 9vw, 9rem) clamp(1rem, 6vw, 6rem); color: var(--atlas-color-paper-cream); background: var(--atlas-color-charcoal-ink); }
+.introduction > div > span { color: var(--atlas-color-transit-yellow); font: .65rem/1.2 var(--atlas-font-wayfinding); letter-spacing: .1em; text-transform: uppercase; }
+.introduction h1 { max-width: 10ch; margin: .9rem 0 0; font: 600 clamp(4rem, 9vw, 9.5rem)/.82 var(--atlas-font-structural); letter-spacing: -.075em; }
+.introduction > p { max-width: 30ch; align-self: end; margin: 0; color: var(--atlas-color-paper-aged); font: clamp(1.4rem, 2.3vw, 2.3rem)/1.12 var(--atlas-font-editorial); }
+.introduction nav { grid-column: 1 / -1; display: flex; border-top: 1px solid var(--atlas-color-rule-strong); }
+.introduction nav a { min-height: 3.5rem; display: inline-flex; align-items: center; padding: .75rem 1.25rem; border-right: 1px solid var(--atlas-color-rule-strong); font: .67rem/1.2 var(--atlas-font-wayfinding); text-decoration: none; }
+
+.technology { background: var(--atlas-color-paper-aged); }
+.technologyOpening { position: relative; padding: clamp(1rem, 3vw, 3rem); background-color: var(--atlas-color-deep-umber); background-image: var(--landmark-route); background-repeat: no-repeat; background-position: 98% 2rem; background-size: 28%; }
+.technologyScene { height: min(64vw, 46rem); min-height: 35rem; border: 1px solid var(--atlas-color-charcoal-ink); }
+.technologyScene::after { content: "CANDIDATE DISTRICT ART · INTERNAL"; position: absolute; z-index: var(--atlas-depth-caption); top: 1rem; right: 1rem; padding: .5rem .65rem; color: var(--atlas-color-paper-cream); background: var(--atlas-color-deep-umber); font: .57rem/1 var(--atlas-font-wayfinding); letter-spacing: .08em; }
+.technologyIdentity { margin-top: -1px; display: grid; grid-template-columns: minmax(12rem, .25fr) 1fr; gap: clamp(1.5rem, 4vw, 4rem); padding: clamp(1.5rem, 4vw, 4rem); color: var(--atlas-color-paper-cream); background: var(--atlas-color-charcoal-ink); border: 1px solid var(--atlas-color-rule-strong); }
+.technologyIdentity :global([data-district="commerce"]) { color: var(--atlas-color-paper-cream); }
+.technologyIdentity :global([data-district="commerce"] small) { color: var(--atlas-color-paper-aged); }
+
+.technologyProof { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(24rem, .8fr); gap: clamp(2rem, 5vw, 6rem); padding: clamp(3rem, 7vw, 7rem) clamp(1rem, 5vw, 5rem); }
+.technologyMedia { min-width: 0; }
+.proofPrinciple { display: block; margin-bottom: 1rem; color: var(--atlas-color-transit-yellow); font: .65rem/1.2 var(--atlas-font-wayfinding); letter-spacing: .08em; text-transform: uppercase; }
+.technologyRegister { display: grid; align-content: start; gap: clamp(3rem, 6vw, 6rem); }
+.relatedRoutes { padding: 0 clamp(1rem, 5vw, 5rem) clamp(3rem, 6vw, 6rem); }
+
+.publishing { color: var(--atlas-color-charcoal-ink); background-color: var(--atlas-color-paper-cream); background-image: var(--archive-paper); background-size: 36rem; }
+.publishingOpening { display: grid; grid-template-columns: minmax(25rem, .6fr) minmax(0, 1.4fr); min-height: 90svh; padding: clamp(2rem, 5vw, 5rem); gap: clamp(2rem, 5vw, 5rem); align-items: center; }
+.publishingIdentity { position: relative; z-index: 2; display: grid; gap: 3rem; padding: clamp(2rem, 4vw, 4rem) 0; }
+.publishingIdentity::before { content: "ARCHIVE COPY · CANDIDATE DISTRICT ART"; width: max-content; padding: .45rem .6rem; color: var(--atlas-color-deep-umber); border: 1px solid currentColor; font: .56rem/1 var(--atlas-font-wayfinding); letter-spacing: .08em; transform: rotate(-1.5deg); }
+.publishingScene { height: min(55vw, 48rem); min-height: 38rem; box-shadow: -.8rem .8rem 0 var(--atlas-color-deep-umber); }
+.publishingScene::after { content: "READING COURTYARD · INTERNAL STUDY"; position: absolute; z-index: var(--atlas-depth-caption); left: 1rem; bottom: 1rem; padding: .5rem .65rem; color: var(--atlas-color-deep-umber); background: var(--atlas-color-paper-cream); font: .57rem/1 var(--atlas-font-wayfinding); letter-spacing: .08em; }
+
+.publishingProof { max-width: 118rem; margin-inline: auto; padding: clamp(4rem, 8vw, 8rem) clamp(1rem, 7vw, 7rem); }
+.archiveHeading { display: grid; grid-template-columns: .35fr 1fr; gap: 2rem; align-items: end; margin-bottom: clamp(2rem, 4vw, 4rem); padding-bottom: 1.5rem; border-bottom: 2px solid var(--atlas-color-charcoal-ink); }
+.archiveHeading span { color: var(--atlas-color-terracotta); font: .62rem/1.3 var(--atlas-font-wayfinding); letter-spacing: .08em; text-transform: uppercase; }
+.archiveHeading strong { max-width: 22ch; font: 520 clamp(2.5rem, 5vw, 5.3rem)/.92 var(--atlas-font-editorial); }
+.publishingRecord { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(3rem, 7vw, 8rem); margin-top: clamp(4rem, 8vw, 8rem); }
+.publishing .relatedRoutes { padding: 0 clamp(1rem, 7vw, 7rem) clamp(4rem, 8vw, 8rem); }
+
+@supports (animation-timeline: view()) {
+  .technologyScene { animation: routeArrival both linear; animation-timeline: view(); animation-range: entry 0% cover 30%; }
+}
+
+@keyframes routeArrival { from { clip-path: inset(0 8% 0 0); } to { clip-path: inset(0); } }
+
+@media (max-width: 1050px) {
+  .technologyProof { grid-template-columns: 1fr; }
+  .publishingOpening { grid-template-columns: 1fr; }
+  .publishingIdentity { order: 2; }
+  .publishingScene { height: 68vw; min-height: 35rem; }
+  .publishingRecord { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 700px) {
+  .reviewStatus { align-items: flex-start; justify-content: flex-start; flex-wrap: wrap; gap: .35rem .75rem; }
+  .reviewStatus span + span { padding-left: 0; border-left: 0; }
+  .introduction { min-height: 70svh; grid-template-columns: 1fr; padding-block: 5rem; }
+  .introduction h1 { font-size: clamp(4rem, 22vw, 6.4rem); }
+  .introduction > p { align-self: start; }
+  .introduction nav { flex-direction: column; }
+  .introduction nav a { border-right: 0; border-bottom: 1px solid var(--atlas-color-rule-strong); }
+  .technologyOpening { padding: 0; background-image: none; }
+  .technologyScene { height: 78svh; min-height: 39rem; border-inline: 0; }
+  .technologyIdentity { grid-template-columns: 1fr; padding: 1.25rem 1rem 2.5rem; border-inline: 0; }
+  .technologyProof { padding-block: 4rem; }
+  .publishingOpening { min-height: auto; padding: 4rem 1rem; }
+  .publishingScene { height: 74svh; min-height: 39rem; order: 1; box-shadow: -.4rem .4rem 0 var(--atlas-color-deep-umber); }
+  .publishingIdentity { gap: 2rem; padding-bottom: 0; }
+  .archiveHeading { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .technologyScene { animation: none !important; clip-path: none !important; transform: none !important; }
+}

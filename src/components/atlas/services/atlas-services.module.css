@@ -1,0 +1,95 @@
+.servicePathway { position: relative; display: grid; grid-template-columns: 4.5rem minmax(17rem, .7fr) minmax(0, 1.3fr); border-top: 1px solid var(--atlas-color-charcoal-ink); scroll-margin-top: 1rem; }
+.pathwayRoute { display: flex; flex-direction: column; align-items: center; gap: 1rem; padding-top: 2rem; border-right: 1px solid var(--atlas-color-charcoal-ink); color: var(--atlas-color-terracotta); font: .68rem/1 var(--atlas-font-wayfinding); }
+.pathwayRoute i { width: 2px; flex: 1; min-height: 9rem; background: currentColor; transform-origin: top; }
+.servicePathway > header { padding: clamp(2rem, 5vw, 5rem); border-right: 1px solid var(--atlas-color-charcoal-ink); }
+.servicePathway > header > span, .capabilityGroup > span, .servicePathway footer span { color: var(--atlas-color-terracotta); font: .62rem/1.25 var(--atlas-font-wayfinding); letter-spacing: .08em; text-transform: uppercase; }
+.servicePathway h2 { max-width: 9ch; margin: .7rem 0 1.5rem; font: 580 clamp(2.6rem, 5vw, 5.8rem)/.86 var(--atlas-font-structural); letter-spacing: -.065em; }
+.servicePathway > header p { max-width: 32ch; margin: 0; font: 1.12rem/1.5 var(--atlas-font-editorial); }
+.pathwayCapabilities { display: grid; grid-template-columns: repeat(3, 1fr); }
+.capabilityGroup { min-width: 0; padding: clamp(2rem, 3vw, 3.5rem); border-right: 1px solid var(--atlas-color-rule-strong); }
+.capabilityGroup:last-child { border-right: 0; }
+.capabilityGroup h3 { min-height: 3.8rem; margin: .65rem 0 2rem; font: 620 1rem/1.15 var(--atlas-font-body); }
+.capabilityGroup ul { margin: 0; padding: 0; list-style: none; }
+.capabilityGroup li { position: relative; padding: .8rem 0 .8rem 1.2rem; border-top: 1px solid var(--atlas-color-rule-strong); font-size: .9rem; line-height: 1.4; }
+.capabilityGroup li::before { content: ""; position: absolute; top: 1.15rem; left: 0; width: .45rem; height: .45rem; background: var(--atlas-color-transit-yellow); border: 1px solid var(--atlas-color-charcoal-ink); }
+.servicePathway footer { grid-column: 2 / -1; display: flex; align-items: stretch; justify-content: space-between; border-top: 1px solid var(--atlas-color-charcoal-ink); }
+.servicePathway footer > div { display: grid; gap: .35rem; padding: 1.25rem clamp(2rem, 5vw, 5rem); }
+.servicePathway footer strong { font: 650 .72rem/1.3 var(--atlas-font-wayfinding); letter-spacing: .035em; text-transform: uppercase; }
+.servicePathway footer small { max-width: 65ch; color: var(--atlas-color-deep-umber); font: .62rem/1.35 var(--atlas-font-wayfinding); }
+.servicePathway footer a { min-width: 15rem; display: flex; align-items: center; justify-content: center; padding: 1rem 1.5rem; color: var(--atlas-color-paper-cream); background: var(--atlas-color-deep-umber); font: 650 .72rem/1.2 var(--atlas-font-wayfinding); text-decoration: none; }
+.servicePathway[data-evidence-status="proposed_internal"] footer strong { color: var(--atlas-color-terracotta); }
+
+.servicePathway[data-pathway-variant="knowledge"] {
+  grid-template-columns: minmax(7rem, .22fr) minmax(17rem, .62fr) minmax(0, 1.16fr);
+  margin-inline: clamp(1rem, 6vw, 6rem);
+  border: 1px solid var(--atlas-color-deep-umber);
+  border-bottom: 0;
+  background: color-mix(in srgb, var(--atlas-color-paper-cream) 88%, transparent);
+}
+.servicePathway[data-pathway-variant="knowledge"]:last-child { border-bottom: 1px solid var(--atlas-color-deep-umber); }
+.servicePathway[data-pathway-variant="knowledge"] .pathwayRoute { color: var(--atlas-color-lagoon-blue); background: var(--atlas-color-paper-aged); }
+.servicePathway[data-pathway-variant="knowledge"] > header { padding: clamp(2rem, 4vw, 4rem); }
+.servicePathway[data-pathway-variant="knowledge"] h2 { max-width: 12ch; font-family: var(--atlas-font-editorial); font-size: clamp(2.2rem, 4vw, 4.4rem); line-height: .94; }
+.servicePathway[data-pathway-variant="knowledge"] .pathwayCapabilities { grid-template-columns: 1fr; }
+.servicePathway[data-pathway-variant="knowledge"] .capabilityGroup { display: grid; grid-template-columns: minmax(8rem, .35fr) 1fr; gap: 0 2rem; padding: 1.4rem 2rem; border-right: 0; border-bottom: 1px solid var(--atlas-color-rule-strong); }
+.servicePathway[data-pathway-variant="knowledge"] .capabilityGroup:last-child { border-bottom: 0; }
+.servicePathway[data-pathway-variant="knowledge"] .capabilityGroup > span { grid-column: 1; }
+.servicePathway[data-pathway-variant="knowledge"] .capabilityGroup h3 { grid-column: 1; min-height: 0; margin-bottom: 0; }
+.servicePathway[data-pathway-variant="knowledge"] .capabilityGroup ul { grid-column: 2; grid-row: 1 / span 2; }
+.servicePathway[data-pathway-variant="knowledge"] .capabilityGroup li::before { background: var(--atlas-color-lagoon-blue); }
+.servicePathway[data-pathway-variant="knowledge"] footer a { background: var(--atlas-color-lagoon-blue); }
+
+.servicePathway[data-pathway-variant="infrastructure"] {
+  grid-template-columns: 3.75rem minmax(16rem, .58fr) minmax(0, 1.42fr);
+  margin-inline: clamp(1rem, 5vw, 5rem);
+  color: var(--atlas-color-paper-cream);
+  background: var(--atlas-color-charcoal-ink);
+  border-color: var(--atlas-color-rule-strong);
+}
+.servicePathway[data-pathway-variant="infrastructure"] .pathwayRoute { color: var(--atlas-color-transit-yellow); border-color: var(--atlas-color-rule-strong); }
+.servicePathway[data-pathway-variant="infrastructure"] > header { padding: clamp(2rem, 4vw, 4rem); border-color: var(--atlas-color-rule-strong); }
+.servicePathway[data-pathway-variant="infrastructure"] h2 { max-width: 12ch; font-size: clamp(2.2rem, 4.4vw, 4.8rem); line-height: .9; }
+.servicePathway[data-pathway-variant="infrastructure"] .pathwayCapabilities { grid-template-columns: repeat(3, 1fr); }
+.servicePathway[data-pathway-variant="infrastructure"] .capabilityGroup { border-color: var(--atlas-color-rule-strong); }
+.servicePathway[data-pathway-variant="infrastructure"] .capabilityGroup li { border-color: var(--atlas-color-rule-strong); }
+.servicePathway[data-pathway-variant="infrastructure"] .capabilityGroup li::before { background: var(--atlas-color-transit-yellow); border-color: var(--atlas-color-paper-cream); }
+.servicePathway[data-pathway-variant="infrastructure"] footer { border-color: var(--atlas-color-rule-strong); }
+.servicePathway[data-pathway-variant="infrastructure"] footer small { color: var(--atlas-color-paper-aged); }
+.servicePathway[data-pathway-variant="infrastructure"] footer a { color: var(--atlas-color-charcoal-ink); background: var(--atlas-color-transit-yellow); }
+
+@supports (animation-timeline: view()) {
+  .pathwayRoute i { animation: serviceRoute both linear; animation-timeline: view(); animation-range: entry 10% cover 45%; }
+}
+@keyframes serviceRoute { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+
+@media (max-width: 1050px) {
+  .servicePathway { grid-template-columns: 3.5rem 1fr; }
+  .servicePathway > header { border-right: 0; }
+  .pathwayCapabilities { grid-column: 2; border-top: 1px solid var(--atlas-color-charcoal-ink); }
+  .servicePathway footer { grid-column: 2; }
+  .servicePathway[data-pathway-variant="knowledge"] { grid-template-columns: 3.5rem 1fr; }
+  .servicePathway[data-pathway-variant="infrastructure"] { grid-template-columns: 3.5rem 1fr; }
+  .servicePathway[data-pathway-variant="infrastructure"] .pathwayCapabilities { grid-column: 2; }
+}
+
+@media (max-width: 700px) {
+  .servicePathway { grid-template-columns: 2.75rem 1fr; }
+  .pathwayRoute { padding-top: 1.5rem; }
+  .servicePathway > header { padding: 2.5rem 1rem; }
+  .servicePathway h2 { font-size: clamp(2.7rem, 15vw, 4.6rem); }
+  .pathwayCapabilities { grid-template-columns: 1fr; }
+  .capabilityGroup { padding: 2rem 1rem; border-right: 0; border-top: 1px solid var(--atlas-color-rule-strong); }
+  .capabilityGroup h3 { min-height: auto; }
+  .servicePathway footer { flex-direction: column; }
+  .servicePathway footer > div { padding: 1.25rem 1rem; }
+  .servicePathway footer a { min-width: 0; min-height: 3.5rem; justify-content: flex-start; }
+  .servicePathway[data-pathway-variant="knowledge"] { grid-template-columns: 2.75rem 1fr; margin-inline: 1rem; }
+  .servicePathway[data-pathway-variant="knowledge"] .capabilityGroup { grid-template-columns: 1fr; gap: 0; padding: 1.6rem 1rem; }
+  .servicePathway[data-pathway-variant="knowledge"] .capabilityGroup ul { grid-column: 1; grid-row: auto; margin-top: 1rem; }
+  .servicePathway[data-pathway-variant="infrastructure"] { grid-template-columns: 2.75rem 1fr; margin-inline: 1rem; }
+  .servicePathway[data-pathway-variant="infrastructure"] .pathwayCapabilities { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pathwayRoute i { animation: none !important; transform: none !important; }
+}

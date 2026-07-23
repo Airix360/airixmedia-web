@@ -1,0 +1,3 @@
+import { trustRegister } from "@/content/atlas/trust";
+import styles from "./atlas-trust.module.css";
+export function TrustRegister(){return <section className={styles.register} id="trust-register" tabIndex={-1} aria-labelledby="register-title"><header><span>Trust register</span><h2 id="register-title">Confidence stays proportional to evidence.</h2><p>Each entry states what kind of record exists and where its boundary begins.</p></header><ol data-trust-register>{trustRegister.map(item=><li key={item.index}><span>{item.index}</span><h3>{item.title}</h3><strong>{item.status}</strong><p>{item.detail}</p></li>)}</ol></section>}
