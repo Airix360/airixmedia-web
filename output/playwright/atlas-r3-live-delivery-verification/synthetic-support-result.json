@@ -1,8 +1,14 @@
 {
   "form": "support",
   "marker": "STAGING TEST — NO ACTION REQUIRED",
-  "attempted": false,
-  "acceptedByProvider": false,
-  "recipientConfirmed": false,
-  "reason": "blocked-before-send"
+  "attempted": true,
+  "acceptedByProvider": true,
+  "deliveredEventObserved": true,
+  "rawMailboxReceiptConfirmed": true,
+  "addressedRoleMatched": true,
+  "referenceMatched": true,
+  "replyToRequesterConfirmed": true,
+  "multipartReadable": true,
+  "reference": "AM-SUP-WO13Y9NUI-VJ",
+  "fingerprint": "cb519375b3238f1f"
 }

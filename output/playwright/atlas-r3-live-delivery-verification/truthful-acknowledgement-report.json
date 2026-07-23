@@ -4,5 +4,6 @@
   "emergency": "delivery-not-acceptance",
   "fallbackSuccessDisclosed": true,
   "monitoringHoursPresent": true,
-  "claim24x7": false
+  "claim24x7": false,
+  "stagingMarkerPresentOnFinalEmergencyAcknowledgements": true
 }

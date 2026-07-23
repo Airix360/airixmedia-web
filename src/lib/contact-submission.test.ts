@@ -119,6 +119,17 @@ describe("providers and routing", () => {
     expect(deliver.mock.calls[0][0].subject).toMatch(/^\[STAGING TEST — NO ACTION REQUIRED\]/);
   });
 
+  it("marks the staging emergency acknowledgement in both subject and body", async () => {
+    process.env.APP_ENVIRONMENT = "staging";
+    process.env.EMERGENCY_ACKNOWLEDGEMENT_ENABLED = "true";
+    const deliver = vi.fn().mockResolvedValue({ ok: true, requestId: "safe-id" });
+    await submitContactEnquiry(emergency, { name: "mock", deliver });
+    expect(deliver).toHaveBeenCalledTimes(2);
+    expect(deliver.mock.calls[1][0].subject).toMatch(/^\[STAGING TEST — NO ACTION REQUIRED\]/);
+    expect(deliver.mock.calls[1][0].textContent).toMatch(/^\[STAGING TEST — NO ACTION REQUIRED\]/);
+    expect(deliver.mock.calls[1][0].htmlContent).toContain("[STAGING TEST — NO ACTION REQUIRED]");
+  });
+
   it("fails truthfully when no emergency route exists", async () => {
     delete process.env.EMERGENCY_RECIPIENTS;
     await expect(submitContactEnquiry(emergency)).resolves.toMatchObject({ ok: false, code: "provider_not_configured", message: expect.stringContaining("has not been sent") });

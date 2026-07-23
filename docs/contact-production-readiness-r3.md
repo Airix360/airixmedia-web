@@ -1,9 +1,9 @@
 # Contact production readiness, R3
 
-Review date: 18 July 2026  
+Review date: 23 July 2026
 Implementation base: `4bc5f85737ca88cf0dade638faede25d72171b09`
 Version: `2.4.0.0`
-Status: **adapters and role aliases configured; production delivery blocked by rejected Brevo credential and unconfirmed monitoring**
+Status: **live staged delivery verified; launch remains blocked by topology and human emergency-duty acceptance**
 
 ## Delivery design
 
@@ -35,8 +35,8 @@ Same-origin validation and the honeypot remain. Privacy-preserving SHA-256 reque
 
 ## Production validation and rollback
 
-Before closing either operational P1: configure approved monitored recipient groups and rota; inject secrets through the deployment secret store; run a controlled project, publishing, booking, general, support and emergency delivery; force primary emergency failure and observe fallback; verify acknowledgements, headers and structured logs; verify no secrets/PII leak; and confirm mailbox monitoring ownership. Live Brevo delivery has not been exercised in this development environment.
+Live staged verification exercised project, publishing, booking, general, support and emergency delivery through the production Brevo adapter. A controlled primary-emergency failure exercised the real fallback route. Provider acceptance, delivery events, raw-mail receipt, role alias, requester Reply-To, references, multipart content, acknowledgements and secret/PII boundaries passed. No public deployment occurred.
 
 Rollback: remove `CONTACT_SUBMISSION_PROVIDER` and `EMERGENCY_ESCALATION_PROVIDER` (or their credentials/recipients) to fail closed with truthful unavailable responses, then revert the feature release if needed. Do not point emergency traffic at the general inbox.
 
-Current infrastructure evidence is recorded in `docs/atlas-r3-live-delivery-verification.md`. The role aliases now exist, but receipt, sender authentication, duty coverage and live delivery remain unverified. Remaining limitations: rejected Brevo credential, no confirmed sender status, no ticket/system-of-record API, no distributed rate limiter, no challenge provider, no attachment adapter, no delivery retry queue, no calendar confirmation, and no live-delivery evidence.
+Current infrastructure evidence is recorded in `docs/atlas-r3-live-delivery-verification.md`. Contact delivery and emergency technical routing are verified. Remaining limitations: human emergency-duty coverage has not been signed off; the deployment topology is not provisioned; the credential cannot read Brevo administrative sender/domain inventory; and there is no ticket/system-of-record API, distributed rate limiter, challenge provider, attachment adapter, delivery retry queue or calendar confirmation.

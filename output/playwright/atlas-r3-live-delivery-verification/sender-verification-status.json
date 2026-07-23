@@ -1,6 +1,9 @@
 {
   "logicalSender": "Airix Media notifications",
-  "providerApiAuthentication": "rejected",
-  "senderVerified": "unconfirmed",
-  "liveSendingAllowed": false
+  "providerApiAuthentication": "pass",
+  "transactionalSending": "active",
+  "senderAndDomainOperationalProof": "accepted-delivered-and-dkim-signed",
+  "dkimSigningDomainMatches": true,
+  "administrativeInventoryEndpoint": "permission-scope-restricted",
+  "rawProviderResponsesStored": false
 }

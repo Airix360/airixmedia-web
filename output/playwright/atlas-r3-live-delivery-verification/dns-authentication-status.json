@@ -1,7 +1,8 @@
 {
   "mx": "present",
-  "spf": "present-provider-authorization-unconfirmed",
-  "dkim": "present-provider-status-unconfirmed",
+  "spf": "present",
+  "dkim": "provider-message-signed-for-airix-domain",
   "dmarc": "present-no-conflict-observed",
-  "dnsChanged": false
+  "dnsChanged": false,
+  "administrativeProviderStatus": "permission-scope-restricted"
 }

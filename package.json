@@ -9,6 +9,7 @@
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
+    "test:live:brevo": "vitest run --disableConsoleIntercept src/lib/contact-live-brevo.test.ts",
     "test:watch": "vitest",
     "test:e2e": "playwright test",
     "audit:operational-forms": "node scripts/audit-operational-forms.mjs",

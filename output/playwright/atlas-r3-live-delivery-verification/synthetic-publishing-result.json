@@ -1,8 +1,14 @@
 {
   "form": "publishing",
   "marker": "STAGING TEST — NO ACTION REQUIRED",
-  "attempted": false,
-  "acceptedByProvider": false,
-  "recipientConfirmed": false,
-  "reason": "blocked-before-send"
+  "attempted": true,
+  "acceptedByProvider": true,
+  "deliveredEventObserved": true,
+  "rawMailboxReceiptConfirmed": true,
+  "addressedRoleMatched": true,
+  "referenceMatched": true,
+  "replyToRequesterConfirmed": true,
+  "multipartReadable": true,
+  "reference": "AM-PUB-ZJ8HH5HNYAVI",
+  "fingerprint": "860eab17c425b8e3"
 }

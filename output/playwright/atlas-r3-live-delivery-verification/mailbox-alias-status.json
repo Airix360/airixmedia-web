@@ -5,6 +5,9 @@
   "emergencyAlias": "present",
   "operationsFallbackAlias": "present",
   "notificationsAlias": "present",
-  "endToEndReceipt": "unconfirmed",
-  "independentlyObservableEmergencyFallback": "unconfirmed"
+  "endToEndReceipt": "confirmed",
+  "addressedAliasPreserved": true,
+  "independentlyObservableEmergencyFallback": "confirmed",
+  "replyToRequesterConfirmed": true,
+  "autoReplyLoopObserved": false
 }

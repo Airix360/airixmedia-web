@@ -1,6 +1,6 @@
 # Airix Media production operations decisions
 
-Date: 18 July 2026
+Date: 23 July 2026
 Branch: `feat/atlas-r3-form-delivery-emergency-routing`
 Version: `2.4.0.0`
 
@@ -18,9 +18,9 @@ Airix Media Operations owns enquiry and support mail. The Emergency Duty Operato
 
 Consultation acknowledgement: the request was delivered, but no appointment exists until Airix confirms availability. Support acknowledgement: delivery only, with no ticket or assignment claim. Emergency acknowledgement: delivery only, chargeability warning, monitoring hours and no acceptance/assignment/technician-seen claim. A fallback-success acknowledgement explicitly says the fallback route was used.
 
-## Mailbox implementation and current result
+## Mailbox implementation and verified result
 
-The approved cPanel model permits aliases into one monitored operations mailbox. `hello@airixmedia.com` and `support@airixmedia.com` already existed as independent mailboxes. On 18 July 2026, the missing publishing, emergency, operations and notifications role aliases were provisioned through cPanel and configured with one approved operations target each. Address existence/routing configuration is verified; end-to-end receipt, alias header preservation, independent emergency/fallback observability, auto-reply safety and human monitoring remain unconfirmed.
+The approved cPanel model permits aliases into one monitored operations mailbox. `hello@airixmedia.com` and `support@airixmedia.com` exist as independent mailboxes; publishing, emergency, operations and notifications are configured role aliases. On 23 July 2026, received raw mail confirmed end-to-end receipt, preservation of the addressed role alias, distinct emergency and fallback routing, requester Reply-To headers, matching references and no observed automatic-reply loop. Human monitoring remains an operational acceptance item.
 
 Provisioning checklist:
 
@@ -30,22 +30,22 @@ Provisioning checklist:
 - [x] Emergency alias exists.
 - [x] Operations fallback alias exists.
 - [x] Notifications sender alias exists.
-- [ ] Send one synthetic message to every role address and confirm the addressed alias in the received headers.
-- [ ] Confirm emergency and fallback can be distinguished in the monitored mailbox.
-- [ ] Confirm no forward or automatic-reply loop.
+- [x] Send one synthetic message to every role address and confirm the addressed alias in the received headers.
+- [x] Confirm emergency and fallback can be distinguished in the monitored mailbox.
+- [x] Confirm no forward or automatic-reply loop was observed.
 - [ ] Confirm Emergency Duty Operator coverage for the approved hours.
 
 ## DNS and sender authentication
 
-Public DNS currently has MX, an SPF record, cPanel DKIM, a `mail._domainkey` record, Brevo domain-verification TXT and DMARC (`p=none`). No DNS was changed. Brevo-specific SPF authorization/alignment and Brevo DKIM/domain status could not be confirmed because the stored API credential returned HTTP 401. `notifications@airixmedia.com` sender verification therefore remains unproven.
+Public DNS has MX, SPF, DKIM/domain-verification material and DMARC (`p=none`). No DNS was changed. Brevo authentication now succeeds, transactional messages are accepted and delivered, and received mail is DKIM-signed for `airixmedia.com`. The credential's administrative sender/domain inventory endpoints remain permission-scope restricted (HTTP 403), so their dashboard fields were not independently read.
 
 Checklist before live sending:
 
-- [ ] Replace/repair the Brevo API credential in the secure store.
-- [ ] Confirm `notifications@airixmedia.com` is active in Brevo.
-- [ ] Confirm Brevo reports `airixmedia.com` authenticated.
-- [ ] Confirm the existing `mail._domainkey` record is the current Brevo value.
-- [ ] Confirm SPF alignment/authorization using Brevo's current provider-facing value; change DNS only after separate approval.
+- [x] Confirm the secure Brevo credential authenticates.
+- [x] Confirm the configured notifications sender can send accepted and delivered transactional messages.
+- [x] Confirm received mail is DKIM-signed for `airixmedia.com`.
+- [ ] Obtain read permission for Brevo administrative sender/domain inventory only if dashboard-status evidence is required.
+- [ ] Confirm SPF alignment from a receiving system that exposes authentication results; change DNS only after separate approval if a defect is found.
 - [x] Confirm DMARC exists and does not reject the approved sender configuration.
 
 ## Deployment and abuse controls
@@ -58,4 +58,4 @@ No website production process currently runs on the inspected cPanel host. The a
 
 `CONTACT_ATTACHMENT_PROVIDER=disabled`. No form accepts, stores or delivers file bytes. Crafted uploads are rejected server-side. Private storage, malware scanning and retention are out of scope.
 
-Operational handover requires: valid secret injection; sender/domain authentication; six synthetic staging deliveries; role-based receipt confirmations; reply-to verification; controlled emergency primary failure; fallback receipt; all-provider-failure UI proof; log/PII review; one-instance topology proof; and signed acceptance of emergency duty ownership/hours.
+Technical delivery handover is complete for secret injection, six staged deliveries, role-based receipt, requester Reply-To, controlled emergency primary failure, fallback receipt, all-provider-failure UI and log/PII review. Launch still requires one-instance topology proof and signed acceptance of emergency duty ownership/hours.

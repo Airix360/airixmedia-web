@@ -7,6 +7,7 @@
     "monitoringHours": true,
     "fallback": true,
     "acknowledgement": true,
+    "stagingAcknowledgement": true,
     "attachmentDisabled": true,
     "processLocalLimiter": true,
     "serverOnlySecrets": true,
@@ -18,5 +19,11 @@
     "sourcePng": true
   },
   "legalCopyRewritten": false,
-  "liveDeliveryVerified": false
+  "liveDeliveryVerified": true,
+  "contactP1": "closed",
+  "emergencyDeliveryP1": "technical-delivery-closed",
+  "emergencyOperationsP1": "open-pending-human-duty-coverage-confirmation",
+  "merged": false,
+  "deployed": false,
+  "dnsChanged": false
 }

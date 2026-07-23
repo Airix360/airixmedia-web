@@ -58,6 +58,7 @@ export function parseRecipientList(raw: string | undefined): { recipients: Recip
 
 function env(name: string) { return process.env[name]?.trim() || ""; }
 function enabled(name: string, defaultValue = false) { const value = env(name).toLowerCase(); return value ? value === "true" : defaultValue; }
+function stagingMarker() { return env("APP_ENVIRONMENT").toLowerCase() === "staging" ? "[STAGING TEST — NO ACTION REQUIRED] " : ""; }
 
 export function safePublicFallbackUrl(value: string | undefined): string | undefined {
   const candidate = value?.trim();
@@ -146,7 +147,7 @@ function subjectFor(submission: ContactSubmission): string {
         : submission.type === "support" ? `[Technical support] ${identity} · ${safeHeaderValue(v.severity)}`
           : submission.type === "emergency" ? `[Emergency request] ${identity} · ${safeHeaderValue(v.outageStatus)}`
             : `[General enquiry] ${identity} · ${safeHeaderValue(v.enquiryType)}`;
-  return safeHeaderValue(`${env("APP_ENVIRONMENT").toLowerCase() === "staging" ? "[STAGING TEST — NO ACTION REQUIRED] " : ""}${subject}`);
+  return safeHeaderValue(`${stagingMarker()}${subject}`);
 }
 
 function buildMessage(submission: ContactSubmission, reference: string, recipients: Recipient[], cc: Recipient[] = []): EmailMessage {
@@ -248,9 +249,10 @@ export async function submitContactEnquiry(submission: ContactSubmission, provid
     logDelivery({ reference, formType: submission.type, status: usedFallback ? "delivered_fallback" : "delivered", provider: provider.name, providerRequestId: delivered.requestId });
     if (enabled("EMERGENCY_ACKNOWLEDGEMENT_ENABLED", true) && emailSchema.safeParse(submission.values.email).success) {
       const acknowledgement = buildMessage(submission, reference, [{ email: String(submission.values.email).toLowerCase() }]);
-      acknowledgement.subject = `Airix Media emergency request delivered · ${reference}`;
-      acknowledgement.textContent = successMessage("emergency", reference, usedFallback);
-      acknowledgement.htmlContent = `<p>${escapeHtml(acknowledgement.textContent)}</p>`;
+      const acknowledgementMessage = successMessage("emergency", reference, usedFallback);
+      acknowledgement.subject = safeHeaderValue(`${stagingMarker()}Airix Media emergency request delivered · ${reference}`);
+      acknowledgement.textContent = `${stagingMarker()}${acknowledgementMessage}`;
+      acknowledgement.htmlContent = `<p>${escapeHtml(stagingMarker())}${escapeHtml(acknowledgementMessage)}</p>`;
       const acknowledgementResult = await provider.deliver(acknowledgement);
       logDelivery({ reference, formType: "emergency", status: acknowledgementResult.ok ? "acknowledgement_delivered" : "acknowledgement_failed", provider: provider.name, ...(!acknowledgementResult.ok ? { failureCategory: acknowledgementResult.category } : {}) });
     }
