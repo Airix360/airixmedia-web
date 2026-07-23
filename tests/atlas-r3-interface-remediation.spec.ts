@@ -145,43 +145,52 @@ test.describe("R3 interface remediation verification", () => {
     for (const theme of ["light", "dark"] as const) {
       await setTheme(page, theme);
       const header = page.locator("header");
-      const emergency = header.getByRole("link", { name: "Emergency", exact: true });
       await page.evaluate(() => window.scrollTo(0, 0));
       await expect(header).not.toHaveClass(/scrolled/);
-      const transparent = await styleRecord(emergency, header, "#14110d");
-      expect(transparent.contrastRatio).toBeGreaterThanOrEqual(4.5);
-      expect(transparent.textDecorationLine).toContain("underline");
-      report[`${theme}Transparent`] = transparent;
-      await header.screenshot({ path: path.join(output, `emergency-${theme}-transparent.png`), animations: "disabled" });
-
-      await page.evaluate(() => window.scrollTo(0, innerHeight));
-      await expect(header).toHaveClass(/scrolled/);
-      const stickyBackground = theme === "light" ? "#f2e8d2" : "#1a1916";
-      const sticky = await styleRecord(emergency, header, stickyBackground);
-      expect(sticky.contrastRatio).toBeGreaterThanOrEqual(4.5);
-      report[`${theme}Sticky`] = sticky;
-      await header.screenshot({ path: path.join(output, `emergency-${theme}-sticky.png`), animations: "disabled" });
+      await header.getByRole("button", { name: "Open menu" }).click();
+      const dialog = page.getByRole("dialog", { name: "Site navigation" });
+      const emergency = dialog.getByRole("link", { name: "Emergency", exact: true });
+      const menuBackground = theme === "light" ? "#f2e8d2" : "#191714";
+      const fromTransparent = await styleRecord(emergency, dialog, menuBackground);
+      expect(fromTransparent.contrastRatio).toBeGreaterThanOrEqual(4.5);
+      expect(fromTransparent.textDecorationLine).toContain("underline");
+      report[`${theme}MenuFromTransparent`] = fromTransparent;
+      await dialog.screenshot({ path: path.join(output, `emergency-${theme}-transparent.png`), animations: "disabled" });
 
       await emergency.hover();
-      const hovered = await styleRecord(emergency, header, stickyBackground);
+      const hovered = await styleRecord(emergency, dialog, menuBackground);
       expect(hovered.contrastRatio).toBeGreaterThanOrEqual(4.5);
       expect(hovered.textDecorationThickness).not.toBe("1px");
       report[`${theme}Hover`] = hovered;
-      if (theme === "dark") await header.screenshot({ path: path.join(output, "emergency-link-hover.png"), animations: "disabled" });
+      if (theme === "dark") await dialog.screenshot({ path: path.join(output, "emergency-link-hover.png"), animations: "disabled" });
 
-      await emergency.focus();
-      const focused = await styleRecord(emergency, header, stickyBackground);
+      await dialog.getByRole("link", { name: "Support", exact: true }).focus();
+      await page.keyboard.press("Tab");
+      await expect(emergency).toBeFocused();
+      const focused = await styleRecord(emergency, dialog, menuBackground);
       expect(focused.outlineStyle).not.toBe("none");
       expect(focused.contrastRatio).toBeGreaterThanOrEqual(4.5);
       report[`${theme}Focus`] = focused;
-      if (theme === "dark") await header.screenshot({ path: path.join(output, "emergency-link-keyboard-focus.png"), animations: "disabled" });
+      if (theme === "dark") await dialog.screenshot({ path: path.join(output, "emergency-link-keyboard-focus.png"), animations: "disabled" });
 
       await emergency.hover();
+      await emergency.evaluate((node) => node.addEventListener("click", (event) => event.preventDefault(), { once: true }));
       await page.mouse.down();
-      const active = await styleRecord(emergency, header, stickyBackground);
+      const active = await styleRecord(emergency, dialog, menuBackground);
       await page.mouse.up();
       expect(active.textDecorationStyle).toBe("double");
       report[`${theme}Active`] = active;
+      await page.keyboard.press("Escape");
+
+      await page.evaluate(() => window.scrollTo(0, innerHeight));
+      await expect(header).toHaveClass(/scrolled/);
+      await header.getByRole("button", { name: "Open menu" }).click();
+      const stickyDialog = page.getByRole("dialog", { name: "Site navigation" });
+      const fromSticky = await styleRecord(stickyDialog.getByRole("link", { name: "Emergency", exact: true }), stickyDialog, menuBackground);
+      expect(fromSticky.contrastRatio).toBeGreaterThanOrEqual(4.5);
+      report[`${theme}MenuFromSticky`] = fromSticky;
+      await stickyDialog.screenshot({ path: path.join(output, `emergency-${theme}-sticky.png`), animations: "disabled" });
+      await page.keyboard.press("Escape");
     }
 
     for (const [name, hour, expected] of [["auto-light", 10, "light"], ["auto-dark", 22, "dark"]] as const) {
@@ -190,10 +199,12 @@ test.describe("R3 interface remediation verification", () => {
       await automatic.page.evaluate(() => window.scrollTo(0, innerHeight));
       const header = automatic.page.locator("header");
       await expect(header).toHaveClass(/scrolled/);
-      const result = await styleRecord(header.getByRole("link", { name: "Emergency", exact: true }), header, expected === "light" ? "#f2e8d2" : "#1a1916");
+      await header.getByRole("button", { name: "Open menu" }).click();
+      const dialog = automatic.page.getByRole("dialog", { name: "Site navigation" });
+      const result = await styleRecord(dialog.getByRole("link", { name: "Emergency", exact: true }), dialog, expected === "light" ? "#f2e8d2" : "#191714");
       expect(result.contrastRatio).toBeGreaterThanOrEqual(4.5);
       report[name] = result;
-      await header.screenshot({ path: path.join(output, `${name}-header.png`), animations: "disabled" });
+      await dialog.screenshot({ path: path.join(output, `${name}-header.png`), animations: "disabled" });
       await automatic.context.close();
     }
 
@@ -217,7 +228,8 @@ test.describe("R3 interface remediation verification", () => {
     await page.evaluate(() => window.scrollTo(0, innerHeight));
     const forcedHeader = page.locator("header");
     await expect(forcedHeader).toHaveClass(/scrolled/);
-    const forcedEmergency = forcedHeader.getByRole("link", { name: "Emergency", exact: true });
+    await forcedHeader.getByRole("button", { name: "Open menu" }).click();
+    const forcedEmergency = page.getByRole("dialog", { name: "Site navigation" }).getByRole("link", { name: "Emergency", exact: true });
     const forcedColours = await forcedEmergency.evaluate((node) => ({
       active: matchMedia("(forced-colors: active)").matches,
       colour: getComputedStyle(node).color,
@@ -228,6 +240,7 @@ test.describe("R3 interface remediation verification", () => {
     expect(forcedColours.textDecorationLine).toContain("underline");
     expect(forcedColours.textDecorationStyle).toBe("double");
     report.forcedColours = forcedColours;
+    await page.keyboard.press("Escape");
 
     await page.emulateMedia({ forcedColors: "none", reducedMotion: "reduce" });
     await page.setViewportSize({ width: 390, height: 844 });

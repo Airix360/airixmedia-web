@@ -21,10 +21,11 @@ test("public homepage presents the complete Atlas journey without review leakage
 test("canonical navigation and direct utility routes remain explicit", async ({ page, isMobile }) => {
   if (!isMobile) await page.setViewportSize({ width: 1440, height: 1000 });
   await page.goto("/");
-  if (isMobile) await page.getByRole("button", { name: "Open menu" }).click();
   const navigation = isMobile ? page.getByRole("dialog", { name: "Site navigation" }).getByRole("navigation") : page.getByRole("navigation", { name: "Primary navigation" });
+  if (isMobile) await page.getByRole("button", { name: "Open menu" }).click();
   for (const label of ["Work", "Services", "Publishing", "Open Source", "Studio", "Contact"]) await expect(navigation.getByRole("link", { name: new RegExp(`${label}$`) })).toBeVisible();
-  const utilityScope = isMobile ? page.getByRole("dialog") : page.getByRole("banner");
+  if (!isMobile) await page.getByRole("button", { name: "Open menu" }).click();
+  const utilityScope = page.getByRole("dialog", { name: "Site navigation" });
   await expect(utilityScope.getByRole("link", { name: "Emergency", exact: true })).toHaveAttribute("href", "/support/emergency");
   await expect(utilityScope.getByRole("link", { name: "Client Portal", exact: true })).toHaveAttribute("href", "https://portal.airixmedia.com");
 });

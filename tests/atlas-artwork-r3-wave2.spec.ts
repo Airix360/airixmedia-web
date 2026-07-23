@@ -35,7 +35,15 @@ async function expectActive(page: Page, key: string, mode: "day" | "night") {
 
 async function switchTo(page: Page, theme: "light" | "dark") {
   const label = theme === "dark" ? "Switch to dark mode" : "Switch to light mode";
-  await page.getByRole("switch", { name: label }).first().click();
+  let control = page.getByRole("switch", { name: label }).first();
+  if (!(await control.count())) {
+    await page.getByRole("button", { name: "Open menu" }).click();
+    control = page.getByRole("dialog", { name: "Site navigation" }).getByRole("switch", { name: label });
+    await control.click();
+    await page.keyboard.press("Escape");
+  } else {
+    await control.click();
+  }
   await expect(page.locator("html")).toHaveAttribute("data-theme", theme);
 }
 
@@ -74,6 +82,7 @@ test.describe.configure({ mode: "serial" });
 
 test("captures responsive Light and Dark evidence and proves in-place switching", async ({ page }, info) => {
   test.skip(info.project.name !== "desktop", "Generate Wave 2 evidence once in desktop Chromium.");
+  test.setTimeout(300_000);
   await mkdir(output, { recursive: true });
   const themeProof: unknown[] = [];
   const cropAudit: unknown[] = [];
