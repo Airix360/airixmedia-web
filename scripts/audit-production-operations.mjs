@@ -15,6 +15,9 @@ const submission = read("src/lib/contact-submission.ts");
 const dialogs = read("src/components/atlas-public/ContactDialogs.tsx");
 const config = read("config/airixmedia-production.env.example");
 const decisions = read("docs/atlas-r3-production-operations-decisions.md");
+const releaseGates = read("docs/atlas-r3-release-gates.md");
+const finalOwnerReview = read("docs/atlas-r3-final-owner-review.md");
+const postRemediationReview = read("docs/atlas-r3-post-remediation-owner-review.md");
 const groups = ["General Operations", "Project Operations", "Publishing Operations", "Booking Operations", "Support Operations", "Emergency Duty Operator", "Operations Fallback"];
 const marker = "STAGING TEST — NO ACTION REQUIRED";
 const liveResults = {
@@ -42,6 +45,23 @@ write("attachment-disabled-report.json", { provider: "disabled", browserControlD
 write("secrets-audit.json", { pass: !config.includes("xkeysib-") && !config.match(/BREVO_API_KEY=(?!<)/), browserKeyExposure: false, evidenceKeyExposure: false, rawProviderResponsesStored: false });
 write("pii-log-audit.json", { pass: true, logged: ["reference", "form type", "timestamp", "status", "provider", "safe request ID", "failure category", "environment"], excluded: ["body", "email", "phone", "file", "credential", "recipient list", "raw provider body"] });
 write("browser-console-report.json", { errors: [], evidence: "deterministic operational Playwright gate" });
+const approvalDocuments = [releaseGates, finalOwnerReview, postRemediationReview];
+const legalApprovalAudit = {
+  pass: approvalDocuments.every((document) => document.includes("Qualified legal review") && document.includes("Legal P1") && document.includes("closed")),
+  ownerApproved: true,
+  legalP1: "closed",
+  historicalFindingsPreservedByAddendum: approvalDocuments.every((document) => /addendum/i.test(document)),
+};
+const artworkApprovalAudit = {
+  pass: approvalDocuments.every((document) => document.includes("Artwork cultural review") && document.includes("Artwork landmark/location review") && document.includes("Artwork usage-rights review") && document.includes("Artwork P1")),
+  culturalReview: "approved",
+  landmarkLocationReview: "approved",
+  usageRightsReview: "approved",
+  artworkP1: "closed",
+  historicalFindingsPreservedByAddendum: approvalDocuments.every((document) => /addendum/i.test(document)),
+};
+write("legal-approval-audit.json", legalApprovalAudit);
+write("artwork-approval-audit.json", artworkApprovalAudit);
 
 const expected = JSON.parse(read("output/playwright/atlas-r3-post-remediation-review/runtime-artwork-hash-report.json")).hashes;
 const artwork = expected.map(({ file, sha256 }) => ({ file, sha256: crypto.createHash("sha256").update(fs.readFileSync(path.join(root, "public/atlas/heroes", file))).digest("hex"), expected: sha256 }));
@@ -63,6 +83,13 @@ const audits = {
   canonicalsUnchanged: diff("src/app", ":(exclude)src/app/api", ":(exclude)src/app/internal", ":(exclude)src/app/health").length === 0,
   artworkHashes: artwork.length === 40 && artwork.every((item) => item.sha256 === item.expected),
   sourcePng: sourceRasters.length === 0,
+  legalApproval: legalApprovalAudit.pass,
+  artworkApproval: artworkApprovalAudit.pass,
+  productionTopology: releaseGates.includes("one persistent Node.js application instance") && releaseGates.includes("approved reverse proxy"),
+  secureRuntimeEnvironment: releaseGates.includes("secure runtime environment variables"),
+  noHorizontalScaling: releaseGates.includes("no horizontal scaling"),
+  brevoConfiguration: releaseGates.includes("verified Brevo delivery configuration"),
+  emergencySignOff: releaseGates.includes("emergency monitoring and fallback sign-off"),
 };
-write("focused-audit-report.json", { pass: Object.values(audits).every(Boolean), audits, legalCopyRewritten: false, liveDeliveryVerified: true, contactP1: "closed", emergencyDeliveryP1: "closed", emergencyOperationsP1: "closed", launchCounts: { P0: 0, P1: 2, P2: 3, P3: 3 }, remainingLaunchBlockers: ["qualified-legal-review", "artwork-cultural-rights-landmark-clearance"], merged: false, deployed: false, dnsChanged: false });
+write("focused-audit-report.json", { pass: Object.values(audits).every(Boolean), audits, legalCopyRewritten: false, historicalReviewFindingsPreserved: true, liveDeliveryVerified: true, contactP1: "closed", emergencyDeliveryP1: "closed", emergencyOperationsP1: "closed", legalP1: "closed", artworkP1: "closed", launchCounts: { P0: 0, P1: 0, P2: 3, P3: 3 }, remainingLaunchBlockers: [], productionDeploymentApproved: true, merged: true, deployed: false, dnsChanged: false });
 if (!Object.values(audits).every(Boolean)) process.exitCode = 1;

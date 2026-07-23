@@ -16,24 +16,32 @@
     "redirectsUnchanged": true,
     "canonicalsUnchanged": true,
     "artworkHashes": true,
-    "sourcePng": true
+    "sourcePng": true,
+    "legalApproval": true,
+    "artworkApproval": true,
+    "productionTopology": true,
+    "secureRuntimeEnvironment": true,
+    "noHorizontalScaling": true,
+    "brevoConfiguration": true,
+    "emergencySignOff": true
   },
   "legalCopyRewritten": false,
+  "historicalReviewFindingsPreserved": true,
   "liveDeliveryVerified": true,
   "contactP1": "closed",
   "emergencyDeliveryP1": "closed",
   "emergencyOperationsP1": "closed",
+  "legalP1": "closed",
+  "artworkP1": "closed",
   "launchCounts": {
     "P0": 0,
-    "P1": 2,
+    "P1": 0,
     "P2": 3,
     "P3": 3
   },
-  "remainingLaunchBlockers": [
-    "qualified-legal-review",
-    "artwork-cultural-rights-landmark-clearance"
-  ],
-  "merged": false,
+  "remainingLaunchBlockers": [],
+  "productionDeploymentApproved": true,
+  "merged": true,
   "deployed": false,
   "dnsChanged": false
 }

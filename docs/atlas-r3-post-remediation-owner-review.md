@@ -114,3 +114,26 @@ Interface evidence is stored under `output/playwright/atlas-r3-post-remediation-
 ## Exact next action
 
 The branch is recommended for merge into the approved release baseline because implementation and operational P1s are closed and the remaining blockers are explicitly governed publication approvals. Do not deploy publicly until qualified legal review and the outstanding cultural, rights and landmark clearances are complete. Deployment must also provision the documented one-instance runtime and secure environment configuration without changing the approved public architecture.
+
+## Final approval addendum — 23 July 2026
+
+The owner has completed the publication approvals that remained open when this
+post-remediation review was written:
+
+- Qualified legal review: **approved**.
+- Artwork cultural review: **approved**.
+- Artwork landmark/location review: **approved**.
+- Artwork usage-rights review: **approved**.
+
+Legal P1 and Artwork P1 are therefore **closed**. Contact delivery, emergency
+technical delivery and emergency operational coverage were already closed. The final
+release classification is **P0 0 · P1 0 · P2 3 · P3 3**, and the site is approved
+for production deployment.
+
+This addendum supersedes only the former release decision. It does not rewrite the
+review’s original findings, route assessments, evidence or issue counts. Production
+must remain one persistent Node.js instance behind the approved reverse proxy, with
+secure runtime environment variables, verified Brevo delivery configuration,
+attachments disabled and no horizontal scaling until process-local rate limiting is
+replaced by an approved shared store. The recorded Airix Media Operations emergency
+monitoring window and fallback responsibility remain in force.
